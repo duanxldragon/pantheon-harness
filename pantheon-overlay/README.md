@@ -43,3 +43,9 @@ This overlay owns the Pantheon-specific governance layer that should not live in
 - backend response / DTO contract checks
 - permission contract checks
 - audit coverage checks
+
+It also owns the Pantheon workspace-consumer reference docs:
+
+- `docs/WORKSPACE_INHERITANCE.md`
+- `docs/PROJECT_INHERITANCE_TEMPLATE.md`
+- `docs/BASE_UPGRADE_WORKFLOW.md`
