@@ -1,0 +1,45 @@
+{
+  "taskId": "2026-05-13-check-task-packet-script",
+  "repo": "pantheon-platform",
+  "agent": {
+    "tool": "codex",
+    "adapter": ".agents/adapters/codex.md"
+  },
+  "commands": [
+    {
+      "command": "node scripts/harness/check-task-packet.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1000,
+      "notes": "Validated all task packets. Initial run caught a checklist wording drift in the bootstrap task packet; after correction, all task packets passed."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs --json",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 900,
+      "notes": "Machine-readable output reported errorCount 0 and warningCount 0."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs docs/harness/tasks/2026-05-13-check-task-packet-script.task.md",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 900,
+      "notes": "Explicit single-file mode passed."
+    }
+  ],
+  "browserEvidence": [],
+  "knownGaps": [
+    "The checker validates Markdown structure only; it does not validate against the JSON schema because task packets are currently Markdown.",
+    "CI integration is intentionally deferred.",
+    "Boundary, response, permission, and audit checks remain planned."
+  ],
+  "completedAt": "2026-05-13T00:00:00Z",
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-05-13-check-task-packet-script.task.md",
+    "evidenceDir": ".harness/evidence/2026-05-13-check-task-packet-script/",
+    "reviewFile": ".harness/evidence/2026-05-13-check-task-packet-script/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  }
+}

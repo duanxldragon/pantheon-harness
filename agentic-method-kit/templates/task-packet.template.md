@@ -1,0 +1,76 @@
+# Task Packet: <task-name>
+
+## Goal
+
+<one sentence>
+
+## Primary Layer
+
+platform | system/auth | system/iam | system/org | system/config | business/* | app
+
+## Dependency Layers
+
+- none
+
+## Contract Anchors
+
+- `path/to/contract.md`
+
+## Scope
+
+### In
+
+- explicit work
+
+### Out
+
+- explicit non-goals
+
+## Expected Files
+
+### Create
+
+- `path`
+
+### Modify
+
+- `path`
+
+### Do Not Touch
+
+- `path`
+
+## Implementation Notes
+
+- notes
+
+## Verification Plan
+
+- `command`
+
+## Linkage
+
+- Task ID: <task-id>
+- OpenSpec Change: openspec/changes/<name>/ | none
+- Superpowers Plan: docs/superpowers/plans/<file>.md | none
+- Evidence Directory: .harness/evidence/<task-id>/
+- Review File: .harness/evidence/<task-id>/review.md | none
+
+## Evidence Required
+
+- command result summary
+- screenshots if UI changed
+- smoke result if browser flow changed
+- review summary
+
+## Human Gates
+
+- none
+
+## Completion Checklist
+
+- [ ] Layer and boundary declared
+- [ ] Contract anchors read
+- [ ] Verification run or exception recorded
+- [ ] Evidence saved or summarized
+- [ ] Review completed

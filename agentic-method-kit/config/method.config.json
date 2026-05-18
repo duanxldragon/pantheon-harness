@@ -1,0 +1,17 @@
+{
+  "taskPacketDir": "docs/harness/tasks",
+  "evidenceDir": ".harness/evidence",
+  "pullRequestTemplate": ".github/pull_request_template.md",
+  "openSpecChangesDir": "openspec/changes",
+  "implementationRoots": [
+    "src/",
+    "app/",
+    "backend/",
+    "frontend/",
+    "services/",
+    "packages/",
+    "docs/contracts/",
+    "docs/designs/",
+    "docs/acceptances/"
+  ]
+}

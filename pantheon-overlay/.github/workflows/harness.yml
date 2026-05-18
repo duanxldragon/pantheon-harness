@@ -1,0 +1,102 @@
+name: Harness
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  harness:
+    name: Harness report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Syntax check harness scripts
+        run: |
+          node --check scripts/harness/check-task-packet.mjs
+          node --check scripts/harness/check-evidence.mjs
+          node --check scripts/harness/check-method-health.mjs
+          node --check scripts/harness/check-boundaries.mjs
+          node --check scripts/harness/check-backend-response-contract.mjs
+          node --check scripts/harness/check-backend-dto-contract.mjs
+          node --check scripts/harness/check-permission-contract.mjs
+          node --check scripts/harness/check-audit-coverage.mjs
+          node --check scripts/harness/check-visual-evidence.mjs
+          node --check scripts/harness/check-adoption.mjs
+          node --check scripts/harness/check-inheritance-contract.mjs
+          node --check scripts/harness/triage-base-drift.mjs
+
+      - name: Test harness scripts
+        run: node --test scripts/harness/*.test.mjs
+
+      - name: Prepare report directory
+        run: mkdir -p .harness/reports
+
+      - name: Check task packets
+        run: |
+          if ls docs/harness/tasks/*.task.md >/dev/null 2>&1; then
+            node scripts/harness/check-task-packet.mjs
+            node scripts/harness/check-task-packet.mjs --json > .harness/reports/task-packets.json
+          else
+            echo '{"skipped":true,"reason":"no task packets yet"}' > .harness/reports/task-packets.json
+          fi
+
+      - name: Check verification evidence
+        run: |
+          if find .harness/evidence -name commands.json | grep . >/dev/null 2>&1; then
+            node scripts/harness/check-evidence.mjs --strict
+            node scripts/harness/check-evidence.mjs --json --strict > .harness/reports/evidence.json
+          else
+            echo '{"skipped":true,"reason":"no evidence yet"}' > .harness/reports/evidence.json
+          fi
+
+      - name: Check method health
+        run: |
+          node scripts/harness/check-method-health.mjs --strict
+          node scripts/harness/check-method-health.mjs --json --strict > .harness/reports/method-health.json
+
+      - name: Run report-first contract checks
+        run: |
+          node scripts/harness/check-boundaries.mjs --json > .harness/reports/boundaries.json
+          node scripts/harness/check-backend-response-contract.mjs --json > .harness/reports/backend-response-contract.json
+          node scripts/harness/check-backend-dto-contract.mjs --json > .harness/reports/backend-dto-contract.json
+          node scripts/harness/check-permission-contract.mjs --json > .harness/reports/permission-contract.json
+          node scripts/harness/check-audit-coverage.mjs --json > .harness/reports/audit-coverage.json
+          node scripts/harness/check-visual-evidence.mjs --json > .harness/reports/visual-evidence.json
+          node scripts/harness/check-adoption.mjs --json > .harness/reports/adoption.json
+          node scripts/harness/check-inheritance-contract.mjs --json --strict > .harness/reports/inheritance-contract.json
+          node scripts/harness/triage-base-drift.mjs --json > .harness/reports/base-drift.json
+
+      - name: Upload harness reports
+        uses: actions/upload-artifact@v6
+        if: always()
+        with:
+          name: harness-reports
+          path: .harness/reports/
+
+  visual-evidence-blocking:
+    name: Visual Evidence Blocking (Experimental)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+      - name: Check visual evidence strictly
+        run: node scripts/harness/check-visual-evidence.mjs --strict

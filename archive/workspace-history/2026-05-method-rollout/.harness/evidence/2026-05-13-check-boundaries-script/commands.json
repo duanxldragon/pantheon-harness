@@ -1,0 +1,59 @@
+{
+  "taskId": "2026-05-13-check-boundaries-script",
+  "repo": "pantheon-platform",
+  "agent": {
+    "tool": "codex",
+    "adapter": ".agents/adapters/codex.md"
+  },
+  "commands": [
+    {
+      "command": "node --check scripts/harness/check-boundaries.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1000,
+      "notes": "Syntax check passed."
+    },
+    {
+      "command": "node scripts/harness/check-boundaries.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1100,
+      "notes": "Report-only mode found 2 existing boundary findings and exited 0."
+    },
+    {
+      "command": "node scripts/harness/check-boundaries.mjs --json",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1100,
+      "notes": "JSON output reported 2 findings and 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-boundaries.mjs --strict",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "failed",
+      "durationMs": 1100,
+      "notes": "Expected failure: strict mode returned non-zero because 2 existing findings are present."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1100,
+      "notes": "All 3 task packets passed."
+    }
+  ],
+  "browserEvidence": [],
+  "knownGaps": [
+    "The checker currently covers the most important business-to-internal/system import cases only.",
+    "Default mode is report-only; CI integration is deferred.",
+    "Existing pantheon-ops boundary findings need a separate remediation task."
+  ],
+  "completedAt": "2026-05-13T00:00:00Z",
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-05-13-check-boundaries-script.task.md",
+    "evidenceDir": ".harness/evidence/2026-05-13-check-boundaries-script/",
+    "reviewFile": ".harness/evidence/2026-05-13-check-boundaries-script/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  }
+}

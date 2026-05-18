@@ -1,0 +1,28 @@
+{
+  "name": "pantheon-overlay",
+  "purpose": "Optional Pantheon-specific overlay for base/business inheritance governance",
+  "requires": [
+    "agentic-method-kit",
+    "agentic-repo-shell",
+    "pantheon-base"
+  ],
+  "includes": [
+    "docs/harness/INHERITANCE_HARNESS_PROTOCOL.md",
+    ".github/pull_request_template.md",
+    ".github/workflows/harness.yml",
+    "scripts/harness/check-boundaries.mjs",
+    "scripts/harness/check-boundaries.test.mjs",
+    "scripts/harness/check-backend-response-contract.mjs",
+    "scripts/harness/check-backend-response-contract.test.mjs",
+    "scripts/harness/check-backend-dto-contract.mjs",
+    "scripts/harness/check-backend-dto-contract.test.mjs",
+    "scripts/harness/check-permission-contract.mjs",
+    "scripts/harness/check-permission-contract.test.mjs",
+    "scripts/harness/check-audit-coverage.mjs",
+    "scripts/harness/check-audit-coverage.test.mjs",
+    "scripts/harness/check-inheritance-contract.mjs",
+    "scripts/harness/check-inheritance-contract.test.mjs",
+    "scripts/harness/triage-base-drift.mjs",
+    "scripts/harness/triage-base-drift.test.mjs"
+  ]
+}

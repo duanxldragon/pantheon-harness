@@ -1,0 +1,24 @@
+{
+  "taskId": "example",
+  "repo": "minimal-repo",
+  "agent": {
+    "tool": "codex"
+  },
+  "commands": [
+    {
+      "command": "node agentic-method-kit/scripts/check-task-packet.mjs --root agentic-method-kit/examples/minimal-repo --config ../../config/method.config.json",
+      "cwd": ".",
+      "status": "passed"
+    }
+  ],
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/example.task.md",
+    "evidenceDir": ".harness/evidence/example/",
+    "reviewFile": ".harness/evidence/example/review.md",
+    "changeRef": "openspec/changes/example-change/",
+    "planRefs": [
+      "docs/superpowers/plans/example-plan.md"
+    ]
+  },
+  "knownGaps": []
+}

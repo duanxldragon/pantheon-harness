@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Review Artifact",
+  "type": "object",
+  "required": ["taskId", "verdict", "linkage"],
+  "properties": {
+    "taskId": { "type": "string" },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "changes requested",
+        "blocked",
+        "approved with documented P2 follow-up"
+      ]
+    },
+    "linkage": {
+      "type": "object",
+      "required": ["taskPacket", "evidence", "reviewFile", "changeRef", "planRefs"],
+      "properties": {
+        "taskPacket": { "type": "string" },
+        "evidence": { "type": "string" },
+        "reviewFile": { "type": "string" },
+        "changeRef": { "type": "string" },
+        "planRefs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

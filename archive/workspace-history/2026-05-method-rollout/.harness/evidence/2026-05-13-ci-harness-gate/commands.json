@@ -1,0 +1,74 @@
+{
+  "taskId": "2026-05-13-ci-harness-gate",
+  "repo": "pantheon-platform",
+  "agent": {
+    "tool": "codex",
+    "adapter": ".agents/adapters/codex.md"
+  },
+  "commands": [
+    {
+      "command": "node --check scripts/harness/check-evidence.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1400,
+      "notes": "Syntax check completed with exit code 0."
+    },
+    {
+      "command": "node scripts/harness/check-evidence.mjs --strict",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1400,
+      "notes": "Initial validation passed for 6 existing evidence command files with 0 errors and 0 warnings before this task evidence was added. Final validation passed for 7 files after this task evidence was added."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1500,
+      "notes": "Validated 7 task packets with 0 errors and 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-boundaries.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2100,
+      "notes": "Report-only mode completed with 2 existing pantheon-ops boundary findings and 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-backend-response-contract.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1800,
+      "notes": "Report-only mode completed with 0 findings and 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-permission-contract.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2000,
+      "notes": "Report-only mode completed with 0 findings, 14 warnings, and 0 scan warnings."
+    },
+    {
+      "command": "node scripts/harness/check-audit-coverage.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1800,
+      "notes": "Report-only mode completed with 0 findings, 124 warnings, 0 scan warnings, and 240 write routes."
+    }
+  ],
+  "browserEvidence": [],
+  "knownGaps": [
+    "Existing pantheon-ops boundary findings remain report-only.",
+    "Permission and audit warnings remain semantic follow-up work.",
+    "CI artifact upload requires a GitHub Actions run to verify end to end.",
+    "PR template wiring remains in Phase 5."
+  ],
+  "completedAt": "2026-05-13T00:00:00Z",
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-05-13-ci-harness-gate.task.md",
+    "evidenceDir": ".harness/evidence/2026-05-13-ci-harness-gate/",
+    "reviewFile": ".harness/evidence/2026-05-13-ci-harness-gate/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  }
+}

@@ -1,0 +1,225 @@
+# Harness Engineering Contract
+
+类型：Contract
+归属层：method
+状态：Active
+
+本文定义通用、工具无关的 Harness Engineering 协议。它约束 AI agent、自动化工具和人工工程师如何接收任务、读取上下文、修改代码、验证结果、提交证据并进入 review。
+
+## 1. 目标
+
+Harness Engineering 的目标是让仓库本身成为执行环境，而不是把流程锁在某个工具里。
+
+Codex、Claude Code、Cursor、GitHub Copilot、OpenHands、Aider 和人工工程师都可以参与开发，但必须遵守同一套仓库协议：
+
+1. 任务边界由合同、设计、验收文档定义。
+2. 工具只负责执行、验证和举证。
+3. 关键判断必须有 human gate 或 review gate。
+4. 完成状态必须由测试、检查、浏览器证据和文档同步共同支撑。
+
+## 2. 适用范围
+
+本文适用于：
+
+- 任何 agent 生成、修改、删除代码或文档的任务。
+- 任何影响接口、权限、菜单、i18n、schema、工作流的任务。
+- 任何影响 UI 视觉、交互、布局、响应式、状态呈现或用户体验的任务。
+- 任何多仓库、基础层/业务层、共享模块/本地模块之间的边界治理任务。
+
+## 3. 非目标
+
+本文不定义某个工具的快捷命令、私有 prompt 或插件行为。工具特定说明放在 `.agents/adapters/` 或工具自己的配置中。
+
+本文也不替代项目自己的：
+
+- `AGENTS.md` / `CLAUDE.md` / `.cursor/rules`
+- `docs/contracts/*`
+- `docs/designs/*`
+- `docs/acceptances/*`
+- 项目特定 overlay 文档
+
+## 4. 核心原则
+
+### 4.1 仓库协议优先
+
+关键规则必须沉淀在仓库中，优先级如下：
+
+1. 用户在当前会话中的直接要求。
+2. 当前仓库的入口文件，如 `AGENTS.md`、`CLAUDE.md`、`GEMINI.md`、`.cursor/rules`。
+3. `docs/harness/*` 工具无关协议。
+4. `docs/contracts/*`、`docs/designs/*`、`docs/acceptances/*`。
+5. 工具 adapter 和 agent 私有技能。
+
+如果工具 adapter 与仓库合同冲突，以仓库合同为准。
+
+### 4.2 工具只是执行器
+
+Skill、rule、instruction、prompt 都只是 adapter。它们可以优化体验，但不能成为唯一事实源。
+
+任何关键约束如果只存在于某个工具配置中，都必须迁移或摘要到 `docs/harness/*` 或对应合同文档。
+
+### 4.3 人负责目标和判断
+
+人负责：
+
+- 定义目标和优先级。
+- 决定跨层边界和 tradeoff。
+- 批准 schema、权限、删除、继承、共享合同变更等高影响操作。
+- 审查证据和剩余风险。
+
+Agent 负责：
+
+- 按任务包读取上下文。
+- 执行实现。
+- 运行验证。
+- 保存证据。
+- 产出 review-ready 说明。
+
+### 4.4 证据优先
+
+不能只说“已完成”“已验证”“应该没问题”。必须给出：
+
+- 执行过的命令。
+- 通过或失败结果。
+- UI 相关截图或 smoke 结果。
+- 已知未验证项。
+- 受影响文档是否已同步。
+
+## 5. 标准工作流
+
+所有非 trivial 任务必须按以下流程推进：
+
+```text
+Intake -> Context -> Plan -> Red -> Green -> Verify -> Evidence -> Review -> Handoff
+```
+
+### 5.1 Intake
+
+读取任务包或用户请求，声明：
+
+- primary layer
+- dependency layers
+- touched contracts
+- expected verification
+- human gates
+
+### 5.2 Context
+
+按当前仓库的阅读顺序读取必要文档，不做无边界的全量阅读。
+
+推荐顺序：
+
+1. 仓库入口文件，如 `AGENTS.md`
+2. 项目总设计或 README
+3. 相关 `docs/contracts/*`
+4. 相关 `docs/designs/*`
+5. 相关 `docs/acceptances/*`
+6. 适用的 overlay 合同或多仓库继承文档
+
+### 5.3 Plan
+
+非 trivial 任务必须有最小计划。跨层任务、新功能、重构、边界治理和高敏配置变更必须使用 task packet。
+
+### 5.4 Red
+
+能用测试或检查固定行为的任务，先写失败测试或失败检查。
+
+例外必须说明：
+
+- 纯文档整理
+- 探索性 audit
+- 无法在当前环境运行的外部依赖
+
+### 5.5 Green
+
+实现只覆盖任务包范围。不得顺手重构无关代码，不得修复未归因的问题。
+
+### 5.6 Verify
+
+按变更面选择最小验证集：
+
+- backend: `go test` 相关包，必要时 `go test ./...`
+- frontend: `npm run type-check`、`npm run lint`、`npm run build`
+- contracts: 项目定义的菜单、i18n、权限、schema、边界检查
+- UI: smoke、截图、console error、浏览器路径
+- visual quality: 按 `VISUAL_QUALITY_PROTOCOL.md` 执行视觉质量门
+
+### 5.7 Evidence
+
+验证结果按 `VERIFICATION_EVIDENCE_SPEC.md` 保存或摘要。
+
+### 5.8 Review
+
+按 `REVIEW_LOOP_SPEC.md` 和项目 acceptance 文档做 findings-first review。
+
+### 5.9 Handoff
+
+交付说明必须包含：
+
+- changed files
+- commands run
+- pass/fail result
+- evidence path
+- known gaps
+- required human decisions
+
+### 5.10 Default Adoption For Ordinary Work
+
+Unless a task is explicitly trivial under Section 8, any code, contract, design, acceptance, UI, route, permission, i18n, schema, or workflow change must ship with:
+
+- a task packet or explicit link to an approved parent task packet
+- verification evidence in the repository-defined structure
+- known gaps recorded instead of omitted
+
+This rule applies equally to:
+
+- ordinary feature delivery
+- bugfixes
+- refactors that change behavior or contracts
+- UI polish work
+- cross-layer remediation work
+
+## 6. Human Gates
+
+以下操作必须先获得人确认，或在 PR 中显式进入 review gate：
+
+- 删除大量文件或目录。
+- 修改数据库 schema、迁移或 seed 语义。
+- 修改权限模型、菜单模型、审计模型或 i18n key 规则。
+- 修改共享合同、共享平台层或多仓库继承边界。
+- 在派生仓库中 override 基础层实现。
+- 引入新运行时依赖、新外部服务或新安全边界。
+- 变更 CI gate、发布流程或 secrets 处理方式。
+
+## 7. 完成定义
+
+一个任务只有同时满足以下条件，才可以标记完成：
+
+1. 已声明归属层和跨层边界。
+2. 已读取对应合同、设计和验收文档。
+3. 已执行任务包或最小计划。
+4. 已运行与变更面匹配的验证命令。
+5. 已保存或摘要验证证据。
+6. 涉及合同、接口、菜单、权限、i18n、数据库或验收口径时，已同步文档。
+7. 涉及 UI 时，已执行视觉质量门并保存截图、浏览器证据或未运行原因。
+8. 已列出未验证项和剩余风险。
+9. Review gate 没有未解决的 P0/P1。
+
+## 8. Trivial 任务例外
+
+以下任务可以不创建 task packet，但仍需遵守相关合同：
+
+- 单字 typo 修复。
+- 注释或 README 小幅澄清。
+- 只读查询、日志查看、状态汇报。
+- 不影响行为的格式化，且已有格式化命令验证。
+
+例外任务仍不能绕过敏感操作 human gate。
+
+## 9. 迁移路线
+
+Harness 成熟度分三阶段推进：
+
+1. 协议层：建立 `docs/harness/*` 与 `.agents/*`，确保工具无关。
+2. 证据层：建立 task packet、evidence schema 和证据目录。
+3. 门禁层：把项目特定的边界、权限、契约和视觉检查下沉为脚本和 CI，必要时由 overlay 提供。

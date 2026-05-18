@@ -1,0 +1,59 @@
+{
+  "taskId": "2026-05-13-check-audit-coverage-script",
+  "repo": "pantheon-platform",
+  "agent": {
+    "tool": "codex",
+    "adapter": ".agents/adapters/codex.md"
+  },
+  "commands": [
+    {
+      "command": "node --check scripts/harness/check-audit-coverage.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1500,
+      "notes": "Syntax check completed with exit code 0."
+    },
+    {
+      "command": "node scripts/harness/check-audit-coverage.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1500,
+      "notes": "Report-only mode completed with 0 findings, 124 warnings, 0 scan warnings, and 240 write routes."
+    },
+    {
+      "command": "node scripts/harness/check-audit-coverage.mjs --json",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1500,
+      "notes": "JSON output mode completed with exit code 0."
+    },
+    {
+      "command": "node scripts/harness/check-audit-coverage.mjs --strict",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1500,
+      "notes": "Strict mode completed with 0 findings and 124 warnings; warnings do not fail strict mode."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1300,
+      "notes": "Task packet check completed for 6 files with 0 errors and 0 warnings."
+    }
+  ],
+  "browserEvidence": [],
+  "knownGaps": [
+    "The 124 warnings are semantic audit metadata follow-up work, not blocking findings.",
+    "CI integration is handled by the follow-up ci-harness-gate task.",
+    "This task does not change backend handlers."
+  ],
+  "completedAt": "2026-05-13T00:00:00Z",
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-05-13-check-audit-coverage-script.task.md",
+    "evidenceDir": ".harness/evidence/2026-05-13-check-audit-coverage-script/",
+    "reviewFile": ".harness/evidence/2026-05-13-check-audit-coverage-script/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  }
+}

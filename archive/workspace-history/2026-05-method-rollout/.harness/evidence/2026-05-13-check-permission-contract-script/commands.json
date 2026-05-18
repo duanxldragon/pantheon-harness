@@ -1,0 +1,59 @@
+{
+  "taskId": "2026-05-13-check-permission-contract-script",
+  "repo": "pantheon-platform",
+  "agent": {
+    "tool": "codex",
+    "adapter": ".agents/adapters/codex.md"
+  },
+  "commands": [
+    {
+      "command": "node --check scripts/harness/check-permission-contract.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2100,
+      "notes": "Syntax check passed."
+    },
+    {
+      "command": "node scripts/harness/check-permission-contract.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2200,
+      "notes": "Report-only mode found 0 findings, 14 warnings, and 0 scan warnings."
+    },
+    {
+      "command": "node scripts/harness/check-permission-contract.mjs --json",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2100,
+      "notes": "JSON output reported 0 findings and 14 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-permission-contract.mjs --strict",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2200,
+      "notes": "Strict mode passed because warnings are informational and there are no findings."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 2000,
+      "notes": "All 5 task packets passed."
+    }
+  ],
+  "browserEvidence": [],
+  "knownGaps": [
+    "This checker is conservative and does not perform full permission graph validation.",
+    "Warnings should be reviewed during PR review but do not block strict mode.",
+    "CI integration is intentionally deferred."
+  ],
+  "completedAt": "2026-05-13T00:00:00Z",
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-05-13-check-permission-contract-script.task.md",
+    "evidenceDir": ".harness/evidence/2026-05-13-check-permission-contract-script/",
+    "reviewFile": ".harness/evidence/2026-05-13-check-permission-contract-script/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  }
+}

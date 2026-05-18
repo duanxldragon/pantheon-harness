@@ -1,0 +1,44 @@
+{
+  "taskId": "2026-05-13-triage-base-drift-script",
+  "repo": "pantheon-platform",
+  "agent": {
+    "tool": "codex",
+    "adapter": ".agents/adapters/codex.md"
+  },
+  "commands": [
+    {
+      "command": "node --test scripts/harness/triage-base-drift.test.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 300,
+      "notes": "2 tests passed after initial RED failure from missing script."
+    },
+    {
+      "command": "node --check scripts/harness/triage-base-drift.mjs",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1600,
+      "notes": "Syntax check passed."
+    },
+    {
+      "command": "node scripts/harness/triage-base-drift.mjs --json",
+      "cwd": "D:\\workspace\\go\\pantheon-platform",
+      "status": "passed",
+      "durationMs": 1300,
+      "notes": "Category counts: pseudo-drift 66, business mount 1, generic drift 74, business-specific drift 33, noise 33, base-only 91, business-only 63."
+    }
+  ],
+  "browserEvidence": [],
+  "knownGaps": [
+    "Classification is file-level and report-first; category D/E decisions still need human review before backport or cutover work.",
+    "The script does not modify docs/DRIFT_AUDIT.md; its JSON output is suitable as input to update that document."
+  ],
+  "completedAt": "2026-05-13T00:00:00Z",
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-05-13-triage-base-drift-script.task.md",
+    "evidenceDir": ".harness/evidence/2026-05-13-triage-base-drift-script/",
+    "reviewFile": ".harness/evidence/2026-05-13-triage-base-drift-script/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  }
+}
