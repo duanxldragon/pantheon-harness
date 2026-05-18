@@ -2,18 +2,16 @@
 
 This repository is the maintenance and distribution workspace for the reusable agentic method stack.
 
-Pantheon is the primary in-repo reference implementation and overlay consumer, but the root workspace now exists first to assemble, validate, version, and publish the reusable method layers.
+Pantheon is an optional overlay and a reference consumer, but this repository is not tied to any one product family. It exists to assemble, validate, version, and publish the reusable method layers.
 
 It does not own the foundation code or business code directly. Instead, it provides:
 
 - tool-agnostic Harness Engineering protocol under `docs/harness/`
 - shared agent adapters under `.agents/`
-- shared Codex adapter skills under `.codex/skills/`
-- workspace inheritance and bootstrap documents under `docs/`
+- distribution-workspace bootstrap and migration documents
 - portable method source under `agentic-method-kit/`
 - copyable repo shell under `agentic-repo-shell/`
 - optional Pantheon-specific overlay under `pantheon-overlay/`
-- submodule pointers to the real project repositories
 
 ## Distribution Surfaces
 
@@ -37,6 +35,7 @@ Start with:
 
 ## Reference Consumers
 
+- any repository that wants a portable Harness Engineering method stack
 - `pantheon-base`: foundation repository for platform and `system/*` capabilities
 - `pantheon-ops`: derived business repository for operations-domain modules
 - future `pantheon-xx`: additional derived business repositories that inherit `pantheon-base`
@@ -48,8 +47,8 @@ Start with:
 - base upgrade workflow
 - tool-agnostic Harness Engineering contracts
 - shared agent adapter documentation
-- Codex-specific routing and execution skills
-- archive of historical rollout artifacts under `archive/`
+- distribution release and migration guides
+- optional minimal archive metadata under `archive/`
 
 ## What Does Not Live Here
 
@@ -58,44 +57,31 @@ Start with:
 - direct platform or business implementation code
 - active delivery task packets or runtime evidence for the distributable starter packages
 
-## Git Model
-
-This workspace repository tracks child repositories as submodules.
-
-Current submodules:
-
-- `pantheon-base`
-- `pantheon-ops`
-
-The current `.gitmodules` file points to the canonical GitHub repositories for `pantheon-base` and `pantheon-ops`.
-
 ## Reading Order
 
 For tool-agnostic Harness Engineering, start with:
 
-1. `docs/WORKSPACE_INHERITANCE.md`
-2. `agentic-method-kit/README.md`
-3. `agentic-method-kit/METHOD_PLAYBOOK.md`
-4. `docs/harness/HARNESS_ENGINEERING_CONTRACT.md`
-5. `docs/harness/AGENT_INTERFACE_CONTRACT.md`
-6. `docs/harness/TASK_PACKET_SPEC.md`
-7. `docs/harness/VERIFICATION_EVIDENCE_SPEC.md`
-8. `docs/harness/REVIEW_LOOP_SPEC.md`
-9. `docs/harness/INHERITANCE_HARNESS_PROTOCOL.md`
-10. `.agents/README.md`
+1. `agentic-method-kit/README.md`
+2. `agentic-method-kit/METHOD_PLAYBOOK.md`
+3. `docs/harness/HARNESS_ENGINEERING_CONTRACT.md`
+4. `docs/harness/AGENT_INTERFACE_CONTRACT.md`
+5. `docs/harness/TASK_PACKET_SPEC.md`
+6. `docs/harness/VERIFICATION_EVIDENCE_SPEC.md`
+7. `docs/harness/REVIEW_LOOP_SPEC.md`
+8. `.agents/README.md`
 
-If you only want the reusable method package rather than the full Pantheon workspace, start with:
+If you only want the reusable method package rather than the full distribution workspace, start with:
 
 1. `agentic-method-kit/README.md`
 2. `agentic-repo-shell/README.md`
 3. `pantheon-overlay/README.md` when applicable
 
-For workspace and inheritance mechanics, continue with:
+For distribution and migration mechanics, continue with:
 
-1. `docs/PROJECT_INHERITANCE_TEMPLATE.md`
-2. `docs/BASE_UPGRADE_WORKFLOW.md`
-3. `.codex/skills/pantheon-base-foundation/SKILL.md`
-4. `.codex/skills/pantheon-workspace-routing/SKILL.md`
+1. `DISTRIBUTION.md`
+2. `RELEASE.md`
+3. `MIGRATION_TO_STANDALONE_REPO.md`
+4. `STANDALONE_REPO_BOOTSTRAP_CHECKLIST.md`
 
 ## New Project Bootstrap
 
@@ -121,6 +107,7 @@ Skills are optional accelerators; contracts, templates, and check scripts are th
 The current bootstrap helper is:
 
 - `scripts/bootstrap-agentic-repo.ps1`
+- `scripts/scaffold-standalone-method-repo.ps1`
 
 The current workspace also publishes repo-shell compatibility metadata in:
 
@@ -128,7 +115,7 @@ The current workspace also publishes repo-shell compatibility metadata in:
 
 ## Harness Engineering Model
 
-Pantheon treats Codex, Claude Code, Cursor, GitHub Copilot, OpenHands, Aider, and human engineers as execution adapters over the same repository protocol.
+This workspace treats Codex, Claude Code, Cursor, GitHub Copilot, OpenHands, Aider, and human engineers as execution adapters over the same repository protocol.
 
 The source of truth is layered:
 
@@ -136,14 +123,11 @@ The source of truth is layered:
 - `docs/harness/*` is the current workspace's repo-local contract and landing layer
 - `.agents/adapters/*` provides tool-specific mappings
 - repository-local `AGENTS.md` / `CLAUDE.md` provides project-specific behavior
-- `.codex/skills/*` is only for Codex-specific helper workflows
 
 No critical architecture, permission, i18n, audit, review, or inheritance rule should exist only inside one tool's private prompt or adapter.
 
 ## Archive
 
-Historical rollout task packets, evidence, and process documents that are no longer part of the current publishable surface are stored under:
+`archive/` is optional and should remain small in the public distribution repository.
 
-- `archive/workspace-history/`
-
-That archive is retained for traceability, not as part of the recommended copy set for new repositories.
+If historical rollout material is kept at all, it should stay clearly separated from the publishable copy set.
