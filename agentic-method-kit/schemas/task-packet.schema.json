@@ -6,6 +6,7 @@
     "taskId",
     "goal",
     "primaryLayer",
+    "harnessProfile",
     "contractAnchors",
     "scope",
     "verificationPlan",
@@ -17,6 +18,38 @@
     "taskId": { "type": "string" },
     "goal": { "type": "string" },
     "primaryLayer": { "type": "string" },
+    "harnessProfile": {
+      "type": "object",
+      "required": ["template", "overlay", "coverageDimensions"],
+      "properties": {
+        "template": {
+          "type": "string",
+          "enum": [
+            "admin-platform",
+            "api-service",
+            "event-processor",
+            "dashboard",
+            "ui-heavy-product",
+            "custom"
+          ]
+        },
+        "overlay": { "type": "string" },
+        "coverageDimensions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "behaviour",
+              "maintainability",
+              "architecture-fitness",
+              "runtime-quality",
+              "method-health"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
     "contractAnchors": {
       "type": "array",
       "items": { "type": "string" },

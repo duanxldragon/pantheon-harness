@@ -161,6 +161,30 @@ node scripts/harness/check-method-health.mjs --strict
 
 Pantheon 专用的 inheritance、drift、architecture 和 backend contract checks 位于 `pantheon-overlay/`。
 
+### `check-failure-registry.mjs`
+
+校验 Harness failure registry Markdown 表格，覆盖必需列、枚举值、必填字段、`FR-001` 编号格式，以及未替换的模板占位行。
+
+默认扫描：
+
+```powershell
+node scripts/harness/check-failure-registry.mjs
+```
+
+JSON 输出：
+
+```powershell
+node scripts/harness/check-failure-registry.mjs --json
+```
+
+显式校验单个文件：
+
+```powershell
+node scripts/harness/check-failure-registry.mjs docs/harness/failure-registry.md
+```
+
+默认路径没有 registry 时只报告 warning，不阻断新仓库渐进采用；发现结构错误时退出 `1`。
+
 ### `check-doc-frontmatter.mjs`
 
 根据 `docs/harness/DOCUMENT_FRONTMATTER_SPEC.md` 中的可移植 frontmatter 约定，校验受治理的 Markdown 文档。
@@ -211,5 +235,5 @@ node --test scripts/harness/*.test.mjs
 | `check-visual-evidence.mjs` | `check-visual-evidence.test.mjs` |
 | `check-adoption.mjs` | `check-adoption.test.mjs` |
 | `check-method-health.mjs` | `check-method-health.test.mjs` |
+| `check-failure-registry.mjs` | `check-failure-registry.test.mjs` |
 | `check-doc-frontmatter.mjs` | `check-doc-frontmatter.test.mjs` |
-

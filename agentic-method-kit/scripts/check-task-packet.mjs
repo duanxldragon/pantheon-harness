@@ -33,6 +33,10 @@ function validateTask(filePath, root) {
   const errors = [];
   const taskId = path.basename(filePath).replace(/\.task\.md$/, '');
   requireMatch(content, /^# Task Packet:/m, 'missing task packet heading', errors);
+  requireMatch(content, /^## Harness Profile$/m, 'missing harness profile section', errors);
+  requireMatch(content, /^- Template:\s*(admin-platform|api-service|event-processor|dashboard|ui-heavy-product|custom)$/m, 'missing or invalid harness template', errors);
+  requireMatch(content, /^- Overlay:\s*.+$/m, 'missing harness overlay', errors);
+  requireMatch(content, /^- Coverage Dimensions:\s*$/m, 'missing coverage dimensions', errors);
   requireMatch(content, /^## Linkage$/m, 'missing linkage section', errors);
   requireMatch(content, new RegExp(`^- Task ID:\\s*${taskId}$`, 'm'), 'linkage task id mismatch', errors);
   requireMatch(content, new RegExp(`^- Evidence Directory:\\s*\\.harness/evidence/${taskId}/$`, 'm'), 'linkage evidence dir mismatch', errors);

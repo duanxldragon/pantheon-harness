@@ -12,6 +12,13 @@ platform
 
 - none
 
+## Harness Profile
+
+- Template: custom
+- Overlay: none
+- Coverage Dimensions:
+  - method-health
+
 ## Contract Anchors
 
 - `docs/contracts/example.md`

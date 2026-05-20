@@ -55,6 +55,8 @@ English version: [README.md](./README.md)
 - `VISUAL_QUALITY_PROTOCOL.md`
 - `INHERITANCE_HARNESS_PROTOCOL.md`
 - `HARNESS_METHOD_PLAYBOOK.md`
+- `failure-registry.md`
+- `HARNESS_OPEN_TASKS.md`
 
 状态：
 - 当前这组文档多数已经偏中文或中文友好
@@ -68,12 +70,16 @@ English version: [README.md](./README.md)
 建议阅读顺序：
 
 1. [../agentic-method-kit/README.zh.md](../agentic-method-kit/README.zh.md)
-2. [../agentic-method-kit/METHOD_PLAYBOOK.zh.md](../agentic-method-kit/METHOD_PLAYBOOK.zh.md)
-3. [../agentic-method-kit/INSTALL.zh.md](../agentic-method-kit/INSTALL.zh.md)
-4. [../agentic-method-kit/UPGRADE.zh.md](../agentic-method-kit/UPGRADE.zh.md)
-5. [../agentic-method-kit/MIGRATION.md](../agentic-method-kit/MIGRATION.md)
-6. [../agentic-method-kit/CONCEPT_MAP.md](../agentic-method-kit/CONCEPT_MAP.md)
-7. [../agentic-method-kit/CHANGELOG.md](../agentic-method-kit/CHANGELOG.md)
+2. [../agentic-method-kit/HARNESS_CORE_MODEL.zh.md](../agentic-method-kit/HARNESS_CORE_MODEL.zh.md)
+3. [../agentic-method-kit/HARNESS_COVERAGE_MODEL.zh.md](../agentic-method-kit/HARNESS_COVERAGE_MODEL.zh.md)
+4. [../agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.zh.md](../agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.zh.md)
+5. [../agentic-method-kit/TOOL_ADAPTER_MATRIX.zh.md](../agentic-method-kit/TOOL_ADAPTER_MATRIX.zh.md)
+6. [../agentic-method-kit/METHOD_PLAYBOOK.zh.md](../agentic-method-kit/METHOD_PLAYBOOK.zh.md)
+7. [../agentic-method-kit/INSTALL.zh.md](../agentic-method-kit/INSTALL.zh.md)
+8. [../agentic-method-kit/UPGRADE.zh.md](../agentic-method-kit/UPGRADE.zh.md)
+9. [../agentic-method-kit/MIGRATION.md](../agentic-method-kit/MIGRATION.md)
+10. [../agentic-method-kit/CONCEPT_MAP.md](../agentic-method-kit/CONCEPT_MAP.md)
+11. [../agentic-method-kit/CHANGELOG.md](../agentic-method-kit/CHANGELOG.md)
 
 状态：
 - 目前基本是英文单份
@@ -147,6 +153,10 @@ English version: [README.md](./README.md)
 ## 第一批建议优先双语化
 
 - `agentic-method-kit/README.md`
+- `agentic-method-kit/HARNESS_CORE_MODEL.md`
+- `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
+- `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
+- `agentic-method-kit/TOOL_ADAPTER_MATRIX.md`
 - `agentic-method-kit/METHOD_PLAYBOOK.md`
 - `agentic-method-kit/INSTALL.md`
 - `agentic-method-kit/UPGRADE.md`

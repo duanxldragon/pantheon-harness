@@ -9,6 +9,10 @@ const DEFAULT_ROOT = process.cwd();
 const REQUIRED_METHOD_KIT_FILES = [
   'agentic-method-kit/VERSION',
   'agentic-method-kit/METHOD_VERSION.json',
+  'agentic-method-kit/HARNESS_CORE_MODEL.md',
+  'agentic-method-kit/HARNESS_COVERAGE_MODEL.md',
+  'agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md',
+  'agentic-method-kit/TOOL_ADAPTER_MATRIX.md',
   'agentic-method-kit/CHANGELOG.md',
   'agentic-method-kit/UPGRADE.md',
 ];
@@ -17,8 +21,13 @@ const REQUIRED_REPO_SHELL_FILES = [
   'SHELL_VERSION.json',
   '.agents/README.md',
   '.github/pull_request_template.md',
+  'docs/harness/HARNESS_CORE_MODEL.md',
+  'docs/harness/HARNESS_COVERAGE_MODEL.md',
+  'docs/harness/HARNESS_TEMPLATE_TAXONOMY.md',
+  'docs/harness/TOOL_ADAPTER_MATRIX.md',
   'docs/harness/HARNESS_ENGINEERING_CONTRACT.md',
   'scripts/harness/check-adoption.mjs',
+  'scripts/harness/check-failure-registry.mjs',
 ];
 
 function printHelp() {

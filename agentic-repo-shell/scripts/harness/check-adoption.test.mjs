@@ -21,6 +21,14 @@ const REQUIRED_PR_MARKERS = [
 ];
 
 const REQUIRED_FILES = [
+  'agentic-method-kit/HARNESS_CORE_MODEL.md',
+  'agentic-method-kit/HARNESS_COVERAGE_MODEL.md',
+  'agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md',
+  'agentic-method-kit/TOOL_ADAPTER_MATRIX.md',
+  'docs/harness/HARNESS_CORE_MODEL.md',
+  'docs/harness/HARNESS_COVERAGE_MODEL.md',
+  'docs/harness/HARNESS_TEMPLATE_TAXONOMY.md',
+  'docs/harness/TOOL_ADAPTER_MATRIX.md',
   'docs/harness/HARNESS_METHOD_PLAYBOOK.md',
   'docs/harness/HARNESS_ENGINEERING_CONTRACT.md',
   'docs/harness/AGENT_INTERFACE_CONTRACT.md',
@@ -193,6 +201,13 @@ test('check-adoption requires real openspec linkage when an active change exists
       '## Dependency Layers',
       '',
       '- none',
+      '',
+      '## Harness Profile',
+      '',
+      '- Template: custom',
+      '- Overlay: none',
+      '- Coverage Dimensions:',
+      '  - method-health',
       '',
       '## Contract Anchors',
       '',

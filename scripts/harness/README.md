@@ -307,6 +307,42 @@ Exit behavior:
 - exits `1` in `--strict` mode when required version or landing files are missing or incompatible
 - warnings are used for soft boundary gaps such as missing runtime directories
 
+### `check-failure-registry.mjs`
+
+Validates Harness failure registry Markdown tables against the portable failure taxonomy.
+
+Default scan:
+
+```powershell
+node scripts/harness/check-failure-registry.mjs
+```
+
+JSON output:
+
+```powershell
+node scripts/harness/check-failure-registry.mjs --json
+```
+
+Explicit registry file:
+
+```powershell
+node scripts/harness/check-failure-registry.mjs docs/harness/failure-registry.md
+```
+
+Current checks include:
+
+- required failure registry table columns
+- valid `Category`, `Recommended Harness Change`, and `Status` enum values
+- required values for failure id, category, example, impact, recommended change, and status
+- `FR-001` style failure ids
+- rejection of unedited template placeholder rows
+
+Exit behavior:
+
+- exits `0` when discovered registry files have no structural errors
+- exits `1` when a registry file has errors
+- reports missing default registry files as warnings so new repositories can adopt the registry gradually
+
 ### `check-inheritance-contract.mjs`
 
 Checks that `pantheon-ops` stays a derived business repository of `pantheon-base`.
@@ -396,6 +432,7 @@ Test coverage by script:
 | `check-visual-evidence.mjs` | `check-visual-evidence.test.mjs` |
 | `check-adoption.mjs` | `check-adoption.test.mjs` |
 | `check-method-health.mjs` | `check-method-health.test.mjs` |
+| `check-failure-registry.mjs` | `check-failure-registry.test.mjs` |
 | `check-inheritance-contract.mjs` | `check-inheritance-contract.test.mjs` |
 | `check-backend-dto-contract.mjs` | `check-backend-dto-contract.test.mjs` |
 | `check-boundaries.mjs` | `check-boundaries.test.mjs` |

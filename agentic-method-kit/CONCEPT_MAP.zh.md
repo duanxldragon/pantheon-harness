@@ -1,20 +1,23 @@
-# Claude Best-Practice 到 Codex 的概念映射
+# Agent 工具最佳实践到 Harness 的概念映射
 
 English version: [CONCEPT_MAP.md](./CONCEPT_MAP.md)
 
-这个文档说明：本 kit 借鉴了 Claude Code best-practice 仓库里的核心方法论，并把它翻译成 Codex 可执行的工作模式。
+这个文档说明：本 kit 借鉴现代 coding agent 工具的架构思想，并把它翻译成可移植 harness 模式。
 
-参考来源：
+代表性参考来源：
 
 - GitHub 仓库概览：https://github.com/shanraisshan/claude-code-best-practice
+- Harness engineering for coding agent users: https://martinfowler.com/articles/harness-engineering.html
+- Agent Harness Engineering: https://addyosmani.com/blog/agent-harness-engineering/
+- OpenAI Codex harness engineering: https://openai.com/index/harness-engineering/
 
 ## 映射后的核心思想
 
 ### 1. Commands 对应工作流入口
 
-Claude best-practice 把 commands 当作稳定的工作流入口。
+现代 agent 工具把 commands 当作稳定的工作流入口。
 
-在 Codex 里，对应的是：
+可移植等价物：
 
 - 稳定的 playbook 章节
 - 可复用的 prompt 进入方式
@@ -22,42 +25,45 @@ Claude best-practice 把 commands 当作稳定的工作流入口。
 
 ### 2. Skills 对应方法模块
 
-Claude best-practice 强调 skills 是可复用能力块。
+Agent 工具强调 skills 或可复用能力块。
 
-在 Codex 里，可对应为：
+可移植等价物：
 
-- `superpowers`
-- `impeccable`
-- `openspec-*`
-- `gstack-*`
+- method modules
+- project how-to guides
+- repo-local scripts
+- tool adapters
 
 关键不是“依赖一个神奇系统”，而是“把多个专长模块组合成默认方法”。
 
 ### 3. Subagents 对应专职执行者
 
-Claude best-practice 强调按职责切分的 subagents。
+Agent 工具越来越强调 planner、generator、evaluator、reviewer 和 janitor 的角色分离。
 
-在 Codex 里，对应的是：
+可移植等价物：
 
-- `spawn_agent`
-- worker / explorer 分工
-- 并行且边界清晰的子任务
+- 角色化工作合同
+- 分离 implementation 和 evaluation
+- 支持时并行执行有界子任务
+- human 负责目标和 tradeoff 的最终判断
 
-### 4. Hooks 对应机械化关卡
+### 4. Hooks 对应 Mechanical Gates 和 Sensors
 
-Claude best-practice 很重视 hooks。
+Agent 工具大量使用 hooks 和 lifecycle scripts。
 
-在可迁移仓库里，更通用的对应物是：
+可移植等价物：
 
 - 仓库本地检查脚本
 - CI gate
 - 模板强制关联
+- runtime 或 browser sensors
+- review gates
 
 这种做法比依赖单一工具的 hook 运行时更可迁移。
 
 ### 5. Memory 对应仓库工件
 
-Claude best-practice 使用不同作用域的 memory。
+Agent 工具使用 memory scopes、resumable sessions、context compaction 和 handoff artifacts。
 
 在可迁移方法里，对应为：
 
@@ -68,9 +74,19 @@ Claude best-practice 使用不同作用域的 memory。
 
 这些内容可检查、可复制，也不会因为切换工具而丢失。
 
-### 6. MCP 和外部工具保持可选
+### 6. Guides 和 Sensors 是一等对象
 
-Claude best-practice 里会使用 MCP server 和插件。
+Harness engineering 区分 feedforward guides 和 feedback sensors。
+
+可移植等价物：
+
+- guides：repo rules、contracts、specs、task packets、plans
+- sensors：tests、static checks、browser evidence、observability、review
+- gates：明确 pass/fail 或 approval decision
+
+### 7. MCP 和外部工具保持可选
+
+Agent 工具包含 MCP servers、plugins、browser tools 或 hosted sandboxes。
 
 这里的可迁移规则是：
 
@@ -92,3 +108,10 @@ Claude best-practice 里会使用 MCP server 和插件。
 - mechanical closure scripts
 
 而不是某一个工具专属配置文件。
+
+另见：
+
+- [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+- [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+- [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+- [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)

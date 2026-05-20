@@ -22,6 +22,10 @@ function createFixture() {
     path.join(root, 'agentic-method-kit', 'METHOD_VERSION.json'),
     JSON.stringify({ version: '1.0.0', compatibleRepoShell: '1.0.0' }),
   );
+  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'HARNESS_CORE_MODEL.md'), '# Core Model\n');
+  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'HARNESS_COVERAGE_MODEL.md'), '# Coverage Model\n');
+  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'HARNESS_TEMPLATE_TAXONOMY.md'), '# Template Taxonomy\n');
+  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'TOOL_ADAPTER_MATRIX.md'), '# Tool Adapter Matrix\n');
   fs.writeFileSync(path.join(root, 'agentic-method-kit', 'CHANGELOG.md'), '# Changelog\n');
   fs.writeFileSync(path.join(root, 'agentic-method-kit', 'UPGRADE.md'), '# Upgrade\n');
   fs.writeFileSync(
@@ -30,8 +34,13 @@ function createFixture() {
   );
   fs.writeFileSync(path.join(root, '.agents', 'README.md'), '# Adapters\n');
   fs.writeFileSync(path.join(root, '.github', 'pull_request_template.md'), 'Task packet\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_CORE_MODEL.md'), '# Core Model\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_COVERAGE_MODEL.md'), '# Coverage Model\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_TEMPLATE_TAXONOMY.md'), '# Template Taxonomy\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'TOOL_ADAPTER_MATRIX.md'), '# Tool Adapter Matrix\n');
   fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_ENGINEERING_CONTRACT.md'), '# Contract\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-adoption.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-failure-registry.mjs'), '#!/usr/bin/env node\n');
   return root;
 }
 
@@ -76,4 +85,15 @@ test('check-method-health reports missing method kit files', () => {
   const result = JSON.parse(output);
   assert.equal(result.findingCount, 1);
   assert.equal(result.findings[0].file, 'agentic-method-kit/CHANGELOG.md');
+});
+
+test('check-method-health reports missing failure registry checker', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'check-failure-registry.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/check-failure-registry.mjs');
 });

@@ -31,14 +31,18 @@
 如果你要先理解方法本身，建议按下面顺序阅读：
 
 1. [agentic-method-kit/README.zh.md](./agentic-method-kit/README.zh.md)
-2. [agentic-method-kit/METHOD_PLAYBOOK.zh.md](./agentic-method-kit/METHOD_PLAYBOOK.zh.md)
-3. [docs/harness/HARNESS_ENGINEERING_CONTRACT.md](./docs/harness/HARNESS_ENGINEERING_CONTRACT.md)
-4. [docs/harness/AGENT_INTERFACE_CONTRACT.md](./docs/harness/AGENT_INTERFACE_CONTRACT.md)
-5. [docs/harness/TASK_PACKET_SPEC.md](./docs/harness/TASK_PACKET_SPEC.md)
-6. [docs/harness/VERIFICATION_EVIDENCE_SPEC.md](./docs/harness/VERIFICATION_EVIDENCE_SPEC.md)
-7. [docs/harness/REVIEW_LOOP_SPEC.md](./docs/harness/REVIEW_LOOP_SPEC.md)
-8. [docs/harness/DOCUMENT_FRONTMATTER_SPEC.md](./docs/harness/DOCUMENT_FRONTMATTER_SPEC.md)
-9. [.agents/README.md](./.agents/README.md)
+2. [agentic-method-kit/HARNESS_CORE_MODEL.zh.md](./agentic-method-kit/HARNESS_CORE_MODEL.zh.md)
+3. [agentic-method-kit/HARNESS_COVERAGE_MODEL.zh.md](./agentic-method-kit/HARNESS_COVERAGE_MODEL.zh.md)
+4. [agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.zh.md](./agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.zh.md)
+5. [agentic-method-kit/TOOL_ADAPTER_MATRIX.zh.md](./agentic-method-kit/TOOL_ADAPTER_MATRIX.zh.md)
+6. [agentic-method-kit/METHOD_PLAYBOOK.zh.md](./agentic-method-kit/METHOD_PLAYBOOK.zh.md)
+7. [docs/harness/HARNESS_ENGINEERING_CONTRACT.md](./docs/harness/HARNESS_ENGINEERING_CONTRACT.md)
+8. [docs/harness/AGENT_INTERFACE_CONTRACT.md](./docs/harness/AGENT_INTERFACE_CONTRACT.md)
+9. [docs/harness/TASK_PACKET_SPEC.md](./docs/harness/TASK_PACKET_SPEC.md)
+10. [docs/harness/VERIFICATION_EVIDENCE_SPEC.md](./docs/harness/VERIFICATION_EVIDENCE_SPEC.md)
+11. [docs/harness/REVIEW_LOOP_SPEC.md](./docs/harness/REVIEW_LOOP_SPEC.md)
+12. [docs/harness/DOCUMENT_FRONTMATTER_SPEC.md](./docs/harness/DOCUMENT_FRONTMATTER_SPEC.md)
+13. [.agents/README.md](./.agents/README.md)
 
 如果你要做仓库发布或方法迁移，再继续看：
 

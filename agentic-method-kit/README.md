@@ -22,11 +22,16 @@ Optional overlay:
 
 ## What This Kit Gives You
 
+- A tool-agnostic harness core model that separates guides, sensors, state, gates, templates, and adapters
+- A harness coverage model for evaluating whether controls catch meaningful failures
+- A harness template taxonomy for common repository topologies
+- A tool adapter matrix that keeps concrete skills and CLIs usable without making them prerequisites
 - A method-level playbook that defines the default workflow
-- A concept map from Claude Code best-practice ideas to Codex-usable patterns
+- A concept map from agent-tool best-practice ideas to portable harness patterns
 - Standard task packet, evidence, review, and PR templates
 - Portable schemas for task packets and verification evidence
 - Portable schema and machine-readable convention for review artifacts
+- Portable schema for failure registry entries
 - Portable document frontmatter schema and README/contract linkage convention
 - Explicit method versioning and upgrade guidance
 - Portable checks for:
@@ -84,13 +89,17 @@ Then wire these paths in the target repo:
 ## Quick Start
 
 1. Read [README.zh.md](./README.zh.md) if your team prefers Chinese-first onboarding
-2. Read [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
-3. Read [INSTALL.zh.md](./INSTALL.zh.md)
-4. Read [CONCEPT_MAP.md](./CONCEPT_MAP.md)
-5. Review [UPGRADE.zh.md](./UPGRADE.zh.md) when you need version rollout context
-6. Copy the templates you need
-7. Adjust [config/method.config.json](./config/method.config.json) if your repo uses different paths
-8. Run the portable checks under [scripts/](./scripts/)
+2. Read [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+3. Read [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+4. Read [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+5. Read [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+6. Read [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+7. Read [INSTALL.zh.md](./INSTALL.zh.md)
+8. Read [CONCEPT_MAP.md](./CONCEPT_MAP.md)
+9. Review [UPGRADE.zh.md](./UPGRADE.zh.md) when you need version rollout context
+10. Copy the templates you need
+11. Adjust [config/method.config.json](./config/method.config.json) if your repo uses different paths
+12. Run the portable checks under [scripts/](./scripts/)
 
 ## Daily Use
 
@@ -145,8 +154,10 @@ The document frontmatter convention closes the repository governance loop for co
 
 This kit is intentionally tool-agnostic at the method level:
 
-- `OpenSpec` manages change identity and lifecycle
-- `superpowers` manages design, planning, execution, and verification discipline
-- `impeccable` is the UI quality gate
-- `gstack` is the default browser evidence and QA path
+- change-management tools manage change identity and lifecycle
+- planning and execution tools manage design, implementation discipline, and verification workflow
+- UI quality gates evaluate visual, interaction, accessibility, and state quality
+- browser or runtime inspection tools provide behaviour evidence
 - local scripts provide mechanical closure
+
+Specific tools may be recommended by a repository, but no single tool defines the method.

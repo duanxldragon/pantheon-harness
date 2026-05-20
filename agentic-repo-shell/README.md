@@ -82,8 +82,13 @@ For Chinese-first onboarding, read:
 1. [README.zh.md](./README.zh.md)
 2. [scripts/harness/README.zh.md](./scripts/harness/README.zh.md)
 3. [.agents/README.md](./.agents/README.md)
-4. [docs/harness/tasks/README.md](./docs/harness/tasks/README.md)
-5. [openspec/README.md](./openspec/README.md)
+4. [docs/harness/HARNESS_CORE_MODEL.md](./docs/harness/HARNESS_CORE_MODEL.md)
+5. [docs/harness/HARNESS_COVERAGE_MODEL.md](./docs/harness/HARNESS_COVERAGE_MODEL.md)
+6. [docs/harness/HARNESS_TEMPLATE_TAXONOMY.md](./docs/harness/HARNESS_TEMPLATE_TAXONOMY.md)
+7. [docs/harness/TOOL_ADAPTER_MATRIX.md](./docs/harness/TOOL_ADAPTER_MATRIX.md)
+8. [docs/harness/failure-registry.md](./docs/harness/failure-registry.md)
+9. [docs/harness/tasks/README.md](./docs/harness/tasks/README.md)
+10. [openspec/README.md](./openspec/README.md)
 
 ## How To Use After Bootstrap
 
@@ -91,8 +96,9 @@ For Chinese-first onboarding, read:
 2. keep `agentic-method-kit/` as the method source of truth
 3. use `docs/harness/` as the repo-local contract layer
 4. store runtime evidence under `.harness/`
-5. run `scripts/harness/*` locally and in CI
-6. run `scripts/harness/check-method-health.mjs --strict` after method upgrades
+5. keep `docs/harness/failure-registry.md` updated when repeated failures appear
+6. run `scripts/harness/*` locally and in CI
+7. run `scripts/harness/check-method-health.mjs --strict` after method upgrades
 
 ## Document Governance Gate
 

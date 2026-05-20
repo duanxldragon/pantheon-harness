@@ -26,4 +26,8 @@ English version: [README.md](./README.md)
 
 检查是否绕过共享响应封装，直接输出 Gin JSON 响应。
 
+### `check-failure-registry.mjs`
+
+校验 Harness failure registry Markdown 表格，覆盖必需列、枚举值、必填字段、`FR-001` 编号格式，以及未替换的模板占位行。
+
 如需完整命令、参数与退出码语义，请看英文原文 [README.md](./README.md)。

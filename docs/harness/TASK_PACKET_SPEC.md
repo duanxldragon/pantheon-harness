@@ -35,6 +35,17 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 
 - none
 
+## Harness Profile
+
+- Template: admin-platform | api-service | event-processor | dashboard | ui-heavy-product | custom
+- Overlay: none
+- Coverage Dimensions:
+  - behaviour
+  - maintainability
+  - architecture-fitness
+  - runtime-quality
+  - method-health
+
 ## Contract Anchors
 
 - `path/to/contract.md`
@@ -142,6 +153,7 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 工具 adapter 可以把 task packet 转换成自己的执行格式，但不得丢失：
 
 - layer
+- harness template and coverage dimensions
 - scope
 - contract anchors
 - verification plan

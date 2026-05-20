@@ -82,8 +82,13 @@ pwsh ./scripts/bootstrap-agentic-repo.ps1 -TargetPath <new-repo> -ApplyPantheonO
 1. [README.zh.md](./README.zh.md)
 2. [scripts/harness/README.zh.md](./scripts/harness/README.zh.md)
 3. [.agents/README.md](./.agents/README.md)
-4. [docs/harness/tasks/README.md](./docs/harness/tasks/README.md)
-5. [openspec/README.md](./openspec/README.md)
+4. [docs/harness/HARNESS_CORE_MODEL.md](./docs/harness/HARNESS_CORE_MODEL.md)
+5. [docs/harness/HARNESS_COVERAGE_MODEL.md](./docs/harness/HARNESS_COVERAGE_MODEL.md)
+6. [docs/harness/HARNESS_TEMPLATE_TAXONOMY.md](./docs/harness/HARNESS_TEMPLATE_TAXONOMY.md)
+7. [docs/harness/TOOL_ADAPTER_MATRIX.md](./docs/harness/TOOL_ADAPTER_MATRIX.md)
+8. [docs/harness/failure-registry.md](./docs/harness/failure-registry.md)
+9. [docs/harness/tasks/README.md](./docs/harness/tasks/README.md)
+10. [openspec/README.md](./openspec/README.md)
 
 ## 引导后怎么用
 
@@ -91,8 +96,9 @@ pwsh ./scripts/bootstrap-agentic-repo.ps1 -TargetPath <new-repo> -ApplyPantheonO
 2. 保持 `agentic-method-kit/` 作为方法事实源
 3. 把 `docs/harness/` 作为仓库本地 contract 层
 4. 把运行时 evidence 存在 `.harness/` 下
-5. 在本地和 CI 中运行 `scripts/harness/*`
-6. 在方法升级后运行 `scripts/harness/check-method-health.mjs --strict`
+5. 当重复失败出现时，更新 `docs/harness/failure-registry.md`
+6. 在本地和 CI 中运行 `scripts/harness/*`
+7. 在方法升级后运行 `scripts/harness/check-method-health.mjs --strict`
 
 ## 文档治理门禁
 

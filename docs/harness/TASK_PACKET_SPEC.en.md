@@ -35,6 +35,17 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 
 - none
 
+## Harness Profile
+
+- Template: admin-platform | api-service | event-processor | dashboard | ui-heavy-product | custom
+- Overlay: none
+- Coverage Dimensions:
+  - behaviour
+  - maintainability
+  - architecture-fitness
+  - runtime-quality
+  - method-health
+
 ## Contract Anchors
 
 - `path/to/contract.md`
@@ -142,6 +153,7 @@ The following must be listed as gates:
 Tool adapters may translate a task packet into their execution format, but they must not lose:
 
 - layer
+- harness template and coverage dimensions
 - scope
 - contract anchors
 - verification plan
@@ -159,4 +171,3 @@ The following fields are the minimum closed-loop keys linking a task packet to l
 - `Superpowers Plan`: if the task comes from `docs/superpowers/plans/*`, it must be recorded explicitly; otherwise use `none`
 
 These linkage fields connect `OpenSpec change / superpowers plan / task packet / evidence / review` into a traceable chain.
-

@@ -22,6 +22,14 @@ const EVIDENCE_ROOT = '.harness/evidence/';
 const OPEN_SPEC_CHANGES_ROOT = 'openspec/changes';
 
 const REQUIRED_FILES = [
+  'agentic-method-kit/HARNESS_CORE_MODEL.md',
+  'agentic-method-kit/HARNESS_COVERAGE_MODEL.md',
+  'agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md',
+  'agentic-method-kit/TOOL_ADAPTER_MATRIX.md',
+  'docs/harness/HARNESS_CORE_MODEL.md',
+  'docs/harness/HARNESS_COVERAGE_MODEL.md',
+  'docs/harness/HARNESS_TEMPLATE_TAXONOMY.md',
+  'docs/harness/TOOL_ADAPTER_MATRIX.md',
   'docs/harness/HARNESS_METHOD_PLAYBOOK.md',
   'docs/harness/HARNESS_ENGINEERING_CONTRACT.md',
   'docs/harness/AGENT_INTERFACE_CONTRACT.md',

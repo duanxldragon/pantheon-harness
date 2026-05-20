@@ -17,8 +17,12 @@ English version: [HARNESS_METHOD_PLAYBOOK.en.md](./HARNESS_METHOD_PLAYBOOK.en.md
 ## 阅读顺序
 
 1. 先读 `agentic-method-kit/README.md`
-2. 再读 `agentic-method-kit/METHOD_PLAYBOOK.md`
-3. 再读当前仓库需要落地执行的合同：
+2. 再读 `agentic-method-kit/HARNESS_CORE_MODEL.md`
+3. 再读 `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
+4. 再读 `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
+5. 再读 `agentic-method-kit/TOOL_ADAPTER_MATRIX.md`
+6. 再读 `agentic-method-kit/METHOD_PLAYBOOK.md`
+7. 再读当前仓库需要落地执行的合同：
    - `HARNESS_ENGINEERING_CONTRACT.md`
    - `TASK_PACKET_SPEC.md`
    - `VERIFICATION_EVIDENCE_SPEC.md`

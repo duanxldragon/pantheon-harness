@@ -22,11 +22,16 @@ English version: [README.md](./README.md)
 
 ## 这个方法包提供什么
 
+- 工具无关的 harness 核心模型，用于区分 guides、sensors、state、gates、templates 和 adapters
+- Harness 覆盖模型，用于评估控制项是否能抓住真正重要的失败
+- 面向常见仓库拓扑的 harness template 分类
+- 工具适配矩阵，用于保留具体 skills 和 CLI 的可用性，同时不把它们变成方法前提
 - 定义默认工作流的方法级 playbook
-- 一份从 Claude Code 最佳实践映射到 Codex 可执行模式的概念图
+- 一份从 agent 工具最佳实践映射到可移植 harness 模式的概念图
 - 标准化的 task packet、evidence、review 和 PR 模板
 - 可移植的 task packet 与 verification evidence schema
 - review artifact 的可移植 schema 与 machine-readable 约定
+- failure registry entry 的可移植 schema
 - 文档 frontmatter schema 以及 README / contract 链接约定
 - 明确的方法版本管理与升级说明
 - 可移植检查脚本，用于校验：
@@ -84,13 +89,17 @@ agentic-method-kit/
 ## 快速开始
 
 1. 阅读 [README.zh.md](./README.zh.md)
-2. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
-3. 阅读 [INSTALL.zh.md](./INSTALL.zh.md)
-4. 阅读 [CONCEPT_MAP.md](./CONCEPT_MAP.md)
-5. 如需了解版本升级，阅读 [UPGRADE.zh.md](./UPGRADE.zh.md)
-6. 复制你需要的模板
-7. 如果你的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
-8. 运行 [scripts/](./scripts/) 下的可移植检查脚本
+2. 阅读 [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+3. 阅读 [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+4. 阅读 [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+5. 阅读 [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+6. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+7. 阅读 [INSTALL.zh.md](./INSTALL.zh.md)
+8. 阅读 [CONCEPT_MAP.md](./CONCEPT_MAP.md)
+9. 如需了解版本升级，阅读 [UPGRADE.zh.md](./UPGRADE.zh.md)
+10. 复制你需要的模板
+11. 如果你的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
+12. 运行 [scripts/](./scripts/) 下的可移植检查脚本
 
 ## 日常使用
 
@@ -143,8 +152,10 @@ agentic-method-kit/
 
 这个方法包在方法层面故意保持工具无关：
 
-- `OpenSpec` 负责 change identity 和 lifecycle
-- `superpowers` 负责设计、规划、执行和验证纪律
-- `impeccable` 是 UI 质量门禁
-- `gstack` 是默认的浏览器 evidence 和 QA 路径
+- 变更管理工具负责 change identity 和 lifecycle
+- 计划与执行工具负责设计、实现纪律和验证工作流
+- UI 质量门评估视觉、交互、可访问性和状态质量
+- 浏览器或运行态检查工具提供行为 evidence
 - 本地脚本负责 mechanical closure
+
+具体工具可以被某个仓库推荐，但不能成为方法本身。

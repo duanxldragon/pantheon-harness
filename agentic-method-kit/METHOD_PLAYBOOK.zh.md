@@ -4,12 +4,19 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 这份 playbook 用来把一组工具收敛成一套统一的方法。
 
+先阅读这些方法基础：
+
+1. [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+2. [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+3. [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+4. [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+
 ## 默认技术栈
 
-- `OpenSpec`：change identity、proposal、design、tasks、archive
-- `superpowers`：brainstorming、planning、execution、debugging、verification
-- `impeccable`：UI 质量门禁
-- `gstack`：浏览器 evidence、QA、review
+- 变更管理层：change identity、proposal、design、tasks、archive
+- 计划/执行层：brainstorming、planning、execution、debugging、verification
+- UI 质量层：视觉、交互、可访问性和状态质量门
+- 浏览器/运行态证据层：浏览器 evidence、QA、可观测性、review
 - 本地 harness checks：task packet、evidence、adoption
 
 ## 默认工作流
@@ -17,17 +24,18 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 ### 1. Intake
 
 - 判断当前工作是 `trivial` 还是 `non-trivial`
-- 如果是 non-trivial，先创建或选择一个 `OpenSpec` change
+- 如果是 non-trivial，先创建或选择一个变更身份，例如 OpenSpec change
+- 选择最小适用的 harness template 或 overlay
 
 ### 2. Design
 
-- 使用 `superpowers:brainstorming`
+- 使用结构化 brainstorming 或设计工作流
 - 产出 design / spec 结果
 - 明确 scope 边界
 
 ### 3. Planning
 
-- 使用 `superpowers:writing-plans`
+- 使用结构化 planning 工作流
 - 产出可执行的具体实现计划
 
 ### 4. Task Packet
@@ -41,13 +49,13 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 ### 5. Implementation
 
-- 使用 `superpowers:executing-plans` 或同等严格的执行方式
+- 按 plan 进行纪律化执行
 - 如果进入调试，转入 `systematic-debugging`
 
 ### 6. UI Quality
 
-- 如果触碰 UI，运行 `impeccable`
-- 如果浏览器路径重要，通过 `gstack` 收集 evidence
+- 如果触碰 UI，运行仓库定义的 UI quality gate
+- 如果浏览器路径重要，采集浏览器或运行态 evidence
 
 ### 7. Evidence
 
@@ -62,6 +70,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
   - `check-task-packet`
   - `check-evidence`
   - `check-adoption`
+- 方法维护时，定期按 [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md) 做 harness coverage review
 
 ### 9. Review
 
@@ -77,7 +86,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 每个 non-trivial 任务都应当具备：
 
-- 一个 OpenSpec change，或显式写 `none`
+- 一个变更身份，或显式写 `none`
 - 一个 task packet
 - 一个 evidence directory
 - 一个 review artifact
@@ -89,4 +98,3 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 - task packet 的 `## Linkage`
 - evidence 的 `linkage`
 - review 的 `## Machine Readable` JSON block
-

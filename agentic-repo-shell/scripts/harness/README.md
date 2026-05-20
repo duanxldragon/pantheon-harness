@@ -161,6 +161,34 @@ node scripts/harness/check-method-health.mjs --strict
 
 Pantheon-specific inheritance, drift, architecture, and backend contract checks live in `pantheon-overlay/`.
 
+### `check-failure-registry.mjs`
+
+Validates Harness failure registry Markdown tables against the portable failure taxonomy.
+
+Default scan:
+
+```powershell
+node scripts/harness/check-failure-registry.mjs
+```
+
+JSON output:
+
+```powershell
+node scripts/harness/check-failure-registry.mjs --json
+```
+
+Explicit registry file:
+
+```powershell
+node scripts/harness/check-failure-registry.mjs docs/harness/failure-registry.md
+```
+
+Exit behavior:
+
+- exits `0` when discovered registry files have no structural errors
+- exits `1` when a registry file has errors
+- reports missing default registry files as warnings so new repositories can adopt the registry gradually
+
 ### `check-doc-frontmatter.mjs`
 
 Validates governed Markdown docs against the portable frontmatter convention in `docs/harness/DOCUMENT_FRONTMATTER_SPEC.md`.
@@ -211,4 +239,5 @@ Test coverage by script:
 | `check-visual-evidence.mjs` | `check-visual-evidence.test.mjs` |
 | `check-adoption.mjs` | `check-adoption.test.mjs` |
 | `check-method-health.mjs` | `check-method-health.test.mjs` |
+| `check-failure-registry.mjs` | `check-failure-registry.test.mjs` |
 | `check-doc-frontmatter.mjs` | `check-doc-frontmatter.test.mjs` |

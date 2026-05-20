@@ -21,6 +21,13 @@ platform
 
 - platform
 
+## Harness Profile
+
+- Template: custom
+- Overlay: none
+- Coverage Dimensions:
+  - method-health
+
 ## Contract Anchors
 
 - \`docs/harness/HARNESS_ENGINEERING_CONTRACT.md\`

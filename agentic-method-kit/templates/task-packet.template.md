@@ -12,6 +12,17 @@ platform | system/auth | system/iam | system/org | system/config | business/* | 
 
 - none
 
+## Harness Profile
+
+- Template: admin-platform | api-service | event-processor | dashboard | ui-heavy-product | custom
+- Overlay: none
+- Coverage Dimensions:
+  - behaviour
+  - maintainability
+  - architecture-fitness
+  - runtime-quality
+  - method-health
+
 ## Contract Anchors
 
 - `path/to/contract.md`

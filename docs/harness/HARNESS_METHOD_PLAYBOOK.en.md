@@ -17,8 +17,12 @@ This file no longer carries the full method definition.
 ## Reading Order
 
 1. First read `agentic-method-kit/README.md`
-2. Then read `agentic-method-kit/METHOD_PLAYBOOK.md`
-3. Then read the contracts this repository executes locally:
+2. Then read `agentic-method-kit/HARNESS_CORE_MODEL.md`
+3. Then read `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
+4. Then read `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
+5. Then read `agentic-method-kit/TOOL_ADAPTER_MATRIX.md`
+6. Then read `agentic-method-kit/METHOD_PLAYBOOK.md`
+7. Then read the contracts this repository executes locally:
    - `HARNESS_ENGINEERING_CONTRACT.md`
    - `TASK_PACKET_SPEC.md`
    - `VERIFICATION_EVIDENCE_SPEC.md`
@@ -35,4 +39,3 @@ This repository keeps the following because they directly serve local execution:
 - `.agents/*` / `.codex/skills/*`: tool adaptation layers
 
 If the method layer conflicts with the repository landing layer, the method definition in `agentic-method-kit/` wins, and the repository landing layer should then be synchronized.
-

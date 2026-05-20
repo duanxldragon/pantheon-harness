@@ -10,6 +10,7 @@ const REQUIRED_SECTIONS = [
   'Goal',
   'Primary Layer',
   'Dependency Layers',
+  'Harness Profile',
   'Contract Anchors',
   'Scope',
   'Expected Files',
@@ -33,6 +34,24 @@ const VALID_PRIMARY_LAYERS = new Set([
   'system/org',
   'system/config',
   'business/*',
+  'app',
+]);
+
+const VALID_HARNESS_TEMPLATES = new Set([
+  'admin-platform',
+  'api-service',
+  'event-processor',
+  'dashboard',
+  'ui-heavy-product',
+  'custom',
+]);
+
+const VALID_COVERAGE_DIMENSIONS = new Set([
+  'behaviour',
+  'maintainability',
+  'architecture-fitness',
+  'runtime-quality',
+  'method-health',
 ]);
 
 const REQUIRED_CHECKLIST_ITEMS = [
@@ -196,6 +215,7 @@ function validateTaskPacket(filePath, root) {
   }
 
   validatePrimaryLayer(content, headings, result);
+  validateHarnessProfile(content, headings, result);
   validateContractAnchors(content, headings, result, root);
   validateScope(content, headings, result);
   validateVerificationPlan(content, headings, result);
@@ -203,6 +223,57 @@ function validateTaskPacket(filePath, root) {
   validateChecklist(content, headings, result);
 
   return result;
+}
+
+function validateHarnessProfile(content, headings, result) {
+  const section = findSection(headings, 'Harness Profile');
+  if (!section) {
+    return;
+  }
+
+  const sectionContent = getSectionContent(content, headings, section);
+  const templateMatch = sectionContent.match(/^- Template:\s*(.+)$/m);
+  const overlayMatch = sectionContent.match(/^- Overlay:\s*(.+)$/m);
+  const coverageHeaderMatch = sectionContent.match(/^- Coverage Dimensions:\s*$/m);
+
+  if (!templateMatch) {
+    result.errors.push('Section "## Harness Profile" must include "- Template: <template>".');
+  } else {
+    const template = stripBackticks(templateMatch[1]);
+    if (!VALID_HARNESS_TEMPLATES.has(template)) {
+      result.errors.push(
+        `Invalid harness template "${template}". Expected one of: ${Array.from(VALID_HARNESS_TEMPLATES).join(', ')}.`,
+      );
+    }
+  }
+
+  if (!overlayMatch) {
+    result.errors.push('Section "## Harness Profile" must include "- Overlay: <overlay>".');
+  }
+
+  if (!coverageHeaderMatch) {
+    result.errors.push('Section "## Harness Profile" must include "- Coverage Dimensions:" with nested list items.');
+    return;
+  }
+
+  const dimensions = [];
+  const coverageBlock = sectionContent.slice(coverageHeaderMatch.index + coverageHeaderMatch[0].length);
+  for (const match of coverageBlock.matchAll(/^\s{2,}[-*]\s+(.+)$/gm)) {
+    dimensions.push(stripBackticks(match[1]));
+  }
+
+  if (dimensions.length === 0) {
+    result.errors.push('Section "## Harness Profile" must list at least one coverage dimension.');
+    return;
+  }
+
+  for (const dimension of dimensions) {
+    if (!VALID_COVERAGE_DIMENSIONS.has(dimension)) {
+      result.errors.push(
+        `Invalid coverage dimension "${dimension}". Expected one of: ${Array.from(VALID_COVERAGE_DIMENSIONS).join(', ')}.`,
+      );
+    }
+  }
 }
 
 function validatePrimaryLayer(content, headings, result) {
