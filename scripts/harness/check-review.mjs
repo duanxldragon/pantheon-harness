@@ -216,6 +216,14 @@ function printTextReport(results, strict) {
   }
 }
 
+function buildMissingReviewResult(root, evidenceDir, strict) {
+  return {
+    file: toRepoPath(path.join(root, evidenceDir), root),
+    errors: strict ? ['No review artifacts found.'] : [],
+    warnings: strict ? [] : ['No review artifacts found.'],
+  };
+}
+
 function main() {
   let options;
   try {
@@ -227,7 +235,10 @@ function main() {
   if (options.help) return printHelp(), 0;
   const config = loadConfig(options.root, options.config);
   const files = options.files.length > 0 ? options.files.map((file) => normalizeInputFile(file, options.root)) : discoverReviewFiles(options.root, config.evidenceDir);
-  const results = files.map((file) => validateReview(file, options.root));
+  const results =
+    files.length > 0
+      ? files.map((file) => validateReview(file, options.root))
+      : [buildMissingReviewResult(options.root, config.evidenceDir, options.strict)];
   const errorCount = results.reduce((count, result) => count + result.errors.length, 0);
   if (options.json) {
     console.log(JSON.stringify({ mode: options.strict ? 'strict' : 'report-only', fileCount: results.length, errorCount, results }, null, 2));

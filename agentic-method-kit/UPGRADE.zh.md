@@ -26,6 +26,8 @@ node agentic-method-kit/scripts/check-review.mjs --root . --strict
 node agentic-method-kit/scripts/check-adoption.mjs --root .
 ```
 
+如果升级后的仓库还没有保存 evidence 或 review 工件，初始化阶段先不要给 evidence/review 检查加 `--strict`。等仓库至少有一个互相关联的 task packet、`commands.json` 和 `review.md` 后再启用 strict。
+
 ## 方法优先 Ratchet 元数据
 
 从旧 task packet 格式升级时，为每个 non-trivial task packet 补齐：

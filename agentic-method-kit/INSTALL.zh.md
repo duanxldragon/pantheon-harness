@@ -85,6 +85,8 @@ node agentic-method-kit/scripts/check-adoption.mjs --root .
 node scripts/harness/check-method-health.mjs --root . --strict
 ```
 
+严格 evidence 和 review 检查要求至少存在一个真实的 `commands.json` 和 `review.md` 工件。新仓库初始化时可先使用 report-only 模式；记录第一个非平凡任务后再切到 `--strict`。
+
 ## 4.1 日常怎么运行
 
 典型 non-trivial 工作流：

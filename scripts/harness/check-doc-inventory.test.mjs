@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const SCRIPT = path.resolve('harness-engineering/scripts/harness/check-doc-inventory.mjs');
+const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
+const SCRIPT = path.resolve(TEST_DIR, 'check-doc-inventory.mjs');
 
 function writeFile(filePath, content) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });

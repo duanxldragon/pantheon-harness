@@ -7,6 +7,8 @@ import process from 'node:process';
 const DEFAULT_ROOT = process.cwd();
 const KEY_MIRRORS = [
   ['scripts/harness/check-review.mjs', 'agentic-repo-shell/scripts/harness/check-review.mjs'],
+  ['scripts/harness/check-evidence.mjs', 'agentic-repo-shell/scripts/harness/check-evidence.mjs'],
+  ['scripts/harness/check-failure-registry.mjs', 'agentic-repo-shell/scripts/harness/check-failure-registry.mjs'],
   ['scripts/harness/check-graph-review.mjs', 'agentic-repo-shell/scripts/harness/check-graph-review.mjs'],
   ['scripts/harness/scaffold-graph-review.mjs', 'agentic-repo-shell/scripts/harness/scaffold-graph-review.mjs'],
   ['scripts/harness/build-graph-review-import.mjs', 'agentic-repo-shell/scripts/harness/build-graph-review-import.mjs'],

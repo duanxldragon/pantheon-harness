@@ -110,6 +110,16 @@ test('check-evidence accepts valid graph checks metadata', () => {
   assert.equal(result.errorCount, 0);
 });
 
+test('check-evidence fails strict mode when no evidence files exist', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'check-evidence-empty-'));
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /No evidence command files found/);
+});
+
 test('check-evidence flags an unknown agent tool in strict mode', () => {
   const root = makeFixture();
   writeCommands(root, 'sample', { ...VALID_PAYLOAD, agent: { tool: 'unknown-tool' } });

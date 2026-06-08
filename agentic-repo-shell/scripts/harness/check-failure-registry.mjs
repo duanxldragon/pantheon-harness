@@ -9,23 +9,35 @@ const DEFAULT_ROOT = process.cwd();
 const REQUIRED_COLUMNS = [
   'Failure ID',
   'Category',
+  'Failure Class',
+  'Owner Layer',
+  'Occurrences',
   'Example',
   'Impact',
+  'GitHub Signal',
   'Current Guide',
   'Current Sensor',
   'Current Gate',
   'Detected By',
   'Missed By',
   'Recommended Harness Change',
+  'Promotion Decision',
+  'Promotion Deadline',
   'Status',
 ];
 
 const REQUIRED_VALUE_COLUMNS = [
   'Failure ID',
   'Category',
+  'Failure Class',
+  'Owner Layer',
+  'Occurrences',
   'Example',
   'Impact',
+  'GitHub Signal',
   'Recommended Harness Change',
+  'Promotion Decision',
+  'Promotion Deadline',
   'Status',
 ];
 
@@ -37,7 +49,44 @@ const VALID_CATEGORIES = new Set([
   'method-health',
 ]);
 
-const VALID_HARNESS_CHANGES = new Set(['guide', 'sensor', 'gate', 'template', 'no-action']);
+const VALID_FAILURE_CLASSES = new Set([
+  'instruction-gap',
+  'task-boundary-gap',
+  'architecture-drift',
+  'test-gap',
+  'static-sensor-gap',
+  'runtime-evidence-gap',
+  'security-boundary-gap',
+  'ci-signal-noise',
+  'method-health-gap',
+]);
+
+const VALID_OWNER_LAYERS = new Set([
+  'portable-method',
+  'consumer-template',
+  'consumer-repository',
+  'agent-adapter',
+  'no-action',
+]);
+
+const VALID_GITHUB_SIGNALS = new Set([
+  'method-gate',
+  'repo-quality-gate',
+  'runtime-evidence-gate',
+  'external-flaky',
+  'not-applicable',
+]);
+
+const VALID_HARNESS_CHANGES = new Set(['guide', 'sensor', 'gate', 'template', 'adapter', 'registry-only', 'no-action']);
+const VALID_PROMOTION_DECISIONS = new Set([
+  'no-repeat-observed',
+  'guide-updated',
+  'sensor-added',
+  'gate-updated',
+  'template-updated',
+  'adapter-updated',
+  'registry-only',
+]);
 const VALID_STATUSES = new Set(['open', 'accepted', 'implemented', 'rejected']);
 
 const DEFAULT_FILES = [
@@ -212,11 +261,23 @@ function validateEnum(result, entry, column, values, line) {
   }
 }
 
+function validateOccurrences(result, entry, line) {
+  const value = stripBackticks(entry.Occurrences ?? '');
+  const occurrences = Number.parseInt(value, 10);
+  if (!/^\d+$/.test(value) || occurrences < 1) {
+    result.errors.push(`Line ${line}: Occurrences "${value}" must be an integer >= 1.`);
+  }
+}
+
 function isTemplatePlaceholder(entry) {
   return (
     stripBackticks(entry['Failure ID'] ?? '') === 'FR-001' &&
     (entry.Category ?? '').includes('|') &&
+    (entry['Failure Class'] ?? '').includes('|') &&
+    (entry['Owner Layer'] ?? '').includes('|') &&
+    (entry['GitHub Signal'] ?? '').includes('|') &&
     (entry['Recommended Harness Change'] ?? '').includes('/') &&
+    (entry['Promotion Decision'] ?? '').includes('|') &&
     (entry.Status ?? '').includes('|')
   );
 }
@@ -276,7 +337,12 @@ function validateFailureRegistry(filePath, root) {
     }
 
     validateEnum(result, entry, 'Category', VALID_CATEGORIES, row.line);
+    validateEnum(result, entry, 'Failure Class', VALID_FAILURE_CLASSES, row.line);
+    validateEnum(result, entry, 'Owner Layer', VALID_OWNER_LAYERS, row.line);
+    validateOccurrences(result, entry, row.line);
+    validateEnum(result, entry, 'GitHub Signal', VALID_GITHUB_SIGNALS, row.line);
     validateEnum(result, entry, 'Recommended Harness Change', VALID_HARNESS_CHANGES, row.line);
+    validateEnum(result, entry, 'Promotion Decision', VALID_PROMOTION_DECISIONS, row.line);
     validateEnum(result, entry, 'Status', VALID_STATUSES, row.line);
   }
 

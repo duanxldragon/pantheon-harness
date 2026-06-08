@@ -439,6 +439,14 @@ function printTextReport(results, options) {
   }
 }
 
+function buildMissingEvidenceResult(root, strict) {
+  return {
+    file: relative(path.join(root, '.harness', 'evidence'), root),
+    errors: strict ? ['No evidence command files found.'] : [],
+    warnings: strict ? [] : ['No evidence command files found.'],
+  };
+}
+
 function main() {
   let options;
   try {
@@ -458,7 +466,8 @@ function main() {
     options.files.length > 0
       ? options.files.map((file) => normalizeInputFile(file, root))
       : discoverEvidenceFiles(root);
-  const results = files.map((file) => validateEvidenceFile(file, root));
+  const results =
+    files.length > 0 ? files.map((file) => validateEvidenceFile(file, root)) : [buildMissingEvidenceResult(root, options.strict)];
   const errorCount = results.reduce((count, result) => count + result.errors.length, 0);
   const warningCount = results.reduce((count, result) => count + result.warnings.length, 0);
 

@@ -15,6 +15,8 @@ function createFixture() {
   fs.mkdirSync(path.join(root, 'agentic-repo-shell', 'scripts', 'harness'), { recursive: true });
   const pairs = [
     'check-review',
+    'check-evidence',
+    'check-failure-registry',
     'check-graph-review',
     'scaffold-graph-review',
     'build-graph-review-import',

@@ -1,0 +1,45 @@
+{
+  "taskId": "2026-06-08-method-standalone-ci",
+  "repo": "harness-engineering",
+  "agent": {
+    "tool": "codex",
+    "adapter": "cli"
+  },
+  "commands": [
+    {
+      "command": "node --test scripts/harness/check-evidence.test.mjs scripts/harness/check-review.test.mjs scripts/harness/check-failure-registry.test.mjs",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Method gate regression tests for evidence, review, and failure registry semantics."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs --root .",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Task packet exists so strict method gates do not pass on empty lifecycle state."
+    },
+    {
+      "command": "node scripts/harness/check-evidence.mjs --strict --root .",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Strict evidence gate validates this command evidence artifact."
+    },
+    {
+      "command": "node scripts/harness/check-review.mjs --strict --root .",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Strict review gate validates the linked review artifact."
+    }
+  ],
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-06-08-method-standalone-ci.task.md",
+    "evidenceDir": ".harness/evidence/2026-06-08-method-standalone-ci/",
+    "reviewFile": ".harness/evidence/2026-06-08-method-standalone-ci/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  },
+  "knownGaps": [],
+  "runtimeSensitive": false,
+  "runtimeGap": "not runtime-sensitive; method CI and artifact validation only",
+  "completedAt": "2026-06-08"
+}

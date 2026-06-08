@@ -40,6 +40,14 @@ test('root check-review accepts a valid review artifact', () => {
   assert.equal(result.fileCount, 1);
 });
 
+test('root check-review fails strict mode when no review artifacts exist', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'check-review-empty-'));
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], { encoding: 'utf8' });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /No review artifacts found/);
+});
+
 test('root check-review fails on invalid verdict', () => {
   const root = makeFixture();
   const payload = JSON.parse(validReview().match(/```json\s*([\s\S]*?)\s*```/m)[1]);

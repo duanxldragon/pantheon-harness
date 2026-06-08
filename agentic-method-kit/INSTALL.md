@@ -85,6 +85,8 @@ node agentic-method-kit/scripts/check-adoption.mjs --root .
 node scripts/harness/check-method-health.mjs --root . --strict
 ```
 
+Strict evidence and review checks require at least one real `commands.json` and `review.md` artifact. Use report-only mode while bootstrapping a new repository; switch to `--strict` after the first non-trivial task is recorded.
+
 ## 4.1 How To Operate Day To Day
 
 Typical non-trivial workflow:

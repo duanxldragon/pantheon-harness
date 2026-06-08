@@ -26,6 +26,8 @@ node agentic-method-kit/scripts/check-review.mjs --root . --strict
 node agentic-method-kit/scripts/check-adoption.mjs --root .
 ```
 
+If the upgraded repository has no recorded evidence or review artifacts yet, run evidence/review checks without `--strict` during bootstrap. Enable `--strict` only after the repository has at least one linked task packet, `commands.json`, and `review.md`.
+
 ## Method-First Ratchet Metadata
 
 When upgrading from an older task packet format, update every non-trivial task packet with:

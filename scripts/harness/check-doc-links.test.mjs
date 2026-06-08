@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const SCRIPT = path.resolve('harness-engineering/scripts/harness/check-doc-links.mjs');
+const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
+const SCRIPT = path.resolve(TEST_DIR, 'check-doc-links.mjs');
 
 test('check-doc-links passes with valid internal markdown links', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'doc-links-'));
