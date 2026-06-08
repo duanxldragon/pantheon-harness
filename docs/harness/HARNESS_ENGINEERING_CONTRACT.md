@@ -87,6 +87,29 @@ Agent 负责：
 - 已知未验证项。
 - 受影响文档是否已同步。
 
+### 4.5 外部评估者默认存在
+
+对 `non-trivial` 任务，默认应显式区分：
+
+- 实现者视角
+- 评审者视角
+
+实现者可以产出自检，但不应把“我检查过了”当作默认完成判定。
+
+以下情况默认需要独立评审者或显式 review gate：
+
+- 触发第 6 节 human gate 的任务
+- 安全、权限、审计、schema、继承边界相关任务
+- release、CI、secrets、删除或高影响运维流程变更
+
+如因环境或任务规模只能 self-review，必须明确写出原因和剩余风险。
+
+### 4.6 约束要能升级，也要能退役
+
+重复失败不应只修代码，应按 `FAILURE_RATCHET_POLICY.md` 升级为 guide、template、sensor 或 gate。
+
+同样，旧 workaround 不应永久累积。重大模型或工具升级后，应按 `HARNESS_RETIREMENT_REVIEW.md` 评估哪些约束可以降级、替换或删除。
+
 ## 5. 标准工作流
 
 所有非 trivial 任务必须按以下流程推进：
@@ -102,6 +125,8 @@ Intake -> Context -> Plan -> Red -> Green -> Verify -> Evidence -> Review -> Han
 - primary layer
 - dependency layers
 - touched contracts
+- implementer posture
+- reviewer posture
 - expected verification
 - human gates
 
@@ -164,6 +189,8 @@ Intake -> Context -> Plan -> Red -> Green -> Verify -> Evidence -> Review -> Han
 
 按 `REVIEW_LOOP_SPEC.md` 和 `CODE_REVIEW_STANDARD.md` 做 findings-first review。
 
+除 trivial 或明确记录理由的低风险例外外，review 默认应作为实现之后的外部评估环节存在，而不是作者自评的同义词。
+
 ### 5.9 Handoff
 
 交付说明必须包含：
@@ -172,6 +199,7 @@ Intake -> Context -> Plan -> Red -> Green -> Verify -> Evidence -> Review -> Han
 - commands run
 - pass/fail result
 - evidence path
+- review mode
 - known gaps
 - required human decisions
 
@@ -181,6 +209,7 @@ Unless a task is explicitly trivial under Section 8, any code, contract, design,
 
 - a task packet or explicit link to an approved parent task packet
 - verification evidence in the repository-defined structure
+- a review mode, or a documented reason why only self-review was used
 - known gaps recorded instead of omitted
 
 This rule applies equally to:
@@ -203,20 +232,23 @@ This rule applies equally to:
 - 引入新运行时依赖、新外部服务或新安全边界。
 - 变更 CI gate、发布流程或 secrets 处理方式。
 
+凡进入 human gate 的任务，默认也应进入独立评审者视角，而不是只保留实现者自检。
+
 ## 7. 完成定义
 
 一个任务只有同时满足以下条件，才可以标记完成：
 
 1. 已声明归属层和跨层边界。
 2. 已读取对应合同、设计和验收文档。
-3. 已执行任务包或最小计划。
-4. 已运行与变更面匹配的验证命令。
-5. 已保存或摘要验证证据。
-6. 涉及合同、接口、菜单、权限、i18n、数据库或验收口径时，已同步文档。
-7. 涉及 UI 时，已执行视觉质量门并保存截图、浏览器证据或未运行原因。
-8. 已列出未验证项和剩余风险。
-9. Review gate 没有未解决的 P0/P1。
-10. 如果仓库启用了文档治理，还需通过 `DOCUMENT_FRONTMATTER_SPEC.md` 定义的 frontmatter / README / 合同关联校验。
+3. 已声明实现者视角与评审者视角，或说明为什么只保留 self-review。
+4. 已执行任务包或最小计划。
+5. 已运行与变更面匹配的验证命令。
+6. 已保存或摘要验证证据。
+7. 涉及合同、接口、菜单、权限、i18n、数据库或验收口径时，已同步文档。
+8. 涉及 UI 时，已执行视觉质量门并保存截图、浏览器证据或未运行原因。
+9. 已列出未验证项和剩余风险。
+10. Review gate 没有未解决的 P0/P1。
+11. 如果仓库启用了文档治理，还需通过 `DOCUMENT_FRONTMATTER_SPEC.md` 定义的 frontmatter / README / 合同关联校验。
 
 ## 8. Trivial 任务例外
 

@@ -7,9 +7,11 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 先阅读这些方法基础：
 
 1. [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
-2. [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
-3. [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
-4. [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+2. [METHOD_FIRST_DELIVERY_POLICY.zh.md](./METHOD_FIRST_DELIVERY_POLICY.zh.md)
+3. [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+4. [CROSS_AGENT_RATCHET_MODEL.zh.md](./CROSS_AGENT_RATCHET_MODEL.zh.md)
+5. [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+6. [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
 
 ## 默认技术栈
 
@@ -21,12 +23,15 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 ## 默认工作流
 
+默认工作流是方法优先。非 trivial 工作在 intake、profile、verification、review 和 ratchet plan 清楚前，不应开始生产代码修改。
+
 ### 1. Intake
 
 - 判断当前工作是 `trivial` 还是 `non-trivial`
 - 如果仓库提供 triviality policy，按该策略判断；否则默认按 `non-trivial`
 - 如果是 non-trivial，先创建或选择一个变更身份，例如 OpenSpec change
 - 选择最小适用的 harness template 或 overlay
+- 判断当前任务是方法/流程工作，还是生产代码工作。方法/流程工作中发现的代码级失败，除非阻塞方法验证，否则应记录为 deferred backlog。
 
 ### 2. Design
 
@@ -42,16 +47,27 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 ### 4. Task Packet
 
 - 根据 plan 创建 task packet
+- 选择 quality profile，或显式写 `none`
+- 当任务处理 repeated failure 时，记录 portable failure class 和 ratchet decision
 - 填写 linkage 字段：
   - task id
   - openspec change
   - evidence directory
   - review file
+- 对 `non-trivial`、跨层、runtime-sensitive、权限/菜单/i18n/审计/生成器/动态模块相关任务，记录最小 `Structural Scope`：
+  - affected subgraph
+  - boundary crossings
+  - risk nodes
+  - graph focus
+- 如果仓库合同要求，还要记录实现者视角、评审者视角和 stop points
 
 ### 5. Implementation
 
+- 只有方法就绪条件清楚后才开始实现；如果方法就绪条件缺失，回到 intake 或 task packet refinement
 - 按 plan 进行纪律化执行
 - 如果进入调试，转入 `systematic-debugging`
+- 把实现视为 generator loop，而不是 approval 本身
+- 如果仓库已启用 CodeGraph，用图谱把改动约束在受影响子图；不要为小改维护全仓图
 
 ### 6. UI Quality
 
@@ -64,6 +80,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 - 把人类可读摘要保存到 `summary.md`
 - 把 review 输出保存到 `review.md`
 - `review.md` 必须包含嵌入式 machine-readable JSON block
+- 对结构性、高风险或跨层改动，在 evidence 里补 `graphChecks`，说明审查了哪条链路、做了哪些结构性检查、发现了什么
 
 ### 8. Mechanical Checks
 
@@ -83,11 +100,21 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 - 采用 findings-first 风格
 - review 必须指向同一份 task packet 和 evidence
+- 对 non-trivial 任务，默认使用外部评估者视角；如果只能 self-review，要记录原因和 residual risk
+- 对结构性、高风险或跨层任务，review 至少说明：
+  - 本轮实际修改的是哪条受影响子图
+  - 是否引入新循环依赖或扩大循环簇
+  - 是否制造了新的 hub 节点
+  - 是否让关键调用链明显变深
+  - 是否让未验证输入穿过关键边界直达敏感操作
 
 ### 10. Close
 
 - 合并或发布
 - 完成后归档 OpenSpec change
+- 如果同类 failure pattern 再次出现，不要只补代码，要把它升级成 guide、template、sensor 或 gate
+- 使用 [CROSS_AGENT_RATCHET_MODEL.zh.md](./CROSS_AGENT_RATCHET_MODEL.zh.md) 判断升级应落在 portable method、consumer template、consumer repository 还是 agent adapter
+- 在重大模型或工具升级后，复核哪些旧 harness workaround 可以降级、替换或删除
 
 ## 最小 Machine-Readable 闭环
 
@@ -103,5 +130,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 可移植的最小闭环包括：
 
 - task packet 的 `## Linkage`
+- task packet 的 `## Structural Scope`，如果任务需要结构性审查
 - evidence 的 `linkage`
+- evidence 的 `graphChecks`，如果任务需要结构性审查
 - review 的 `## Machine Readable` JSON block

@@ -16,6 +16,9 @@ platform | system/auth | system/iam | system/org | system/config | business/* | 
 
 - Template: admin-platform | api-service | event-processor | dashboard | ui-heavy-product | custom
 - Overlay: none
+- Quality Profile: repository-defined profile | none
+- Portable Failure Class: instruction-gap | task-boundary-gap | architecture-drift | test-gap | static-sensor-gap | runtime-evidence-gap | security-boundary-gap | ci-signal-noise | method-health-gap | none
+- Owner Layer: portable-method | consumer-template | consumer-repository | agent-adapter | no-action
 - Coverage Dimensions:
   - behaviour
   - maintainability
@@ -55,6 +58,21 @@ platform | system/auth | system/iam | system/org | system/config | business/* | 
 
 - notes
 
+## Method Readiness
+
+- Consumer-Specific Controls: repository contract | checker | smoke path | none
+- Required Sensors: command | review | runtime evidence | none
+- Required Evidence: command summary | screenshot | smoke result | runtime gap | review summary
+- Ratchet Decision: no-repeat-observed | guide-updated | sensor-added | gate-updated | template-updated | adapter-updated | registry-only
+- Deferred Code Issues: none | symptom plus recommended follow-up task
+
+## Structural Scope
+
+- Affected Subgraph: `<entry -> core path -> exit/side effect>` | `none`
+- Boundary Crossings: `none | platform -> system/auth | system/* -> pkg/* | base -> ops`
+- Risk Nodes: `none | auth handler | permission service | menu registry | generator orchestrator`
+- Graph Focus: `none | cycle-check | hub-check | call-depth | sensitive-input-flow`
+
 ## Verification Plan
 
 - `command`
@@ -81,6 +99,8 @@ platform | system/auth | system/iam | system/org | system/config | business/* | 
 ## Completion Checklist
 
 - [ ] Layer and boundary declared
+- [ ] Quality profile or explicit `none` declared
+- [ ] Ratchet decision declared for repeated failures
 - [ ] Contract anchors read
 - [ ] Verification run or exception recorded
 - [ ] Evidence saved or summarized

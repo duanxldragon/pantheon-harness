@@ -22,3 +22,7 @@ English version: [README.md](./README.md)
 - `adapters/github-copilot.md`
 - `adapters/openhands.md`
 - `adapters/human.md`
+
+共享的 repo-local skill 模板放在：
+
+- `skills/README.zh.md`

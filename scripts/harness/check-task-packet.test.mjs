@@ -62,6 +62,13 @@ platform
 
 write the script.
 
+## Structural Scope
+
+- Affected Subgraph: \`task packet -> checker -> result\`
+- Boundary Crossings: \`none\`
+- Risk Nodes: \`none\`
+- Graph Focus: \`method-health\`
+
 ## Verification Plan
 
 - node scripts/harness/sample.mjs
@@ -173,4 +180,48 @@ test('check-task-packet rejects linkage task id mismatch', () => {
 
   assert.equal(result.status, 1);
   assert.match(result.stdout, /must match file name task id/);
+});
+
+test('check-task-packet rejects malformed optional execution roles and stop points sections', () => {
+  const root = makeFixture();
+  const packet = `${VALID_PACKET}
+
+## Execution Roles
+
+- Reviewer Posture: architect
+
+## Stop Points
+
+none
+
+## State Plan
+
+- Resume Artifacts: summary.md
+`;
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), packet);
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--root', root], { encoding: 'utf8' });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /Implementer Posture|Stop Points|Checkpoint Expectation/);
+});
+
+test('check-task-packet rejects malformed optional structural scope section', () => {
+  const root = makeFixture();
+  const packet = VALID_PACKET.replace(
+    /## Structural Scope[\s\S]*?## Verification Plan/,
+    `## Structural Scope
+
+- Affected Subgraph:
+- Boundary Crossings: \`none\`
+- Risk Nodes: \`none\`
+
+## Verification Plan`,
+  );
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), packet);
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--root', root], { encoding: 'utf8' });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /Affected Subgraph|Graph Focus/);
 });

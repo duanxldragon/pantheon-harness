@@ -7,9 +7,11 @@ This playbook turns a set of tools into a single operating method.
 Read these method foundations first:
 
 1. [HARNESS_CORE_MODEL.md](./HARNESS_CORE_MODEL.md)
-2. [HARNESS_COVERAGE_MODEL.md](./HARNESS_COVERAGE_MODEL.md)
-3. [HARNESS_TEMPLATE_TAXONOMY.md](./HARNESS_TEMPLATE_TAXONOMY.md)
-4. [TOOL_ADAPTER_MATRIX.md](./TOOL_ADAPTER_MATRIX.md)
+2. [METHOD_FIRST_DELIVERY_POLICY.md](./METHOD_FIRST_DELIVERY_POLICY.md)
+3. [HARNESS_COVERAGE_MODEL.md](./HARNESS_COVERAGE_MODEL.md)
+4. [CROSS_AGENT_RATCHET_MODEL.md](./CROSS_AGENT_RATCHET_MODEL.md)
+5. [HARNESS_TEMPLATE_TAXONOMY.md](./HARNESS_TEMPLATE_TAXONOMY.md)
+6. [TOOL_ADAPTER_MATRIX.md](./TOOL_ADAPTER_MATRIX.md)
 
 ## Default Stack
 
@@ -21,12 +23,15 @@ Read these method foundations first:
 
 ## Default Workflow
 
+The default workflow is method-first. Do not start production-code changes for non-trivial work until the intake, profile, verification, review, and ratchet plan are clear.
+
 ### 1. Intake
 
 - Decide whether the work is `trivial` or `non-trivial`
 - Use the repository's triviality policy when one exists; otherwise default to `non-trivial`
 - If non-trivial, create or select a change identity such as an OpenSpec change
 - Select the smallest applicable harness template or overlay
+- Decide whether the current task is method/process work or production-code work. Method/process work should record code-level failures as deferred backlog unless they block method validation.
 
 ### 2. Design
 
@@ -42,16 +47,27 @@ Read these method foundations first:
 ### 4. Task Packet
 
 - Create a task packet from the plan
+- Select a quality profile or explicitly record `none`
+- Record the portable failure class and ratchet decision when the task addresses repeated failure
 - Fill linkage fields:
   - task id
   - openspec change
   - evidence directory
   - review file
+- For `non-trivial`, cross-layer, runtime-sensitive, permission/menu/i18n/audit/generator/dynamic-module work, record a minimum `Structural Scope`:
+  - affected subgraph
+  - boundary crossings
+  - risk nodes
+  - graph focus
+- Record the implementer posture, reviewer posture, and stop points when the repository contract expects them
 
 ### 5. Implementation
 
+- Start implementation only after method readiness is explicit; if method readiness is missing, return to intake or task packet refinement
 - Use disciplined execution against the plan
 - For debugging, route into `systematic-debugging`
+- Treat implementation as the generator loop only; do not treat it as approval
+- When the repository has CodeGraph, use it to constrain the change to the affected subgraph instead of trying to maintain a full-repo graph for small edits
 
 ### 6. UI Quality
 
@@ -64,6 +80,7 @@ Read these method foundations first:
 - Save human-readable summary in `summary.md`
 - Save review output in `review.md`
 - `review.md` must contain an embedded machine-readable JSON block
+- For structural, high-risk, or cross-layer changes, add `graphChecks` to evidence to record which chain was reviewed, which structural checks ran, and what findings were discovered
 
 ### 8. Mechanical Checks
 
@@ -83,11 +100,21 @@ Read these method foundations first:
 
 - Findings-first
 - Review must point at the same task packet and evidence
+- Use an external evaluator by default for non-trivial work; if only self-review is used, record why and what residual risk remains
+- For structural, high-risk, or cross-layer work, review should at minimum say:
+  - what affected subgraph actually changed
+  - whether a new cycle or larger cycle cluster was introduced
+  - whether a new hub node was created
+  - whether the critical call chain became meaningfully deeper
+  - whether unvalidated input can now cross a key boundary into a sensitive action
 
 ### 10. Close
 
 - Merge or ship
 - Archive the OpenSpec change when complete
+- If the same failure pattern recurs, ratchet it into a guide, template, sensor, or gate instead of only patching code again
+- Use [CROSS_AGENT_RATCHET_MODEL.md](./CROSS_AGENT_RATCHET_MODEL.md) to decide whether the promotion belongs in the portable method, a consumer template, a consumer repository, or an agent adapter
+- After major model or tool upgrades, review whether old harness workarounds can be downgraded, replaced, or removed
 
 ## Minimum Machine-Readable Closure
 
@@ -103,5 +130,7 @@ All four must reference each other through explicit fields, not just by filename
 The portable minimum is:
 
 - task packet `## Linkage`
+- task packet `## Structural Scope`, when the task needs structural review
 - evidence `linkage`
+- evidence `graphChecks`, when the task needs structural review
 - review `## Machine Readable` JSON block

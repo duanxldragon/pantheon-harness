@@ -28,10 +28,75 @@
         }
       }
     },
+    "graphChecks": {
+      "type": "object",
+      "properties": {
+        "usedCodeGraph": { "type": "boolean" },
+        "affectedSubgraph": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["cycle", "hub", "call-depth", "sensitive-flow"]
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
     "browserEvidence": {
       "type": "array",
       "items": { "type": "object" }
     },
+    "runtimeSensitive": { "type": "boolean" },
+    "runtimeLogs": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ]
+    },
+    "runtimeMetrics": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ]
+    },
+    "runtimeTraces": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ]
+    },
+    "runtimePerformance": {
+      "oneOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      ]
+    },
+    "runtimeGap": { "type": "string" },
     "linkage": {
       "type": "object",
       "required": ["taskPacket", "evidenceDir", "reviewFile", "changeRef", "planRefs"],

@@ -1,10 +1,12 @@
 # Verification Evidence Spec
 
+English version: [VERIFICATION_EVIDENCE_SPEC.en.md](./VERIFICATION_EVIDENCE_SPEC.en.md)
+
 类型：Contract
-归属层：method
+归属层：platform
 状态：Active
 
-本文定义任务验证证据的格式。证据格式必须工具无关。
+本文定义 Pantheon 任务验证证据的格式。证据格式必须工具无关。
 
 ## 1. 证据目录
 
@@ -36,7 +38,14 @@
 
 | Command | CWD | Result | Notes |
 |---|---|---|---|
-| `go test ./...` | `.` | passed |  |
+| `go test ./...` | `pantheon-base` | passed |  |
+
+## Graph Checks
+
+- Used CodeGraph: yes | no
+- Affected subgraph:
+- Structural checks: `cycle` / `hub` / `call-depth` / `sensitive-flow`
+- Findings: none | `<finding>`
 
 ## Browser Evidence
 
@@ -56,7 +65,7 @@ complete | blocked | partial
 ```json
 {
   "taskId": "YYYY-MM-DD-task-name",
-  "repo": "<repository-name>",
+  "repo": "pantheon-platform",
   "agent": {
     "tool": "codex",
     "adapter": ".agents/adapters/codex.md"
@@ -64,13 +73,26 @@ complete | blocked | partial
   "commands": [
     {
       "command": "go test ./backend/...",
-      "cwd": ".",
+      "cwd": "pantheon-base",
       "status": "passed",
       "durationMs": 0,
       "notes": ""
     }
   ],
+  "graphChecks": {
+    "usedCodeGraph": true,
+    "affectedSubgraph": [
+      "route -> handler -> service -> repo"
+    ],
+    "checks": ["cycle", "hub", "call-depth", "sensitive-flow"],
+    "findings": [],
+    "notes": ""
+  },
   "browserEvidence": [],
+  "runtimeSensitive": true,
+  "runtimeLogs": ["logs/auth-smoke.log"],
+  "runtimeMetrics": ["p95=120ms"],
+  "runtimeGap": "",
   "linkage": {
     "taskPacket": "docs/harness/tasks/YYYY-MM-DD-task-name.task.md",
     "evidenceDir": ".harness/evidence/YYYY-MM-DD-task-name/",
@@ -108,6 +130,25 @@ complete | blocked | partial
 
 如当前环境无法产出截图，可在单条记录中使用 `visualGap` 替代 `screenshot`，或在 `knownGaps` 中补充全局原因。
 
+当任务属于 runtime-sensitive 时，`commands.json` 推荐额外记录：
+
+```json
+{
+  "runtimeSensitive": true,
+  "runtimeLogs": ["logs/auth-smoke.log"],
+  "runtimeMetrics": ["p95=120ms"],
+  "runtimeTraces": ["trace/auth-login-01"],
+  "runtimePerformance": ["login p95 < 150ms"],
+  "runtimeGap": "staging trace export unavailable"
+}
+```
+
+其中：
+
+- `runtimeSensitive`：是否显式声明本任务带有运行态风险
+- `runtimeLogs` / `runtimeMetrics` / `runtimeTraces` / `runtimePerformance`：运行态信号
+- `runtimeGap`：当前环境拿不到信号时的显式说明
+
 ## 4.2 Artifact Linkage
 
 `commands.json` 应显式记录 artifact linkage：
@@ -117,6 +158,8 @@ complete | blocked | partial
 - `linkage.reviewFile`
 - `linkage.changeRef`
 - `linkage.planRefs`
+
+如任务属于结构性、高风险或跨层改动，建议同时记录 `graphChecks`，用于保存本轮受影响子图和结构性检查结论。`graphChecks` 的目标是解释“审查了哪条链路、发现了什么”，不是输出全仓架构指标报表。
 
 规则：
 
@@ -160,3 +203,5 @@ For UI-affecting tasks, evidence must include:
 ```
 
 不能用“时间不够”“应该没问题”作为验证豁免。
+
+对于 runtime-sensitive 任务，也不能只写“测试通过”，却既没有 runtime signal，也没有 runtime gap。

@@ -305,6 +305,10 @@ function validateEvidenceFile(filePath, root) {
     validateBrowserEvidence(evidence.browserEvidence, result.errors);
   }
 
+  validateGraphChecks(evidence, result.errors);
+
+  validateRuntimeMetadata(evidence, result.errors);
+
   validateLinkage(evidence, filePath, root, result.errors);
 
   if ('completedAt' in evidence && typeof evidence.completedAt !== 'string') {
@@ -312,6 +316,105 @@ function validateEvidenceFile(filePath, root) {
   }
 
   return result;
+}
+
+function validateRuntimeMetadata(evidence, errors) {
+  if ('runtimeSensitive' in evidence && typeof evidence.runtimeSensitive !== 'boolean') {
+    errors.push('root.runtimeSensitive must be a boolean when present.');
+  }
+
+  for (const field of ['runtimeLogs', 'runtimeMetrics', 'runtimeTraces', 'runtimePerformance']) {
+    if (!(field in evidence)) {
+      continue;
+    }
+
+    const value = evidence[field];
+    const pathLabel = `root.${field}`;
+    if (typeof value === 'string') {
+      if (value.trim() === '') {
+        errors.push(`${pathLabel} must not be empty when present.`);
+      }
+      continue;
+    }
+
+    if (!Array.isArray(value)) {
+      errors.push(`${pathLabel} must be a string or an array of strings when present.`);
+      continue;
+    }
+
+    value.forEach((entry, index) => {
+      if (typeof entry !== 'string' || entry.trim() === '') {
+        errors.push(`${pathLabel}[${index}] must be a non-empty string.`);
+      }
+    });
+  }
+
+  if ('runtimeGap' in evidence && (typeof evidence.runtimeGap !== 'string' || evidence.runtimeGap.trim() === '')) {
+    errors.push('root.runtimeGap must be a non-empty string when present.');
+  }
+}
+
+function validateGraphChecks(evidence, errors) {
+  if (!('graphChecks' in evidence)) {
+    return;
+  }
+
+  if (!isObject(evidence.graphChecks)) {
+    errors.push('root.graphChecks must be an object when present.');
+    return;
+  }
+
+  const graphChecks = evidence.graphChecks;
+
+  if ('usedCodeGraph' in graphChecks && typeof graphChecks.usedCodeGraph !== 'boolean') {
+    errors.push('root.graphChecks.usedCodeGraph must be a boolean when present.');
+  }
+
+  if ('affectedSubgraph' in graphChecks) {
+    const { affectedSubgraph } = graphChecks;
+    if (typeof affectedSubgraph === 'string') {
+      if (affectedSubgraph.trim() === '') {
+        errors.push('root.graphChecks.affectedSubgraph must not be empty when present.');
+      }
+    } else if (Array.isArray(affectedSubgraph)) {
+      affectedSubgraph.forEach((entry, index) => {
+        if (typeof entry !== 'string' || entry.trim() === '') {
+          errors.push(`root.graphChecks.affectedSubgraph[${index}] must be a non-empty string.`);
+        }
+      });
+    } else {
+      errors.push('root.graphChecks.affectedSubgraph must be a string or an array of strings when present.');
+    }
+  }
+
+  if ('checks' in graphChecks) {
+    const validChecks = new Set(['cycle', 'hub', 'call-depth', 'sensitive-flow']);
+    if (!Array.isArray(graphChecks.checks)) {
+      errors.push('root.graphChecks.checks must be an array when present.');
+    } else {
+      graphChecks.checks.forEach((entry, index) => {
+        if (typeof entry !== 'string' || !validChecks.has(entry)) {
+          errors.push(`root.graphChecks.checks[${index}] must be one of: ${Array.from(validChecks).join(', ')}.`);
+        }
+      });
+    }
+  }
+
+  if ('findings' in graphChecks) {
+    if (!Array.isArray(graphChecks.findings)) {
+      errors.push('root.graphChecks.findings must be an array when present.');
+    } else {
+      graphChecks.findings.forEach((entry, index) => {
+        if (typeof entry !== 'string') {
+          errors.push(`root.graphChecks.findings[${index}] must be a string.`);
+        }
+      });
+    }
+  }
+
+  if ('notes' in graphChecks && typeof graphChecks.notes !== 'string') {
+    errors.push('root.graphChecks.notes must be a string when present.');
+  }
 }
 
 function printTextReport(results, options) {

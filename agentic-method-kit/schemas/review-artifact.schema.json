@@ -14,6 +14,32 @@
         "approved with documented P2 follow-up"
       ]
     },
+    "structuralReview": {
+      "type": "object",
+      "properties": {
+        "affectedSubgraph": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["cycle", "hub", "call-depth", "sensitive-flow"]
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
     "linkage": {
       "type": "object",
       "required": ["taskPacket", "evidence", "reviewFile", "changeRef", "planRefs"],

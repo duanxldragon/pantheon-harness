@@ -2,16 +2,25 @@
 
 Chinese version: [BASE_UPGRADE_WORKFLOW.zh.md](./BASE_UPGRADE_WORKFLOW.zh.md)
 
-Use this workflow when a derived repository needs to adopt a newer `pantheon-base` version.
+Use this workflow when a derived repository needs to adopt a newer `pantheon-base` foundation release.
 
-## 1. Pick The Target Base Version
+The default target is a gated foundation release, not `base/main`.
 
-- Prefer an explicit tag.
-- If no tag exists yet, pin the target commit hash.
+## 1. Pick The Target Base Release
 
-## 2. Review Upstream Base Changes
+- Prefer an explicit tag such as `base-v0.8.0`.
+- Second choice is a stable release line such as `release/0.8`.
+- Use an unpublished commit hash only as a documented emergency exception.
 
-Read the changed files in `pantheon-base`, especially:
+## 2. Review Upstream Release Notes
+
+Review at least:
+
+- release notes
+- consumer impact summary
+- upgrade notes
+
+Then read the changed files in `pantheon-base`, especially:
 
 - `AGENTS.md`
 - `DESIGN.md`
@@ -23,9 +32,12 @@ Read the changed files in `pantheon-base`, especially:
 
 In `docs/PROJECT_INHERITANCE.md`, update:
 
+- base release line
 - base version
 - any changed required reading docs
 - any changed local business impacts
+
+Prefer explicit wording such as `foundation-release-consumer` instead of language that implies tracking `main`.
 
 ## 3.1 Enforce Base/Ops Code Sync
 
@@ -60,7 +72,7 @@ Use the drift categories this way:
 
 When `generic drift` remains after an upgrade attempt, follow [`docs/harness/BASE_DRIFT_BACKPORT_POLICY.md`](./harness/BASE_DRIFT_BACKPORT_POLICY.md) before accepting any local override.
 
-## 4. Apply Local Adjustments
+## 4. Apply Local Overlay Adjustments
 
 - update only the business modules affected by the base change
 - keep platform and system-domain fixes in `pantheon-base` whenever possible
@@ -77,7 +89,7 @@ Run the validation set that matches the touched surface:
 
 Capture:
 
-- previous base version
-- new base version
+- previous base release/version
+- new base release/version
 - affected business modules
 - known follow-up gaps

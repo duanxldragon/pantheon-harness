@@ -37,6 +37,12 @@ function validateTask(filePath, root) {
   requireMatch(content, /^- Template:\s*(admin-platform|api-service|event-processor|dashboard|ui-heavy-product|custom)$/m, 'missing or invalid harness template', errors);
   requireMatch(content, /^- Overlay:\s*.+$/m, 'missing harness overlay', errors);
   requireMatch(content, /^- Coverage Dimensions:\s*$/m, 'missing coverage dimensions', errors);
+  if (/^## Structural Scope$/m.test(content)) {
+    requireMatch(content, /^- Affected Subgraph:\s*.+$/m, 'missing structural affected subgraph', errors);
+    requireMatch(content, /^- Boundary Crossings:\s*.+$/m, 'missing structural boundary crossings', errors);
+    requireMatch(content, /^- Risk Nodes:\s*.+$/m, 'missing structural risk nodes', errors);
+    requireMatch(content, /^- Graph Focus:\s*.+$/m, 'missing structural graph focus', errors);
+  }
   requireMatch(content, /^## Linkage$/m, 'missing linkage section', errors);
   requireMatch(content, new RegExp(`^- Task ID:\\s*${taskId}$`, 'm'), 'linkage task id mismatch', errors);
   requireMatch(content, new RegExp(`^- Evidence Directory:\\s*\\.harness/evidence/${taskId}/$`, 'm'), 'linkage evidence dir mismatch', errors);

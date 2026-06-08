@@ -118,6 +118,121 @@ Current checks include:
 - linkage to task packet, evidence, review file, OpenSpec change, and plan refs
 - task id consistency with evidence directory
 
+### `check-graph-review.mjs`
+
+Checks whether task packet `Structural Scope`, evidence `graphChecks`, and review `structuralReview` stay consistent for graph-reviewed tasks.
+
+Default report-only mode:
+
+```powershell
+node scripts/harness/check-graph-review.mjs
+```
+
+JSON output:
+
+```powershell
+node scripts/harness/check-graph-review.mjs --json
+```
+
+Strict mode:
+
+```powershell
+node scripts/harness/check-graph-review.mjs --strict
+```
+
+Current checks include:
+
+- graph-reviewed or high-risk tasks should carry `## Structural Scope`
+- graph-reviewed evidence should carry `graphChecks`
+- graph-reviewed review artifacts should carry `structuralReview`
+- affected subgraph and structural-check lists should stay aligned across the three artifacts
+
+### `scaffold-graph-review.mjs`
+
+Seeds `.harness/evidence/<task-id>/commands.json` `graphChecks` and `.harness/evidence/<task-id>/review.md` `structuralReview` from a task packet's `## Structural Scope`.
+
+Report-only mode:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs sample
+```
+
+Write mode:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write sample
+```
+
+Import reviewed graph results:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --import graph-review.json sample
+```
+
+Write reviewed graph results directly from live CodeGraph data:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-context "permission service" sample
+```
+
+Current behavior:
+
+- resolves a task by task id or `docs/harness/tasks/<task>.task.md`
+- derives `affectedSubgraph` and structural `checks` from `## Structural Scope`
+- accepts an optional import JSON with `usedCodeGraph`, `affectedSubgraph`, `checks`, `findings`, and `notes`
+- accepts live `codegraph` inputs via `--live-callers`, `--live-callees`, `--live-impact`, and `--live-context`
+- creates missing evidence/review files or refreshes only their graph-review sections
+- preserves existing command logs, known gaps, verdicts, and surrounding human review notes
+- sets scaffold notes that must be replaced after the real CodeGraph/manual review
+
+### `build-graph-review-import.mjs`
+
+Normalizes saved CodeGraph-style JSON, or live `codegraph` CLI results, into the `graph-review.json` shape consumed by `scaffold-graph-review --import`.
+
+Print normalized JSON:
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --source trace.json
+```
+
+Write normalized import file:
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --source trace.json --write graph-review.json
+node scripts/harness/scaffold-graph-review.mjs --write --import graph-review.json sample
+```
+
+Build an import file from live CodeGraph structure:
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate --write graph-review.json
+node scripts/harness/scaffold-graph-review.mjs --write --import graph-review.json sample
+```
+
+Refresh the repository index first and use an explicit Windows CLI path when needed:
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --sync --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --codegraph-bin C:\tools\codegraph.cmd --live-impact AuthService --live-context "permission service" --write graph-review.json
+```
+
+Current behavior:
+
+- accepts direct import JSON or trace-like JSON with `trace`, `path`, `paths`, `checks`, `findings`, and `notes`
+- accepts live `codegraph` inputs via `--live-callers`, `--live-callees`, `--live-impact`, and `--live-context`
+- converts trace arrays into `entry -> ... -> exit` chain strings
+- converts live caller/callee/impact/context responses into affected-subgraph chains and inferred checks
+- extracts finding text from `message`, `reason`, `summary`, or plain strings
+- defaults `usedCodeGraph` to `true` when not provided
+- supports `--codegraph-bin` or `CODEGRAPH_BIN` when `codegraph` is not resolvable on `PATH`
+
+Common `pantheon-base` live query patterns:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate iam-auth
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-impact AuthService iam-auth
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-context "permission service" iam-permission
+```
+
 ### `check-template-health.mjs`
 
 Checks whether the repository carries the minimum generic template-governance surface.
@@ -508,6 +623,9 @@ Test coverage by script:
 | `check-task-packet.mjs` | `check-task-packet.test.mjs` |
 | `check-evidence.mjs` | `check-evidence.test.mjs` |
 | `check-review.mjs` | `check-review.test.mjs` |
+| `check-graph-review.mjs` | `check-graph-review.test.mjs` |
+| `scaffold-graph-review.mjs` | `scaffold-graph-review.test.mjs` |
+| `build-graph-review-import.mjs` | `build-graph-review-import.test.mjs` |
 | `check-template-health.mjs` | `check-template-health.test.mjs` |
 | `check-runtime-evidence.mjs` | `check-runtime-evidence.test.mjs` |
 | `check-doc-links.mjs` | `check-doc-links.test.mjs` |

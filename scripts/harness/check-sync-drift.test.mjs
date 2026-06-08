@@ -4,14 +4,25 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync, spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const SCRIPT = path.resolve('harness-engineering/scripts/harness/check-sync-drift.mjs');
+const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
+const SCRIPT = path.resolve(TEST_DIR, 'check-sync-drift.mjs');
 
 function createFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'sync-drift-'));
   fs.mkdirSync(path.join(root, 'scripts', 'harness'), { recursive: true });
   fs.mkdirSync(path.join(root, 'agentic-repo-shell', 'scripts', 'harness'), { recursive: true });
-  const pairs = ['check-review', 'check-template-health', 'check-runtime-evidence', 'check-doc-links', 'check-doc-inventory'];
+  const pairs = [
+    'check-review',
+    'check-graph-review',
+    'scaffold-graph-review',
+    'build-graph-review-import',
+    'check-template-health',
+    'check-runtime-evidence',
+    'check-doc-links',
+    'check-doc-inventory',
+  ];
   for (const name of pairs) {
     fs.writeFileSync(path.join(root, 'scripts', 'harness', `${name}.mjs`), `#!/usr/bin/env node\nconsole.log('${name}');\n`);
     fs.writeFileSync(path.join(root, 'agentic-repo-shell', 'scripts', 'harness', `${name}.mjs`), `export * from '../../../scripts/harness/${name}.mjs';\n`);

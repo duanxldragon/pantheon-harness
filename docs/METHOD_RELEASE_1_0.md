@@ -40,3 +40,5 @@ This release is not a Claude Code preset, a Codex preset, or a Pantheon-only wor
 
 - visual evidence strict-mode promotion remains staged, not forced
 - failure registry presence is implemented, but promotion from warning to mandatory landing file is deferred until downstream adoption is broader
+- repeated failures should now be reviewed through an explicit ratchet loop instead of remaining chat-only lessons
+- major model or tool upgrades should trigger a harness retirement review so temporary workarounds do not become permanent shackles

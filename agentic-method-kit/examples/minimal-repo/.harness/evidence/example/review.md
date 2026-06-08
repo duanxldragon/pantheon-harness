@@ -6,6 +6,17 @@
 {
   "taskId": "example",
   "verdict": "approved",
+  "structuralReview": {
+    "affectedSubgraph": [
+      "task packet -> evidence -> review"
+    ],
+    "checks": [
+      "cycle",
+      "hub"
+    ],
+    "findings": [],
+    "notes": "none"
+  },
   "linkage": {
     "taskPacket": "docs/harness/tasks/example.task.md",
     "evidence": ".harness/evidence/example/commands.json",
@@ -31,6 +42,12 @@ approved
 ## Findings
 
 No P0/P1/P2 findings found.
+
+## Structural Notes
+
+- Affected subgraph: `task packet -> evidence -> review`
+- Checks: `cycle`, `hub`
+- Findings: none
 
 ## Residual Risk
 

@@ -31,6 +31,7 @@ Examples:
 - repo entry files such as `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or equivalent
 - contracts, design docs, and acceptance docs
 - task packets and implementation plans
+- affected-subgraph notes and boundary-crossing summaries
 - architecture maps and domain rules
 - how-to documents and project-local skills
 - generated references such as schema snapshots or API maps
@@ -48,6 +49,7 @@ Sensors are feedback controls. They detect whether the agent's output moved the 
 Examples:
 
 - tests, type checks, lint, static analysis, architectural checks
+- CodeGraph-assisted structural review for cycles, hubs, call-depth, and sensitive-flow
 - browser smoke tests, screenshots, console logs, accessibility checks
 - observability queries, logs, traces, metrics
 - review agents, human review, architecture review, security review
@@ -67,7 +69,9 @@ Examples:
 
 - OpenSpec changes or equivalent change identity
 - task packets
+- structural-scope / affected-subgraph summaries
 - evidence directories
+- graphChecks results
 - review artifacts
 - decision logs
 - completed plans and known technical debt
@@ -137,6 +141,7 @@ Typical artifacts:
 
 - OpenSpec change or equivalent
 - task packet
+- affected-subgraph / boundary-crossing statements
 - implementation plan
 - sprint contract or done criteria
 
@@ -160,6 +165,7 @@ Typical artifacts:
 
 - tests and smoke checks
 - static analysis
+- graphChecks
 - visual evidence
 - observability queries
 - evidence summaries
@@ -172,6 +178,7 @@ Typical artifacts:
 
 - findings-first review
 - role-specific review
+- structural findings such as cycle, hub, call-depth, and sensitive-flow
 - human approval
 - review artifact linkage
 

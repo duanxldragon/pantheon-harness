@@ -61,6 +61,17 @@ const VALID_UI_PAYLOAD = {
   ],
 };
 
+const VALID_GRAPH_PAYLOAD = {
+  ...VALID_PAYLOAD,
+  graphChecks: {
+    usedCodeGraph: true,
+    affectedSubgraph: ['route -> handler -> service -> repo'],
+    checks: ['cycle', 'hub', 'call-depth', 'sensitive-flow'],
+    findings: [],
+    notes: 'no structural findings',
+  },
+};
+
 test('check-evidence accepts a valid evidence fixture', () => {
   const root = makeFixture();
   writeCommands(root, 'sample', VALID_PAYLOAD);
@@ -85,6 +96,18 @@ test('check-evidence accepts valid browser evidence for a UI task', () => {
 
   assert.equal(result.errorCount, 0);
   assert.equal(result.warningCount, 0);
+});
+
+test('check-evidence accepts valid graph checks metadata', () => {
+  const root = makeFixture();
+  writeCommands(root, 'sample', VALID_GRAPH_PAYLOAD);
+
+  const output = execFileSync(process.execPath, [SCRIPT, '--json', '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+
+  assert.equal(result.errorCount, 0);
 });
 
 test('check-evidence flags an unknown agent tool in strict mode', () => {
@@ -191,4 +214,39 @@ test('check-evidence rejects linkage when task packet path does not match taskId
 
   assert.equal(result.status, 1);
   assert.match(result.stdout, /root\.linkage\.taskPacket does not exist|must match root\.taskId/);
+});
+
+test('check-evidence rejects malformed runtime classification metadata', () => {
+  const root = makeFixture();
+  writeCommands(root, 'sample', {
+    ...VALID_PAYLOAD,
+    runtimeSensitive: 'yes',
+    runtimeLogs: [{ path: 'logs/run.log' }],
+  });
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /runtimeSensitive|runtimeLogs/);
+});
+
+test('check-evidence rejects malformed graph checks metadata', () => {
+  const root = makeFixture();
+  writeCommands(root, 'sample', {
+    ...VALID_PAYLOAD,
+    graphChecks: {
+      usedCodeGraph: 'yes',
+      checks: ['cycle', 'made-up-check'],
+      findings: [1],
+    },
+  });
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /graphChecks\.usedCodeGraph|graphChecks\.checks\[1\]|graphChecks\.findings\[0\]/);
 });

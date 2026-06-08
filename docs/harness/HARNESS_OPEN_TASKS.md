@@ -20,4 +20,5 @@ This file tracks method-level tasks that are intentionally not blocking the curr
 
 - Review this file during method releases.
 - Move completed items to `Recently Closed` with evidence or a linked checker.
-- If an open item becomes a repeated failure, add or update an entry in `docs/harness/failure-registry.md`.
+- If an open item becomes a repeated failure, follow `FAILURE_RATCHET_POLICY.md` and add or update an entry in `docs/harness/failure-registry.md` when appropriate.
+- During release review or major model/tool upgrades, use `HARNESS_RETIREMENT_REVIEW.md` to decide whether an open item should stay, downgrade, or be removed.

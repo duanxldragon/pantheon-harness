@@ -28,7 +28,7 @@ function writeReview(root, content) {
 }
 
 function validReview() {
-  return ['# Review', '', '## Machine Readable', '```json', JSON.stringify({ taskId: 'sample', verdict: 'approved', linkage: { taskPacket: 'docs/harness/tasks/sample.task.md', evidence: '.harness/evidence/sample/commands.json', reviewFile: '.harness/evidence/sample/review.md', changeRef: 'openspec/changes/sample-change/', planRefs: ['docs/superpowers/plans/sample-plan.md'] } }, null, 2), '```'].join('\n');
+  return ['# Review', '', '## Machine Readable', '```json', JSON.stringify({ taskId: 'sample', verdict: 'approved', structuralReview: { affectedSubgraph: ['route -> handler -> service -> repo'], checks: ['cycle', 'hub'], findings: [], notes: 'none' }, linkage: { taskPacket: 'docs/harness/tasks/sample.task.md', evidence: '.harness/evidence/sample/commands.json', reviewFile: '.harness/evidence/sample/review.md', changeRef: 'openspec/changes/sample-change/', planRefs: ['docs/superpowers/plans/sample-plan.md'] } }, null, 2), '```'].join('\n');
 }
 
 test('repo-shell check-review accepts a valid review artifact', () => {
@@ -47,4 +47,14 @@ test('repo-shell check-review fails when linked evidence is missing', () => {
   const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], { encoding: 'utf8' });
   assert.equal(result.status, 1);
   assert.match(result.stdout, /linked evidence missing/);
+});
+
+test('repo-shell check-review fails on malformed structural review metadata', () => {
+  const root = makeFixture();
+  const payload = JSON.parse(validReview().match(/```json\s*([\s\S]*?)\s*```/m)[1]);
+  payload.structuralReview = { checks: ['cycle', 'bad-check'], findings: [1] };
+  writeReview(root, ['# Review', '', '## Machine Readable', '```json', JSON.stringify(payload, null, 2), '```'].join('\n'));
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], { encoding: 'utf8' });
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /structuralReview\.checks\[1\]|structuralReview\.findings\[0\]/);
 });

@@ -22,3 +22,7 @@ Adapters map that shared protocol to specific tools:
 - `adapters/github-copilot.md`
 - `adapters/openhands.md`
 - `adapters/human.md`
+
+Shared repo-local skill templates live in:
+
+- `skills/README.md`

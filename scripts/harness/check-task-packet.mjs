@@ -219,7 +219,11 @@ function validateTaskPacket(filePath, root) {
   validateContractAnchors(content, headings, result, root);
   validateScope(content, headings, result);
   validateVerificationPlan(content, headings, result);
+  validateOptionalStructuralScope(content, headings, result);
   validateLinkage(content, headings, result, root, filePath);
+  validateOptionalExecutionRoles(content, headings, result);
+  validateOptionalStopPoints(content, headings, result);
+  validateOptionalStatePlan(content, headings, result);
   validateChecklist(content, headings, result);
 
   return result;
@@ -358,6 +362,80 @@ function validateVerificationPlan(content, headings, result) {
   const sectionContent = getSectionContent(content, headings, section);
   if (!hasListItem(sectionContent)) {
     result.errors.push('Section "## Verification Plan" must include at least one command or explicit none item.');
+  }
+}
+
+function validateOptionalStructuralScope(content, headings, result) {
+  const section = findSection(headings, 'Structural Scope');
+  if (!section) {
+    return;
+  }
+
+  const sectionContent = getSectionContent(content, headings, section);
+  const affectedSubgraphMatch = sectionContent.match(/^- Affected Subgraph:\s*(.+)$/m);
+  const boundaryCrossingsMatch = sectionContent.match(/^- Boundary Crossings:\s*(.+)$/m);
+  const riskNodesMatch = sectionContent.match(/^- Risk Nodes:\s*(.+)$/m);
+  const graphFocusMatch = sectionContent.match(/^- Graph Focus:\s*(.+)$/m);
+
+  if (!affectedSubgraphMatch || stripBackticks(affectedSubgraphMatch[1]) === '') {
+    result.errors.push('Section "## Structural Scope" must include "- Affected Subgraph: <value>".');
+  }
+
+  if (!boundaryCrossingsMatch || stripBackticks(boundaryCrossingsMatch[1]) === '') {
+    result.errors.push('Section "## Structural Scope" must include "- Boundary Crossings: <value>".');
+  }
+
+  if (!riskNodesMatch || stripBackticks(riskNodesMatch[1]) === '') {
+    result.errors.push('Section "## Structural Scope" must include "- Risk Nodes: <value>".');
+  }
+
+  if (!graphFocusMatch || stripBackticks(graphFocusMatch[1]) === '') {
+    result.errors.push('Section "## Structural Scope" must include "- Graph Focus: <value>".');
+  }
+}
+
+function validateOptionalExecutionRoles(content, headings, result) {
+  const section = findSection(headings, 'Execution Roles');
+  if (!section) {
+    return;
+  }
+
+  const sectionContent = getSectionContent(content, headings, section);
+  const implementerMatch = sectionContent.match(/^- Implementer Posture:\s*(.+)$/m);
+  const reviewerMatch = sectionContent.match(/^- Reviewer Posture:\s*(.+)$/m);
+
+  if (!implementerMatch || stripBackticks(implementerMatch[1]) === '') {
+    result.errors.push('Section "## Execution Roles" must include "- Implementer Posture: <value>".');
+  }
+
+  if (!reviewerMatch || stripBackticks(reviewerMatch[1]) === '') {
+    result.errors.push('Section "## Execution Roles" must include "- Reviewer Posture: <value>".');
+  }
+}
+
+function validateOptionalStopPoints(content, headings, result) {
+  const section = findSection(headings, 'Stop Points');
+  if (!section) {
+    return;
+  }
+
+  const sectionContent = getSectionContent(content, headings, section);
+  if (!hasListItem(sectionContent)) {
+    result.errors.push('Section "## Stop Points" must include at least one list item, even when the value is "none".');
+  }
+}
+
+function validateOptionalStatePlan(content, headings, result) {
+  const section = findSection(headings, 'State Plan');
+  if (!section) {
+    return;
+  }
+
+  const sectionContent = getSectionContent(content, headings, section);
+  const checkpointMatch = sectionContent.match(/^- Checkpoint Expectation:\s*(.+)$/m);
+
+  if (!checkpointMatch || stripBackticks(checkpointMatch[1]) === '') {
+    result.errors.push('Section "## State Plan" must include "- Checkpoint Expectation: <value>".');
   }
 }
 

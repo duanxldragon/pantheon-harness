@@ -47,6 +47,42 @@ node scripts/harness/check-task-packet.mjs --json
 
 校验 `.harness/evidence/**/review.md` 下的 machine-readable review artifacts。
 
+### `check-graph-review.mjs`
+
+检查 task packet `Structural Scope`、evidence `graphChecks` 与 review `structuralReview` 是否保持一致。
+
+### `scaffold-graph-review.mjs`
+
+根据 task packet 的 `## Structural Scope` 生成或刷新 `graphChecks` 与 `structuralReview`，但不覆盖其余 evidence / review 内容。
+
+也支持 `--import <file>` 导入一次图审查结果，仅合并这些结构化字段。
+
+### `build-graph-review-import.mjs`
+
+把保存下来的 CodeGraph 风格 JSON 整理成 `scaffold-graph-review --import` 可消费的导入结构。
+
+也支持直接读取实时 `codegraph` CLI 结果并转换成同一导入结构。
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate --write graph-review.json
+node scripts/harness/scaffold-graph-review.mjs --write --import graph-review.json sample
+```
+
+如果需要先同步索引，或本机 `PATH` 找不到 `codegraph`，可改用 `--sync` 与 `--codegraph-bin` / `CODEGRAPH_BIN`。
+
+实时直写 task evidence：
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-context "permission service" sample
+```
+
+常用 `pantheon-base` 查询模板：
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate iam-auth
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-impact AuthService iam-auth
+```
+
 ### `check-template-health.mjs`
 
 检查仓库是否具备最小通用 template-governance 面。

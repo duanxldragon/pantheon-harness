@@ -18,11 +18,13 @@ English version: [HARNESS_METHOD_PLAYBOOK.en.md](./HARNESS_METHOD_PLAYBOOK.en.md
 
 1. 先读 `agentic-method-kit/README.md`
 2. 再读 `agentic-method-kit/HARNESS_CORE_MODEL.md`
-3. 再读 `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
-4. 再读 `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
-5. 再读 `agentic-method-kit/TOOL_ADAPTER_MATRIX.md`
-6. 再读 `agentic-method-kit/METHOD_PLAYBOOK.md`
-7. 再读当前仓库需要落地执行的合同：
+3. 再读 `agentic-method-kit/METHOD_FIRST_DELIVERY_POLICY.md`
+4. 再读 `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
+5. 再读 `agentic-method-kit/CROSS_AGENT_RATCHET_MODEL.md`
+6. 再读 `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
+7. 再读 `agentic-method-kit/TOOL_ADAPTER_MATRIX.md`
+8. 再读 `agentic-method-kit/METHOD_PLAYBOOK.md`
+9. 再读当前仓库需要落地执行的合同：
    - `HARNESS_ENGINEERING_CONTRACT.md`
    - `TRIVIALITY_CLASSIFICATION_POLICY.md`
    - `TASK_PACKET_SPEC.md`
@@ -30,7 +32,9 @@ English version: [HARNESS_METHOD_PLAYBOOK.en.md](./HARNESS_METHOD_PLAYBOOK.en.md
    - `REVIEW_LOOP_SPEC.md`
    - `VISUAL_QUALITY_PROTOCOL.md`
    - `VISUAL_EVIDENCE_PROMOTION_POLICY.md`
+   - `FAILURE_RATCHET_POLICY.md`
    - `FAILURE_REGISTRY_PROMOTION_POLICY.md`
+   - `HARNESS_RETIREMENT_REVIEW.md`
    - `INHERITANCE_HARNESS_PROTOCOL.md`
 
 ## 当前仓库职责

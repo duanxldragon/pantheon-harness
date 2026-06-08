@@ -9,9 +9,9 @@ English version: [PROJECT_INHERITANCE_TEMPLATE.md](./PROJECT_INHERITANCE_TEMPLAT
 
 ## 1. Inheritance Source
 - Base repository: `../pantheon-base`
-- Base branch: `main`
-- Base version: `<tag-or-commit>`
-- Inheritance mode: `foundation-only`
+- Base release line: `release/<x.y>` 或 `<stability-line>`
+- Base version: `<base-tag>`
+- Inheritance mode: `foundation-release-consumer`
 
 ## 2. Inherited Base Rules
 This repository inherits from `pantheon-base`:
@@ -54,3 +54,10 @@ Before editing this repository, read:
 - 在业务仓库的 `docs/PROJECT_INHERITANCE.md` 中补充中文解释性注释
 - 或者另外写一份中文导读，解释每个字段应该怎么填
 
+### 关于 release 而不是 main
+
+推荐派生仓默认消费 `pantheon-base` 的显式 release/tag，而不是跟随 `main`：
+
+- `main` 是底座持续优化线
+- `release line + base tag` 才是业务仓默认消费接口
+- 只有紧急例外才允许写未发布 commit，并且要记录原因

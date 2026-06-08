@@ -80,10 +80,19 @@ node scripts/harness/check-method-health.mjs --root . --strict
 
 1. 创建一个 OpenSpec change
 2. 创建 `docs/harness/tasks/<task-id>.task.md`
-3. 实现
-4. 保存 `.harness/evidence/<task-id>/commands.json`
-5. 保存 `.harness/evidence/<task-id>/review.md`
-6. 运行检查
+3. 如果任务带有 `## Structural Scope`，先生成图审查闭环骨架：
+   `node scripts/harness/scaffold-graph-review.mjs --write <task-id>`
+4. 如果你保存了 CodeGraph 风格的审查输出，先整理再导入：
+   `node scripts/harness/build-graph-review-import.mjs --source trace.json --write .harness/evidence/<task-id>/graph-review.json`
+   `node scripts/harness/scaffold-graph-review.mjs --write --import .harness/evidence/<task-id>/graph-review.json <task-id>`
+5. 实现
+6. 保存 `.harness/evidence/<task-id>/commands.json`
+7. 保存 `.harness/evidence/<task-id>/review.md`
+8. 运行检查
+
+示例导入文件：
+
+- `agentic-method-kit/examples/minimal-repo/.harness/evidence/example/graph-review.json`
 
 典型 trivial 工作流：
 
@@ -123,4 +132,3 @@ node scripts/harness/check-method-health.mjs --root . --strict
 - disciplined execution
 - UI quality review
 - browser QA
-

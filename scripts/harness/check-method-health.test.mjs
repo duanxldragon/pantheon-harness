@@ -4,8 +4,10 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
-const SCRIPT_PATH = path.resolve('harness-engineering/scripts/harness/check-method-health.mjs');
+const TEST_DIR = path.dirname(fileURLToPath(import.meta.url));
+const SCRIPT_PATH = path.resolve(TEST_DIR, 'check-method-health.mjs');
 
 function createFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'method-health-'));
@@ -44,6 +46,9 @@ function createFixture() {
   fs.writeFileSync(path.join(root, 'docs', 'harness', 'FAILURE_REGISTRY_PROMOTION_POLICY.md'), '# Failure Policy\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-adoption.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-review.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-graph-review.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'scaffold-graph-review.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'build-graph-review-import.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-failure-registry.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-template-health.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-runtime-evidence.mjs'), '#!/usr/bin/env node\n');
@@ -116,4 +121,37 @@ test('check-method-health reports missing generic review checker', () => {
   const result = JSON.parse(output);
   assert.equal(result.findingCount, 1);
   assert.equal(result.findings[0].file, 'scripts/harness/check-review.mjs');
+});
+
+test('check-method-health reports missing graph review checker', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'check-graph-review.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/check-graph-review.mjs');
+});
+
+test('check-method-health reports missing graph review scaffold tool', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'scaffold-graph-review.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/scaffold-graph-review.mjs');
+});
+
+test('check-method-health reports missing graph review import builder', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'build-graph-review-import.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/build-graph-review-import.mjs');
 });

@@ -11,6 +11,18 @@
       "status": "passed"
     }
   ],
+  "graphChecks": {
+    "usedCodeGraph": true,
+    "affectedSubgraph": [
+      "task packet -> evidence -> review"
+    ],
+    "checks": [
+      "cycle",
+      "hub"
+    ],
+    "findings": [],
+    "notes": "fixture has no structural findings"
+  },
   "linkage": {
     "taskPacket": "docs/harness/tasks/example.task.md",
     "evidenceDir": ".harness/evidence/example/",

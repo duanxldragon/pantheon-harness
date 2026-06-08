@@ -47,6 +47,9 @@ function createFixture() {
   fs.writeFileSync(path.join(root, 'docs', 'harness', 'FAILURE_REGISTRY_PROMOTION_POLICY.md'), '# Failure Policy\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-adoption.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-review.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-graph-review.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'scaffold-graph-review.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'build-graph-review-import.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-doc-frontmatter.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-doc-links.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-doc-inventory.mjs'), '#!/usr/bin/env node\n');
@@ -76,4 +79,37 @@ test('repo-shell check-method-health reports missing failure registry checker', 
   const result = JSON.parse(output);
   assert.equal(result.findingCount, 1);
   assert.equal(result.findings[0].file, 'scripts/harness/check-failure-registry.mjs');
+});
+
+test('repo-shell check-method-health reports missing graph review checker', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'check-graph-review.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/check-graph-review.mjs');
+});
+
+test('repo-shell check-method-health reports missing graph review scaffold tool', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'scaffold-graph-review.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/scaffold-graph-review.mjs');
+});
+
+test('repo-shell check-method-health reports missing graph review import builder', () => {
+  const root = createFixture();
+  fs.rmSync(path.join(root, 'scripts', 'harness', 'build-graph-review-import.mjs'));
+  const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+  const result = JSON.parse(output);
+  assert.equal(result.findingCount, 1);
+  assert.equal(result.findings[0].file, 'scripts/harness/build-graph-review-import.mjs');
 });

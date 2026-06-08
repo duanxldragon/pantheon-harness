@@ -29,3 +29,17 @@ English version: [SKILLS.md](./SKILLS.md)
 如果你希望某个变更对所有项目生效，更新用户级 skills。
 如果项目需要固定版本或定制副本，更新仓库本地 skills。
 
+## Codex 流程触发
+
+当任务是 non-trivial，并且需要使用 Pantheon 默认流程时，使用 [CODEX_DEVELOPMENT_PROCESS.zh.md](./CODEX_DEVELOPMENT_PROCESS.zh.md)：
+
+- 选择目标仓库
+- 判定任务层级
+- UI 任务走视觉门禁
+- 选择 smoke / evidence 验证
+- 做 base -> ops 继承同步
+- 收口低代码生成闭环
+
+当你要创建或刷新仓库本地 workflow skills，例如 `repo-verify`、`repo-pr-gate`、`repo-ci-triage`、`gh-fix-ci` 时，使用 `../.agents/skills/README.zh.md` 里的共享模板层。
+
+如果任务很小，只用仓库合同和最小相关 skill 即可。

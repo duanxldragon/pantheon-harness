@@ -113,6 +113,7 @@ function validateReview(filePath, root) {
   if (typeof review.verdict === 'string' && !VALID_VERDICTS.has(review.verdict)) {
     result.errors.push(`root.verdict must be one of: ${Array.from(VALID_VERDICTS).join(', ')}.`);
   }
+  validateStructuralReview(review, result.errors);
   if (!isObject(review.linkage)) {
     result.errors.push('root.linkage must be an object.');
     return result;
@@ -144,6 +145,64 @@ function validateReview(filePath, root) {
     result.errors.push(`linked OpenSpec change missing: ${review.linkage.changeRef}`);
   }
   return result;
+}
+
+function validateStructuralReview(review, errors) {
+  if (!('structuralReview' in review)) {
+    return;
+  }
+
+  if (!isObject(review.structuralReview)) {
+    errors.push('root.structuralReview must be an object when present.');
+    return;
+  }
+
+  const structuralReview = review.structuralReview;
+  if ('affectedSubgraph' in structuralReview) {
+    const { affectedSubgraph } = structuralReview;
+    if (typeof affectedSubgraph === 'string') {
+      if (affectedSubgraph.trim() === '') {
+        errors.push('root.structuralReview.affectedSubgraph must not be empty when present.');
+      }
+    } else if (Array.isArray(affectedSubgraph)) {
+      affectedSubgraph.forEach((entry, index) => {
+        if (typeof entry !== 'string' || entry.trim() === '') {
+          errors.push(`root.structuralReview.affectedSubgraph[${index}] must be a non-empty string.`);
+        }
+      });
+    } else {
+      errors.push('root.structuralReview.affectedSubgraph must be a string or an array of strings when present.');
+    }
+  }
+
+  if ('checks' in structuralReview) {
+    const validChecks = new Set(['cycle', 'hub', 'call-depth', 'sensitive-flow']);
+    if (!Array.isArray(structuralReview.checks)) {
+      errors.push('root.structuralReview.checks must be an array when present.');
+    } else {
+      structuralReview.checks.forEach((entry, index) => {
+        if (typeof entry !== 'string' || !validChecks.has(entry)) {
+          errors.push(`root.structuralReview.checks[${index}] must be one of: ${Array.from(validChecks).join(', ')}.`);
+        }
+      });
+    }
+  }
+
+  if ('findings' in structuralReview) {
+    if (!Array.isArray(structuralReview.findings)) {
+      errors.push('root.structuralReview.findings must be an array when present.');
+    } else {
+      structuralReview.findings.forEach((entry, index) => {
+        if (typeof entry !== 'string') {
+          errors.push(`root.structuralReview.findings[${index}] must be a string.`);
+        }
+      });
+    }
+  }
+
+  if ('notes' in structuralReview && typeof structuralReview.notes !== 'string') {
+    errors.push('root.structuralReview.notes must be a string when present.');
+  }
 }
 
 function printTextReport(results, strict) {

@@ -52,6 +52,27 @@ platform
 
 - fixture only
 
+## Execution Roles
+
+- Implementer Posture: `fixture-author`
+- Reviewer Posture: `mechanical`
+
+## Stop Points
+
+- `none`
+
+## State Plan
+
+- Checkpoint Expectation: `none`
+- Resume Artifacts: `none`
+
+## Structural Scope
+
+- Affected Subgraph: `task packet -> evidence -> review`
+- Boundary Crossings: `none`
+- Risk Nodes: `none`
+- Graph Focus: `cycle-check | hub-check`
+
 ## Verification Plan
 
 - `node agentic-method-kit/scripts/check-task-packet.mjs --root agentic-method-kit/examples/minimal-repo --config ../../config/method.config.json`

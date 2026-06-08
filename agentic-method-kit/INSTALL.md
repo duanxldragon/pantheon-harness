@@ -80,10 +80,19 @@ Typical non-trivial workflow:
 
 1. create an OpenSpec change
 2. create `docs/harness/tasks/<task-id>.task.md`
-3. implement
-4. save `.harness/evidence/<task-id>/commands.json`
-5. save `.harness/evidence/<task-id>/review.md`
-6. run the checks
+3. if the task has `## Structural Scope`, scaffold graph review closure:
+   `node scripts/harness/scaffold-graph-review.mjs --write <task-id>`
+4. if you saved CodeGraph-style review output, normalize it and import it:
+   `node scripts/harness/build-graph-review-import.mjs --source trace.json --write .harness/evidence/<task-id>/graph-review.json`
+   `node scripts/harness/scaffold-graph-review.mjs --write --import .harness/evidence/<task-id>/graph-review.json <task-id>`
+5. implement
+6. save `.harness/evidence/<task-id>/commands.json`
+7. save `.harness/evidence/<task-id>/review.md`
+8. run the checks
+
+Example import file:
+
+- `agentic-method-kit/examples/minimal-repo/.harness/evidence/example/graph-review.json`
 
 Typical trivial workflow:
 

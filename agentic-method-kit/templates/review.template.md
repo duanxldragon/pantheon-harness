@@ -6,6 +6,19 @@
 {
   "taskId": "<task-id>",
   "verdict": "approved",
+  "structuralReview": {
+    "affectedSubgraph": [
+      "entry -> core path -> exit/side effect"
+    ],
+    "checks": [
+      "cycle",
+      "hub",
+      "call-depth",
+      "sensitive-flow"
+    ],
+    "findings": [],
+    "notes": "none"
+  },
   "linkage": {
     "taskPacket": "docs/harness/tasks/<task-id>.task.md",
     "evidence": ".harness/evidence/<task-id>/commands.json",
@@ -31,6 +44,12 @@ approved | changes requested | blocked | approved with documented P2 follow-up
 ## Findings
 
 No P0/P1/P2 findings found.
+
+## Structural Notes
+
+- Affected subgraph: `entry -> core path -> exit/side effect`
+- Checks: `cycle`, `hub`, `call-depth`, `sensitive-flow`
+- Findings: none
 
 ## Residual Risk
 

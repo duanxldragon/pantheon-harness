@@ -26,6 +26,55 @@ English version: [README.md](./README.md)
 
 校验 `.harness/evidence/**/review.md` 下的 machine-readable review artifacts。
 
+### `check-graph-review.mjs`
+
+检查 task packet `Structural Scope`、evidence `graphChecks` 与 review `structuralReview` 是否保持一致。
+
+### `scaffold-graph-review.mjs`
+
+根据 task packet 的 `## Structural Scope`，为 `.harness/evidence/<task-id>/commands.json` 生成或刷新 `graphChecks`，并为 `.harness/evidence/<task-id>/review.md` 生成或刷新 `structuralReview`。
+
+可选地通过 `--import <file>` 导入一次图审查结果，只覆盖 `usedCodeGraph`、`affectedSubgraph`、`checks`、`findings` 和 `notes` 这些结构化字段。
+
+### `build-graph-review-import.mjs`
+
+把保存下来的 CodeGraph 风格 JSON 整理成 `scaffold-graph-review --import` 可直接消费的 `graph-review.json` 结构。
+
+也支持直接拉取实时 `codegraph` CLI 结果，再整理成同一份导入结构。
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate --write graph-review.json
+node scripts/harness/scaffold-graph-review.mjs --write --import graph-review.json sample
+```
+
+如果需要先同步索引，或在 Windows 上显式指定 `codegraph.cmd` 路径：
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --sync --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --codegraph-bin C:\tools\codegraph.cmd --live-impact AuthService --live-context "permission service" --write graph-review.json
+```
+
+当前行为：
+
+- 支持直接导入 JSON、trace/path/paths 风格 JSON，以及 `--live-callers` / `--live-callees` / `--live-impact` / `--live-context`
+- 会把实时 callers/callees/impact/context 结果折叠成 `affectedSubgraph` 与推断后的 `checks`
+- 当 `PATH` 找不到 `codegraph` 时，可用 `--codegraph-bin` 或 `CODEGRAPH_BIN` 指定可执行文件
+
+### `scaffold-graph-review.mjs` 实时直写示例
+
+不经过中间 `graph-review.json`，直接把实时 CodeGraph 结果写进任务 evidence / review：
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-context "permission service" sample
+```
+
+常用 `pantheon-base` 查询模板：
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate iam-auth
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-impact AuthService iam-auth
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-context "permission service" iam-permission
+```
+
 ### `check-template-health.mjs`
 
 检查仓库是否具备最小通用 template-governance 面。

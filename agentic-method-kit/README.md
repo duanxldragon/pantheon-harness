@@ -6,6 +6,12 @@ Portable method kit for repositories that want a repeatable Harness Engineering 
 
 Copy this directory into another repository when you want explicit delivery controls for non-trivial agent or human-assisted work.
 
+It also carries a minimal graph-review closure path:
+
+- scaffold `graphChecks` / `structuralReview` from task packet `## Structural Scope`
+- normalize saved CodeGraph-style output into `graph-review.json`
+- import that normalized result back into evidence/review closure
+
 Use it with:
 
 - `agentic-repo-shell/`
@@ -17,7 +23,9 @@ Optional overlay:
 ## What This Kit Defines
 
 - A tool-agnostic harness core model
+- A method-first delivery policy that keeps process design ahead of production-code fixes
 - A coverage model for guides, sensors, gates, and failure capture
+- A cross-agent ratchet model for promoting repeated failures without coupling the method to one product repository
 - A template taxonomy for different repository shapes
 - A tool adapter matrix so concrete tools remain usable without becoming prerequisites
 - A default playbook for change selection, task packets, implementation, evidence, and review
@@ -38,13 +46,15 @@ Specific tools can be recommended by a repository. They do not define the method
 
 1. Read [README.zh.md](./README.zh.md) if your team is Chinese-first
 2. Read [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
-3. Read [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
-4. Read [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
-5. Read [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
-6. Read [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
-7. Copy the templates you need
-8. Adjust [config/method.config.json](./config/method.config.json) if your repo uses different paths
-9. Run the portable checks under [scripts/](./scripts/)
+3. Read [METHOD_FIRST_DELIVERY_POLICY.md](./METHOD_FIRST_DELIVERY_POLICY.md)
+4. Read [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+5. Read [CROSS_AGENT_RATCHET_MODEL.md](./CROSS_AGENT_RATCHET_MODEL.md)
+6. Read [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+7. Read [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+8. Read [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+9. Copy the templates you need
+10. Adjust [config/method.config.json](./config/method.config.json) if your repo uses different paths
+11. Run the portable checks under [scripts/](./scripts/)
 
 ## Closed Loop
 

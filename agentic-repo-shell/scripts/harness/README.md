@@ -71,6 +71,40 @@ Exit behavior:
 
 Validates machine-readable review artifacts under `.harness/evidence/**/review.md`.
 
+### `check-graph-review.mjs`
+
+Checks whether task packet `Structural Scope`, evidence `graphChecks`, and review `structuralReview` stay consistent.
+
+### `scaffold-graph-review.mjs`
+
+Seeds `graphChecks` and `structuralReview` from a task packet's `## Structural Scope` without replacing the rest of the evidence/review content.
+
+It also accepts `--import <file>` to merge reviewed graph results into those structural fields only.
+
+### `build-graph-review-import.mjs`
+
+Normalizes saved CodeGraph-style JSON, or live `codegraph` CLI results, into the import shape consumed by `scaffold-graph-review --import`.
+
+```powershell
+node scripts/harness/build-graph-review-import.mjs --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate --write graph-review.json
+node scripts/harness/scaffold-graph-review.mjs --write --import graph-review.json sample
+```
+
+Use `--sync` to refresh the index first, and `--codegraph-bin` or `CODEGRAPH_BIN` when the CLI is not resolvable on `PATH`.
+
+Direct live task-write shortcut:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-context "permission service" sample
+```
+
+Common `pantheon-base` query patterns:
+
+```powershell
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-callers Authenticate --live-callees Authenticate iam-auth
+node scripts/harness/scaffold-graph-review.mjs --write --codegraph-path D:\workspace\go\pantheon-platform\pantheon-base --live-impact AuthService iam-auth
+```
+
 ### `check-template-health.mjs`
 
 Checks whether the repository carries the minimum generic template-governance surface.
@@ -261,6 +295,9 @@ Test coverage by script:
 | `check-task-packet.mjs` | `check-task-packet.test.mjs` |
 | `check-evidence.mjs` | `check-evidence.test.mjs` |
 | `check-review.mjs` | `check-review.test.mjs` |
+| `check-graph-review.mjs` | `check-graph-review.test.mjs` |
+| `scaffold-graph-review.mjs` | `scaffold-graph-review.test.mjs` |
+| `build-graph-review-import.mjs` | `build-graph-review-import.test.mjs` |
 | `check-template-health.mjs` | `check-template-health.test.mjs` |
 | `check-runtime-evidence.mjs` | `check-runtime-evidence.test.mjs` |
 | `check-doc-links.mjs` | `check-doc-links.test.mjs` |

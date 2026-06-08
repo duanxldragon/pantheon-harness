@@ -9,9 +9,9 @@ Copy this file into a derived Pantheon business repository as `docs/PROJECT_INHE
 
 ## 1. Inheritance Source
 - Base repository: `../pantheon-base`
-- Base branch: `main`
-- Base version: `<tag-or-commit>`
-- Inheritance mode: `foundation-only`
+- Base release line: `release/<x.y>` or `<stability-line>`
+- Base version: `<base-tag>`
+- Inheritance mode: `foundation-release-consumer`
 
 ## 2. Inherited Base Rules
 This repository inherits from `pantheon-base`:
@@ -39,3 +39,9 @@ Before editing this repository, read:
 - Not allowed: redefining base contracts, base layer ownership, key-first i18n rules, or shared UI hard constraints
 - If base rules must change, update `pantheon-base` first
 ```
+
+Use explicit releases or tags instead of tracking `main` by default:
+
+- `main` is the continuous foundation optimization line
+- `release line + base tag` is the downstream consumer interface
+- an unpublished commit should be an emergency exception only

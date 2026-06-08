@@ -6,6 +6,12 @@ English version: [README.md](./README.md)
 
 当你希望非 trivial 的 agent 或人工辅助交付有明确控制项时，就把这个目录复制进目标仓库。
 
+它也内置了一条最小图审查收口路径：
+
+- 从 task packet 的 `## Structural Scope` 生成 `graphChecks` / `structuralReview` 骨架
+- 把保存下来的 CodeGraph 风格输出整理成 `graph-review.json`
+- 再把这个导入结果写回 evidence / review 收口件
+
 建议与下列目录一起使用：
 
 - `agentic-repo-shell/`
@@ -17,7 +23,9 @@ English version: [README.md](./README.md)
 ## 这个方法包定义什么
 
 - 工具无关的 harness 核心模型
+- 方法优先交付策略，避免流程尚未清楚时陷入生产代码修复
 - 面向 guides、sensors、gates 和 failure capture 的覆盖模型
+- 跨 agent ratchet 模型，把重复失败升级成可复用方法资产，同时避免绑定单一业务仓库
 - 面向不同仓库形态的模板分类
 - 工具适配矩阵，让具体工具可用，但不把它们变成方法前提
 - 一套默认 playbook，覆盖 change 选择、task packet、实现、evidence 和 review
@@ -38,13 +46,15 @@ English version: [README.md](./README.md)
 
 1. 阅读 [README.zh.md](./README.zh.md)
 2. 阅读 [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
-3. 阅读 [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
-4. 阅读 [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
-5. 阅读 [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
-6. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
-7. 复制你需要的模板
-8. 如果你的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
-9. 运行 [scripts/](./scripts/) 下的可移植检查脚本
+3. 阅读 [METHOD_FIRST_DELIVERY_POLICY.zh.md](./METHOD_FIRST_DELIVERY_POLICY.zh.md)
+4. 阅读 [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+5. 阅读 [CROSS_AGENT_RATCHET_MODEL.zh.md](./CROSS_AGENT_RATCHET_MODEL.zh.md)
+6. 阅读 [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+7. 阅读 [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+8. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+9. 复制你需要的模板
+10. 如果你的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
+11. 运行 [scripts/](./scripts/) 下的可移植检查脚本
 
 ## 闭环
 

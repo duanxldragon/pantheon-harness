@@ -62,6 +62,13 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 
 - <explicit non-goals>
 
+## Structural Scope
+
+- Affected Subgraph: `<entry -> core path -> exit/side effect>` | `none`
+- Boundary Crossings: `none | platform -> system/auth | system/* -> pkg/* | base -> ops`
+- Risk Nodes: `none | auth handler | permission service | menu registry | generator orchestrator`
+- Graph Focus: `none | cycle-check | hub-check | call-depth | sensitive-input-flow`
+
 ## Expected Files
 
 ### Create
@@ -79,6 +86,21 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 ## Implementation Notes
 
 - <boundary or sequencing notes>
+
+## Execution Roles
+
+- Implementer Posture: `<implementer role or none>`
+- Reviewer Posture: `<reviewer role or none>`
+
+## Stop Points
+
+- `none`
+- 或在 schema / contract / delete / release gate 前停下
+
+## State Plan
+
+- Checkpoint Expectation: `none | path | artifact name`
+- Resume Artifacts: `none | path`
 
 ## Verification Plan
 
@@ -107,6 +129,7 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 - command result summary
 - screenshots if UI changed
 - smoke JSON if browser flow changed
+- runtime logs / metrics / traces / performance signal, or explicit runtime gap if the task is runtime-sensitive
 - review summary
 
 ## Human Gates
@@ -123,6 +146,10 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 - [ ] Docs updated if contracts changed
 - [ ] Review completed
 ```
+
+`Execution Roles`、`Stop Points`、`State Plan` 是可选 section，但一旦仓库合同要求或任务显式声明这些 section，内容就必须完整、可解释、可校验。
+
+`Structural Scope` 对 trivial 任务可写 `none`；对 `non-trivial`、跨层、runtime-sensitive、权限/菜单/i18n/审计/生成器/动态模块相关任务，默认应补最小受影响子图说明。它的目的不是要求维护全仓架构图，而是让实现者和 reviewer 审查同一个结构范围。
 
 ## 3. Trivial 任务
 
@@ -155,6 +182,9 @@ platform | system/auth | system/iam | system/org | system/config | business/*
 - layer
 - harness template and coverage dimensions
 - scope
+- execution roles when declared
+- stop points when declared
+- state/checkpoint expectations when declared
 - contract anchors
 - verification plan
 - evidence required

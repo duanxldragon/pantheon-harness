@@ -50,6 +50,28 @@ function validate(filePath, root) {
       }
     }
   }
+  if ('graphChecks' in payload) {
+    if (typeof payload.graphChecks !== 'object' || payload.graphChecks === null || Array.isArray(payload.graphChecks)) {
+      errors.push('graphChecks must be an object when present');
+    } else {
+      if ('usedCodeGraph' in payload.graphChecks && typeof payload.graphChecks.usedCodeGraph !== 'boolean') {
+        errors.push('graphChecks.usedCodeGraph must be boolean');
+      }
+      if ('checks' in payload.graphChecks) {
+        const validChecks = new Set(['cycle', 'hub', 'call-depth', 'sensitive-flow']);
+        if (!Array.isArray(payload.graphChecks.checks)) {
+          errors.push('graphChecks.checks must be an array');
+        } else {
+          for (const entry of payload.graphChecks.checks) {
+            if (typeof entry !== 'string' || !validChecks.has(entry)) {
+              errors.push('graphChecks.checks contains invalid value');
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
   return { file: path.relative(root, filePath).replaceAll(path.sep, '/'), errors };
 }
 

@@ -63,9 +63,66 @@
         "out": { "type": "array", "items": { "type": "string" } }
       }
     },
+    "structuralScope": {
+      "type": "object",
+      "properties": {
+        "affectedSubgraph": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ]
+        },
+        "boundaryCrossings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "riskNodes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "graphFocus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "cycle-check",
+              "hub-check",
+              "call-depth",
+              "sensitive-input-flow"
+            ]
+          }
+        }
+      }
+    },
     "verificationPlan": {
       "type": "array",
       "items": { "type": "string" }
+    },
+    "executionRoles": {
+      "type": "object",
+      "required": ["implementerPosture", "reviewerPosture"],
+      "properties": {
+        "implementerPosture": { "type": "string" },
+        "reviewerPosture": { "type": "string" }
+      }
+    },
+    "stopPoints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "statePlan": {
+      "type": "object",
+      "required": ["checkpointExpectation"],
+      "properties": {
+        "checkpointExpectation": { "type": "string" },
+        "resumeArtifacts": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
     },
     "linkage": {
       "type": "object",

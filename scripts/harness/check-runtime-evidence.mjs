@@ -59,10 +59,10 @@ function scanFile(filePath, root) {
 
   const taskId = typeof payload.taskId === 'string' ? payload.taskId : path.basename(path.dirname(filePath));
   const taskPacket = typeof payload.linkage?.taskPacket === 'string' ? path.join(root, payload.linkage.taskPacket) : null;
-  let runtimeSensitive = false;
+  let runtimeSensitive = payload.runtimeSensitive === true;
   if (taskPacket && fs.existsSync(taskPacket)) {
     const source = fs.readFileSync(taskPacket, 'utf8');
-    runtimeSensitive = /\bruntime quality\b/i.test(source) || /\blogs\b/i.test(source) || /\bmetrics\b/i.test(source) || /\btraces\b/i.test(source) || /\bperformance\b/i.test(source);
+    runtimeSensitive ||= /\bruntime quality\b/i.test(source) || /\blogs\b/i.test(source) || /\bmetrics\b/i.test(source) || /\btraces\b/i.test(source) || /\bperformance\b/i.test(source);
   }
 
   if (!runtimeSensitive) return result;
@@ -72,7 +72,9 @@ function scanFile(filePath, root) {
     containsRuntimeSignal(payload.runtimeMetrics) ||
     containsRuntimeSignal(payload.runtimeTraces) ||
     containsRuntimeSignal(payload.runtimePerformance);
-  const hasGap = Array.isArray(payload.knownGaps) && payload.knownGaps.some((gap) => /runtime|log|metric|trace|performance/i.test(String(gap)));
+  const hasGap =
+    containsRuntimeSignal(payload.runtimeGap) ||
+    (Array.isArray(payload.knownGaps) && payload.knownGaps.some((gap) => /runtime|log|metric|trace|performance/i.test(String(gap))));
 
   if (!hasSignal && !hasGap) {
     result.warnings.push({
