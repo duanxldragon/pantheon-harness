@@ -30,12 +30,32 @@
 - Updated:
 - Closed:
 
+## Cross-Agent Ratchet Review
+
+| Failure Class | Owner Layer | Current Control | Promotion Latency | Next Ratchet Decision |
+|---|---|---|---|---|
+| instruction-gap | portable-method \| consumer-template \| consumer-repository \| agent-adapter \| no-action |  |  | guide-updated \| sensor-added \| gate-updated \| template-updated \| adapter-updated \| registry-only |
+
+## Consumer Specificity Review
+
+- Consumer-specific controls that must stay local:
+- Controls that should be promoted into the portable method:
+- Consumer-specific leakage found in portable assets:
+- Decision: none | accepted | blocked
+
+## Deferred Code Backlog
+
+| Task ID | Deferred Issue | Severity | Owner Layer | Follow-Up |
+|---|---|---|---|---|
+|  |  | P0 \| P1 \| P2 \| P3 | consumer-repository \| consumer-template |  |
+
 ## Load-Bearing Review
 
 - Controls still needed:
 - Controls to simplify:
 - Controls to remove:
 - New controls to add:
+- Noisy sensors to tune or downgrade:
 
 ## Decisions
 

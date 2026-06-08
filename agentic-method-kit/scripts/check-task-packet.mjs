@@ -36,7 +36,31 @@ function validateTask(filePath, root) {
   requireMatch(content, /^## Harness Profile$/m, 'missing harness profile section', errors);
   requireMatch(content, /^- Template:\s*(admin-platform|api-service|event-processor|dashboard|ui-heavy-product|custom)$/m, 'missing or invalid harness template', errors);
   requireMatch(content, /^- Overlay:\s*.+$/m, 'missing harness overlay', errors);
+  requireMatch(content, /^- Quality Profile:\s*.+$/m, 'missing quality profile', errors);
+  requireMatch(
+    content,
+    /^- Portable Failure Class:\s*(instruction-gap|task-boundary-gap|architecture-drift|test-gap|static-sensor-gap|runtime-evidence-gap|security-boundary-gap|ci-signal-noise|method-health-gap|none)$/m,
+    'missing or invalid portable failure class',
+    errors,
+  );
+  requireMatch(
+    content,
+    /^- Owner Layer:\s*(portable-method|consumer-template|consumer-repository|agent-adapter|no-action)$/m,
+    'missing or invalid owner layer',
+    errors,
+  );
   requireMatch(content, /^- Coverage Dimensions:\s*$/m, 'missing coverage dimensions', errors);
+  requireMatch(content, /^## Method Readiness$/m, 'missing method readiness section', errors);
+  requireMatch(content, /^- Consumer-Specific Controls:\s*.+$/m, 'missing consumer-specific controls', errors);
+  requireMatch(content, /^- Required Sensors:\s*.+$/m, 'missing required sensors', errors);
+  requireMatch(content, /^- Required Evidence:\s*.+$/m, 'missing required evidence', errors);
+  requireMatch(
+    content,
+    /^- Ratchet Decision:\s*(no-repeat-observed|guide-updated|sensor-added|gate-updated|template-updated|adapter-updated|registry-only)$/m,
+    'missing or invalid ratchet decision',
+    errors,
+  );
+  requireMatch(content, /^- Deferred Code Issues:\s*.+$/m, 'missing deferred code issues', errors);
   if (/^## Structural Scope$/m.test(content)) {
     requireMatch(content, /^- Affected Subgraph:\s*.+$/m, 'missing structural affected subgraph', errors);
     requireMatch(content, /^- Boundary Crossings:\s*.+$/m, 'missing structural boundary crossings', errors);

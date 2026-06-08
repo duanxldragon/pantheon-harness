@@ -16,6 +16,9 @@ platform
 
 - Template: custom
 - Overlay: none
+- Quality Profile: none
+- Portable Failure Class: method-health-gap
+- Owner Layer: portable-method
 - Coverage Dimensions:
   - method-health
 
@@ -51,6 +54,14 @@ platform
 ## Implementation Notes
 
 - fixture only
+
+## Method Readiness
+
+- Consumer-Specific Controls: none
+- Required Sensors: command | review
+- Required Evidence: command summary | review summary
+- Ratchet Decision: template-updated
+- Deferred Code Issues: none
 
 ## Execution Roles
 
@@ -97,6 +108,8 @@ platform
 ## Completion Checklist
 
 - [ ] Layer and boundary declared
+- [ ] Quality profile or explicit `none` declared
+- [ ] Ratchet decision declared for repeated failures
 - [ ] Contract anchors read
 - [ ] Verification run or exception recorded
 - [ ] Evidence saved or summarized

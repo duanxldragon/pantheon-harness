@@ -2,6 +2,14 @@
 
 Chinese version: [CHANGELOG.zh.md](./CHANGELOG.zh.md)
 
+## Unreleased
+
+- Require method-first ratchet metadata in task packets: quality profile, portable failure class, owner layer, method readiness, ratchet decision, and deferred code issues.
+- Require evidence and review artifacts to record owner layer, ratchet decision, and deferred code issues.
+- Add task-packet regression tests so stale packets without method readiness fail mechanically.
+- Extend coverage review templates with cross-agent ratchet, consumer-specific leakage, deferred code backlog, and noisy sensor review sections.
+- Document upgrade steps for older task packets, evidence, and review artifacts.
+
 ## 1.0.0 - 2026-05-18
 
 Initial portable release.

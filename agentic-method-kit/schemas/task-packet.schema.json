@@ -7,6 +7,7 @@
     "goal",
     "primaryLayer",
     "harnessProfile",
+    "methodReadiness",
     "contractAnchors",
     "scope",
     "verificationPlan",
@@ -20,7 +21,14 @@
     "primaryLayer": { "type": "string" },
     "harnessProfile": {
       "type": "object",
-      "required": ["template", "overlay", "coverageDimensions"],
+      "required": [
+        "template",
+        "overlay",
+        "qualityProfile",
+        "portableFailureClass",
+        "ownerLayer",
+        "coverageDimensions"
+      ],
       "properties": {
         "template": {
           "type": "string",
@@ -34,6 +42,32 @@
           ]
         },
         "overlay": { "type": "string" },
+        "qualityProfile": { "type": "string" },
+        "portableFailureClass": {
+          "type": "string",
+          "enum": [
+            "instruction-gap",
+            "task-boundary-gap",
+            "architecture-drift",
+            "test-gap",
+            "static-sensor-gap",
+            "runtime-evidence-gap",
+            "security-boundary-gap",
+            "ci-signal-noise",
+            "method-health-gap",
+            "none"
+          ]
+        },
+        "ownerLayer": {
+          "type": "string",
+          "enum": [
+            "portable-method",
+            "consumer-template",
+            "consumer-repository",
+            "agent-adapter",
+            "no-action"
+          ]
+        },
         "coverageDimensions": {
           "type": "array",
           "items": {
@@ -46,6 +80,50 @@
               "method-health"
             ]
           },
+          "minItems": 1
+        }
+      }
+    },
+    "methodReadiness": {
+      "type": "object",
+      "required": [
+        "consumerSpecificControls",
+        "requiredSensors",
+        "requiredEvidence",
+        "ratchetDecision",
+        "deferredCodeIssues"
+      ],
+      "properties": {
+        "consumerSpecificControls": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "requiredSensors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "requiredEvidence": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "ratchetDecision": {
+          "type": "string",
+          "enum": [
+            "no-repeat-observed",
+            "guide-updated",
+            "sensor-added",
+            "gate-updated",
+            "template-updated",
+            "adapter-updated",
+            "registry-only"
+          ]
+        },
+        "deferredCodeIssues": {
+          "type": "array",
+          "items": { "type": "string" },
           "minItems": 1
         }
       }

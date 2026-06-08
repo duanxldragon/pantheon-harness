@@ -154,6 +154,7 @@ function validateReview(filePath, root) {
     result.errors.push(`root.verdict must be one of: ${Array.from(VALID_VERDICTS).join(', ')}.`);
   }
   validateStructuralReview(review, result.errors);
+  validateMethodReview(review, result.errors);
 
   if (!isObject(review.linkage)) {
     result.errors.push('root.linkage must be an object.');
@@ -209,6 +210,51 @@ function validateReview(filePath, root) {
   }
 
   return result;
+}
+
+function validateMethodReview(review, errors) {
+  if (!isObject(review.methodReview)) {
+    errors.push('root.methodReview must be an object.');
+    return;
+  }
+
+  const methodReview = review.methodReview;
+  const validOwnerLayers = new Set([
+    'portable-method',
+    'consumer-template',
+    'consumer-repository',
+    'agent-adapter',
+    'no-action',
+  ]);
+  const validRatchetDecisions = new Set([
+    'no-repeat-observed',
+    'guide-updated',
+    'sensor-added',
+    'gate-updated',
+    'template-updated',
+    'adapter-updated',
+    'registry-only',
+  ]);
+  const validLeakage = new Set(['none', 'accepted', 'blocked']);
+
+  if (!validOwnerLayers.has(methodReview.ownerLayer)) {
+    errors.push(`root.methodReview.ownerLayer must be one of: ${Array.from(validOwnerLayers).join(', ')}.`);
+  }
+  if (!validRatchetDecisions.has(methodReview.ratchetDecision)) {
+    errors.push(`root.methodReview.ratchetDecision must be one of: ${Array.from(validRatchetDecisions).join(', ')}.`);
+  }
+  if (!Array.isArray(methodReview.deferredCodeIssues)) {
+    errors.push('root.methodReview.deferredCodeIssues must be an array.');
+  } else {
+    methodReview.deferredCodeIssues.forEach((entry, index) => {
+      if (typeof entry !== 'string') {
+        errors.push(`root.methodReview.deferredCodeIssues[${index}] must be a string.`);
+      }
+    });
+  }
+  if (!validLeakage.has(methodReview.consumerSpecificLeakage)) {
+    errors.push(`root.methodReview.consumerSpecificLeakage must be one of: ${Array.from(validLeakage).join(', ')}.`);
+  }
 }
 
 function validateStructuralReview(review, errors) {

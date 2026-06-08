@@ -2,6 +2,14 @@
 
 English version: [CHANGELOG.md](./CHANGELOG.md)
 
+## Unreleased
+
+- Task packet 强制声明方法优先 ratchet 元数据：quality profile、portable failure class、owner layer、method readiness、ratchet decision、deferred code issues。
+- Evidence 和 review artifact 强制记录 owner layer、ratchet decision、deferred code issues。
+- 增加 task-packet 回归测试，确保缺少 method readiness 的旧格式任务包不能误通过。
+- 覆盖评审模板增加 cross-agent ratchet、consumer-specific leakage、deferred code backlog、noisy sensor review。
+- 补充旧 task packet、evidence、review artifact 的升级步骤。
+
 ## 1.0.0 - 2026-05-18
 
 首个可迁移版本发布。

@@ -17,6 +17,12 @@
     "findings": [],
     "notes": "none"
   },
+  "methodReview": {
+    "ownerLayer": "portable-method",
+    "ratchetDecision": "template-updated",
+    "deferredCodeIssues": [],
+    "consumerSpecificLeakage": "none"
+  },
   "linkage": {
     "taskPacket": "docs/harness/tasks/example.task.md",
     "evidence": ".harness/evidence/example/commands.json",
@@ -48,6 +54,13 @@ No P0/P1/P2 findings found.
 - Affected subgraph: `task packet -> evidence -> review`
 - Checks: `cycle`, `hub`
 - Findings: none
+
+## Method Notes
+
+- Owner layer: portable-method
+- Ratchet decision: template-updated
+- Deferred code issues: none
+- Consumer-specific leakage: none
 
 ## Residual Risk
 

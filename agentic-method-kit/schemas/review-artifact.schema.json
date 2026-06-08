@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Portable Review Artifact",
   "type": "object",
-  "required": ["taskId", "verdict", "linkage"],
+  "required": ["taskId", "verdict", "methodReview", "linkage"],
   "properties": {
     "taskId": { "type": "string" },
     "verdict": {
@@ -38,6 +38,47 @@
           "items": { "type": "string" }
         },
         "notes": { "type": "string" }
+      }
+    },
+    "methodReview": {
+      "type": "object",
+      "required": [
+        "ownerLayer",
+        "ratchetDecision",
+        "deferredCodeIssues",
+        "consumerSpecificLeakage"
+      ],
+      "properties": {
+        "ownerLayer": {
+          "type": "string",
+          "enum": [
+            "portable-method",
+            "consumer-template",
+            "consumer-repository",
+            "agent-adapter",
+            "no-action"
+          ]
+        },
+        "ratchetDecision": {
+          "type": "string",
+          "enum": [
+            "no-repeat-observed",
+            "guide-updated",
+            "sensor-added",
+            "gate-updated",
+            "template-updated",
+            "adapter-updated",
+            "registry-only"
+          ]
+        },
+        "deferredCodeIssues": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "consumerSpecificLeakage": {
+          "type": "string",
+          "enum": ["none", "accepted", "blocked"]
+        }
       }
     },
     "linkage": {

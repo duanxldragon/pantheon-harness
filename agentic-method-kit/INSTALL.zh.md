@@ -62,6 +62,17 @@ agentic-method-kit/
 - `templates/review.template.md`
 - `templates/pr-template.md`
 
+Task packet 必须声明方法优先的 ratchet 元数据：
+
+- `Quality Profile`
+- `Portable Failure Class`
+- `Owner Layer`
+- `Method Readiness`
+- `Ratchet Decision`
+- `Deferred Code Issues`
+
+字段不适用时显式写 `none`，不要省略字段。
+
 ## 4. 接入检查脚本
 
 典型命令：
@@ -80,15 +91,16 @@ node scripts/harness/check-method-health.mjs --root . --strict
 
 1. 创建一个 OpenSpec change
 2. 创建 `docs/harness/tasks/<task-id>.task.md`
-3. 如果任务带有 `## Structural Scope`，先生成图审查闭环骨架：
+3. 在开始实现前声明 method readiness block
+4. 如果任务带有 `## Structural Scope`，先生成图审查闭环骨架：
    `node scripts/harness/scaffold-graph-review.mjs --write <task-id>`
-4. 如果你保存了 CodeGraph 风格的审查输出，先整理再导入：
+5. 如果你保存了 CodeGraph 风格的审查输出，先整理再导入：
    `node scripts/harness/build-graph-review-import.mjs --source trace.json --write .harness/evidence/<task-id>/graph-review.json`
    `node scripts/harness/scaffold-graph-review.mjs --write --import .harness/evidence/<task-id>/graph-review.json <task-id>`
-5. 实现
-6. 保存 `.harness/evidence/<task-id>/commands.json`
-7. 保存 `.harness/evidence/<task-id>/review.md`
-8. 运行检查
+6. 实现
+7. 保存 `.harness/evidence/<task-id>/commands.json`
+8. 保存 `.harness/evidence/<task-id>/review.md`
+9. 运行检查
 
 示例导入文件：
 
@@ -116,6 +128,17 @@ node scripts/harness/check-method-health.mjs --root . --strict
 对于 non-trivial 变更，建议在 pull request 上运行全部四项检查。
 
 如果触碰 UI，还应通过你常规的 QA 流程要求浏览器或截图 evidence。
+
+推荐 PR 门禁：
+
+```text
+node agentic-method-kit/scripts/check-task-packet.mjs --root .
+node agentic-method-kit/scripts/check-evidence.mjs --root .
+node agentic-method-kit/scripts/check-review.mjs --root . --strict
+node agentic-method-kit/scripts/check-adoption.mjs --root .
+```
+
+产品特定质量门禁保留在消费仓库。只有重复出现且可移植的失败模式，才上移回这个方法包。
 
 ## 7. Skill 安装建议
 

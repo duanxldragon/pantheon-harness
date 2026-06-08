@@ -37,6 +37,7 @@ function validate(filePath, root) {
   const errors = [];
   const payload = JSON.parse(fs.readFileSync(filePath, 'utf8'));
   if (!payload.taskId) errors.push('missing taskId');
+  validateMethodReadiness(payload.methodReadiness, errors);
   if (!payload.linkage) errors.push('missing linkage');
   if (payload.linkage) {
     const expectedDir = path.relative(root, path.dirname(filePath)).replaceAll(path.sep, '/') + '/';
@@ -73,6 +74,42 @@ function validate(filePath, root) {
     }
   }
   return { file: path.relative(root, filePath).replaceAll(path.sep, '/'), errors };
+}
+
+function validateMethodReadiness(methodReadiness, errors) {
+  if (typeof methodReadiness !== 'object' || methodReadiness === null || Array.isArray(methodReadiness)) {
+    errors.push('missing methodReadiness');
+    return;
+  }
+
+  const validOwnerLayers = new Set([
+    'portable-method',
+    'consumer-template',
+    'consumer-repository',
+    'agent-adapter',
+    'no-action',
+  ]);
+  const validRatchetDecisions = new Set([
+    'no-repeat-observed',
+    'guide-updated',
+    'sensor-added',
+    'gate-updated',
+    'template-updated',
+    'adapter-updated',
+    'registry-only',
+  ]);
+
+  if (!validOwnerLayers.has(methodReadiness.ownerLayer)) {
+    errors.push('methodReadiness.ownerLayer contains invalid value');
+  }
+  if (!validRatchetDecisions.has(methodReadiness.ratchetDecision)) {
+    errors.push('methodReadiness.ratchetDecision contains invalid value');
+  }
+  if (!Array.isArray(methodReadiness.deferredCodeIssues)) {
+    errors.push('methodReadiness.deferredCodeIssues must be an array');
+  } else if (methodReadiness.deferredCodeIssues.some((entry) => typeof entry !== 'string')) {
+    errors.push('methodReadiness.deferredCodeIssues must contain only strings');
+  }
 }
 
 const options = parseArgs(process.argv.slice(2));

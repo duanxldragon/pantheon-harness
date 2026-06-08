@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Portable Verification Evidence",
   "type": "object",
-  "required": ["taskId", "repo", "agent", "commands", "linkage", "knownGaps"],
+  "required": ["taskId", "repo", "agent", "commands", "methodReadiness", "linkage", "knownGaps"],
   "properties": {
     "taskId": { "type": "string" },
     "repo": { "type": "string" },
@@ -25,6 +25,38 @@
           "status": { "type": "string" },
           "durationMs": { "type": "number" },
           "notes": { "type": "string" }
+        }
+      }
+    },
+    "methodReadiness": {
+      "type": "object",
+      "required": ["ownerLayer", "ratchetDecision", "deferredCodeIssues"],
+      "properties": {
+        "ownerLayer": {
+          "type": "string",
+          "enum": [
+            "portable-method",
+            "consumer-template",
+            "consumer-repository",
+            "agent-adapter",
+            "no-action"
+          ]
+        },
+        "ratchetDecision": {
+          "type": "string",
+          "enum": [
+            "no-repeat-observed",
+            "guide-updated",
+            "sensor-added",
+            "gate-updated",
+            "template-updated",
+            "adapter-updated",
+            "registry-only"
+          ]
+        },
+        "deferredCodeIssues": {
+          "type": "array",
+          "items": { "type": "string" }
         }
       }
     },

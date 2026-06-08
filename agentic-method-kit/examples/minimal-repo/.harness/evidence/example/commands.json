@@ -11,6 +11,11 @@
       "status": "passed"
     }
   ],
+  "methodReadiness": {
+    "ownerLayer": "portable-method",
+    "ratchetDecision": "template-updated",
+    "deferredCodeIssues": []
+  },
   "graphChecks": {
     "usedCodeGraph": true,
     "affectedSubgraph": [

@@ -19,6 +19,12 @@
     "findings": [],
     "notes": "none"
   },
+  "methodReview": {
+    "ownerLayer": "portable-method",
+    "ratchetDecision": "template-updated",
+    "deferredCodeIssues": [],
+    "consumerSpecificLeakage": "none"
+  },
   "linkage": {
     "taskPacket": "docs/harness/tasks/<task-id>.task.md",
     "evidence": ".harness/evidence/<task-id>/commands.json",
@@ -50,6 +56,13 @@ No P0/P1/P2 findings found.
 - Affected subgraph: `entry -> core path -> exit/side effect`
 - Checks: `cycle`, `hub`, `call-depth`, `sensitive-flow`
 - Findings: none
+
+## Method Notes
+
+- Owner layer: portable-method | consumer-template | consumer-repository | agent-adapter | no-action
+- Ratchet decision: no-repeat-observed | guide-updated | sensor-added | gate-updated | template-updated | adapter-updated | registry-only
+- Deferred code issues: none
+- Consumer-specific leakage: none | accepted | blocked
 
 ## Residual Risk
 

@@ -46,6 +46,12 @@ function validReview() {
           findings: [],
           notes: 'none',
         },
+        methodReview: {
+          ownerLayer: 'portable-method',
+          ratchetDecision: 'template-updated',
+          deferredCodeIssues: [],
+          consumerSpecificLeakage: 'none',
+        },
         linkage: {
           taskPacket: 'docs/harness/tasks/sample.task.md',
           evidence: '.harness/evidence/sample/commands.json',
@@ -84,6 +90,23 @@ test('check-review fails when machine-readable block is missing', () => {
 
   assert.equal(result.status, 1);
   assert.match(result.stdout, /missing ## Machine Readable JSON block/);
+});
+
+test('check-review fails when method review is missing', () => {
+  const root = makeFixture();
+  const parsed = JSON.parse(validReview().match(/```json\s*([\s\S]*?)\s*```/m)[1]);
+  delete parsed.methodReview;
+  writeReview(
+    root,
+    ['# Review', '', '## Machine Readable', '```json', JSON.stringify(parsed, null, 2), '```'].join('\n'),
+  );
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /root\.methodReview must be an object/);
 });
 
 test('check-review fails when linkage does not match the task id', () => {

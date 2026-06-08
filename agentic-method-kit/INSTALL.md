@@ -62,6 +62,17 @@ Use these templates as your repo-level source material:
 - `templates/review.template.md`
 - `templates/pr-template.md`
 
+Task packets must declare method-first ratchet metadata:
+
+- `Quality Profile`
+- `Portable Failure Class`
+- `Owner Layer`
+- `Method Readiness`
+- `Ratchet Decision`
+- `Deferred Code Issues`
+
+Use `none` explicitly when a field does not apply. Do not omit the field.
+
 ## 4. Wire The Checks
 
 Typical commands:
@@ -80,15 +91,16 @@ Typical non-trivial workflow:
 
 1. create an OpenSpec change
 2. create `docs/harness/tasks/<task-id>.task.md`
-3. if the task has `## Structural Scope`, scaffold graph review closure:
+3. declare the method readiness block before implementation starts
+4. if the task has `## Structural Scope`, scaffold graph review closure:
    `node scripts/harness/scaffold-graph-review.mjs --write <task-id>`
-4. if you saved CodeGraph-style review output, normalize it and import it:
+5. if you saved CodeGraph-style review output, normalize it and import it:
    `node scripts/harness/build-graph-review-import.mjs --source trace.json --write .harness/evidence/<task-id>/graph-review.json`
    `node scripts/harness/scaffold-graph-review.mjs --write --import .harness/evidence/<task-id>/graph-review.json <task-id>`
-5. implement
-6. save `.harness/evidence/<task-id>/commands.json`
-7. save `.harness/evidence/<task-id>/review.md`
-8. run the checks
+6. implement
+7. save `.harness/evidence/<task-id>/commands.json`
+8. save `.harness/evidence/<task-id>/review.md`
+9. run the checks
 
 Example import file:
 
@@ -116,6 +128,17 @@ Recommended wrapper names:
 Run all four checks on pull requests for non-trivial changes.
 
 If UI is touched, also require browser or screenshot evidence through your normal QA flow.
+
+Recommended PR gate:
+
+```text
+node agentic-method-kit/scripts/check-task-packet.mjs --root .
+node agentic-method-kit/scripts/check-evidence.mjs --root .
+node agentic-method-kit/scripts/check-review.mjs --root . --strict
+node agentic-method-kit/scripts/check-adoption.mjs --root .
+```
+
+Keep product-specific quality gates in the consumer repository. Promote only repeated, portable failure patterns back into this kit.
 
 ## 7. Skill Installation Guidance
 
