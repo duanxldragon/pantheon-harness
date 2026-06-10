@@ -88,7 +88,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 - Task ID: <task-id>
 - OpenSpec Change: openspec/changes/<name>/ | none
-- Superpowers Plan: docs/superpowers/plans/<file>.md | none
+- Plan References: docs/superpowers/plans/<file>.md, .omx/plans/<file>.md, .codex-flow/journal/<file>.jsonl | none
 - Evidence Directory: .harness/evidence/<task-id>/
 - Review File: .harness/evidence/<task-id>/review.md | none
 

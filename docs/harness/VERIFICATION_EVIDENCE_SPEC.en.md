@@ -98,7 +98,11 @@ complete | blocked | partial
     "evidenceDir": ".harness/evidence/YYYY-MM-DD-task-name/",
     "reviewFile": ".harness/evidence/YYYY-MM-DD-task-name/review.md",
     "changeRef": "openspec/changes/<name>/",
-    "planRefs": ["docs/superpowers/plans/<file>.md"]
+    "planRefs": [
+      "docs/superpowers/plans/<file>.md",
+      ".omx/plans/<file>.md",
+      ".codex-flow/journal/<file>.jsonl"
+    ]
   },
   "knownGaps": [],
   "completedAt": "YYYY-MM-DDTHH:mm:ssZ"
@@ -166,7 +170,7 @@ Rules:
 - `taskId` must match the `linkage.taskPacket` filename and the `linkage.evidenceDir` directory name
 - if `reviewFile` exists, it should live under the matching evidence directory
 - if there is no OpenSpec change, `changeRef` must be `none`
-- if there is no superpowers plan, `planRefs` may be an empty array
+- if there is no plan, workflow, or resumable execution artifact, `planRefs` may be an empty array; Superpowers plans, OMX plans/goals, and codex-flow journals are all valid plan references
 
 ## 4. UI Evidence
 

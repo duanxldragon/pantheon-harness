@@ -77,7 +77,7 @@ write the script.
 
 - Task ID: \`sample\`
 - OpenSpec Change: none
-- Superpowers Plan: none
+- Plan References: none
 - Evidence Directory: \`.harness/evidence/sample/\`
 - Review File: \`.harness/evidence/sample/review.md\`
 
@@ -126,6 +126,22 @@ test('check-task-packet accepts a valid task packet fixture', () => {
   assert.equal(result.errorCount, 0);
   assert.equal(result.warningCount, 0);
   assert.equal(result.results.length, 1);
+});
+
+test('check-task-packet rejects packets that only use legacy Superpowers Plan', () => {
+  const root = makeFixture();
+  const packet = VALID_PACKET.replace('- Plan References: none', '- Superpowers Plan: none');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), packet);
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--json', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  const payload = JSON.parse(result.stdout);
+  assert.equal(payload.errorCount, 1);
+  assert.equal(payload.warningCount, 0);
+  assert.match(payload.results[0].errors.join('\n'), /missing required item: Plan References/);
 });
 
 test('check-task-packet fails when required sections are missing', () => {

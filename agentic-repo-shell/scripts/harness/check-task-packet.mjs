@@ -476,12 +476,16 @@ function validateLinkage(content, headings, result, root, filePath) {
 
   const sectionContent = getSectionContent(content, headings, section);
   const linkage = parseLinkageItems(sectionContent);
-  const requiredItems = ['Task ID', 'OpenSpec Change', 'Superpowers Plan', 'Evidence Directory', 'Review File'];
+  const requiredItems = ['Task ID', 'OpenSpec Change', 'Evidence Directory', 'Review File'];
 
   for (const item of requiredItems) {
     if (!linkage.has(item)) {
       result.errors.push(`Section "## Linkage" is missing required item: ${item}.`);
     }
+  }
+
+  if (!linkage.has('Plan References')) {
+    result.errors.push('Section "## Linkage" is missing required item: Plan References.');
   }
 
   const expectedTaskId = path.basename(filePath).replace(/\.task\.md$/, '');
@@ -519,13 +523,26 @@ function validateLinkage(content, headings, result, root, filePath) {
     }
   }
 
-  const planRef = linkage.get('Superpowers Plan');
-  if (planRef) {
-    const normalized = stripBackticks(planRef);
-    if (normalized !== 'none' && !fs.existsSync(path.join(root, normalized))) {
-      result.warnings.push(`Linked superpowers plan does not exist: ${normalized}`);
+  const planReferences = linkage.get('Plan References');
+  if (planReferences) {
+    const normalizedRefs = normalizePlanReferences(planReferences);
+    for (const normalized of normalizedRefs) {
+      if (normalized !== 'none' && !fs.existsSync(path.join(root, normalized))) {
+        result.warnings.push(`Linked plan reference does not exist: ${normalized}`);
+      }
     }
   }
+}
+
+function normalizePlanReferences(value) {
+  const normalized = stripBackticks(value);
+  if (!normalized || normalized === 'none') {
+    return ['none'];
+  }
+  return normalized
+    .split(',')
+    .map((item) => stripBackticks(item))
+    .filter(Boolean);
 }
 
 function validateChecklist(content, headings, result) {

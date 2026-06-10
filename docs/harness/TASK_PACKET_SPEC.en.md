@@ -16,7 +16,7 @@ Task packets should live by default at:
 docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 ```
 
-If the task comes from an existing superpowers plan, the task packet may reference that plan instead of repeating it in full.
+If the task comes from an existing plan, workflow, or resumable execution record, the task packet may reference that artifact instead of repeating it in full.
 
 ## 2. Required Template
 
@@ -120,7 +120,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 - Task ID: `YYYY-MM-DD-task-name`
 - OpenSpec Change: `openspec/changes/<name>/` | none
-- Superpowers Plan: `docs/superpowers/plans/<file>.md` | none
+- Plan References: `docs/superpowers/plans/<file>.md`, `.omx/plans/<file>.md`, `.codex-flow/journal/<file>.jsonl` | none
 - Evidence Directory: `.harness/evidence/<task-id>/`
 - Review File: `.harness/evidence/<task-id>/review.md` | none
 
@@ -198,6 +198,6 @@ The following fields are the minimum closed-loop keys linking a task packet to l
 - `Evidence Directory`: must point to `.harness/evidence/<task-id>/`
 - `Review File`: if a review artifact is retained, it must point to a file under the evidence directory
 - `OpenSpec Change`: if the task comes from OpenSpec, the change path must be recorded explicitly; otherwise use `none`
-- `Superpowers Plan`: if the task comes from `docs/superpowers/plans/*`, it must be recorded explicitly; otherwise use `none`
+- `Plan References`: if the task comes from a plan, OMX goal/plan, codex-flow journal, or equivalent artifact, record it explicitly; otherwise use `none`
 
-These linkage fields connect `OpenSpec change / superpowers plan / task packet / evidence / review` into a traceable chain.
+These linkage fields connect `OpenSpec change / plan or workflow reference / task packet / evidence / review` into a traceable chain.

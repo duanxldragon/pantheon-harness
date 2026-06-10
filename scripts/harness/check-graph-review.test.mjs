@@ -108,7 +108,7 @@ system/iam
 
 - Task ID: \`sample\`
 - OpenSpec Change: none
-- Superpowers Plan: none
+- Plan References: none
 - Evidence Directory: \`.harness/evidence/sample/\`
 - Review File: \`.harness/evidence/sample/review.md\`
 

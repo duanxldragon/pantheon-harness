@@ -16,7 +16,7 @@ Task packet 是非 trivial 任务的工具无关输入格式。它让 Codex、Cl
 docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 ```
 
-如果任务来自已有 superpowers plan，可以在 task packet 中引用该 plan，而不是重复全文。
+如果任务来自已有计划、工作流或可恢复执行记录，可以在 task packet 中引用对应 artifact，而不是重复全文。
 
 ## 2. 必填模板
 
@@ -120,7 +120,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 - Task ID: `YYYY-MM-DD-task-name`
 - OpenSpec Change: `openspec/changes/<name>/` | none
-- Superpowers Plan: `docs/superpowers/plans/<file>.md` | none
+- Plan References: `docs/superpowers/plans/<file>.md`, `.omx/plans/<file>.md`, `.codex-flow/journal/<file>.jsonl` | none
 - Evidence Directory: `.harness/evidence/<task-id>/`
 - Review File: `.harness/evidence/<task-id>/review.md` | none
 
@@ -198,6 +198,6 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 - `Evidence Directory`：必须指向 `.harness/evidence/<task-id>/`
 - `Review File`：如保留 review artifact，必须指向 evidence 目录下文件
 - `OpenSpec Change`：如任务来自 OpenSpec，必须显式记录 change 路径；否则写 `none`
-- `Superpowers Plan`：如任务来自 `docs/superpowers/plans/*`，必须显式记录；否则写 `none`
+- `Plan References`：如任务来自 plan、OMX goal/plan、codex-flow journal 或等价 artifact，必须显式记录；否则写 `none`
 
-这组 linkage 字段用于把 `OpenSpec change / superpowers plan / task packet / evidence / review` 串成可追踪链路。
+这组 linkage 字段用于把 `OpenSpec change / plan or workflow reference / task packet / evidence / review` 串成可追踪链路。

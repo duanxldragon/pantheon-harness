@@ -93,13 +93,13 @@ platform
 
 ## Verification Plan
 
-- `node agentic-method-kit/scripts/check-task-packet.mjs --root agentic-method-kit/examples/minimal-repo --config ../../config/method.config.json`
+- `node agentic-method-kit/scripts/check-task-packet.mjs --root agentic-method-kit/examples/minimal-repo`
 
 ## Linkage
 
 - Task ID: example
 - OpenSpec Change: openspec/changes/example-change/
-- Superpowers Plan: docs/superpowers/plans/example-plan.md
+- Plan References: docs/superpowers/plans/example-plan.md
 - Evidence Directory: .harness/evidence/example/
 - Review File: .harness/evidence/example/review.md
 

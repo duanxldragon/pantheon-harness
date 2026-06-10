@@ -37,7 +37,9 @@
     "reviewFile": ".harness/evidence/<task-id>/review.md",
     "changeRef": "openspec/changes/<name>/",
     "planRefs": [
-      "docs/superpowers/plans/<file>.md"
+      "docs/superpowers/plans/<file>.md",
+      ".omx/plans/<file>.md",
+      ".codex-flow/journal/<file>.jsonl"
     ]
   }
 }

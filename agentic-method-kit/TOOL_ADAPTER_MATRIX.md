@@ -9,8 +9,9 @@ Tools may be recommended by a repository, but they do not define the method. If 
 | Harness capability | Required outcome | Possible adapters |
 |---|---|---|
 | Change identity | Non-trivial work has a stable change reference | OpenSpec, issue ID, task packet only, human-maintained change log |
-| Planning | Work has bounded scope, steps, risks, and verification | superpowers planning, Claude/Codex/Cursor prompt workflow, human plan |
-| Execution | Work is implemented against the plan | Codex, Claude Code, Cursor, Copilot, OpenHands, Aider, human engineer |
+| Planning / orchestration | Work has bounded scope, steps, risks, verification, and a selected execution lane | OMX planning, superpowers planning, Claude/Codex/Cursor prompt workflow, human plan |
+| Resumable parallel workflow | Independent branches can fan out, resume, and synthesize into one recommendation | codex-flow / dynamic-workflow, CI matrix jobs, scripted batch review, human-maintained checklist |
+| Execution | Work is implemented against the plan | Codex, Claude Code, Cursor, Copilot, OpenHands, Aider, OMX execution lanes, human engineer |
 | UI quality | Visual, interaction, accessibility, and state quality are checked | impeccable, design review agent, human designer, Playwright plus checklist |
 | Browser evidence | User flows are inspected in a running app | gstack browse, Playwright, Chrome DevTools MCP, manual browser screenshots |
 | Runtime evidence | Logs, metrics, traces, and performance signals are visible | local observability stack, CLI logs, cloud observability APIs, manual exports |

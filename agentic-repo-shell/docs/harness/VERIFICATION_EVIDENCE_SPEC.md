@@ -98,7 +98,11 @@ complete | blocked | partial
     "evidenceDir": ".harness/evidence/YYYY-MM-DD-task-name/",
     "reviewFile": ".harness/evidence/YYYY-MM-DD-task-name/review.md",
     "changeRef": "openspec/changes/<name>/",
-    "planRefs": ["docs/superpowers/plans/<file>.md"]
+    "planRefs": [
+      "docs/superpowers/plans/<file>.md",
+      ".omx/plans/<file>.md",
+      ".codex-flow/journal/<file>.jsonl"
+    ]
   },
   "knownGaps": [],
   "completedAt": "YYYY-MM-DDTHH:mm:ssZ"
@@ -166,7 +170,7 @@ complete | blocked | partial
 - `taskId` 必须与 `linkage.taskPacket` 文件名和 `linkage.evidenceDir` 目录名一致
 - `reviewFile` 如存在应放在对应 evidence 目录下
 - `changeRef` 如无 OpenSpec change，写 `none`
-- `planRefs` 如无 superpowers plan，可为空数组
+- `planRefs` 如无 plan、workflow 或可恢复执行 artifact，可为空数组；Superpowers plan、OMX plan/goal、codex-flow journal 都可以作为 plan reference
 
 ## 4. UI 证据
 

@@ -248,7 +248,7 @@ test('check-adoption requires real openspec linkage when an active change exists
       '',
       '- Task ID: sample',
       '- OpenSpec Change: none',
-      '- Superpowers Plan: none',
+      '- Plan References: none',
       '- Evidence Directory: .harness/evidence/sample/',
       '- Review File: .harness/evidence/sample/review.md',
       '',

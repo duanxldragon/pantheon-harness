@@ -149,18 +149,18 @@ function toRepoPath(filePath, root) {
 }
 
 function stripBackticks(value) {
-  return value.replace(/^`+/, '').replace(/`+$/, '').trim();
+  return value.trim().replace(/^`+/, '').replace(/`+$/, '').trim();
 }
 
 function normalizeListValue(value) {
-  const normalized = stripBackticks(value);
+  const normalized = value.trim();
   if (!normalized || normalized.toLowerCase() === 'none') {
     return [];
   }
 
   return normalized
-    .split('|')
-    .map((entry) => entry.trim())
+    .split(/[|,]/)
+    .map((entry) => stripBackticks(entry))
     .filter(Boolean);
 }
 
@@ -233,7 +233,7 @@ function parseLinkage(content, fallbackTaskId) {
 
   const taskId = extract(/^- Task ID:\s*(.+)$/m) || fallbackTaskId;
   const changeRef = extract(/^- OpenSpec Change:\s*(.+)$/m) || 'none';
-  const planRefValue = extract(/^- Superpowers Plan:\s*(.+)$/m) || 'none';
+  const planRefValue = extract(/^- Plan References:\s*(.+)$/m) || 'none';
   const evidenceDir = extract(/^- Evidence Directory:\s*(.+)$/m) || `.harness/evidence/${taskId}/`;
   const reviewFile = extract(/^- Review File:\s*(.+)$/m) || `.harness/evidence/${taskId}/review.md`;
 

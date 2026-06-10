@@ -1,6 +1,6 @@
 ---
 name: pantheon-base-foundation
-description: Pantheon foundation rules for pantheon-base and derived business repositories. Use when working on Pantheon projects to determine layer ownership, document reading order, architecture boundaries, tech stack, review gates, and when to route into superpowers or gstack workflows.
+description: Pantheon foundation rules for pantheon-base and derived business repositories. Use when working on Pantheon projects to determine layer ownership, document reading order, architecture boundaries, tech stack, review gates, and when to route through the workspace workflow contract or gstack workflows.
 ---
 
 # Pantheon Base Foundation
@@ -37,12 +37,12 @@ Use this skill as the foundation entrypoint for any Pantheon repository.
 - Keep business repositories focused on `business/*` design, code, and acceptance additions.
 - Keep menu metadata, permissions, i18n, audit, and schema concerns in the validation loop for every relevant change.
 
-## Tooling And Skill Routing
+## Workflow Routing
 
-- For requirement shaping, scope refinement, or design choices, invoke `superpowers:brainstorming`.
-- For multi-step implementation work, invoke `superpowers:writing-plans`.
-- For bugs, failing tests, runtime errors, or unclear regressions, invoke `superpowers:systematic-debugging`.
-- Before claiming work is complete or fixed, invoke `superpowers:verification-before-completion`.
+- Use [Pantheon Workflow Routing](../../../../docs/WORKFLOW_ROUTING.md) as the source of truth for lane selection, gates, and fallback behavior.
+- Follow the lane selected by that contract; do not hard-code legacy Superpowers routing here.
+- Keep `impeccable` as the UI visual quality gate.
+- Use `codex-flow` for resumable fan-out or independent branches when the routing contract recommends it.
 - For browser flows, screenshots, UI regressions, permission interaction checks, and smoke evidence, prefer gstack `browse`.
 - For test-and-fix QA loops, prefer gstack `qa`.
 - For report-only QA, prefer gstack `qa-only`.

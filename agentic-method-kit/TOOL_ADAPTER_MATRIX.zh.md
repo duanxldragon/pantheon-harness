@@ -9,8 +9,9 @@ English version: [TOOL_ADAPTER_MATRIX.md](./TOOL_ADAPTER_MATRIX.md)
 | Harness capability | Required outcome | Possible adapters |
 |---|---|---|
 | Change identity | 非 trivial 工作有稳定变更引用 | OpenSpec、issue ID、仅 task packet、人工维护 change log |
-| Planning | 工作有明确 scope、步骤、风险和验证 | superpowers planning、Claude/Codex/Cursor prompt workflow、人工 plan |
-| Execution | 按 plan 实现工作 | Codex、Claude Code、Cursor、Copilot、OpenHands、Aider、人工工程师 |
+| Planning / orchestration | 工作有明确 scope、步骤、风险、验证和执行 lane | OMX planning、superpowers planning、Claude/Codex/Cursor prompt workflow、人工 plan |
+| Resumable parallel workflow | 独立分支可并行、恢复，并综合为一个建议 | codex-flow / dynamic-workflow、CI matrix jobs、脚本化批量 review、人工 checklist |
+| Execution | 按 plan 实现工作 | Codex、Claude Code、Cursor、Copilot、OpenHands、Aider、OMX execution lanes、人工工程师 |
 | UI quality | 视觉、交互、可访问性和状态质量被检查 | impeccable、design review agent、人工设计 review、Playwright 加 checklist |
 | Browser evidence | 在运行应用中检查用户流程 | gstack browse、Playwright、Chrome DevTools MCP、人工浏览器截图 |
 | Runtime evidence | log、metric、trace 和性能信号对 agent 可见 | 本地可观测性栈、CLI logs、云观测 API、人工导出 |

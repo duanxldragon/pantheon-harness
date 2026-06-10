@@ -100,7 +100,7 @@ method
 
 - Task ID: 2026-06-08-method-standalone-ci
 - OpenSpec Change: none
-- Superpowers Plan: none
+- Plan References: none
 - Evidence Directory: .harness/evidence/2026-06-08-method-standalone-ci/
 - Review File: .harness/evidence/2026-06-08-method-standalone-ci/review.md
 

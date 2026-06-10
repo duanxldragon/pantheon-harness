@@ -78,7 +78,7 @@ system/iam
 
 - Task ID: \`sample\`
 - OpenSpec Change: \`none\`
-- Superpowers Plan: \`docs/superpowers/plans/sample-plan.md\`
+- Plan References: \`docs/superpowers/plans/sample-plan.md\`, \`.omx/plans/sample-plan.md\`
 - Evidence Directory: \`.harness/evidence/sample/\`
 - Review File: \`.harness/evidence/sample/review.md\`
 
@@ -104,8 +104,10 @@ function makeFixture() {
   fs.mkdirSync(path.join(root, 'docs', 'harness', 'tasks'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'contracts'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'superpowers', 'plans'), { recursive: true });
+  fs.mkdirSync(path.join(root, '.omx', 'plans'), { recursive: true });
   fs.writeFileSync(path.join(root, 'docs', 'contracts', 'example.md'), '# Contract\n');
   fs.writeFileSync(path.join(root, 'docs', 'superpowers', 'plans', 'sample-plan.md'), '# Plan\n');
+  fs.writeFileSync(path.join(root, '.omx', 'plans', 'sample-plan.md'), '# OMX Plan\n');
   fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), TASK_PACKET);
   return root;
 }
@@ -171,7 +173,10 @@ test('scaffold-graph-review creates graph review skeleton from task packet', () 
   assert.equal(evidence.linkage.evidenceDir, '.harness/evidence/sample/');
   assert.equal(evidence.linkage.reviewFile, '.harness/evidence/sample/review.md');
   assert.equal(evidence.linkage.changeRef, 'none');
-  assert.deepEqual(evidence.linkage.planRefs, ['docs/superpowers/plans/sample-plan.md']);
+  assert.deepEqual(evidence.linkage.planRefs, [
+    'docs/superpowers/plans/sample-plan.md',
+    '.omx/plans/sample-plan.md',
+  ]);
 
   const review = readReviewJson(root).machine;
   assert.equal(review.taskId, 'sample');
@@ -186,7 +191,10 @@ test('scaffold-graph-review creates graph review skeleton from task packet', () 
   assert.equal(review.linkage.evidence, '.harness/evidence/sample/commands.json');
   assert.equal(review.linkage.reviewFile, '.harness/evidence/sample/review.md');
   assert.equal(review.linkage.changeRef, 'none');
-  assert.deepEqual(review.linkage.planRefs, ['docs/superpowers/plans/sample-plan.md']);
+  assert.deepEqual(review.linkage.planRefs, [
+    'docs/superpowers/plans/sample-plan.md',
+    '.omx/plans/sample-plan.md',
+  ]);
 });
 
 test('scaffold-graph-review preserves existing evidence and review fields while refreshing graph sections', () => {
