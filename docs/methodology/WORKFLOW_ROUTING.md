@@ -4,6 +4,8 @@ This document is the workspace-level routing contract for development work. It d
 
 `workflow.md` is a discussion record. Use this document, `CLAUDE.md`, and `docs/codex-workflow-quick-reference.md` as the operational sources.
 
+For the current solo-maintainer stage, apply [Solo Delivery Tiers](./SOLO_DELIVERY_TIERS.md) before selecting a lane. Choose the lightest tier that can safely finish the task, then apply the routing rules below.
+
 ## Core Model
 
 Use the smallest workflow that can finish the task with evidence.
@@ -24,6 +26,14 @@ Keep `impeccable`. It is the current UI visual quality gate because it catches v
 ## Decision Tree
 
 Start every non-trivial task by identifying the target repository, layer, risk, and evidence requirement.
+
+For Pantheon day-to-day delivery, first classify the task as:
+
+- `L0` direct change
+- `L1` lean delivery
+- `L2` full governance
+
+Then route within that tier instead of defaulting every non-trivial task to the heaviest loop.
 
 ```text
 Task arrives
@@ -60,6 +70,7 @@ When two paths apply, prefer composition over replacement:
 | Task shape | Primary route | Required gates |
 |---|---|---|
 | Single-file fix, docs typo, obvious local bug | Native Codex | Minimum targeted test/check |
+| `L1` ordinary solo delivery | Native Codex or OMX planning path | Lean plan plus targeted verification |
 | Ambiguous request, missing boundaries, unclear acceptance | OMX `$deep-interview` or `$ralplan` | CodeGraph when repo structure matters |
 | Architecture/design/tradeoff decision | OMX `$ralplan` | CodeGraph impact, explicit acceptance criteria |
 | Approved multi-step implementation | Native Codex or OMX `$ultragoal` based on durability need | Tests/build/smoke proportional to risk |
