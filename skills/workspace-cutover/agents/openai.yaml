@@ -1,0 +1,7 @@
+interface:
+  display_name: "Workspace Cutover (PR-2)"
+  short_description: "Atomic workspace cutover: delete redundant ops files, enable replace directive, wire business mount points"
+  default_prompt: "Use $workspace-cutover to execute PR-2 of the drift consolidation plan. Run only after PR-1 is merged. Stop at every human gate; never push; never modify pantheon-base."
+
+policy:
+  allow_implicit_invocation: false

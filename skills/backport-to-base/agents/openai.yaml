@@ -1,0 +1,7 @@
+interface:
+  display_name: "Backport IAM to Base (PR-1)"
+  short_description: "Backport ops's generic IAM enhancements to pantheon-base and add 2 extension points"
+  default_prompt: "Use $backport-to-base to execute PR-1 of the drift consolidation plan. Stop at every human gate; never push; never modify pantheon-ops."
+
+policy:
+  allow_implicit_invocation: false

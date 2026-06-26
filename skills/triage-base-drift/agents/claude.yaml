@@ -1,0 +1,28 @@
+interface:
+  display_name: "Triage Base Drift"
+  short_description: "Scan pantheon-base vs business repo for real vs pseudo drift"
+
+permissions:
+  allowed_tools:
+    - Read
+    - Glob
+    - Grep
+    - Bash(diff:*)
+    - Bash(sed:*)
+    - Bash(wc:*)
+    - Bash(awk:*)
+    - Bash(grep:*)
+    - Bash(sort:*)
+    - Bash(find:*)
+    - Write
+  denied_tools:
+    - Edit
+    - Bash(rm:*)
+    - Bash(git commit:*)
+    - Bash(git push:*)
+    - Bash(go mod:*)
+
+write_scope:
+  - "docs/DRIFT_AUDIT.md"
+
+model_preference: opus

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Pantheon Workspace Routing"
+  short_description: "Workspace inheritance and repo routing"
+  default_prompt: "Use $pantheon-workspace-routing to decide where Pantheon knowledge should live and how a derived repository should inherit and upgrade base rules."
+
+policy:
+  allow_implicit_invocation: true

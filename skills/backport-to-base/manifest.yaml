@@ -1,0 +1,97 @@
+schema_version: v1
+category: integration
+stage: 0
+repo_scope: base
+
+chain:
+  next_skill: workspace-cutover
+  stage_boundary: true
+  await_human: true
+
+human_gate:
+  show_to_human:
+    - api_design_choices
+    - commits_created
+    - files_touched
+    - tests_passing
+    - branch_name
+  prompt: "PR-1 落地完成，pantheon-base 上已生成 commits。请手动创建 PR review，等 PR-1 合并后再开 PR-2 (workspace-cutover)。"
+
+preconditions:
+  - "docs/DRIFT_AUDIT.md exists and is current"
+  - "triage-base-drift has been run within this session and Category D matches reality"
+  - "pantheon-base git status is clean (no uncommitted changes)"
+  - "pantheon-ops git status is clean"
+  - "User is online for the Stage 1 API design human gate"
+
+inputs:
+  - name: base_repo_path
+    description: "Relative path to pantheon-base from workspace root"
+    default: "pantheon-base"
+  - name: ops_repo_path
+    description: "Relative path to pantheon-ops (read-only source of truth)"
+    default: "pantheon-ops"
+  - name: branch_name
+    description: "Feature branch name in pantheon-base. Default: backport/iam-from-ops"
+    default: "backport/iam-from-ops"
+
+internal_stages:
+  - id: 1
+    name: "Propose Extension API Designs"
+    output: "user-chosen API variants for RegisterAdditionalComponents and RegisterAdditionalPolicies"
+    await_human: true
+  - id: 2
+    name: "Backport 5 IAM files"
+    output: "5 commits on pantheon-base, one per file"
+    await_human: true
+    gate_per_commit: true
+  - id: 3
+    name: "Implement Extension APIs"
+    output: "2 commits on pantheon-base + new contracts package files + tests"
+    await_human: true
+    gate_per_commit: true
+  - id: 4
+    name: "Validate"
+    output: "go build ./... + go test results"
+    await_human: false
+  - id: 5
+    name: "Stop"
+    output: "summary of changes, branch name, suggestion for manual PR creation"
+    await_human: true
+
+artifacts:
+  - path: "pantheon-base/backend/modules/system/iam/role/role_service.go"
+    action: "modify"
+  - path: "pantheon-base/backend/modules/system/iam/role/role_service_test.go"
+    action: "modify"
+  - path: "pantheon-base/backend/modules/system/iam/permission/permission_service.go"
+    action: "modify"
+  - path: "pantheon-base/backend/modules/system/iam/permission/permission_service_test.go"
+    action: "modify"
+  - path: "pantheon-base/backend/modules/system/iam/permission/permission_workbench.go"
+    action: "modify"
+  - path: "pantheon-base/backend/modules/system/iam/menu/component_registry.go"
+    action: "modify"
+  - path: "pantheon-base/backend/modules/system/iam/menu/component_registry_test.go"
+    action: "create_or_modify"
+  - path: "pantheon-base/backend/pkg/contracts/permission_policies.go"
+    action: "create"
+  - path: "pantheon-base/backend/pkg/contracts/permission_policies_test.go"
+    action: "create"
+
+verification:
+  - "cd pantheon-base && go build ./..."
+  - "cd pantheon-base && go test ./backend/modules/system/iam/..."
+  - "cd pantheon-base && go test ./backend/pkg/contracts/..."
+  - "All 7 commits use format: '<scope>: <summary> [PR-1]'"
+  - "git log shows exactly 7 commits since the branch was created"
+  - "pantheon-ops has zero new commits and zero modified files"
+
+caveats:
+  - "Extension API design is the highest-value decision; never skip Stage 1 human gate"
+  - "If ops content has drifted further since DRIFT_AUDIT.md was written, re-run triage-base-drift first"
+  - "Tests backported from ops may reference helpers that exist in ops but not in base; verify import compilation before commit"
+  - "The pantheon-ops version of pkg/contracts/permission_policies.go mixes base-level and business-level entries — only the system:* entries belong in this PR; business:* entries stay in ops for PR-2"
+  - "Never push or create PR from this skill; user owns the review/ship step"
+
+owner: ai-then-human

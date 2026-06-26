@@ -1,0 +1,4 @@
+interface:
+  display_name: "Impeccable"
+  short_description: "Visual excellence gate for polished UI"
+  default_prompt: "Use impeccable to design, review, and refine UI until it looks professionally finished."

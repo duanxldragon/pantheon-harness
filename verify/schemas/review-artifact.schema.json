@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Review Artifact",
+  "type": "object",
+  "required": ["taskId", "verdict", "methodReview", "deliveryGovernanceReview", "linkage"],
+  "properties": {
+    "taskId": { "type": "string" },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "changes requested",
+        "blocked",
+        "approved with documented P2 follow-up"
+      ]
+    },
+    "structuralReview": {
+      "type": "object",
+      "properties": {
+        "affectedSubgraph": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["cycle", "hub", "call-depth", "sensitive-flow"]
+          }
+        },
+        "findings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "notes": { "type": "string" }
+      }
+    },
+    "methodReview": {
+      "type": "object",
+      "required": [
+        "ownerLayer",
+        "ratchetDecision",
+        "deferredCodeIssues",
+        "consumerSpecificLeakage"
+      ],
+      "properties": {
+        "ownerLayer": {
+          "type": "string",
+          "enum": [
+            "portable-method",
+            "consumer-template",
+            "consumer-repository",
+            "agent-adapter",
+            "no-action"
+          ]
+        },
+        "ratchetDecision": {
+          "type": "string",
+          "enum": [
+            "no-repeat-observed",
+            "guide-updated",
+            "sensor-added",
+            "gate-updated",
+            "template-updated",
+            "adapter-updated",
+            "registry-only"
+          ]
+        },
+        "deferredCodeIssues": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "consumerSpecificLeakage": {
+          "type": "string",
+          "enum": ["none", "accepted", "blocked"]
+        }
+      }
+    },
+    "deliveryGovernanceReview": {
+      "type": "object",
+      "required": ["designGate", "developmentGate", "qaAcceptanceGate", "githubGovernanceGate"],
+      "properties": {
+        "designGate": {
+          "type": "string",
+          "enum": ["satisfied", "gap-recorded", "not-applicable"]
+        },
+        "developmentGate": {
+          "type": "string",
+          "enum": ["satisfied", "gap-recorded", "not-applicable"]
+        },
+        "qaAcceptanceGate": {
+          "type": "string",
+          "enum": ["satisfied", "gap-recorded", "not-applicable"]
+        },
+        "githubGovernanceGate": {
+          "type": "string",
+          "enum": [
+            "method-gate",
+            "repo-quality-gate",
+            "runtime-evidence-gate",
+            "external-flaky",
+            "not-applicable"
+          ]
+        }
+      }
+    },
+    "linkage": {
+      "type": "object",
+      "required": ["taskPacket", "evidence", "reviewFile", "changeRef", "planRefs"],
+      "properties": {
+        "taskPacket": { "type": "string" },
+        "evidence": { "type": "string" },
+        "reviewFile": { "type": "string" },
+        "changeRef": { "type": "string" },
+        "planRefs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

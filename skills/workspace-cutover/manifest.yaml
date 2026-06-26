@@ -1,0 +1,108 @@
+schema_version: v1
+category: integration
+stage: 0
+repo_scope: business
+
+chain:
+  next_skill: null
+  stage_boundary: true
+  await_human: true
+
+human_gate:
+  show_to_human:
+    - branch_name
+    - files_deleted_count
+    - files_modified_count
+    - commits_created
+    - build_results
+    - test_results
+  prompt: "PR-2 落地完成。pantheon-ops 已切换到 workspace 模式。请手动创建 PR review；drift consolidation 完成。"
+
+preconditions:
+  - "PR-1 (backport-to-base) is merged into pantheon-base main branch"
+  - "docs/DRIFT_AUDIT.md is current"
+  - "triage-base-drift has been run within this session"
+  - "pantheon-ops git status is clean"
+  - "pantheon-base git status is clean"
+  - "User is online for the 6 human gates in this skill"
+
+inputs:
+  - name: base_repo_path
+    description: "Relative path to pantheon-base (read-only)"
+    default: "pantheon-base"
+  - name: ops_repo_path
+    description: "Relative path to pantheon-ops (the target)"
+    default: "pantheon-ops"
+  - name: branch_name
+    description: "Feature branch name in pantheon-ops"
+    default: "workspace-cutover"
+  - name: workspace_root
+    description: "Absolute path to the pantheon-platform workspace root"
+    default: "D:/workspace/go/pantheon-platform"
+
+internal_stages:
+  - id: 0
+    name: "Branch setup and precondition verification"
+    await_human: false
+  - id: 1
+    name: "Add go.work + modify ops go.mod"
+    output: "uncommitted: go.work created, ops/go.mod modified"
+    await_human: true
+  - id: 2
+    name: "Delete 94 redundant files (88 Category A + 6 IAM overrides)"
+    output: "uncommitted: 94 file deletions + empty directories removed"
+    await_human: true
+  - id: 3
+    name: "Rewrite imports in remaining ops files"
+    output: "uncommitted: sed-rewritten imports for base-owned paths"
+    await_human: true
+  - id: 4
+    name: "Slim pkg/contracts/permission_policies.go to business-only"
+    output: "uncommitted: ~half of permission_policies.go content removed"
+    await_human: true
+  - id: 5
+    name: "Update cmd/server/main.go to register business entries"
+    output: "uncommitted: main.go imports + init calls updated"
+    await_human: true
+  - id: 6
+    name: "Run full validation"
+    output: "go work sync + go build + go test all green"
+    await_human: false
+  - id: 7
+    name: "Commit and stop"
+    output: "1-5 commits on workspace-cutover branch"
+    await_human: true
+
+artifacts:
+  - path: "pantheon-platform/go.work"
+    action: "create"
+  - path: "pantheon-ops/go.mod"
+    action: "modify"
+  - path: "pantheon-ops/backend/{internal,modules/auth,modules/dashboard,modules/system,modules/platform,pkg}/**"
+    action: "delete (94 files per DRIFT_AUDIT.md Category A + 6 IAM overrides)"
+  - path: "pantheon-ops/backend/modules/business/**/*.go"
+    action: "modify (sed-rewrite imports)"
+  - path: "pantheon-ops/backend/pkg/contracts/permission_policies.go"
+    action: "modify (slim to business-only entries)"
+  - path: "pantheon-ops/backend/cmd/server/main.go"
+    action: "modify (imports + business registration calls)"
+
+verification:
+  - "cd <workspace> && go work sync passes"
+  - "cd pantheon-ops && go build ./... passes"
+  - "cd pantheon-ops && go test ./backend/... passes"
+  - "cd pantheon-base && go build ./... still passes (untouched)"
+  - "cd pantheon-base && go test ./backend/... still passes"
+  - "pantheon-base has zero new commits and zero modified files"
+  - "pantheon-ops has 1-5 commits with [PR-2] in message"
+
+caveats:
+  - "This skill is destructive and large; 94 file deletions cannot be partially executed"
+  - "Stages 1-5 produce uncommitted intermediate states that don't build; only commit at Stage 7"
+  - "The exact API call signatures in main.go depend on PR-1's design choices; read PR-1 commits to know which variant was picked"
+  - "If pantheon-base has had unrelated commits since PR-1 merge, verify those don't conflict with the cutover assumptions"
+  - "Some empty directories may have hidden files (.gitkeep, etc.); don't blindly rm -rf"
+  - "The sed script targets specific path prefixes; if business code happens to import from an unlisted path, the rewrite will miss it — verify via grep after Stage 3"
+  - "Never run this skill without PR-1 merged first; the diamond dependency will silently drop ops's IAM enhancements"
+
+owner: ai-then-human

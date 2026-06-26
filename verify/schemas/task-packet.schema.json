@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Portable Task Packet",
+  "type": "object",
+  "required": [
+    "taskId",
+    "goal",
+    "primaryLayer",
+    "harnessProfile",
+    "methodReadiness",
+    "deliveryGovernance",
+    "contractAnchors",
+    "scope",
+    "verificationPlan",
+    "linkage",
+    "evidenceRequired",
+    "humanGates"
+  ],
+  "properties": {
+    "taskId": { "type": "string" },
+    "goal": { "type": "string" },
+    "primaryLayer": { "type": "string" },
+    "harnessProfile": {
+      "type": "object",
+      "required": [
+        "template",
+        "overlay",
+        "qualityProfile",
+        "portableFailureClass",
+        "ownerLayer",
+        "coverageDimensions"
+      ],
+      "properties": {
+        "template": {
+          "type": "string",
+          "enum": [
+            "admin-platform",
+            "api-service",
+            "event-processor",
+            "dashboard",
+            "ui-heavy-product",
+            "custom"
+          ]
+        },
+        "overlay": { "type": "string" },
+        "qualityProfile": { "type": "string" },
+        "portableFailureClass": {
+          "type": "string",
+          "enum": [
+            "instruction-gap",
+            "task-boundary-gap",
+            "architecture-drift",
+            "test-gap",
+            "static-sensor-gap",
+            "runtime-evidence-gap",
+            "security-boundary-gap",
+            "ci-signal-noise",
+            "method-health-gap",
+            "none"
+          ]
+        },
+        "ownerLayer": {
+          "type": "string",
+          "enum": [
+            "portable-method",
+            "consumer-template",
+            "consumer-repository",
+            "agent-adapter",
+            "no-action"
+          ]
+        },
+        "coverageDimensions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "behaviour",
+              "maintainability",
+              "architecture-fitness",
+              "runtime-quality",
+              "method-health"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "methodReadiness": {
+      "type": "object",
+      "required": [
+        "consumerSpecificControls",
+        "requiredSensors",
+        "requiredEvidence",
+        "ratchetDecision",
+        "deferredCodeIssues"
+      ],
+      "properties": {
+        "consumerSpecificControls": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "requiredSensors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "requiredEvidence": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "ratchetDecision": {
+          "type": "string",
+          "enum": [
+            "no-repeat-observed",
+            "guide-updated",
+            "sensor-added",
+            "gate-updated",
+            "template-updated",
+            "adapter-updated",
+            "registry-only"
+          ]
+        },
+        "deferredCodeIssues": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
+      }
+    },
+    "deliveryGovernance": {
+      "type": "object",
+      "required": ["designGate", "developmentGate", "qaAcceptanceGate", "githubGovernanceGate"],
+      "properties": {
+        "designGate": { "type": "string" },
+        "developmentGate": { "type": "string" },
+        "qaAcceptanceGate": { "type": "string" },
+        "githubGovernanceGate": {
+          "type": "string",
+          "enum": [
+            "method-gate",
+            "repo-quality-gate",
+            "runtime-evidence-gate",
+            "external-flaky",
+            "not-applicable"
+          ]
+        }
+      }
+    },
+    "contractAnchors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "scope": {
+      "type": "object",
+      "required": ["in", "out"],
+      "properties": {
+        "in": { "type": "array", "items": { "type": "string" } },
+        "out": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "structuralScope": {
+      "type": "object",
+      "properties": {
+        "affectedSubgraph": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ]
+        },
+        "boundaryCrossings": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "riskNodes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "graphFocus": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "cycle-check",
+              "hub-check",
+              "call-depth",
+              "sensitive-input-flow"
+            ]
+          }
+        }
+      }
+    },
+    "verificationPlan": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "executionRoles": {
+      "type": "object",
+      "required": ["implementerPosture", "reviewerPosture"],
+      "properties": {
+        "implementerPosture": { "type": "string" },
+        "reviewerPosture": { "type": "string" }
+      }
+    },
+    "stopPoints": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "statePlan": {
+      "type": "object",
+      "required": ["checkpointExpectation"],
+      "properties": {
+        "checkpointExpectation": { "type": "string" },
+        "resumeArtifacts": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "linkage": {
+      "type": "object",
+      "required": ["taskId", "taskPacket", "evidenceDir", "reviewFile", "changeRef", "planRefs"],
+      "properties": {
+        "taskId": { "type": "string" },
+        "taskPacket": { "type": "string" },
+        "evidenceDir": { "type": "string" },
+        "reviewFile": { "type": "string" },
+        "changeRef": { "type": "string" },
+        "planRefs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "evidenceRequired": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "humanGates": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

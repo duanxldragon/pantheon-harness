@@ -1,0 +1,7 @@
+interface:
+  display_name: "Pantheon Base Foundation"
+  short_description: "Pantheon base rules and execution gates"
+  default_prompt: "Use $pantheon-base-foundation to load Pantheon base rules, classify the task layer, and route into the right execution workflow."
+
+policy:
+  allow_implicit_invocation: true

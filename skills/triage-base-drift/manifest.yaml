@@ -1,0 +1,51 @@
+schema_version: v1
+category: maintenance
+stage: 0
+repo_scope: both
+
+chain:
+  next_skill: null
+  stage_boundary: true
+  await_human: true
+
+human_gate:
+  show_to_human:
+    - category_counts
+    - real_drift_files
+    - recommended_pr_sequence
+  prompt: "Drift triage 完成。请审阅 docs/DRIFT_AUDIT.md，决定每个真实漂移文件的归属。"
+
+preconditions:
+  - "Workspace contains pantheon-base and at least one business repo as submodules"
+  - "Both repos are at clean git state (no uncommitted changes)"
+  - "Both repos can be read by the active user"
+
+inputs:
+  - name: base_repo_path
+    description: "Relative path to pantheon-base from workspace root"
+    default: "pantheon-base"
+  - name: business_repo_path
+    description: "Relative path to the business repo being audited"
+    default: "pantheon-ops"
+  - name: business_repo_module_name
+    description: "Go module name of the business repo (from its go.mod)"
+    default: "pantheon-ops"
+
+artifacts:
+  - path: "docs/DRIFT_AUDIT.md"
+    action: "create_or_append"
+    description: "Timestamped audit snapshot with execution plan"
+
+verification:
+  - "Output lists every differing file with a category"
+  - "All Category A files reproduce to zero diff after module-name normalization"
+  - "All Category D/E files have explicit per-file verdicts"
+  - "Generated code paths (i18n/resources/generated/*, modules/generated/*) are excluded from the report"
+
+caveats:
+  - "Module-name normalization uses sed; may miss edge cases where module names appear in string literals (test fixtures, log messages)"
+  - "Generated files (i18n, scaffold output) must be excluded; otherwise reports will be noisy"
+  - "This skill is read-only on code; downstream skills (workspace-cutover, backport-to-base) perform the destructive actions"
+  - "If business repo's go.mod is corrupted or missing, the scan will produce false positives — verify go.mod before running"
+
+owner: ai-then-human

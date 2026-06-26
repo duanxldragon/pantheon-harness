@@ -1,0 +1,83 @@
+schema_version: v1
+category: maintenance
+stage: 0
+repo_scope: business
+
+chain:
+  next_skill: null
+  stage_boundary: true
+  await_human: true
+
+human_gate:
+  show_to_human:
+    - drift_classification_table
+    - per_file_decisions
+    - deletion_list
+    - new_readme_content
+    - commits_created
+  prompt: "Phase A (docs drift治理) 完成。ops/docs/ 现在只含业务文档；漂移内容已回流或丢弃。准备好进入 Phase B/C/D 了吗？"
+
+preconditions:
+  - "docs/DOCS_OPTIMIZATION_PLAN.md exists and Phase A is approved"
+  - "pantheon-base git status is clean"
+  - "Target business repo git status is clean"
+  - "WORKSPACE_INHERITANCE.md defines ownership rules"
+
+inputs:
+  - name: base_repo_path
+    description: "Relative path to pantheon-base"
+    default: "pantheon-base"
+  - name: business_repo_path
+    description: "Relative path to the business repo being cleaned"
+    default: "pantheon-ops"
+  - name: branch_name
+    description: "Feature branch in business repo"
+    default: "docs-cutover"
+
+internal_stages:
+  - id: 1
+    name: "Scan and classify all docs/ files"
+    await_human: false
+  - id: 2
+    name: "Per-file drift decision (one gate per drift file)"
+    await_human: true
+  - id: 3
+    name: "Backport approved changes to base (conditional)"
+    await_human: true
+  - id: 4
+    name: "Stage deletions in business repo"
+    await_human: true
+  - id: 5
+    name: "Rewrite README as inheritance pointer"
+    await_human: true
+  - id: 6
+    name: "Update AGENTS.md doc-ownership constraint"
+    await_human: false
+  - id: 7
+    name: "Validate post-cutover diff"
+    await_human: false
+  - id: 8
+    name: "Commit and stop"
+    await_human: true
+
+artifacts:
+  - path: "<business-repo>/docs/<pseudo-and-drift-files>"
+    action: "delete"
+  - path: "<business-repo>/docs/README.md"
+    action: "rewrite (inheritance pointer)"
+  - path: "<business-repo>/AGENTS.md"
+    action: "modify (add doc-ownership constraint)"
+
+verification:
+  - "diff -rq base/docs/ <business-repo>/docs/ shows only legitimate exceptions"
+  - "All BUSINESS_*_MODULE_DESIGN.md still present"
+  - "PROJECT_INHERITANCE.md still present"
+  - "No commits to pantheon-base from this skill"
+
+caveats:
+  - "Some 'drift' may be intentional override that user wants to preserve; never delete without explicit per-file approval"
+  - "Backporting documentation content to base is harder to automate than code — may require manual section merges"
+  - "Contract documents (*_CONTRACT.md) drift is high-risk; halt and require careful inspection"
+  - "If business repo is consumed by multiple downstream readers, the README rewrite needs to preserve any historical references"
+
+owner: ai-then-human

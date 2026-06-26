@@ -1,0 +1,7 @@
+interface:
+  display_name: "Triage Base Drift"
+  short_description: "Scan pantheon-base vs business repo for real vs pseudo drift"
+  default_prompt: "Use $triage-base-drift to scan divergence between pantheon-base and the active business repository, classify each differing file, and update docs/DRIFT_AUDIT.md."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,59 @@
+interface:
+  display_name: "Docs Cutover (Phase A)"
+  short_description: "Clean documentation drift in business repos; align with WORKSPACE_INHERITANCE.md"
+
+permissions:
+  allowed_tools:
+    - Read
+    - Glob
+    - Grep
+    - Edit
+    - Write
+    - Bash(diff:*)
+    - Bash(wc:*)
+    - Bash(git add:*)
+    - Bash(git commit:*)
+    - Bash(git status:*)
+    - Bash(git diff:*)
+    - Bash(git log:*)
+    - Bash(git checkout -b:*)
+    - Bash(git checkout:*)
+    - Bash(git rm:*)
+    - Bash(rm:*)
+    - Bash(find:*)
+    - AskUserQuestion
+  denied_tools:
+    - Bash(git push:*)
+    - Bash(gh pr create:*)
+    - Bash(gh pr merge:*)
+    - Bash(git commit --amend:*)
+    - Bash(git commit --no-verify:*)
+
+write_scope:
+  - "pantheon-ops/docs/**"
+  - "pantheon-ops/AGENTS.md"
+
+read_scope:
+  - "docs/DOCS_OPTIMIZATION_PLAN.md"
+  - "docs/WORKSPACE_INHERITANCE.md"
+  - "pantheon-base/docs/**"
+  - "pantheon-ops/docs/**"
+  - "pantheon-ops/AGENTS.md"
+
+denied_paths:
+  - "pantheon-base/**"      # READ ONLY; do not modify base in this skill
+  - ".git/**"
+
+model_preference: opus
+
+human_gates:
+  - stage: 2
+    description: "Per-file drift decision (backport / delete / override)"
+  - stage: 3
+    description: "Backport coordination (if any drift accepted)"
+  - stage: 4
+    description: "Bulk deletion confirmation"
+  - stage: 5
+    description: "New README content review"
+  - stage: 8
+    description: "Stop before push; user owns review and ship"

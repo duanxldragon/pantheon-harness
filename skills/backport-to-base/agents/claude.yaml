@@ -1,0 +1,57 @@
+interface:
+  display_name: "Backport IAM to Base (PR-1)"
+  short_description: "Backport ops's generic IAM enhancements to pantheon-base and add 2 extension points"
+
+permissions:
+  allowed_tools:
+    - Read
+    - Glob
+    - Grep
+    - Edit
+    - Write
+    - Bash(go build:*)
+    - Bash(go test:*)
+    - Bash(git add:*)
+    - Bash(git commit:*)
+    - Bash(git status:*)
+    - Bash(git diff:*)
+    - Bash(git log:*)
+    - Bash(git checkout -b:*)
+    - Bash(git checkout:*)
+    - AskUserQuestion
+  denied_tools:
+    - Bash(git push:*)
+    - Bash(gh pr create:*)
+    - Bash(gh pr merge:*)
+    - Bash(git reset --hard:*)
+    - Bash(git rebase:*)
+    - Bash(git commit --amend:*)
+    - Bash(git commit --no-verify:*)
+    - Bash(rm:*)
+
+write_scope:
+  - "pantheon-base/backend/modules/system/iam/**"
+  - "pantheon-base/backend/pkg/contracts/**"
+
+read_scope:
+  - "docs/DRIFT_AUDIT.md"
+  - ".codex/skills/triage-base-drift/**"
+  - "pantheon-base/**"
+  - "pantheon-ops/**"
+
+denied_paths:
+  - "pantheon-ops/**"      # READ ONLY in this skill
+  - ".git/**"
+  - "**/.env*"
+
+model_preference: opus
+
+human_gates:
+  - stage: 1
+    description: "API design choices must be user-approved before any code is written"
+  - stage: 2
+    description: "Per-commit message and diff review (5 gates)"
+  - stage: 3
+    description: "Per-commit message and diff review (2 gates)"
+  - stage: 5
+    description: "Stop before push/PR; user owns review and ship"

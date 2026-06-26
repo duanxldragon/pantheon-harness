@@ -1,0 +1,7 @@
+interface:
+  display_name: "Docs Cutover (Phase A)"
+  short_description: "Clean documentation drift in business repos; align with WORKSPACE_INHERITANCE.md"
+  default_prompt: "Use $docs-cutover to execute Phase A of docs/DOCS_OPTIMIZATION_PLAN.md. Treats documentation drift between pantheon-base and the business repo. Stop at every human gate; never push; never modify pantheon-base unless explicitly approved per-file."
+
+policy:
+  allow_implicit_invocation: false

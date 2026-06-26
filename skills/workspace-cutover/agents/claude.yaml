@@ -1,0 +1,68 @@
+interface:
+  display_name: "Workspace Cutover (PR-2)"
+  short_description: "Atomic workspace cutover: delete redundant ops files, enable replace directive, wire business mount points"
+
+permissions:
+  allowed_tools:
+    - Read
+    - Glob
+    - Grep
+    - Edit
+    - Write
+    - Bash(go build:*)
+    - Bash(go test:*)
+    - Bash(go work:*)
+    - Bash(go mod:*)
+    - Bash(git add:*)
+    - Bash(git commit:*)
+    - Bash(git status:*)
+    - Bash(git diff:*)
+    - Bash(git log:*)
+    - Bash(git checkout -b:*)
+    - Bash(git checkout:*)
+    - Bash(git rm:*)
+    - Bash(rm:*)
+    - Bash(find:*)
+    - Bash(sed:*)
+    - Bash(grep:*)
+    - AskUserQuestion
+  denied_tools:
+    - Bash(git push:*)
+    - Bash(gh pr create:*)
+    - Bash(gh pr merge:*)
+    - Bash(git reset --hard:*)
+    - Bash(git rebase:*)
+    - Bash(git commit --amend:*)
+    - Bash(git commit --no-verify:*)
+
+write_scope:
+  - "pantheon-ops/**"
+  - "go.work"   # workspace root
+
+read_scope:
+  - "docs/DRIFT_AUDIT.md"
+  - ".codex/skills/triage-base-drift/**"
+  - ".codex/skills/backport-to-base/**"
+  - "pantheon-base/**"
+  - "pantheon-ops/**"
+
+denied_paths:
+  - "pantheon-base/**"     # READ ONLY; PR-2 must not modify base
+  - ".git/**"
+  - "**/.env*"
+
+model_preference: opus
+
+human_gates:
+  - stage: 1
+    description: "Confirm go.work content and ops/go.mod diff before committing setup"
+  - stage: 2
+    description: "Confirm 94-file deletion list before deletion"
+  - stage: 3
+    description: "Confirm import rewrite results (sample 3-5 files + grep verification)"
+  - stage: 4
+    description: "Confirm permission_policies.go slimming diff"
+  - stage: 5
+    description: "Confirm cmd/server/main.go modification diff"
+  - stage: 7
+    description: "Confirm commit structure (one bulk or 5 logical commits) before commit, then stop"
