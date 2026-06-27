@@ -1,6 +1,6 @@
 # Agentic Method Kit 变更记录
 
-English version: [CHANGELOG.md](./CHANGELOG.md)
+English version: [changelog.md](./changelog.md)
 
 ## Unreleased
 

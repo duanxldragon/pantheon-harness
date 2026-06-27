@@ -1,6 +1,6 @@
 # 安装 Pantheon Harness
 
-English version: [INSTALL.md](./INSTALL.md)
+English version: [install.md](./install.md)
 
 本工具包支持两种使用方式：
 1. **独立模式**：复制到任意仓库根目录

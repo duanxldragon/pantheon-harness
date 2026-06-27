@@ -1,6 +1,6 @@
 # Upgrade Guide
 
-Chinese version: [UPGRADE.zh.md](./UPGRADE.zh.md)
+Chinese version: [upgrade.zh.md](./upgrade.zh.md)
 
 Use this guide when updating an existing repository that already contains:
 

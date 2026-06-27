@@ -1,6 +1,6 @@
 # Migration Notes
 
-Chinese version: [MIGRATION.zh.md](./MIGRATION.zh.md)
+Chinese version: [migration.zh.md](./migration.zh.md)
 
 This kit is intended to survive repo moves and tool swaps.
 

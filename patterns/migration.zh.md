@@ -1,6 +1,6 @@
 # 迁移说明
 
-English version: [MIGRATION.md](./MIGRATION.md)
+English version: [migration.md](./migration.md)
 
 这个 kit 的目标，是在仓库迁移和工具切换后仍然可持续使用。
 

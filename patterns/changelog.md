@@ -1,6 +1,6 @@
 # Agentic Method Kit Changelog
 
-Chinese version: [CHANGELOG.zh.md](./CHANGELOG.zh.md)
+Chinese version: [changelog.zh.md](./changelog.zh.md)
 
 ## Unreleased
 

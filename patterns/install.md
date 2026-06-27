@@ -1,6 +1,6 @@
 # Install Pantheon Harness
 
-Chinese version: [INSTALL.zh.md](./INSTALL.zh.md)
+Chinese version: [install.zh.md](./install.zh.md)
 
 This kit is designed to be used in two modes:
 1. **Standalone**: Copy into any repository root

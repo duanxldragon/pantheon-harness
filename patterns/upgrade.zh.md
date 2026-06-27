@@ -1,6 +1,6 @@
 # 升级指南
 
-English version: [UPGRADE.md](./UPGRADE.md)
+English version: [upgrade.md](./upgrade.md)
 
 当您要更新一个已经包含以下内容的现有仓库时，使用这份指南：
 

@@ -3,7 +3,7 @@
 > 最后更新：2026-06-23
 > 版本：[v1.0.0](../../VERSION)
 > 变更历史：[CHANGELOG.md](../../CHANGELOG.md)
-> 演化机制：[EVOLUTION.md](./EVOLUTION.md)
+> 演化机制：[evolution.md](./evolution.md)
 > 作者：人机协作（Human 定目标和验收，agent roles 规划、执行、验证、审查）
 
 ## 0. 核心原则
