@@ -2,7 +2,8 @@
 
 The portable source of truth is:
 
-- `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
+- `patterns/harness-coverage-model.md`
+- `patterns/harness-coverage-model.zh.md`
 
 This repo-local file exists so this repository exposes coverage review from the `docs/harness/` reading path.
 

@@ -11,12 +11,12 @@ const SCRIPT = path.resolve(TEST_DIR, 'check-review.mjs');
 
 function makeFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'check-review-root-'));
-  fs.mkdirSync(path.join(root, 'agentic-method-kit', 'config'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'config'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'harness', 'tasks'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'superpowers', 'plans'), { recursive: true });
   fs.mkdirSync(path.join(root, 'openspec', 'changes', 'sample-change'), { recursive: true });
   fs.mkdirSync(path.join(root, '.harness', 'evidence', 'sample'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'config', 'method.config.json'), JSON.stringify({ evidenceDir: '.harness/evidence' }));
+  fs.writeFileSync(path.join(root, 'config', 'method.config.json'), JSON.stringify({ evidenceDir: '.harness/evidence' }));
   fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), '# Task');
   fs.writeFileSync(path.join(root, 'docs', 'superpowers', 'plans', 'sample-plan.md'), '# Plan');
   fs.writeFileSync(path.join(root, '.harness', 'evidence', 'sample', 'commands.json'), '{}');

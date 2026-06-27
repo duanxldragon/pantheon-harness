@@ -1,10 +1,10 @@
 # Codex 工作流速查
 
-> 目标：把复杂任务拆成可执行的最小流程。完整路由契约见 [Pantheon Workflow Routing](./WORKFLOW_ROUTING.md)。本页只保留常用判断和命令。
+> 目标：把复杂任务拆成可执行的最小流程。完整路由契约见 [Pantheon Workflow Routing](./workflow-routing.md)。本页只保留常用判断和命令。
 
 ## 路由入口
 
-完整判断只维护在 [Pantheon Workflow Routing](./WORKFLOW_ROUTING.md)。本页不再重复决策树，避免多个文件给出不同路由。
+完整判断只维护在 [Pantheon Workflow Routing](./workflow-routing.md)。本页不再重复决策树，避免多个文件给出不同路由。
 
 Windows 上优先用工作区 launcher：`node scripts/codex-workflow.mjs ...` 或 `scripts/codex-workflow.ps1 ...`。这个 launcher 会把 `codex-flow` 自带的 `codex.exe` 目录放到 PATH 前面，并默认把 `run` / `smoke` 路由到 `codex-exec`。
 
@@ -68,7 +68,7 @@ sonar-scanner
 
 ## 失败时回退
 
-- `codex-flow doctor` 失败：按 [Pantheon Workflow Routing](./WORKFLOW_ROUTING.md) 的 fallback 规则回到直接 Codex / task packet。
+- `codex-flow doctor` 失败：按 [Pantheon Workflow Routing](./workflow-routing.md) 的 fallback 规则回到直接 Codex / task packet。
 - 如果 raw `codex-flow` 在 Windows 上报 `spawn ENOENT` 或 `codex` 解析失败，先用 `node scripts/codex-workflow.mjs ...`。
 - 没有明确目标仓库：先读 `CLAUDE.md` 和目标仓库的 `AGENTS.md`。
 - 需要验证但没有现成流程：优先用最小相关测试、烟雾或截图，而不是先建新工具。
@@ -76,6 +76,6 @@ sonar-scanner
 ## 参考入口
 
 - [Workspace routing rules](../../AGENTS.md)
-- [Pantheon Workflow Routing](./WORKFLOW_ROUTING.md)
+- [Pantheon Workflow Routing](./workflow-routing.md)
 - [Codex development process card](./codex-development-process-improvement.md)
-- [Workspace inheritance rules](../../sample-overlays/pantheon/docs/WORKSPACE_INHERITANCE.md)
+- [Workspace routing rules](../../AGENTS.md)

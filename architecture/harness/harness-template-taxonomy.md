@@ -2,7 +2,8 @@
 
 The portable source of truth is:
 
-- `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
+- `patterns/harness-template-taxonomy.md`
+- `patterns/harness-template-taxonomy.zh.md`
 
 This repo-local file exists so this repository exposes template selection from the `docs/harness/` reading path.
 

@@ -1,10 +1,14 @@
+---
+title: Visual Evidence Promotion Policy
+doc_type: Policy
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Visual Evidence Promotion Policy
 
-Chinese version: [VISUAL_EVIDENCE_PROMOTION_POLICY.md](./VISUAL_EVIDENCE_PROMOTION_POLICY.md)
-
-Type: Policy
-Layer: method
-Status: Active
+Chinese version: [VISUAL_EVIDENCE_PROMOTION_POLICY.md](./visual-evidence-promotion-policy.md)
 
 This policy defines when `check-visual-evidence.mjs --strict` should move from an observational gate to a blocking gate.
 
@@ -41,3 +45,4 @@ Any promotion or rollback must update:
 - `HARNESS_OPEN_TASKS.md`
 - the relevant failure-registry or review notes
 - CI workflow comments
+

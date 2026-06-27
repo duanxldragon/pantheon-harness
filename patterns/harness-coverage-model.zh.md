@@ -1,6 +1,6 @@
 # Harness 覆盖模型
 
-English version: [HARNESS_COVERAGE_MODEL.md](./HARNESS_COVERAGE_MODEL.md)
+English version: [harness-coverage-model.md](./harness-coverage-model.md)
 
 本文定义如何评估 harness 是否真正有用，而不仅是流程完整。
 

@@ -1,6 +1,6 @@
 # 跨 Agent Ratchet 模型
 
-English version: [CROSS_AGENT_RATCHET_MODEL.md](./CROSS_AGENT_RATCHET_MODEL.md)
+English version: [CROSS_AGENT_RATCHET_MODEL.md](./cross-agent-ratchet-model.md)
 
 本文定义 Harness Engineering 如何把重复出现的 AI agent 失败，沉淀成跨工具、跨 agent、跨产品仓库复用的方法资产。
 
@@ -12,7 +12,7 @@ Harness 资产分为两类。
 
 | 类型 | 存放位置 | 目的 | 示例 |
 |---|---|---|---|
-| 可移植方法资产 | `agentic-method-kit/` | 跨 agent、跨仓库复用 | task packet schema、evidence schema、ratchet 规则、review artifact 格式、adapter contract |
+| 可移植方法资产 | `patterns/` | 跨 agent、跨仓库复用 | task packet schema、evidence schema、ratchet 规则、review artifact 格式、adapter contract |
 | 消费方 overlay | 产品仓库 | 项目架构和质量控制 | admin-platform quality profile、权限策略测试、i18n hardcode 检查、smoke 路由 |
 
 规则：

@@ -4,7 +4,7 @@
 
 `workflow.md` is a discussion record. Use this document, `CLAUDE.md`, and `docs/codex-workflow-quick-reference.md` as the operational sources.
 
-For the current solo-maintainer stage, apply [Solo Delivery Tiers](./SOLO_DELIVERY_TIERS.md) before selecting a lane. Choose the lightest tier that can safely finish the task, then apply the routing rules below.
+For the current solo-maintainer stage, apply [Solo Delivery Tiers](./solo-delivery-tiers.md) before selecting a lane. Choose the lightest tier that can safely finish the task, then apply the routing rules below.
 
 ## Core Model
 
@@ -118,7 +118,7 @@ Use `/plan` or equivalent to define the path before executing.
 
 `workflow.md` is a discussion record. Use this document, `CLAUDE.md`, and `docs/codex-workflow-quick-reference.md` as the operational sources.
 
-For the current solo-maintainer stage, apply [Solo Delivery Tiers](./SOLO_DELIVERY_TIERS.md) before selecting a lane. Choose the lightest tier that can safely finish the task, then apply the routing rules below.
+For the current solo-maintainer stage, apply [Solo Delivery Tiers](./solo-delivery-tiers.md) before selecting a lane. Choose the lightest tier that can safely finish the task, then apply the routing rules below.
 
 ## Core Model
 

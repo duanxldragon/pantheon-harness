@@ -1,6 +1,6 @@
 # Harness Core Model
 
-Chinese version: [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+Chinese version: [harness-core-model.zh.md](./harness-core-model.zh.md)
 
 This document defines the tool-agnostic core model for Harness Engineering.
 
@@ -257,7 +257,7 @@ The harness should make four common failure modes explicit before they become re
 - diff expansion that was never scoped
 - completion claims that were never verified
 
-Portable execution guardrails for these cases live in [EXECUTION_GUARDRAILS.md](./EXECUTION_GUARDRAILS.md).
+Portable execution guardrails for these cases live in [EXECUTION_GUARDRAILS.md](./execution-guardrails.md).
 
 In practice, this means the harness should give the agent a place to record:
 
@@ -270,7 +270,7 @@ In practice, this means the harness should give the agent a place to record:
 
 The harness should retrieve context in layers instead of front-loading every prior artifact.
 
-Portable context-loading rules live in [CONTEXT_ENGINEERING_PROTOCOL.md](./CONTEXT_ENGINEERING_PROTOCOL.md).
+Portable context-loading rules live in [CONTEXT_ENGINEERING_PROTOCOL.md](./context-engineering-protocol.md).
 
 In practice:
 

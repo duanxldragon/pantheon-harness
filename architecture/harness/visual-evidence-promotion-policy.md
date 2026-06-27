@@ -1,10 +1,14 @@
+---
+title: Visual Evidence Promotion Policy
+doc_type: Policy
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Visual Evidence Promotion Policy
 
-English version: [VISUAL_EVIDENCE_PROMOTION_POLICY.en.md](./VISUAL_EVIDENCE_PROMOTION_POLICY.en.md)
-
-类型：Policy
-归属层：method
-状态：Active
+English version: [VISUAL_EVIDENCE_PROMOTION_POLICY.en.md](./visual-evidence-promotion-policy.en.md)
 
 本文定义 `check-visual-evidence.mjs --strict` 何时从观察性 gate 升级为阻断性 gate。
 
@@ -41,3 +45,4 @@ promotion 或回退时，必须同步更新：
 - `HARNESS_OPEN_TASKS.md`
 - 对应 failure registry 或 review notes
 - CI workflow 注释
+

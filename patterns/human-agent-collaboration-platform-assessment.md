@@ -1,6 +1,6 @@
 # Human-Agent Collaboration Platform Assessment
 
-Chinese version: [HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.zh.md](./HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.zh.md)
+Chinese version: [HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.zh.md](./human-agent-collaboration-platform-assessment.zh.md)
 
 ## 1. Summary
 

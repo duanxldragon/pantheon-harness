@@ -1,6 +1,6 @@
 # Context Engineering Protocol
 
-English version: [CONTEXT_ENGINEERING_PROTOCOL.md](./CONTEXT_ENGINEERING_PROTOCOL.md)
+English version: [CONTEXT_ENGINEERING_PROTOCOL.md](./context-engineering-protocol.md)
 
 这份协议把 memory-first、skill-driven agent 系统里可迁移的方法，整理成仓库自有的 Harness Engineering 资产。
 

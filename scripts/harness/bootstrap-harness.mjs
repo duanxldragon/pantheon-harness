@@ -56,7 +56,7 @@ const CORE_CONTRACT_TEMPLATES = {
 状态：Active
 版本：v1.0 (bootstrap)
 
-本文档为新项目引导模板，实际使用时需参考 harness-engineering 中的 canonical 版本。
+本文档为新项目引导模板，实际使用时需参考 pantheon-harness 中的 canonical 版本。
 
 ## 1. 核心原则
 
@@ -136,7 +136,7 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 - Technical Debt Flag
 - Dependencies (blockedBy/blocks)
 
-详细规范请参考 harness-engineering/docs/harness/TASK_PACKET_SPEC.md
+详细规范请参考 pantheon-harness/architecture/harness/task-packet-spec.md
 `,
 
   'docs/harness/VERIFICATION_EVIDENCE_SPEC.md': `# Verification Evidence Spec
@@ -166,7 +166,7 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 - 截图分辨率：桌面 1920x1080，移动 375x812
 - 日志格式：[LEVEL] [TIMESTAMP] [SOURCE] MESSAGE
 
-详细规范请参考 harness-engineering/docs/harness/VERIFICATION_EVIDENCE_SPEC.md
+详细规范请参考 pantheon-harness/architecture/harness/verification-evidence-spec.md
 `,
 
   'docs/harness/REVIEW_LOOP_SPEC.md': `# Review Loop Spec
@@ -189,7 +189,7 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 - Security Reviewer: 安全审计
 - Quality Reviewer: 质量门禁
 
-详细规范请参考 harness-engineering/docs/harness/REVIEW_LOOP_SPEC.md
+详细规范请参考 pantheon-harness/architecture/harness/review-loop-spec.md
 `,
 
   'docs/harness/AGENT_INTERFACE_CONTRACT.md': `# Agent Interface Contract
@@ -212,7 +212,7 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 - 未生成 Evidence 就声称完成
 - 自行扩大任务范围
 
-详细规范请参考 harness-engineering/docs/harness/AGENT_INTERFACE_CONTRACT.md
+详细规范请参考 pantheon-harness/architecture/harness/agent-interface-contract.md
 `,
 
   'docs/harness/FAILURE_RATCHET_POLICY.md': `# Failure Ratchet Policy
@@ -231,7 +231,7 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 | L2 | 第二次出现 | 升级为 guide、task packet 模板 |
 | L3 | 第三次出现 | 升级为 test、static check |
 
-详细规范请参考 harness-engineering/docs/harness/FAILURE_RATCHET_POLICY.md
+详细规范请参考 pantheon-harness/architecture/harness/failure-ratchet-policy.md
 `,
 
   'docs/harness/HANDOFF_PROTOCOL.md': `# Agent 间交接协议
@@ -256,7 +256,7 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 - 所有验证命令已执行
 - Evidence 已生成并命名规范
 
-详细规范请参考 harness-engineering/docs/harness/HANDOFF_PROTOCOL.md
+详细规范请参考 pantheon-harness/architecture/harness/handoff-protocol.md
 `,
 
   'docs/harness/ERROR_RECOVERY_STRATEGY.md': `# 错误恢复策略
@@ -286,7 +286,7 @@ L3 无法澄清 -> L4
 L4 Human 拒绝 -> 任务终止
 \`\`\`
 
-详细规范请参考 harness-engineering/docs/harness/ERROR_RECOVERY_STRATEGY.md
+详细规范请参考 pantheon-harness/architecture/harness/error-recovery-strategy.md
 `,
 };
 
@@ -396,7 +396,7 @@ function createHarnessStructure(projectPath, dryRun = false) {
     if (template) {
       writeFile(fullPath, template, dryRun);
     } else {
-      writeFile(fullPath, `# ${path.basename(contract, '.md')}\n\nSee harness-engineering for canonical version.\n`, dryRun);
+      writeFile(fullPath, `# ${path.basename(contract, '.md')}\n\nSee pantheon-harness for canonical version.\n`, dryRun);
     }
   }
 
@@ -435,8 +435,8 @@ docs/harness/
 
 ## 更多信息
 
-- Canonical 源：harness-engineering/docs/harness/
-- 方法论总纲：harness-engineering/docs/methodology/HARNESS_METHODOLOGY.zh.md
+- Canonical 源：pantheon-harness/architecture/harness/
+- 方法论总纲：pantheon-harness/architecture/methodology/harness-methodology.zh.md
 `;
   writeFile(readmePath, readmeContent, dryRun);
 }
@@ -552,8 +552,8 @@ function printSummary(projectPath, dryRun = false) {
   console.log('  2. Add scripts to package.json for harness checks');
   console.log('  3. Run: node scripts/harness/check-task-packet.mjs');
   console.log('\nFor more information, see:');
-  console.log('  - harness-engineering/docs/methodology/HARNESS_METHODOLOGY.zh.md');
-  console.log('  - harness-engineering/docs/harness/');
+  console.log('  - pantheon-harness/architecture/methodology/harness-methodology.zh.md');
+  console.log('  - pantheon-harness/architecture/harness/');
 }
 
 function main() {

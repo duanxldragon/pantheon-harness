@@ -1,6 +1,6 @@
 # Context Engineering Protocol
 
-Chinese version: [CONTEXT_ENGINEERING_PROTOCOL.zh.md](./CONTEXT_ENGINEERING_PROTOCOL.zh.md)
+Chinese version: [CONTEXT_ENGINEERING_PROTOCOL.zh.md](./context-engineering-protocol.zh.md)
 
 This protocol distills portable workflow methods from memory-first and skill-driven agent systems into repo-owned Harness Engineering assets.
 

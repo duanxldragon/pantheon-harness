@@ -1,10 +1,14 @@
+---
+title: Agent Interface Contract
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Agent Interface Contract
 
-Chinese version: [AGENT_INTERFACE_CONTRACT.md](./AGENT_INTERFACE_CONTRACT.md)
-
-Type: Contract
-Layer: method
-Status: Active
+Chinese version: [AGENT_INTERFACE_CONTRACT.md](./agent-interface-contract.md)
 
 This document defines the input, output, and behavior protocol for any agent or human engineer entering a repository. Tools may differ, but the protocol must remain consistent.
 
@@ -146,3 +150,4 @@ Executors must not:
 - silently rewrite upstream shared contracts inside downstream repositories, plugins, or business extensions
 - defer permission, routing, i18n, audit, or security-boundary concerns as a later patch
 - reduce test coverage or remove checks just to make tests pass
+

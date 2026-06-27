@@ -1,6 +1,6 @@
 # Tool Adapter Matrix
 
-Chinese version: [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+Chinese version: [tool-adapter-matrix.zh.md](./tool-adapter-matrix.zh.md)
 
 This matrix keeps the method tool-agnostic while still naming practical execution options.
 

@@ -90,6 +90,7 @@ const VALID_PROMOTION_DECISIONS = new Set([
 const VALID_STATUSES = new Set(['open', 'accepted', 'implemented', 'rejected']);
 
 const DEFAULT_FILES = [
+  'architecture/harness/failure-registry.md',
   'docs/harness/failure-registry.md',
   'docs/harness/failures.md',
   'docs/harness/failure-registry/index.md',
@@ -100,7 +101,7 @@ function printHelp() {
   node scripts/harness/check-failure-registry.mjs [--json] [--strict] [--root <path>] [registry-file ...]
 
 Defaults:
-  Scans common registry paths such as <root>/docs/harness/failure-registry.md.
+  Scans common registry paths such as <root>/architecture/harness/failure-registry.md.
   Missing default registries are reported as warnings, not errors.
 
 Examples:
@@ -147,6 +148,11 @@ function normalizeInputFile(inputPath, root) {
 }
 
 function discoverRegistryFiles(root) {
+  const canonicalPath = path.join(root, 'architecture/harness/failure-registry.md');
+  if (fs.existsSync(canonicalPath)) {
+    return [canonicalPath];
+  }
+
   const discovered = DEFAULT_FILES.map((repoPath) => path.join(root, repoPath)).filter((filePath) =>
     fs.existsSync(filePath),
   );

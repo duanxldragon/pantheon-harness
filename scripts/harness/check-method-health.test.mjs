@@ -11,39 +11,43 @@ const SCRIPT_PATH = path.resolve(TEST_DIR, 'check-method-health.mjs');
 
 function createFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'method-health-'));
-  fs.mkdirSync(path.join(root, 'agentic-method-kit'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'patterns'), { recursive: true });
   fs.mkdirSync(path.join(root, '.agents'), { recursive: true });
   fs.mkdirSync(path.join(root, '.github'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'harness'), { recursive: true });
   fs.mkdirSync(path.join(root, 'scripts', 'harness'), { recursive: true });
   fs.mkdirSync(path.join(root, '.harness'), { recursive: true });
-  fs.mkdirSync(path.join(root, 'openspec'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'tools', 'openspec'), { recursive: true });
 
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'VERSION'), '1.0.0\n');
+  fs.writeFileSync(path.join(root, 'VERSION'), '1.0.0\n');
   fs.writeFileSync(
-    path.join(root, 'agentic-method-kit', 'METHOD_VERSION.json'),
+    path.join(root, 'patterns', 'METHOD_VERSION.json'),
     JSON.stringify({ version: '1.0.0', compatibleRepoShell: '1.0.0' }),
   );
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'HARNESS_CORE_MODEL.md'), '# Core Model\n');
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'HARNESS_COVERAGE_MODEL.md'), '# Coverage Model\n');
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'HARNESS_TEMPLATE_TAXONOMY.md'), '# Template Taxonomy\n');
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'TOOL_ADAPTER_MATRIX.md'), '# Tool Adapter Matrix\n');
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'CHANGELOG.md'), '# Changelog\n');
-  fs.writeFileSync(path.join(root, 'agentic-method-kit', 'UPGRADE.md'), '# Upgrade\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'harness-core-model.md'), '# Core Model\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'harness-coverage-model.md'), '# Coverage Model\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'harness-template-taxonomy.md'), '# Template Taxonomy\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'tool-adapter-matrix.md'), '# Tool Adapter Matrix\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'method-playbook.md'), '# Method Playbook\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'README.md'), '# Method Patterns\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'changelog.md'), '# Changelog\n');
+  fs.writeFileSync(path.join(root, 'patterns', 'upgrade.md'), '# Upgrade\n');
   fs.writeFileSync(
     path.join(root, 'SHELL_VERSION.json'),
     JSON.stringify({ version: '1.0.0', compatibleMethodKit: '1.0.0' }),
   );
   fs.writeFileSync(path.join(root, '.agents', 'README.md'), '# Adapters\n');
   fs.writeFileSync(path.join(root, '.github', 'pull_request_template.md'), 'Task packet\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_CORE_MODEL.md'), '# Core Model\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_COVERAGE_MODEL.md'), '# Coverage Model\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_TEMPLATE_TAXONOMY.md'), '# Template Taxonomy\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'TOOL_ADAPTER_MATRIX.md'), '# Tool Adapter Matrix\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_ENGINEERING_CONTRACT.md'), '# Contract\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'TRIVIALITY_CLASSIFICATION_POLICY.md'), '# Triviality\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'VISUAL_EVIDENCE_PROMOTION_POLICY.md'), '# Visual Policy\n');
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'FAILURE_REGISTRY_PROMOTION_POLICY.md'), '# Failure Policy\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'harness-core-model.md'), '# Core Model\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'harness-coverage-model.md'), '# Coverage Model\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'harness-template-taxonomy.md'), '# Template Taxonomy\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tool-adapter-matrix.md'), '# Tool Adapter Matrix\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'harness-engineering-contract.md'), '# Contract\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'triviality-classification-policy.md'), '# Triviality\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'visual-evidence-promotion-policy.md'), '# Visual Policy\n');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'failure-registry-promotion-policy.md'), '# Failure Policy\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-task-packet.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-evidence.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-adoption.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-review.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-graph-review.mjs'), '#!/usr/bin/env node\n');
@@ -54,7 +58,9 @@ function createFixture() {
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-runtime-evidence.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-doc-links.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-doc-inventory.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-doc-frontmatter.mjs'), '#!/usr/bin/env node\n');
   fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-sync-drift.mjs'), '#!/usr/bin/env node\n');
+  fs.writeFileSync(path.join(root, 'scripts', 'harness', 'check-visual-evidence.mjs'), '#!/usr/bin/env node\n');
   return root;
 }
 
@@ -92,13 +98,13 @@ test('check-method-health fails strict mode on incompatible versions', () => {
 
 test('check-method-health reports missing method kit files', () => {
   const root = createFixture();
-  fs.rmSync(path.join(root, 'agentic-method-kit', 'CHANGELOG.md'));
+  fs.rmSync(path.join(root, 'patterns', 'changelog.md'));
   const output = execFileSync('node', [SCRIPT_PATH, '--json', '--root', root], {
     encoding: 'utf8',
   });
   const result = JSON.parse(output);
   assert.equal(result.findingCount, 1);
-  assert.equal(result.findings[0].file, 'agentic-method-kit/CHANGELOG.md');
+  assert.equal(result.findings[0].file, 'patterns/changelog.md');
 });
 
 test('check-method-health reports missing failure registry checker', () => {

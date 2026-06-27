@@ -10,8 +10,8 @@ English version: [README.md](./README.md)
 
 ## 本目录内容
 
-- 核心方法模型（`HARNESS_CORE_MODEL.*`）
-- 方法 playbook（`METHOD_PLAYBOOK.*`）
+- 核心方法模型（`harness-core-model.*`）
+- 方法 playbook（`method-playbook.*`）
 - Context engineering 协议
 - 执行护栏
 - 模板分类
@@ -32,12 +32,12 @@ English version: [README.md](./README.md)
 ## 快速开始
 
 1. 如果您的团队优先使用中文，阅读 [README.zh.md](./README.zh.md)
-2. 阅读 [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+2. 阅读 [harness-core-model.zh.md](./harness-core-model.zh.md)
 3. 阅读 [execution-guardrails.zh.md](./execution-guardrails.zh.md)
-4. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+4. 阅读 [method-playbook.zh.md](./method-playbook.zh.md)
 5. 从 [templates/](./templates/) 复制您需要的模板
-6. 如果您的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
-7. 运行 [scripts/](./scripts/) 下的可移植检查脚本
+6. 如果您的仓库路径约定不同，调整 [config/method.config.json](../config/method.config.json)
+7. 运行 [verify/scripts/](../verify/scripts/) 下的可移植检查脚本
 
 ## 目录位置
 

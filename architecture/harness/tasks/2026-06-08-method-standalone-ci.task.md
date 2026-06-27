@@ -25,9 +25,9 @@ method
 
 ## Contract Anchors
 
-- `agentic-method-kit/HARNESS_CORE_MODEL.md`
-- `agentic-method-kit/HARNESS_COVERAGE_MODEL.md`
-- `agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md`
+- `patterns/harness-core-model.md`
+- `patterns/harness-coverage-model.md`
+- `patterns/harness-template-taxonomy.md`
 
 ## Scope
 

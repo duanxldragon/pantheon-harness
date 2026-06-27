@@ -83,6 +83,13 @@ function isUiTask(content) {
   return UI_PATTERNS.some((pattern) => pattern.test(content));
 }
 
+function isVisualEvidenceNotApplicable(content) {
+  return (
+    /\bvisual evidence\b[\s\S]{0,240}\b(not applicable|n\/a|not required|not needed)\b/i.test(content) ||
+    /\bno user-facing UI\b/i.test(content)
+  );
+}
+
 function hasViewportPlan(content) {
   return /\bviewport\b/i.test(content) && /\b(desktop|mobile|narrow|wide)\b/i.test(content);
 }
@@ -138,6 +145,9 @@ function scanTasks(root) {
   for (const taskPath of readFiles(taskDir, '.task.md')) {
     const content = fs.readFileSync(taskPath, 'utf8');
     if (!isUiTask(content)) {
+      continue;
+    }
+    if (isVisualEvidenceNotApplicable(content)) {
       continue;
     }
 

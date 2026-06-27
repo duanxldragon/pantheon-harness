@@ -1,6 +1,6 @@
 # Agent Tool Best-Practice To Harness Concept Map
 
-Chinese version: [CONCEPT_MAP.zh.md](./CONCEPT_MAP.zh.md)
+Chinese version: [CONCEPT_MAP.zh.md](./concept-map.zh.md)
 
 This kit borrows architectural ideas from modern coding agent tools and translates them into portable harness patterns.
 
@@ -111,7 +111,7 @@ instead of one tool-specific config file.
 
 See also:
 
-- [HARNESS_CORE_MODEL.md](./HARNESS_CORE_MODEL.md)
-- [HARNESS_COVERAGE_MODEL.md](./HARNESS_COVERAGE_MODEL.md)
-- [HARNESS_TEMPLATE_TAXONOMY.md](./HARNESS_TEMPLATE_TAXONOMY.md)
-- [TOOL_ADAPTER_MATRIX.md](./TOOL_ADAPTER_MATRIX.md)
+- [harness-core-model.md](./harness-core-model.md)
+- [harness-coverage-model.md](./harness-coverage-model.md)
+- [harness-template-taxonomy.md](./harness-template-taxonomy.md)
+- [tool-adapter-matrix.md](./tool-adapter-matrix.md)

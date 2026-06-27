@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://harness-engineering.local/schemas/doc-frontmatter.schema.json",
+  "$id": "https://pantheon-harness.local/schemas/doc-frontmatter.schema.json",
   "title": "Harness Document Frontmatter",
   "type": "object",
   "properties": {

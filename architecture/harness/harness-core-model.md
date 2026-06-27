@@ -2,7 +2,8 @@
 
 The portable source of truth is:
 
-- `agentic-method-kit/HARNESS_CORE_MODEL.md`
+- `patterns/harness-core-model.md`
+- `patterns/harness-core-model.zh.md`
 
 This repo-local file exists so this repository exposes the core model from the `docs/harness/` reading path.
 

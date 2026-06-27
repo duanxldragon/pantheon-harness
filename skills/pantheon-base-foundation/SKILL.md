@@ -39,7 +39,7 @@ Use this skill as the foundation entrypoint for any Pantheon repository.
 
 ## Workflow Routing
 
-- Use [Pantheon Workflow Routing](../../../../docs/WORKFLOW_ROUTING.md) as the source of truth for lane selection, gates, and fallback behavior.
+- Use [Pantheon Workflow Routing](../../architecture/methodology/workflow-routing.md) as the source of truth for lane selection, gates, and fallback behavior.
 - Follow the lane selected by that contract; do not hard-code legacy Superpowers routing here.
 - Keep `impeccable` as the UI visual quality gate.
 - Use `codex-flow` for resumable fan-out or independent branches when the routing contract recommends it.

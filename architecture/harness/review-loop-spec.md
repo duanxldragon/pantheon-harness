@@ -1,10 +1,14 @@
+---
+title: Review Loop Spec
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Review Loop Spec
 
-English version: [REVIEW_LOOP_SPEC.en.md](./REVIEW_LOOP_SPEC.en.md)
-
-类型：Contract
-归属层：method
-状态：Active
+English version: [REVIEW_LOOP_SPEC.en.md](./review-loop-spec.en.md)
 
 本文定义工具无关 review loop。实现者和 reviewer 可以是不同工具或人工，但输出格式必须一致。
 
@@ -158,3 +162,4 @@ No P0/P1/P2 findings found.
 ```
 
 即使 review 不单独落盘，也必须在 PR / review comment 中引用同一 task packet 和 evidence 路径。
+

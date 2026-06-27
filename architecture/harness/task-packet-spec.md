@@ -1,10 +1,15 @@
+---
+title: Task Packet Spec
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Task Packet Spec
 
-English version: [TASK_PACKET_SPEC.en.md](./TASK_PACKET_SPEC.en.md)
+English version: [TASK_PACKET_SPEC.en.md](./task-packet-spec.en.md)
 
-类型：Contract
-归属层：method
-状态：Active
 版本：v1.1 (2026-06-26)
 
 Task packet 是非 trivial 任务的工具无关输入格式。它让 Codex、Claude Code、Cursor、Copilot、OpenHands、Aider 和人工工程师共享同一份任务边界。
@@ -142,7 +147,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 ## Context Strategy
 
-> v1.2+ 增强：参考 [Context Engineering Guide](./context-engineering-guide.md)
+> v1.2+ 增强：参考 [Context Engineering Guide](../methodology/context-engineering-guide.md)
 
 - Entry Sources: `AGENTS.md`, `CLAUDE.md`, current task packet, latest review summary | none
 - Retrieval Order: `entry -> summary -> raw`
@@ -308,3 +313,4 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 - `Plan References`：如任务来自 plan、OMX goal/plan、codex-flow journal 或等价 artifact，必须显式记录；否则写 `none`
 
 这组 linkage 字段用于把 `OpenSpec change / plan or workflow reference / task packet / evidence / review` 串成可追踪链路。
+

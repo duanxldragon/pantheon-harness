@@ -1,10 +1,14 @@
+---
+title: Failure Ratchet Policy
+doc_type: Policy
+layer: platform
+status: Active
+updated_at: 2026-06-27
+---
+
 # Failure Ratchet Policy
 
-Chinese version: [FAILURE_RATCHET_POLICY.md](./FAILURE_RATCHET_POLICY.md)
-
-Type: Policy
-Layer: platform
-Status: Active
+Chinese version: [FAILURE_RATCHET_POLICY.md](./failure-ratchet-policy.md)
 
 This policy defines how a repeated failure should move from a one-off problem into a repository-owned method asset.
 
@@ -121,3 +125,4 @@ Any downgrade must also record:
 - why the original judgment no longer holds
 - which artifact was downgraded or removed
 - when the next review should happen
+

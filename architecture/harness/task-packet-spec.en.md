@@ -1,10 +1,14 @@
+---
+title: Task Packet Spec
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Task Packet Spec
 
-Chinese version: [TASK_PACKET_SPEC.md](./TASK_PACKET_SPEC.md)
-
-Type: Contract
-Layer: method
-Status: Active
+Chinese version: [TASK_PACKET_SPEC.md](./task-packet-spec.md)
 
 A task packet is the tool-agnostic input format for non-trivial work. It lets Codex, Claude Code, Cursor, Copilot, OpenHands, Aider, and human engineers share the same task boundary.
 
@@ -252,3 +256,4 @@ The following fields are the minimum closed-loop keys linking a task packet to l
 - `Plan References`: if the task comes from a plan, OMX goal/plan, codex-flow journal, or equivalent artifact, record it explicitly; otherwise use `none`
 
 These linkage fields connect `OpenSpec change / plan or workflow reference / task packet / evidence / review` into a traceable chain.
+

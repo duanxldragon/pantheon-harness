@@ -1,10 +1,15 @@
+---
+title: 错误恢复策略
+doc_type: Policy
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # 错误恢复策略
 
-English version: [ERROR_RECOVERY_STRATEGY.en.md](./ERROR_RECOVERY_STRATEGY.en.md)
+English version: not yet available.
 
-类型：Policy
-归属层：method
-状态：Active
 版本：v1.0 (2026-06-26)
 
 本文定义 harness 中的错误分类和恢复策略。
@@ -319,3 +324,4 @@ L4 Human 拒绝 -> 任务终止
 - 忽略 L1 错误而不重试
 - 跳过 L2/L3 修复直接升级
 - 绕过 Human Gate 继续执行 L4 任务
+

@@ -1,10 +1,14 @@
+---
+title: Visual Quality Protocol
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Visual Quality Protocol
 
-English version: [VISUAL_QUALITY_PROTOCOL.en.md](./VISUAL_QUALITY_PROTOCOL.en.md)
-
-类型：Contract
-归属层：method
-状态：Active
+English version: [VISUAL_QUALITY_PROTOCOL.en.md](./visual-quality-protocol.en.md)
 
 本文定义 UI 任务的视觉质量门。它是工具无关 Harness 协议的一部分，不绑定任何具体产品、组件库或后台风格。
 
@@ -106,3 +110,4 @@ P0/P1 视觉问题不能 approved。
 ## 6.1 Blocking Rule
 
 If a UI task packet declares UI scope and strict mode is enabled in CI, missing screenshot evidence or missing an explicit visual gap record is a blocking harness failure.
+

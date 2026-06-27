@@ -102,12 +102,12 @@ pantheon-harness/
 
 | 文档 | 用途 |
 |------|------|
-| `HARNESS_CORE_MODEL` | Agentic 交付核心模型 |
-| `HARNESS_METHOD_PLAYBOOK` | 实践执行指南 |
-| `TASK_PACKET_SPEC` | Task Packet 规范 |
-| `VERIFICATION_EVIDENCE_SPEC` | 证据格式规范 |
-| `WORKFLOW_ROUTING` | 工具路由决策树 |
-| `SOLO_DELIVERY_TIERS` | L0/L1/L2 交付层级 |
+| `patterns/harness-core-model.md` | Agentic 交付核心模型 |
+| `patterns/method-playbook.md` | 实践执行指南 |
+| `architecture/harness/task-packet-spec.md` | Task Packet 规范 |
+| `architecture/harness/verification-evidence-spec.md` | 证据格式规范 |
+| `architecture/methodology/workflow-routing.md` | 工具路由决策树 |
+| `architecture/methodology/solo-delivery-tiers.md` | L0/L1/L2 交付层级 |
 
 ## 前置依赖
 

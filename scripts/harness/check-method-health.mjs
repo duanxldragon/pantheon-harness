@@ -9,26 +9,30 @@ const DEFAULT_ROOT = process.cwd();
 const REQUIRED_METHOD_KIT_FILES = [
   'VERSION',
   'patterns/METHOD_VERSION.json',
-  'patterns/HARNESS_CORE_MODEL.md',
-  'patterns/HARNESS_COVERAGE_MODEL.md',
-  'patterns/HARNESS_TEMPLATE_TAXONOMY.md',
-  'patterns/TOOL_ADAPTER_MATRIX.md',
-  'patterns/CHANGELOG.md',
-  'patterns/UPGRADE.md',
+  'patterns/README.md',
+  'patterns/harness-core-model.md',
+  'patterns/harness-coverage-model.md',
+  'patterns/harness-template-taxonomy.md',
+  'patterns/tool-adapter-matrix.md',
+  'patterns/method-playbook.md',
+  'patterns/changelog.md',
+  'patterns/upgrade.md',
 ];
 
 const REQUIRED_REPO_SHELL_FILES = [
   'SHELL_VERSION.json',
   '.agents/README.md',
   '.github/pull_request_template.md',
-  'docs/harness/HARNESS_CORE_MODEL.md',
-  'docs/harness/HARNESS_COVERAGE_MODEL.md',
-  'docs/harness/HARNESS_TEMPLATE_TAXONOMY.md',
-  'docs/harness/TOOL_ADAPTER_MATRIX.md',
-  'docs/harness/HARNESS_ENGINEERING_CONTRACT.md',
-  'docs/harness/TRIVIALITY_CLASSIFICATION_POLICY.md',
-  'docs/harness/VISUAL_EVIDENCE_PROMOTION_POLICY.md',
-  'docs/harness/FAILURE_REGISTRY_PROMOTION_POLICY.md',
+  'docs/harness/harness-core-model.md',
+  'docs/harness/harness-coverage-model.md',
+  'docs/harness/harness-template-taxonomy.md',
+  'docs/harness/tool-adapter-matrix.md',
+  'docs/harness/harness-engineering-contract.md',
+  'docs/harness/triviality-classification-policy.md',
+  'docs/harness/visual-evidence-promotion-policy.md',
+  'docs/harness/failure-registry-promotion-policy.md',
+  'scripts/harness/check-task-packet.mjs',
+  'scripts/harness/check-evidence.mjs',
   'scripts/harness/check-adoption.mjs',
   'scripts/harness/check-review.mjs',
   'scripts/harness/check-graph-review.mjs',
@@ -39,7 +43,9 @@ const REQUIRED_REPO_SHELL_FILES = [
   'scripts/harness/check-runtime-evidence.mjs',
   'scripts/harness/check-doc-links.mjs',
   'scripts/harness/check-doc-inventory.mjs',
+  'scripts/harness/check-doc-frontmatter.mjs',
   'scripts/harness/check-sync-drift.mjs',
+  'scripts/harness/check-visual-evidence.mjs',
 ];
 
 function printHelp() {
@@ -147,7 +153,7 @@ function validateCompatibility(methodVersion, shellVersion, findings) {
 
   if (shellVersion.compatibleMethodKit !== methodVersion.version) {
     findings.push({
-      file: 'agentic-method-kit/METHOD_VERSION.json',
+      file: 'patterns/METHOD_VERSION.json',
       reason: `method kit version "${methodVersion.version}" does not match repo shell compatibleMethodKit "${shellVersion.compatibleMethodKit}"`,
     });
   }
@@ -157,8 +163,8 @@ function validateBoundaries(root, warnings) {
   if (!exists(root, '.harness')) {
     warnings.push({ file: '.harness', reason: 'runtime evidence directory is missing' });
   }
-  if (!exists(root, 'openspec')) {
-    warnings.push({ file: 'openspec', reason: 'OpenSpec skeleton directory is missing' });
+  if (!exists(root, 'tools/openspec')) {
+    warnings.push({ file: 'tools/openspec', reason: 'OpenSpec tool directory is missing' });
   }
 }
 

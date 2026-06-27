@@ -20,21 +20,21 @@ const REQUIRED_PR_MARKERS = [
 ];
 
 const REQUIRED_FILES = [
-  'agentic-method-kit/HARNESS_CORE_MODEL.md',
-  'agentic-method-kit/HARNESS_COVERAGE_MODEL.md',
-  'agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md',
-  'agentic-method-kit/TOOL_ADAPTER_MATRIX.md',
-  'docs/harness/HARNESS_CORE_MODEL.md',
-  'docs/harness/HARNESS_COVERAGE_MODEL.md',
-  'docs/harness/HARNESS_TEMPLATE_TAXONOMY.md',
-  'docs/harness/TOOL_ADAPTER_MATRIX.md',
-  'docs/harness/HARNESS_METHOD_PLAYBOOK.md',
-  'docs/harness/HARNESS_ENGINEERING_CONTRACT.md',
-  'docs/harness/AGENT_INTERFACE_CONTRACT.md',
-  'docs/harness/TASK_PACKET_SPEC.md',
-  'docs/harness/VERIFICATION_EVIDENCE_SPEC.md',
-  'docs/harness/REVIEW_LOOP_SPEC.md',
-  'docs/harness/VISUAL_QUALITY_PROTOCOL.md',
+  'patterns/harness-core-model.md',
+  'patterns/harness-coverage-model.md',
+  'patterns/harness-template-taxonomy.md',
+  'patterns/tool-adapter-matrix.md',
+  'architecture/harness/harness-core-model.md',
+  'architecture/harness/harness-coverage-model.md',
+  'architecture/harness/harness-template-taxonomy.md',
+  'architecture/harness/tool-adapter-matrix.md',
+  'architecture/harness/harness-method-playbook.md',
+  'architecture/harness/harness-engineering-contract.md',
+  'architecture/harness/agent-interface-contract.md',
+  'architecture/harness/task-packet-spec.md',
+  'architecture/harness/verification-evidence-spec.md',
+  'architecture/harness/review-loop-spec.md',
+  'architecture/harness/visual-quality-protocol.md',
   '.agents/README.md',
   '.agents/adapters/codex.md',
   '.agents/adapters/claude-code.md',
@@ -56,9 +56,9 @@ function makeFixture() {
     path.join(root, '.github', 'pull_request_template.md'),
     REQUIRED_PR_MARKERS.join('\n'),
   );
-  fs.mkdirSync(path.join(root, '.agents', 'prompts'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'config', 'agents', 'prompts'), { recursive: true });
   fs.writeFileSync(
-    path.join(root, '.agents', 'prompts', 'implementation.md'),
+    path.join(root, 'config', 'agents', 'prompts', 'implementation.md'),
     [
       'Task Packet',
       'Record verification results',
@@ -86,7 +86,7 @@ test('check-adoption passes when all required entrypoints exist', () => {
 
 test('check-adoption fails strict mode when a required Harness file is missing', () => {
   const root = makeFixture();
-  fs.rmSync(path.join(root, 'docs', 'harness', 'HARNESS_ENGINEERING_CONTRACT.md'));
+  fs.rmSync(path.join(root, 'architecture', 'harness', 'harness-engineering-contract.md'));
 
   const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
     encoding: 'utf8',
@@ -114,7 +114,7 @@ test('check-adoption fails when PR template is missing the trivial-change marker
 test('check-adoption warns when implementation prompt is missing evidence rules', () => {
   const root = makeFixture();
   fs.writeFileSync(
-    path.join(root, '.agents', 'prompts', 'implementation.md'),
+    path.join(root, 'config', 'agents', 'prompts', 'implementation.md'),
     'no relevant content',
   );
 
@@ -210,7 +210,7 @@ test('check-adoption requires real openspec linkage when an active change exists
       '',
       '## Contract Anchors',
       '',
-      '- `docs/harness/HARNESS_ENGINEERING_CONTRACT.md`',
+      '- `architecture/harness/harness-engineering-contract.md`',
       '',
       '## Scope',
       '',

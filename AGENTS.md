@@ -20,8 +20,8 @@ pantheon-harness/
 ├── README.md              # Main documentation entry
 ├── README.zh.md           # 中文文档入口
 ├── CHANGELOG.md           # Method changelog
-├── VERSION                # Current version: 1.1.0
-├── MIGRATION.md           # Migration guide from harness-engineering
+├── VERSION                # Current version: 1.3.0
+├── MIGRATION.md           # Migration guide from harness-engineering to pantheon-harness
 ├── architecture/          # Architecture & method documentation
 │   ├── harness/           # Harness protocols & contracts
 │   └── methodology/       # Methodology docs

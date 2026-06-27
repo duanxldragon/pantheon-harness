@@ -1,10 +1,14 @@
+---
+title: Failure Registry Promotion Policy
+doc_type: Policy
+layer: platform
+status: Active
+updated_at: 2026-06-27
+---
+
 # Failure Registry Promotion Policy
 
-Chinese version: [FAILURE_REGISTRY_PROMOTION_POLICY.md](./FAILURE_REGISTRY_PROMOTION_POLICY.md)
-
-Type: Policy
-Layer: platform
-Status: Active
+Chinese version: [FAILURE_REGISTRY_PROMOTION_POLICY.md](./failure-registry-promotion-policy.md)
 
 This policy defines when the failure registry should move from “recommended” to “required landing file”.
 
@@ -36,3 +40,4 @@ Any promotion must also:
 ## 4. Rollback Condition
 
 If promotion reveals that consumer bootstrap still widely omits the registry and the new rule causes clear adoption friction, the rule may temporarily fall back to warning mode, but the rollback reason and next review date must be recorded.
+

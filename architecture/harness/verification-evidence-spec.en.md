@@ -1,10 +1,14 @@
+---
+title: Verification Evidence Spec
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Verification Evidence Spec
 
-Chinese version: [VERIFICATION_EVIDENCE_SPEC.md](./VERIFICATION_EVIDENCE_SPEC.md)
-
-Type: Contract
-Layer: method
-Status: Active
+Chinese version: [VERIFICATION_EVIDENCE_SPEC.md](./verification-evidence-spec.md)
 
 This document defines the format for task verification evidence. The evidence format must be tool-agnostic.
 
@@ -257,3 +261,4 @@ If verification was not run, the reason must be recorded:
 For runtime-sensitive work, “tests passed” is also insufficient if there is neither a runtime signal nor an explicit runtime gap.
 
 For long-running, delegated, or cost-sensitive work, “done” is also insufficient if there is neither `sessionEconomics` nor an explicit note that the current tool cannot expose those signals.
+

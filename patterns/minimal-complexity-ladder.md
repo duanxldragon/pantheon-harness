@@ -1,6 +1,6 @@
 # Minimal Complexity Ladder
 
-Chinese version: [MINIMAL_COMPLEXITY_LADDER.zh.md](./MINIMAL_COMPLEXITY_LADDER.zh.md)
+Chinese version: [MINIMAL_COMPLEXITY_LADDER.zh.md](./minimal-complexity-ladder.zh.md)
 
 This guide captures a tool-agnostic simplicity control inspired by [Ponytail](https://github.com/DietrichGebert/ponytail). It adopts the method, not the plugin runtime: repositories may install an adapter if they want, but Harness Engineering treats the ladder as a portable guide and review sensor.
 

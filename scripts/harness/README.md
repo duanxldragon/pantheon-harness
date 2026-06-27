@@ -4,12 +4,13 @@ Chinese version: [README.zh.md](./README.zh.md)
 
 This directory contains portable Harness Engineering checks for the method repository and downstream repo shells.
 
-The portable method source of truth lives in `agentic-method-kit/`. Scripts here are generic execution-layer sensors for task packets, evidence, review closure, documentation integrity, method health, and runtime/visual evidence. Project-specific checks belong in optional overlays such as `sample-overlays/pantheon/`.
+The portable method source of truth lives in `patterns/`. Scripts here are generic execution-layer sensors for task packets, evidence, review closure, documentation integrity, method health, and runtime/visual evidence. Project-specific checks belong in consumer repositories or optional overlays.
 
 ## Current Scripts
 
 | Script | Purpose |
 |---|---|
+| `bootstrap-harness.mjs` | Generates or refreshes baseline Harness landing files for a target repository. |
 | `check-task-packet.mjs` | Validates task packet structure and linkage. |
 | `check-evidence.mjs` | Validates `.harness/evidence/**/commands.json`. |
 | `check-review.mjs` | Validates machine-readable review artifacts. |
@@ -20,7 +21,7 @@ The portable method source of truth lives in `agentic-method-kit/`. Scripts here
 | `check-runtime-evidence.mjs` | Reports runtime-sensitive tasks missing runtime evidence or explicit gaps. |
 | `check-doc-links.mjs` | Checks internal Markdown links across method docs. |
 | `check-doc-inventory.mjs` | Checks script and documentation inventory coverage. |
-| `check-sync-drift.mjs` | Checks root and repo-shell script mirror drift. |
+| `check-sync-drift.mjs` | Checks configured file mirror drift. |
 | `check-visual-evidence.mjs` | Reports UI/visual evidence gaps. |
 | `check-adoption.mjs` | Checks generic method adoption entrypoints and task/evidence linkage. |
 | `check-method-health.mjs` | Checks method-kit and repo-shell version and landing-file health. |

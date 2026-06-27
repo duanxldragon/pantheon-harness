@@ -1,6 +1,6 @@
 # Harness 模板分类
 
-English version: [HARNESS_TEMPLATE_TAXONOMY.md](./HARNESS_TEMPLATE_TAXONOMY.md)
+English version: [harness-template-taxonomy.md](./harness-template-taxonomy.md)
 
 本文定义可移植 harness template 分类。
 

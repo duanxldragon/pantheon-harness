@@ -23,21 +23,21 @@ const EVIDENCE_ROOT = '.harness/evidence/';
 const OPEN_SPEC_CHANGES_ROOT = 'openspec/changes';
 
 const REQUIRED_FILES = [
-  'patterns/HARNESS_CORE_MODEL.md',
-  'patterns/HARNESS_COVERAGE_MODEL.md',
-  'patterns/HARNESS_TEMPLATE_TAXONOMY.md',
-  'patterns/TOOL_ADAPTER_MATRIX.md',
-  'architecture/harness/HARNESS_CORE_MODEL.md',
-  'architecture/harness/HARNESS_COVERAGE_MODEL.md',
-  'architecture/harness/HARNESS_TEMPLATE_TAXONOMY.md',
-  'architecture/harness/TOOL_ADAPTER_MATRIX.md',
-  'architecture/harness/HARNESS_METHOD_PLAYBOOK.md',
-  'architecture/harness/HARNESS_ENGINEERING_CONTRACT.md',
-  'architecture/harness/AGENT_INTERFACE_CONTRACT.md',
-  'architecture/harness/TASK_PACKET_SPEC.md',
-  'architecture/harness/VERIFICATION_EVIDENCE_SPEC.md',
-  'architecture/harness/REVIEW_LOOP_SPEC.md',
-  'architecture/harness/VISUAL_QUALITY_PROTOCOL.md',
+  'patterns/harness-core-model.md',
+  'patterns/harness-coverage-model.md',
+  'patterns/harness-template-taxonomy.md',
+  'patterns/tool-adapter-matrix.md',
+  'architecture/harness/harness-core-model.md',
+  'architecture/harness/harness-coverage-model.md',
+  'architecture/harness/harness-template-taxonomy.md',
+  'architecture/harness/tool-adapter-matrix.md',
+  'architecture/harness/harness-method-playbook.md',
+  'architecture/harness/harness-engineering-contract.md',
+  'architecture/harness/agent-interface-contract.md',
+  'architecture/harness/task-packet-spec.md',
+  'architecture/harness/verification-evidence-spec.md',
+  'architecture/harness/review-loop-spec.md',
+  'architecture/harness/visual-quality-protocol.md',
   '.agents/README.md',
   '.agents/adapters/codex.md',
   '.agents/adapters/claude-code.md',
@@ -295,7 +295,7 @@ function scanAdoption(root, changedFiles) {
     }
   }
 
-  const implementationPromptPath = '.agents/prompts/implementation.md';
+  const implementationPromptPath = 'config/agents/prompts/implementation.md';
   if (!fs.existsSync(path.join(root, implementationPromptPath))) {
     findings.push({
       file: implementationPromptPath,

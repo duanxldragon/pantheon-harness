@@ -70,7 +70,7 @@ platform
 ## Success Criteria
 
 - Behaviour Outcome: the sample task packet passes the mechanical checker
-- Verification Signal: `node agentic-method-kit/scripts/check-task-packet.mjs --root agentic-method-kit/examples/minimal-repo`
+- Verification Signal: `node pantheon-harness/verify/scripts/check-task-packet.mjs --root pantheon-harness/examples/minimal-repo`
 - Regression Watch: required linkage and checklist fields stay present
 
 ## Method Readiness
@@ -111,7 +111,7 @@ platform
 
 ## Verification Plan
 
-- `node agentic-method-kit/scripts/check-task-packet.mjs --root agentic-method-kit/examples/minimal-repo`
+- `node pantheon-harness/verify/scripts/check-task-packet.mjs --root pantheon-harness/examples/minimal-repo`
 
 ## Linkage
 

@@ -1,6 +1,6 @@
 # 工具适配矩阵
 
-English version: [TOOL_ADAPTER_MATRIX.md](./TOOL_ADAPTER_MATRIX.md)
+English version: [tool-adapter-matrix.md](./tool-adapter-matrix.md)
 
 这个矩阵用于保持方法工具无关，同时保留实际执行选项。
 

@@ -52,7 +52,7 @@ function extractLinks(source) {
 
 function scan(root) {
   const findings = [];
-  for (const dir of ['docs', 'agentic-method-kit', 'agentic-repo-shell', 'sample-overlays/pantheon']) {
+  for (const dir of ['docs', 'architecture', 'patterns', 'scripts/harness', 'config/agents']) {
     for (const filePath of walkMarkdownFiles(path.join(root, dir))) {
       const source = fs.readFileSync(filePath, 'utf8');
       for (const href of extractLinks(source)) {

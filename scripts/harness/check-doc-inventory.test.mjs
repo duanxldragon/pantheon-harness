@@ -25,21 +25,15 @@ function createFixture() {
     ['# Harness Scripts', '### `check-alpha.mjs`', '### `check-beta.mjs`'].join('\n'),
   );
 
-  writeFile(path.join(root, 'agentic-repo-shell', 'scripts', 'harness', 'check-shell.mjs'), '#!/usr/bin/env node\n');
-  writeFile(
-    path.join(root, 'agentic-repo-shell', 'scripts', 'harness', 'README.md'),
-    ['# Harness Scripts', '### `check-shell.mjs`'].join('\n'),
-  );
-
   for (const doc of [
-    'agentic-method-kit/README.md',
-    'agentic-method-kit/HARNESS_CORE_MODEL.md',
-    'agentic-method-kit/HARNESS_COVERAGE_MODEL.md',
-    'agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md',
-    'agentic-method-kit/TOOL_ADAPTER_MATRIX.md',
-    'agentic-method-kit/METHOD_PLAYBOOK.md',
-    'docs/harness/HARNESS_ENGINEERING_CONTRACT.md',
-    'docs/harness/HARNESS_METHOD_PLAYBOOK.md',
+    'patterns/README.md',
+    'patterns/harness-core-model.md',
+    'patterns/harness-coverage-model.md',
+    'patterns/harness-template-taxonomy.md',
+    'patterns/tool-adapter-matrix.md',
+    'patterns/method-playbook.md',
+    'architecture/harness/harness-engineering-contract.md',
+    'architecture/harness/harness-method-playbook.md',
   ]) {
     writeFile(path.join(root, doc), '# Doc\n');
   }
@@ -48,14 +42,14 @@ function createFixture() {
     path.join(root, 'docs', 'README.md'),
     [
       '# Docs',
-      '- [../agentic-method-kit/README.md](../agentic-method-kit/README.md)',
-      '- [../agentic-method-kit/HARNESS_CORE_MODEL.md](../agentic-method-kit/HARNESS_CORE_MODEL.md)',
-      '- [../agentic-method-kit/HARNESS_COVERAGE_MODEL.md](../agentic-method-kit/HARNESS_COVERAGE_MODEL.md)',
-      '- [../agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md](../agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md)',
-      '- [../agentic-method-kit/TOOL_ADAPTER_MATRIX.md](../agentic-method-kit/TOOL_ADAPTER_MATRIX.md)',
-      '- [../agentic-method-kit/METHOD_PLAYBOOK.md](../agentic-method-kit/METHOD_PLAYBOOK.md)',
-      '- [harness/HARNESS_ENGINEERING_CONTRACT.md](harness/HARNESS_ENGINEERING_CONTRACT.md)',
-      '- [harness/HARNESS_METHOD_PLAYBOOK.md](harness/HARNESS_METHOD_PLAYBOOK.md)',
+      '- [../patterns/README.md](../patterns/README.md)',
+      '- [../patterns/harness-core-model.md](../patterns/harness-core-model.md)',
+      '- [../patterns/harness-coverage-model.md](../patterns/harness-coverage-model.md)',
+      '- [../patterns/harness-template-taxonomy.md](../patterns/harness-template-taxonomy.md)',
+      '- [../patterns/tool-adapter-matrix.md](../patterns/tool-adapter-matrix.md)',
+      '- [../patterns/method-playbook.md](../patterns/method-playbook.md)',
+      '- [../architecture/harness/harness-engineering-contract.md](../architecture/harness/harness-engineering-contract.md)',
+      '- [../architecture/harness/harness-method-playbook.md](../architecture/harness/harness-method-playbook.md)',
     ].join('\n'),
   );
 
@@ -91,7 +85,7 @@ test('check-doc-inventory fails when docs README misses a required method entry'
   const readme = fs.readFileSync(path.join(root, 'docs', 'README.md'), 'utf8');
   fs.writeFileSync(
     path.join(root, 'docs', 'README.md'),
-    readme.replace('- [../agentic-method-kit/METHOD_PLAYBOOK.md](../agentic-method-kit/METHOD_PLAYBOOK.md)', ''),
+    readme.replace('- [../patterns/method-playbook.md](../patterns/method-playbook.md)', ''),
   );
 
   const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
@@ -100,5 +94,5 @@ test('check-doc-inventory fails when docs README misses a required method entry'
 
   assert.equal(result.status, 1);
   assert.match(result.stdout, /required document is missing from docs README/);
-  assert.match(result.stdout, /agentic-method-kit\/METHOD_PLAYBOOK.md/);
+  assert.match(result.stdout, /patterns\/method-playbook.md/);
 });

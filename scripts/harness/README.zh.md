@@ -4,12 +4,13 @@ English version: [README.md](./README.md)
 
 这个目录只放可移植 Harness Engineering 方法检查脚本。
 
-`agentic-method-kit/` 是方法事实源；这里是通用执行层 sensor，覆盖 task packet、evidence、review closure、文档完整性、方法健康度、runtime/visual evidence 等。项目专属检查应放在 `sample-overlays/pantheon/` 这类可选 overlay 中。
+`patterns/` 是方法事实源；这里是通用执行层 sensor，覆盖 task packet、evidence、review closure、文档完整性、方法健康度、runtime/visual evidence 等。项目专属检查应放在消费仓库或可选 overlay 中。
 
 ## 当前脚本
 
 | Script | 用途 |
 |---|---|
+| `bootstrap-harness.mjs` | 为目标仓库生成或刷新基础 Harness 落地文件。 |
 | `check-task-packet.mjs` | 校验 task packet 结构和 linkage。 |
 | `check-evidence.mjs` | 校验 `.harness/evidence/**/commands.json`。 |
 | `check-review.mjs` | 校验 machine-readable review artifact。 |
@@ -20,7 +21,7 @@ English version: [README.md](./README.md)
 | `check-runtime-evidence.mjs` | 报告 runtime-sensitive 任务缺少 runtime evidence 或显式 gap。 |
 | `check-doc-links.mjs` | 校验方法文档内部 Markdown 链接。 |
 | `check-doc-inventory.mjs` | 校验脚本和文档清单覆盖度。 |
-| `check-sync-drift.mjs` | 校验根脚本与 repo-shell 镜像脚本是否漂移。 |
+| `check-sync-drift.mjs` | 校验已配置文件镜像是否漂移。 |
 | `check-visual-evidence.mjs` | 报告 UI/visual evidence 缺口。 |
 | `check-adoption.mjs` | 校验通用方法 adoption 入口和 task/evidence linkage。 |
 | `check-method-health.mjs` | 校验 method-kit 与 repo-shell 版本和落地文件健康度。 |

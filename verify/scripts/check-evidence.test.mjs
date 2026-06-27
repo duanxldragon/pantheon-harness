@@ -34,7 +34,7 @@ function validEvidence() {
     },
     commands: [
       {
-        command: 'node agentic-method-kit/scripts/check-evidence.mjs --root .',
+        command: 'node verify/scripts/check-evidence.mjs --root .',
         cwd: '.',
         status: 'passed',
         durationMs: 12,

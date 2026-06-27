@@ -11,15 +11,15 @@ const SCRIPT = path.resolve(TEST_DIR, 'check-task-packet.mjs');
 
 function makeFixture() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'check-task-packet-kit-'));
-  fs.mkdirSync(path.join(root, 'agentic-method-kit', 'config'), { recursive: true });
+  fs.mkdirSync(path.join(root, 'config'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'harness', 'tasks'), { recursive: true });
   fs.mkdirSync(path.join(root, 'docs', 'harness'), { recursive: true });
   fs.mkdirSync(path.join(root, '.harness', 'evidence', 'sample'), { recursive: true });
   fs.writeFileSync(
-    path.join(root, 'agentic-method-kit', 'config', 'method.config.json'),
+    path.join(root, 'config', 'method.config.json'),
     JSON.stringify({ taskPacketDir: 'docs/harness/tasks' }),
   );
-  fs.writeFileSync(path.join(root, 'docs', 'harness', 'HARNESS_ENGINEERING_CONTRACT.md'), 'anchor stub');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'harness-engineering-contract.md'), 'anchor stub');
   fs.writeFileSync(path.join(root, '.harness', 'evidence', 'sample', 'review.md'), '# Review');
   return root;
 }
@@ -56,7 +56,7 @@ function validTask() {
     '',
     '## Contract Anchors',
     '',
-    '- `docs/harness/HARNESS_ENGINEERING_CONTRACT.md`',
+    '- `docs/harness/harness-engineering-contract.md`',
     '',
     '## Scope',
     '',
@@ -101,12 +101,12 @@ function validTask() {
     '## Success Criteria',
     '',
     '- Behaviour Outcome: packet validates cleanly',
-    '- Verification Signal: node agentic-method-kit/scripts/check-task-packet.mjs --root .',
+    '- Verification Signal: node verify/scripts/check-task-packet.mjs --root .',
     '- Regression Watch: linkage format remains manifest-first',
     '',
     '## Verification Plan',
     '',
-    '- node agentic-method-kit/scripts/check-task-packet.mjs --root .',
+    '- node verify/scripts/check-task-packet.mjs --root .',
     '',
     '## Method Readiness',
     '',

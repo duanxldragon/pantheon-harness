@@ -1,6 +1,6 @@
 # Harness Template Taxonomy
 
-Chinese version: [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
+Chinese version: [harness-template-taxonomy.zh.md](./harness-template-taxonomy.zh.md)
 
 This document defines portable harness template categories.
 

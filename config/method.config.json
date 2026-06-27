@@ -1,8 +1,9 @@
 {
+  "templateId": "custom",
   "taskPacketDir": "docs/harness/tasks",
   "evidenceDir": ".harness/evidence",
-  "failureRegistryTemplate": "agentic-method-kit/templates/failure-registry.template.md",
-  "harnessCoverageReviewTemplate": "agentic-method-kit/templates/harness-coverage-review.template.md",
+  "failureRegistryTemplate": "patterns/templates/failure-registry.template.md",
+  "harnessCoverageReviewTemplate": "patterns/templates/harness-coverage-review.template.md",
   "pullRequestTemplate": ".github/pull_request_template.md",
   "openSpecChangesDir": "openspec/changes",
   "implementationRoots": [

@@ -1,10 +1,14 @@
+---
+title: Review Loop Spec
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Review Loop Spec
 
-Chinese version: [REVIEW_LOOP_SPEC.md](./REVIEW_LOOP_SPEC.md)
-
-Type: Contract
-Layer: method
-Status: Active
+Chinese version: [REVIEW_LOOP_SPEC.md](./review-loop-spec.md)
 
 This document defines the tool-agnostic review loop. Implementers and reviewers may use different tools or be human, but the output format must remain consistent.
 
@@ -158,3 +162,4 @@ No P0/P1/P2 findings found.
 ```
 
 Even if the review is not saved as a file, the PR or review comment must still reference the same task packet and evidence paths.
+

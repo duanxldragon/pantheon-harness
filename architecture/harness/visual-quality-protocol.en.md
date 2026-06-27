@@ -1,10 +1,14 @@
+---
+title: Visual Quality Protocol
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Visual Quality Protocol
 
-Chinese version: [VISUAL_QUALITY_PROTOCOL.md](./VISUAL_QUALITY_PROTOCOL.md)
-
-Type: Contract
-Layer: method
-Status: Active
+Chinese version: [VISUAL_QUALITY_PROTOCOL.md](./visual-quality-protocol.md)
 
 This document defines the visual quality gate for UI work. It is part of the tool-agnostic Harness protocol and is not tied to any specific product, component library, or backoffice style.
 
@@ -106,3 +110,4 @@ If screenshots cannot be produced, the task must record:
 ## 6.1 Blocking Rule
 
 If a UI task packet declares UI scope and strict mode is enabled in CI, missing screenshot evidence or a missing explicit visual gap record is a blocking harness failure.
+

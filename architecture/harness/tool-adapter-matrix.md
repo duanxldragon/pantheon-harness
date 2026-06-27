@@ -2,7 +2,8 @@
 
 The portable source of truth is:
 
-- `agentic-method-kit/TOOL_ADAPTER_MATRIX.md`
+- `patterns/tool-adapter-matrix.md`
+- `patterns/tool-adapter-matrix.zh.md`
 
 This repo-local file exists so this repository exposes tool adapter guidance from the `docs/harness/` reading path.
 

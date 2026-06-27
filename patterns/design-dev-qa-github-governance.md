@@ -1,6 +1,6 @@
 # Design, Development, QA, And GitHub Governance
 
-Chinese version: [DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md)
+Chinese version: [DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md](./design-dev-qa-github-governance.zh.md)
 
 This document defines a lightweight delivery governance loop for repositories that use AI-assisted or human-assisted development.
 

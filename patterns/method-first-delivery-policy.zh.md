@@ -1,6 +1,6 @@
 # 方法优先交付策略
 
-English version: [METHOD_FIRST_DELIVERY_POLICY.md](./METHOD_FIRST_DELIVERY_POLICY.md)
+English version: [METHOD_FIRST_DELIVERY_POLICY.md](./method-first-delivery-policy.md)
 
 本文防止 agentic work 在操作方法还没清楚前，就陷入代码报错和零散修复。
 

@@ -1,10 +1,14 @@
+---
+title: Triviality Classification Policy
+doc_type: Policy
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Triviality Classification Policy
 
-Chinese version: [TRIVIALITY_CLASSIFICATION_POLICY.md](./TRIVIALITY_CLASSIFICATION_POLICY.md)
-
-Type: Policy
-Layer: method
-Status: Active
+Chinese version: [TRIVIALITY_CLASSIFICATION_POLICY.md](./triviality-classification-policy.md)
 
 This policy defines how work is classified as `trivial` or `non-trivial` so the repository does not rely on personal judgment alone when deciding whether task packets, evidence, and review artifacts are required.
 
@@ -57,3 +61,4 @@ Even `trivial` work must still:
 ## 5. Priority
 
 If this policy conflicts with repository contracts or direct user instructions, direct user instructions and repository contracts win.
+

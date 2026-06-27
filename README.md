@@ -102,12 +102,12 @@ Internal Only (not needed by consumers):
 
 | Document | Purpose |
 |----------|---------|
-| `HARNESS_CORE_MODEL` | Core model of agentic delivery |
-| `HARNESS_METHOD_PLAYBOOK` | Practical execution guide |
-| `TASK_PACKET_SPEC` | Task Packet specification |
-| `VERIFICATION_EVIDENCE_SPEC` | Evidence format specification |
-| `WORKFLOW_ROUTING` | Tool routing decision tree |
-| `SOLO_DELIVERY_TIERS` | L0/L1/L2 delivery levels |
+| `patterns/harness-core-model.md` | Core model of agentic delivery |
+| `patterns/method-playbook.md` | Practical execution guide |
+| `architecture/harness/task-packet-spec.md` | Task Packet specification |
+| `architecture/harness/verification-evidence-spec.md` | Evidence format specification |
+| `architecture/methodology/workflow-routing.md` | Tool routing decision tree |
+| `architecture/methodology/solo-delivery-tiers.md` | L0/L1/L2 delivery levels |
 
 ## Prerequisites
 

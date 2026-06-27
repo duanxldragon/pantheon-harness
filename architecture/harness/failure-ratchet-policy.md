@@ -1,10 +1,14 @@
+---
+title: Failure Ratchet Policy
+doc_type: Policy
+layer: platform
+status: Active
+updated_at: 2026-06-27
+---
+
 # Failure Ratchet Policy
 
-English version: [FAILURE_RATCHET_POLICY.en.md](./FAILURE_RATCHET_POLICY.en.md)
-
-类型：Policy
-归属层：platform
-状态：Active
+English version: [FAILURE_RATCHET_POLICY.en.md](./failure-ratchet-policy.en.md)
 
 本文定义 repeated failure 应如何从一次性问题，升级为仓库级方法资产。
 
@@ -121,3 +125,4 @@ ratchet loop 的目标是：
 - 为什么原判断不成立
 - 哪个 artifact 被降级或删除
 - 下一次复核时间
+

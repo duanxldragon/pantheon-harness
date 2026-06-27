@@ -1,20 +1,20 @@
 # Method Playbook
 
-Chinese version: [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+Chinese version: [method-playbook.zh.md](./method-playbook.zh.md)
 
 This playbook turns a set of tools into a single operating method.
 
 Read these method foundations first:
 
-1. [HARNESS_CORE_MODEL.md](./HARNESS_CORE_MODEL.md)
-2. [CONTEXT_ENGINEERING_PROTOCOL.md](./CONTEXT_ENGINEERING_PROTOCOL.md)
-3. [METHOD_FIRST_DELIVERY_POLICY.md](./METHOD_FIRST_DELIVERY_POLICY.md)
-4. [MINIMAL_COMPLEXITY_LADDER.md](./MINIMAL_COMPLEXITY_LADDER.md)
-5. [HARNESS_COVERAGE_MODEL.md](./HARNESS_COVERAGE_MODEL.md)
-6. [CROSS_AGENT_RATCHET_MODEL.md](./CROSS_AGENT_RATCHET_MODEL.md)
-7. [DESIGN_DEV_QA_GITHUB_GOVERNANCE.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.md)
-8. [HARNESS_TEMPLATE_TAXONOMY.md](./HARNESS_TEMPLATE_TAXONOMY.md)
-9. [TOOL_ADAPTER_MATRIX.md](./TOOL_ADAPTER_MATRIX.md)
+1. [harness-core-model.md](./harness-core-model.md)
+2. [context-engineering-protocol.md](./context-engineering-protocol.md)
+3. [method-first-delivery-policy.md](./method-first-delivery-policy.md)
+4. [minimal-complexity-ladder.md](./minimal-complexity-ladder.md)
+5. [harness-coverage-model.md](./harness-coverage-model.md)
+6. [cross-agent-ratchet-model.md](./cross-agent-ratchet-model.md)
+7. [design-dev-qa-github-governance.md](./design-dev-qa-github-governance.md)
+8. [harness-template-taxonomy.md](./harness-template-taxonomy.md)
+9. [tool-adapter-matrix.md](./tool-adapter-matrix.md)
 
 ## Default Stack
 
@@ -40,7 +40,7 @@ Every non-trivial task should first establish a lightweight collaboration protoc
 
 ### 0.1 Minimal Complexity
 
-Before implementation, apply [MINIMAL_COMPLEXITY_LADDER.md](./MINIMAL_COMPLEXITY_LADDER.md):
+Before implementation, apply [MINIMAL_COMPLEXITY_LADDER.md](./minimal-complexity-ladder.md):
 
 - Record the highest rung that satisfies the task: skip, reuse, stdlib, native platform, installed dependency, one local expression, or minimum new code.
 - Prefer deletion, reuse, standard library, native platform features, and existing dependencies before new abstractions or dependencies.
@@ -50,7 +50,7 @@ Before implementation, apply [MINIMAL_COMPLEXITY_LADDER.md](./MINIMAL_COMPLEXITY
 
 ### 0.2 Execution Guardrails
 
-Before implementation, apply [EXECUTION_GUARDRAILS.md](./EXECUTION_GUARDRAILS.md):
+Before implementation, apply [EXECUTION_GUARDRAILS.md](./execution-guardrails.md):
 
 - Write down confirmed facts, working assumptions, and open questions when ambiguity exists.
 - Record the smallest viable approach before introducing a new abstraction or dependency.
@@ -59,7 +59,7 @@ Before implementation, apply [EXECUTION_GUARDRAILS.md](./EXECUTION_GUARDRAILS.md
 
 ### 0.3 Context Strategy
 
-Before implementation, apply [CONTEXT_ENGINEERING_PROTOCOL.md](./CONTEXT_ENGINEERING_PROTOCOL.md):
+Before implementation, apply [CONTEXT_ENGINEERING_PROTOCOL.md](./context-engineering-protocol.md):
 
 - decide which entry sources actually govern this task instead of replaying broad history
 - prefer `entry -> summary -> raw` retrieval rather than opening raw logs first
@@ -88,7 +88,7 @@ Before implementation, choose the smallest narration budget that still keeps the
 - Use a structured brainstorming or design workflow
 - Produce design/spec output
 - Keep scope explicit
-- Apply the Design Gate in [DESIGN_DEV_QA_GITHUB_GOVERNANCE.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.md); for small tasks this can be a short written boundary, not a large document
+- Apply the Design Gate in [DESIGN_DEV_QA_GITHUB_GOVERNANCE.md](./design-dev-qa-github-governance.md); for small tasks this can be a short written boundary, not a large document
 
 ### 3. Planning
 
@@ -151,7 +151,7 @@ Before implementation, choose the smallest narration budget that still keeps the
   - `check-doc-links`
   - `check-doc-inventory`
   - `check-sync-drift`
-- For method upkeep, periodically run a harness coverage review using [HARNESS_COVERAGE_MODEL.md](./HARNESS_COVERAGE_MODEL.md)
+- For method upkeep, periodically run a harness coverage review using [harness-coverage-model.md](./harness-coverage-model.md)
 
 ### 9. Review
 
@@ -171,7 +171,7 @@ Before implementation, choose the smallest narration budget that still keeps the
 - Classify any PR or CI failure as `method-gate`, `repo-quality-gate`, `runtime-evidence-gate`, `external-flaky`, or `not-applicable`
 - Archive the OpenSpec change when complete
 - If the same failure pattern recurs, ratchet it into a guide, template, sensor, or gate instead of only patching code again
-- Use [CROSS_AGENT_RATCHET_MODEL.md](./CROSS_AGENT_RATCHET_MODEL.md) to decide whether the promotion belongs in the portable method, a consumer template, a consumer repository, or an agent adapter
+- Use [CROSS_AGENT_RATCHET_MODEL.md](./cross-agent-ratchet-model.md) to decide whether the promotion belongs in the portable method, a consumer template, a consumer repository, or an agent adapter
 - After major model or tool upgrades, review whether old harness workarounds can be downgraded, replaced, or removed
 
 ## Minimum Machine-Readable Closure

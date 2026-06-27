@@ -1,10 +1,15 @@
+---
+title: Verification Evidence Spec
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Verification Evidence Spec
 
-English version: [VERIFICATION_EVIDENCE_SPEC.en.md](./VERIFICATION_EVIDENCE_SPEC.en.md)
+English version: [VERIFICATION_EVIDENCE_SPEC.en.md](./verification-evidence-spec.en.md)
 
-类型：Contract
-归属层：method
-状态：Active
 版本：v1.1 (2026-06-26)
 
 本文定义任务验证证据的格式。证据格式必须工具无关。
@@ -331,3 +336,4 @@ For UI-affecting tasks, evidence must include:
 - 如果有替代验证，必须在 `alternativeVerification` 中记录
 - 必须有 `riskAcceptedBy` 确认风险已被接受
 - 所有 skipped verification 都应在 `summary.md` 的 `Known Gaps` 中列出
+

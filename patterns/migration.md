@@ -29,7 +29,7 @@ These should remain outside the kit in each target repository:
 
 When moving to a new repository:
 
-1. Copy `agentic-method-kit/`
+1. Copy `pantheon-harness/` or vendor `patterns/`, `scripts/harness/`, and `verify/` according to your adoption mode
 2. Adjust `config/method.config.json` if paths differ
 3. Recreate wrapper scripts or CI wiring
 4. Seed one sample task packet, evidence directory, and review artifact

@@ -1,6 +1,6 @@
 # Harness Coverage Model
 
-Chinese version: [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
+Chinese version: [harness-coverage-model.zh.md](./harness-coverage-model.zh.md)
 
 This document defines how to evaluate whether a harness is useful, not just complete.
 

@@ -10,7 +10,7 @@ Harness assets fall into two classes.
 
 | Class | Lives In | Purpose | Examples |
 |---|---|---|---|
-| Portable method asset | `agentic-method-kit/` | Reusable across agents and repositories | task packet schema, evidence schema, ratchet rules, review artifact shape, adapter contract |
+| Portable method asset | `patterns/` | Reusable across agents and repositories | task packet schema, evidence schema, ratchet rules, review artifact shape, adapter contract |
 | Consumer overlay | product repository | Project-specific architecture and quality controls | admin-platform quality profiles, auth policy tests, i18n hardcode checks, smoke routes |
 
 Rules:

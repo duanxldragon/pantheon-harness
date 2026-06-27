@@ -1,6 +1,6 @@
 # Agent 工具最佳实践到 Harness 的概念映射
 
-English version: [CONCEPT_MAP.md](./CONCEPT_MAP.md)
+English version: [CONCEPT_MAP.md](./concept-map.md)
 
 这个文档说明：本 kit 借鉴现代 coding agent 工具的架构思想，并把它翻译成可移植 harness 模式。
 
@@ -111,7 +111,7 @@ Agent 工具包含 MCP servers、plugins、browser tools 或 hosted sandboxes。
 
 另见：
 
-- [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
-- [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
-- [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
-- [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+- [harness-core-model.zh.md](./harness-core-model.zh.md)
+- [harness-coverage-model.zh.md](./harness-coverage-model.zh.md)
+- [harness-template-taxonomy.zh.md](./harness-template-taxonomy.zh.md)
+- [tool-adapter-matrix.zh.md](./tool-adapter-matrix.zh.md)

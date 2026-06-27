@@ -1,10 +1,15 @@
+---
+title: Agent 间交接协议
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Agent 间交接协议
 
-English version: [HANDOFF_PROTOCOL.en.md](./HANDOFF_PROTOCOL.en.md)
+English version: not yet available.
 
-类型：Contract
-归属层：method
-状态：Active
 版本：v1.0 (2026-06-26)
 
 本文定义 agent 间交接的标准化流程、状态机和检查清单。
@@ -304,3 +309,4 @@ If yes, specify reason: <reason>
 - 跳过检查清单项而不记录原因
 - 在未生成 Evidence 前触发 Review 交接
 - 绕过 Human Gate 直接完成任务
+

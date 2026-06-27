@@ -1,6 +1,6 @@
 # 最小复杂度阶梯
 
-English version: [MINIMAL_COMPLEXITY_LADDER.md](./MINIMAL_COMPLEXITY_LADDER.md)
+English version: [MINIMAL_COMPLEXITY_LADDER.md](./minimal-complexity-ladder.md)
 
 本指南提炼自 [Ponytail](https://github.com/DietrichGebert/ponytail) 的工具无关简化控制。这里采用的是方法，不是插件 runtime：仓库可以按需安装某个 adapter，但 Harness Engineering 只把这条阶梯当作可移植 guide 和 review sensor。
 

@@ -8,13 +8,13 @@ const DEFAULT_ROOT = process.cwd();
 
 const REQUIRED_DOC_README_ENTRIES = [
   'patterns/README.md',
-  'patterns/HARNESS_CORE_MODEL.md',
-  'patterns/HARNESS_COVERAGE_MODEL.md',
-  'patterns/HARNESS_TEMPLATE_TAXONOMY.md',
-  'patterns/TOOL_ADAPTER_MATRIX.md',
-  'patterns/METHOD_PLAYBOOK.md',
-  'architecture/harness/HARNESS_ENGINEERING_CONTRACT.md',
-  'architecture/harness/HARNESS_METHOD_PLAYBOOK.md',
+  'patterns/harness-core-model.md',
+  'patterns/harness-coverage-model.md',
+  'patterns/harness-template-taxonomy.md',
+  'patterns/tool-adapter-matrix.md',
+  'patterns/method-playbook.md',
+  'architecture/harness/harness-engineering-contract.md',
+  'architecture/harness/harness-method-playbook.md',
 ];
 
 function parseArgs(argv) {
@@ -109,12 +109,6 @@ function scan(root) {
   const findings = [];
 
   validateScriptInventory(root, 'scripts/harness', 'scripts/harness/README.md', findings);
-  validateScriptInventory(
-    root,
-    'agentic-repo-shell/scripts/harness',
-    'agentic-repo-shell/scripts/harness/README.md',
-    findings,
-  );
   validateDocsReadme(root, findings);
 
   return findings;

@@ -1,10 +1,14 @@
+---
+title: Triviality Classification Policy
+doc_type: Policy
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Triviality Classification Policy
 
-English version: [TRIVIALITY_CLASSIFICATION_POLICY.en.md](./TRIVIALITY_CLASSIFICATION_POLICY.en.md)
-
-类型：Policy
-归属层：method
-状态：Active
+English version: [TRIVIALITY_CLASSIFICATION_POLICY.en.md](./triviality-classification-policy.en.md)
 
 本文定义如何把任务归类为 `trivial` 或 `non-trivial`，避免仓库只靠个人判断决定是否需要 task packet、evidence 和 review artifact。
 
@@ -39,7 +43,7 @@ English version: [TRIVIALITY_CLASSIFICATION_POLICY.en.md](./TRIVIALITY_CLASSIFIC
 
 Proto First 任务不属于 trivial，**也不属于 non-trivial 的标准定义**。Proto First 是独立的开发模式：
 
-- 如果任务明确为探索性开发、方案验证，应使用 [Proto First Workflow](./proto-driven-development.md)
+- 如果任务明确为探索性开发、方案验证，应使用 [Proto First Workflow](../methodology/proto-driven-development.md)
 - Proto First 不需要完整的 Task Packet，但需要 Proto Goal 和 Decision Criteria
 - Proto First 验证成功后，可能需要进入 L1 或 L2 完成生产实现
 
@@ -65,3 +69,4 @@ Proto First 任务不属于 trivial，**也不属于 non-trivial 的标准定义
 ## 5. 优先级
 
 若本策略与仓库合同、用户直接指令冲突，以用户直接指令和仓库合同为先。
+

@@ -6,7 +6,7 @@
 
 ## 0.1 当前落地方案
 
-基于现有工具栈，当前建议固化为一条分层主线，而不是继续横向增加大量 skill。日常执行入口以 [Pantheon Workflow Routing](./WORKFLOW_ROUTING.md) 为准，本文件只保留背景和任务类型细化，不再定义工具路由。
+基于现有工具栈，当前建议固化为一条分层主线，而不是继续横向增加大量 skill。日常执行入口以 [Pantheon Workflow Routing](./workflow-routing.md) 为准，本文件只保留背景和任务类型细化，不再定义工具路由。
 
 建议新增但不默认常驻的外部 skill：
 
@@ -15,8 +15,8 @@
 
 对应的可执行流程已落到：
 
-- `harness-engineering/docs/CODEX_DEVELOPMENT_PROCESS.zh.md`
-- `harness-engineering/docs/CODEX_DEVELOPMENT_CHECKLIST.zh.md`
+- `architecture/methodology/workflow-routing.md`
+- `architecture/methodology/codex-workflow-quick-reference.md`
 
 这个增强卡后续主要保留“为什么这样设计”的背景，不再承担日常执行入口。
 
@@ -62,14 +62,14 @@
 | base -> ops 继承同步 | 2026-05-11 ops 继承工作流；2026-05-23 align shared backoffice layers；Codex history 多次要求同步 base 到 ops 并验证 CMDB/Deploy | 高 | extend existing | 值得。已有 drift 脚本，缺少人工执行顺序 |
 | 低代码生成模块闭环 | 2026-05-07 CMDB 后端/前端/seed/smoke；2026-05-20 low-code baseline；2026-05-23 platform coverage；Codex history 多次围绕 generator/dynamicmodule/autoRecycle/CMDB 真实生成验证 | 高 | extend existing | 值得。已有功能和 smoke，缺少“一次生成算完成”的定义 |
 | 安全审计和 GitHub governance follow-up | 2026-05-13 gitleaks/security reports；2026-05-26 security review follow-ups、GitHub governance controls | 中高 | existing skill | 暂不新建。已有 `cso`、`review`、GitHub controls |
-| 文档 frontmatter/索引治理 | 2026-05-18 frontmatter validation gate、repo-wide scan、bilingual docs；harness-engineering 已有 frontmatter checks | 中高 | existing automation | 暂不新建。已有 harness checks，按需执行即可 |
+| 文档 frontmatter/索引治理 | 2026-05-18 frontmatter validation gate、repo-wide scan、bilingual docs；pantheon-harness 已有 frontmatter checks | 中高 | existing automation | 暂不新建。已有 harness checks，按需执行即可 |
 
 ## 3. 推荐的 Codex 开发入口
 
 以后给 Codex 派发非 trivial 任务时，优先补上下面 6 个字段。字段不全时，Codex 应先从仓库中推断，推断有风险再问。
 
 ```text
-目标仓库：pantheon-base / pantheon-ops / harness-engineering / workspace docs
+目标仓库：pantheon-base / pantheon-ops / pantheon-harness / workspace docs
 任务层级：platform / system/auth / system/iam / system/org / system/config / system/lowcode / business/*
 任务类型：小改 / 标准功能 / UI任务 / 高风险任务 / 继承同步 / 真实环境操作
 依据文档：contract / design / acceptance / AGENTS / OpenSpec change
@@ -115,7 +115,7 @@
 
 ### 3.3 工具路由
 
-工具选择不在本文件维护。使用 [Pantheon Workflow Routing](./WORKFLOW_ROUTING.md) 作为唯一决策树；本文件后续章节只说明 Pantheon 常见任务类型的收口要求。
+工具选择不在本文件维护。使用 [Pantheon Workflow Routing](./workflow-routing.md) 作为唯一决策树；本文件后续章节只说明 Pantheon 常见任务类型的收口要求。
 
 ## 4. 按任务类型执行
 
@@ -251,7 +251,7 @@
 - `docs/WORKSPACE_INHERITANCE.md`
 - `docs/WORKSPACE_INHERITANCE.zh.md`
 - `docs/codex-development-process-improvement.md`
-- `harness-engineering/docs/CODEX_DEVELOPMENT_PROCESS.zh.md`
+- `architecture/methodology/codex-development-process-improvement.md`
 - `pantheon-ops/docs/PROJECT_INHERITANCE.md`
 
 没有创建新 skill、subagent 或 automation，原因是高频能力大多已存在：
@@ -259,7 +259,7 @@
 - UI 质量门：`impeccable`
 - QA/浏览器验证：`qa`、`qa-only`、`browse`
 - PR/安全审查：`review`、`cso`
-- harness 检查：`harness-engineering/scripts/harness/*`
+- harness 检查：`pantheon-harness/scripts/harness/*`
 - base/ops 继承检查：`triage-base-drift`、inheritance checks、ops sync scripts
 
 ## 6. 刻意跳过

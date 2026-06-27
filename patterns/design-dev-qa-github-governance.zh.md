@@ -1,6 +1,6 @@
 # 设计、开发、QA 与 GitHub 治理
 
-English version: [DESIGN_DEV_QA_GITHUB_GOVERNANCE.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.md)
+English version: [DESIGN_DEV_QA_GITHUB_GOVERNANCE.md](./design-dev-qa-github-governance.md)
 
 本文定义一条轻量的交付治理闭环，适用于 AI 辅助或人工辅助开发的仓库。
 

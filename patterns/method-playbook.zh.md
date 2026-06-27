@@ -1,20 +1,20 @@
 # Method Playbook
 
-English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
+English version: [method-playbook.md](./method-playbook.md)
 
 这份 playbook 用来把一组工具收敛成一套统一的方法。
 
 先阅读这些方法基础：
 
-1. [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
-2. [CONTEXT_ENGINEERING_PROTOCOL.zh.md](./CONTEXT_ENGINEERING_PROTOCOL.zh.md)
-3. [METHOD_FIRST_DELIVERY_POLICY.zh.md](./METHOD_FIRST_DELIVERY_POLICY.zh.md)
-4. [MINIMAL_COMPLEXITY_LADDER.zh.md](./MINIMAL_COMPLEXITY_LADDER.zh.md)
-5. [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
-6. [CROSS_AGENT_RATCHET_MODEL.zh.md](./CROSS_AGENT_RATCHET_MODEL.zh.md)
-7. [DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md)
-8. [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
-9. [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
+1. [harness-core-model.zh.md](./harness-core-model.zh.md)
+2. [context-engineering-protocol.zh.md](./context-engineering-protocol.zh.md)
+3. [method-first-delivery-policy.zh.md](./method-first-delivery-policy.zh.md)
+4. [minimal-complexity-ladder.zh.md](./minimal-complexity-ladder.zh.md)
+5. [harness-coverage-model.zh.md](./harness-coverage-model.zh.md)
+6. [cross-agent-ratchet-model.zh.md](./cross-agent-ratchet-model.zh.md)
+7. [design-dev-qa-github-governance.zh.md](./design-dev-qa-github-governance.zh.md)
+8. [harness-template-taxonomy.zh.md](./harness-template-taxonomy.zh.md)
+9. [tool-adapter-matrix.zh.md](./tool-adapter-matrix.zh.md)
 
 ## 默认技术栈
 
@@ -40,7 +40,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 ### 0.1 最小复杂度
 
-实现前应用 [MINIMAL_COMPLEXITY_LADDER.zh.md](./MINIMAL_COMPLEXITY_LADDER.zh.md)：
+实现前应用 [MINIMAL_COMPLEXITY_LADDER.zh.md](./minimal-complexity-ladder.zh.md)：
 
 - 记录能满足任务的最高 rung：跳过、复用、标准库、平台原生、已安装依赖、一条局部表达式，或最小新增代码。
 - 新抽象或新依赖之前，优先删除、复用、标准库、平台原生能力和既有依赖。
@@ -50,7 +50,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 ### 0.2 执行护栏
 
-实现前应用 [EXECUTION_GUARDRAILS.zh.md](./EXECUTION_GUARDRAILS.zh.md)：
+实现前应用 [EXECUTION_GUARDRAILS.zh.md](./execution-guardrails.zh.md)：
 
 - 存在歧义时，先写出已确认事实、工作假设和未决问题。
 - 引入新抽象或新依赖前，先记录最小可行方案。
@@ -59,7 +59,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 
 ### 0.3 Context Strategy
 
-实现前应用 [CONTEXT_ENGINEERING_PROTOCOL.zh.md](./CONTEXT_ENGINEERING_PROTOCOL.zh.md)：
+实现前应用 [CONTEXT_ENGINEERING_PROTOCOL.zh.md](./context-engineering-protocol.zh.md)：
 
 - 先决定这次任务真正受哪些入口源约束，不要大范围回放历史
 - 优先按 `entry -> summary -> raw` 顺序取回上下文，而不是先开原始日志
@@ -88,7 +88,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 - 使用结构化 brainstorming 或设计工作流
 - 产出 design / spec 结果
 - 明确 scope 边界
-- 应用 [DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md) 中的 Design Gate；小任务可以只写一段边界说明，不需要大型文档
+- 应用 [DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md](./design-dev-qa-github-governance.zh.md) 中的 Design Gate；小任务可以只写一段边界说明，不需要大型文档
 
 ### 3. Planning
 
@@ -151,7 +151,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
   - `check-doc-links`
   - `check-doc-inventory`
   - `check-sync-drift`
-- 方法维护时，定期按 [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md) 做 harness coverage review
+- 方法维护时，定期按 [harness-coverage-model.zh.md](./harness-coverage-model.zh.md) 做 harness coverage review
 
 ### 9. Review
 
@@ -171,7 +171,7 @@ English version: [METHOD_PLAYBOOK.md](./METHOD_PLAYBOOK.md)
 - 将 PR 或 CI 失败分类为 `method-gate`、`repo-quality-gate`、`runtime-evidence-gate`、`external-flaky` 或 `not-applicable`
 - 完成后归档 OpenSpec change
 - 如果同类 failure pattern 再次出现，不要只补代码，要把它升级成 guide、template、sensor 或 gate
-- 使用 [CROSS_AGENT_RATCHET_MODEL.zh.md](./CROSS_AGENT_RATCHET_MODEL.zh.md) 判断升级应落在 portable method、consumer template、consumer repository 还是 agent adapter
+- 使用 [CROSS_AGENT_RATCHET_MODEL.zh.md](./cross-agent-ratchet-model.zh.md) 判断升级应落在 portable method、consumer template、consumer repository 还是 agent adapter
 - 在重大模型或工具升级后，复核哪些旧 harness workaround 可以降级、替换或删除
 
 ## 最小 Machine-Readable 闭环

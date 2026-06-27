@@ -10,8 +10,8 @@ Copy this directory into another repository when you want explicit delivery cont
 
 ## What This Directory Contains
 
-- Core method models (`HARNESS_CORE_MODEL.*`)
-- Method playbooks (`METHOD_PLAYBOOK.*`)
+- Core method models (`harness-core-model.*`)
+- Method playbooks (`method-playbook.*`)
 - Context engineering protocol
 - Execution guardrails
 - Template taxonomy
@@ -32,11 +32,11 @@ Place `pantheon-harness/` as a sibling at workspace root. Consumer repos referen
 ## Quick Start
 
 1. Read [README.zh.md](./README.zh.md) if your team is Chinese-first
-2. Read [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
+2. Read [harness-core-model.zh.md](./harness-core-model.zh.md)
 3. Read [execution-guardrails.md](./execution-guardrails.md)
-4. Read [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+4. Read [method-playbook.zh.md](./method-playbook.zh.md)
 5. Copy the templates you need from [templates/](./templates/)
-6. Adjust [config/method.config.json](./config/method.config.json) if your repo uses different paths
+6. Adjust [config/method.config.json](../config/method.config.json) if your repo uses different paths
 7. Run the portable checks under [scripts/](../verify/scripts/)
 
 ## Directory Location

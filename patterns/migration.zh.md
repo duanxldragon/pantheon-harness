@@ -29,7 +29,7 @@ English version: [MIGRATION.md](./MIGRATION.md)
 
 迁移到新仓库时：
 
-1. 复制 `agentic-method-kit/`
+1. 复制 `pantheon-harness/`，或按采用模式 vendoring `patterns/`、`scripts/harness/` 和 `verify/`
 2. 如果路径不同，调整 `config/method.config.json`
 3. 重建包装脚本或 CI wiring
 4. 预置一个示例 task packet、evidence 目录和 review artifact

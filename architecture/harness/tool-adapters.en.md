@@ -1,10 +1,16 @@
+---
+title: Tool Adapters
+doc_type: Design
+layer: method
+status: Active
+updated_at: 2026-06-27
+linked_contracts:
+  - architecture/harness/harness-engineering-contract.md
+---
+
 # Tool Adapters
 
-Chinese version: [TOOL_ADAPTERS.md](./TOOL_ADAPTERS.md)
-
-Type: Design
-Layer: method
-Status: Active
+Chinese version: [tool-adapters.md](./tool-adapters.md)
 
 This document explains how the method layer supports multiple agent tools without becoming locked into any one tool.
 
@@ -21,7 +27,7 @@ The shared protocol lives in:
 - `docs/harness/verification-evidence-spec.md`
 - `docs/harness/review-loop-spec.md`
 
-`HARNESS_METHOD_PLAYBOOK.md` answers what should happen first, what happens next, and what each tool is responsible for. The other contracts define boundaries, formats, and gates.
+`harness-method-playbook.md` answers what should happen first, what happens next, and what each tool is responsible for. The other contracts define boundaries, formats, and gates.
 
 Tool-specific guidance lives in:
 
@@ -68,3 +74,4 @@ But they must share:
 Harness Engineering is not a replacement for Codex, Claude Code, Cursor, opencode, or any future agent. It is the repository-level control system those tools operate within.
 
 Agents decide how to plan, edit, run commands, and summarize. Harness decides what must be known before work starts, what evidence proves completion, which changes require human judgment, and how failures ratchet into better guides, templates, sensors, or gates.
+

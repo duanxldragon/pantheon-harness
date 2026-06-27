@@ -1,6 +1,6 @@
 # Execution Guardrails
 
-Chinese version: [EXECUTION_GUARDRAILS.zh.md](./EXECUTION_GUARDRAILS.zh.md)
+Chinese version: [EXECUTION_GUARDRAILS.zh.md](./execution-guardrails.zh.md)
 
 This document adds a small set of execution guardrails to the portable Harness Engineering method.
 
@@ -32,7 +32,7 @@ Solve today's problem with the smallest load-bearing change.
 
 Harness mapping:
 
-- [MINIMAL_COMPLEXITY_LADDER.md](./MINIMAL_COMPLEXITY_LADDER.md)
+- [MINIMAL_COMPLEXITY_LADDER.md](./minimal-complexity-ladder.md)
 - task packet `## Minimum Viable Approach`
 
 ## 3. Surgical Changes

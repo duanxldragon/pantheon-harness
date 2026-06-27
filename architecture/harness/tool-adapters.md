@@ -1,10 +1,16 @@
+---
+title: Tool Adapters
+doc_type: Design
+layer: method
+status: Active
+updated_at: 2026-06-27
+linked_contracts:
+  - architecture/harness/harness-engineering-contract.md
+---
+
 # Tool Adapters
 
-English version: [TOOL_ADAPTERS.en.md](./TOOL_ADAPTERS.en.md)
-
-类型：Design
-归属层：method
-状态：Active
+English version: [tool-adapters.en.md](./tool-adapters.en.md)
 
 本文说明方法层如何支持多种 agent 工具而不被某个工具锁死。
 
@@ -21,7 +27,7 @@ Adapter 只负责把通用协议映射到具体工具。
 - `docs/harness/verification-evidence-spec.md`
 - `docs/harness/review-loop-spec.md`
 
-其中 `HARNESS_METHOD_PLAYBOOK.md` 负责回答“默认先做什么、再做什么、每个工具负责什么”；其余合同负责边界、格式和门禁。
+其中 `harness-method-playbook.md` 负责回答“默认先做什么、再做什么、每个工具负责什么”；其余合同负责边界、格式和门禁。
 
 工具说明在：
 
@@ -62,3 +68,4 @@ Adapter 只负责把通用协议映射到具体工具。
 - evidence format
 - review findings format
 - human gate 规则
+

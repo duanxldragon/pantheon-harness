@@ -1,10 +1,14 @@
+---
+title: Agent Interface Contract
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Agent Interface Contract
 
-English version: [AGENT_INTERFACE_CONTRACT.en.md](./AGENT_INTERFACE_CONTRACT.en.md)
-
-类型：Contract
-归属层：method
-状态：Active
+English version: [AGENT_INTERFACE_CONTRACT.en.md](./agent-interface-contract.en.md)
 
 本文定义任何 agent 或人工工程师进入仓库时的输入、输出和行为协议。工具可以不同，协议必须一致。
 
@@ -146,3 +150,4 @@ Verification checked:
 - 在下游仓库、插件或业务扩展中静默重写上游共享合同。
 - 把权限、路由、i18n、审计、安全边界视为后续补丁。
 - 为了让测试通过而降低测试覆盖或删除检查。
+

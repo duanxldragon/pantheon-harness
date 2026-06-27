@@ -6,16 +6,16 @@ import process from 'node:process';
 
 const DEFAULT_ROOT = process.cwd();
 const REQUIRED_METHOD_DOCS = [
-  'agentic-method-kit/HARNESS_CORE_MODEL.md',
-  'agentic-method-kit/HARNESS_COVERAGE_MODEL.md',
-  'agentic-method-kit/HARNESS_TEMPLATE_TAXONOMY.md',
-  'agentic-method-kit/TOOL_ADAPTER_MATRIX.md',
+  'patterns/harness-core-model.md',
+  'patterns/harness-coverage-model.md',
+  'patterns/harness-template-taxonomy.md',
+  'patterns/tool-adapter-matrix.md',
 ];
 const REQUIRED_REPO_DOCS = [
-  'docs/harness/HARNESS_CORE_MODEL.md',
-  'docs/harness/HARNESS_COVERAGE_MODEL.md',
-  'docs/harness/HARNESS_TEMPLATE_TAXONOMY.md',
-  'docs/harness/TOOL_ADAPTER_MATRIX.md',
+  'docs/harness/harness-core-model.md',
+  'docs/harness/harness-coverage-model.md',
+  'docs/harness/harness-template-taxonomy.md',
+  'docs/harness/tool-adapter-matrix.md',
 ];
 
 function parseArgs(argv) {
@@ -44,7 +44,7 @@ function exists(root, repoPath) {
 }
 
 function detectTemplateSelection(root) {
-  const configPath = path.join(root, 'agentic-method-kit', 'config', 'method.config.json');
+  const configPath = path.join(root, 'config', 'method.config.json');
   if (!fs.existsSync(configPath)) return false;
   try {
     const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
@@ -69,7 +69,7 @@ function scan(root) {
   }
   if (!detectTemplateSelection(root) && !detectTemplateReview(root)) {
     warnings.push({
-      file: 'agentic-method-kit/config/method.config.json',
+      file: 'config/method.config.json',
       reason: 'no templateId selection and no template review artifact found',
     });
   }

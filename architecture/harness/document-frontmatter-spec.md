@@ -1,10 +1,14 @@
+---
+title: Document Frontmatter Spec
+doc_type: Contract
+layer: platform
+status: Active
+updated_at: 2026-06-27
+---
+
 # Document Frontmatter Spec
 
-English version: [DOCUMENT_FRONTMATTER_SPEC.en.md](./DOCUMENT_FRONTMATTER_SPEC.en.md)
-
-Type: Contract
-Layer: platform
-Status: Active
+English version: [DOCUMENT_FRONTMATTER_SPEC.en.md](./document-frontmatter-spec.en.md)
 
 This document defines the portable YAML frontmatter convention for repository-level governance docs used by Harness Engineering.
 
@@ -102,3 +106,4 @@ This spec is intentionally lightweight.
 
 It does not try to fully schema-encode every possible document body.
 It focuses on the metadata and linkage layer that agents and CI can enforce reliably.
+

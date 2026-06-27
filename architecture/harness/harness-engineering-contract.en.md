@@ -1,10 +1,14 @@
+---
+title: Harness Engineering Contract
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Harness Engineering Contract
 
-Chinese version: [HARNESS_ENGINEERING_CONTRACT.md](./HARNESS_ENGINEERING_CONTRACT.md)
-
-Type: Contract
-Layer: method
-Status: Active
+Chinese version: [HARNESS_ENGINEERING_CONTRACT.md](./harness-engineering-contract.md)
 
 This document defines the tool-agnostic Harness Engineering protocol. It constrains how AI agents, automation tools, and human engineers receive tasks, read context, modify code, verify results, record evidence, and enter review.
 
@@ -262,3 +266,4 @@ Harness maturity progresses in three stages:
 1. protocol layer: establish `docs/harness/*` and `.agents/*` so the workflow is tool-agnostic
 2. evidence layer: establish task packet, evidence schema, and evidence directory conventions
 3. gate layer: push repository-specific boundaries, quality checks, runtime evidence, and document governance into scripts and CI
+

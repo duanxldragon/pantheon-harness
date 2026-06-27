@@ -1,0 +1,81 @@
+{
+  "taskId": "2026-06-27-frontmatter-migration",
+  "repo": "pantheon-harness",
+  "agent": {
+    "tool": "codex"
+  },
+  "commands": [
+    {
+      "command": "node scripts/harness/check-doc-frontmatter.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Baseline before migration: 0 errors, 30 legacy metadata warnings."
+    },
+    {
+      "command": "node -e <frontmatter migration script>",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Migrated 30 architecture/harness Markdown files from legacy metadata lines to YAML frontmatter."
+    },
+    {
+      "command": "node scripts/harness/check-doc-frontmatter.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Post-migration: 0 errors, 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-doc-links.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings."
+    },
+    {
+      "command": "node scripts/harness/check-doc-inventory.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings."
+    },
+    {
+      "command": "node --test scripts/harness/*.test.mjs",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "80 tests passed."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs --root .",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Final task packet gate passed with 0 errors and 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-evidence.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Final evidence gate passed with 0 errors and 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-review.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Final review gate passed with 0 errors."
+    }
+  ],
+  "graphChecks": {
+    "usedCodeGraph": false,
+    "affectedSubgraph": [
+      "architecture/harness docs -> frontmatter checker -> doc inventory -> evidence/review gates"
+    ],
+    "checks": [],
+    "findings": [],
+    "notes": "Task packet declares Graph Focus: none; frontmatter metadata migration did not require codegraph traversal."
+  },
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-06-27-frontmatter-migration.task.md",
+    "evidenceDir": ".harness/evidence/2026-06-27-frontmatter-migration/",
+    "reviewFile": ".harness/evidence/2026-06-27-frontmatter-migration/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  },
+  "knownGaps": [],
+  "completedAt": "2026-06-27T17:05:17+08:00"
+}

@@ -1,18 +1,18 @@
 {
-  "version": "1.1.0",
-  "compatibleMethodKit": "1.1.0",
+  "version": "1.3.0",
+  "compatibleMethodKit": "1.3.0",
   "description": "Pantheon Harness Repo Shell - Landing files for harness adoption",
   "releaseDate": "2026-06-26",
   "landingFiles": [
     ".agents/README.md",
     ".github/pull_request_template.md",
-    "docs/harness/HARNESS_CORE_MODEL.md",
-    "docs/harness/HARNESS_COVERAGE_MODEL.md",
-    "docs/harness/HARNESS_TEMPLATE_TAXONOMY.md",
-    "docs/harness/TOOL_ADAPTER_MATRIX.md",
-    "docs/harness/HARNESS_ENGINEERING_CONTRACT.md",
-    "docs/harness/TRIVIALITY_CLASSIFICATION_POLICY.md",
-    "docs/harness/VISUAL_EVIDENCE_PROMOTION_POLICY.md",
-    "docs/harness/FAILURE_REGISTRY_PROMOTION_POLICY.md"
+    "docs/harness/harness-core-model.md",
+    "docs/harness/harness-coverage-model.md",
+    "docs/harness/harness-template-taxonomy.md",
+    "docs/harness/tool-adapter-matrix.md",
+    "docs/harness/harness-engineering-contract.md",
+    "docs/harness/triviality-classification-policy.md",
+    "docs/harness/visual-evidence-promotion-policy.md",
+    "docs/harness/failure-registry-promotion-policy.md"
   ]
 }

@@ -1,6 +1,6 @@
 # 人机协同开发平台评估
 
-English version: [HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.md](./HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.md)
+English version: [HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.md](./human-agent-collaboration-platform-assessment.md)
 
 ## 1. 结论
 

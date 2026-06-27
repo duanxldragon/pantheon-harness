@@ -1,6 +1,6 @@
 # 执行护栏
 
-English version: [EXECUTION_GUARDRAILS.md](./EXECUTION_GUARDRAILS.md)
+English version: [EXECUTION_GUARDRAILS.md](./execution-guardrails.md)
 
 本文为可移植的 Harness Engineering 方法补上一组小而硬的执行护栏。
 
@@ -32,7 +32,7 @@ Harness 对应落点：
 
 Harness 对应落点：
 
-- [MINIMAL_COMPLEXITY_LADDER.zh.md](./MINIMAL_COMPLEXITY_LADDER.zh.md)
+- [MINIMAL_COMPLEXITY_LADDER.zh.md](./minimal-complexity-ladder.zh.md)
 - task packet 的 `## Minimum Viable Approach`
 
 ## 3. 外科式改动

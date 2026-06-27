@@ -104,6 +104,29 @@ test('check-visual-evidence warns when evidence directory is missing', () => {
   );
 });
 
+test('check-visual-evidence ignores explicit not-applicable method tasks that mention visual docs', () => {
+  const root = makeFixture();
+  writeUiTask(
+    root,
+    'method-docs',
+    [
+      '# Task Packet: Method Docs',
+      '',
+      '- Modify `architecture/harness/visual-quality-protocol.md`.',
+      '',
+      '## Visual Evidence Scope',
+      '',
+      '- Applicability: not applicable',
+      '- Reason: method documentation only; no user-facing UI changed.',
+    ].join('\n'),
+  );
+
+  const result = runJson(root);
+
+  assert.equal(result.uiTaskCount, 0);
+  assert.equal(result.warningCount, 0);
+});
+
 test('check-visual-evidence fails strict mode when warnings exist', () => {
   const root = makeFixture();
   writeUiTask(

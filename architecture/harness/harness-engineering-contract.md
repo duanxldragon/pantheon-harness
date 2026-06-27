@@ -1,10 +1,14 @@
+---
+title: Harness Engineering Contract
+doc_type: Contract
+layer: method
+status: Active
+updated_at: 2026-06-27
+---
+
 # Harness Engineering Contract
 
-English version: [HARNESS_ENGINEERING_CONTRACT.en.md](./HARNESS_ENGINEERING_CONTRACT.en.md)
-
-类型：Contract
-归属层：method
-状态：Active
+English version: [HARNESS_ENGINEERING_CONTRACT.en.md](./harness-engineering-contract.en.md)
 
 本文定义工具无关 Harness Engineering 协议。它约束所有 AI agent、自动化工具和人工工程师如何接收任务、读取上下文、修改代码、验证结果、提交证据和进入 review。
 
@@ -268,3 +272,4 @@ Harness 成熟度分三阶段推进：
 1. 协议层：建立 `docs/harness/*` 与 `.agents/*`，确保工具无关。
 2. 证据层：建立 task packet、evidence schema 和证据目录。
 3. 门禁层：把仓库专属边界、质量检查、运行态证据和文档治理下沉为脚本和 CI。
+

@@ -6,13 +6,13 @@ English version: [README.md](./README.md)
 
 它不是单独的事实来源。真正应先阅读的是根协议与方法文档：
 
-1. `docs/harness/HARNESS_METHOD_PLAYBOOK.md`
-2. `docs/harness/HARNESS_ENGINEERING_CONTRACT.md`
-3. `docs/harness/AGENT_INTERFACE_CONTRACT.md`
-4. `docs/harness/TASK_PACKET_SPEC.md`
-5. `docs/harness/VERIFICATION_EVIDENCE_SPEC.md`
-6. `docs/harness/REVIEW_LOOP_SPEC.md`
-7. `docs/harness/INHERITANCE_HARNESS_PROTOCOL.md`
+1. `docs/harness/harness-method-playbook.md`
+2. `docs/harness/harness-engineering-contract.md`
+3. `docs/harness/agent-interface-contract.md`
+4. `docs/harness/task-packet-spec.md`
+5. `docs/harness/verification-evidence-spec.md`
+6. `docs/harness/review-loop-spec.md`
+7. `docs/harness/inheritance-harness-protocol.md`
 
 然后再看具体工具适配：
 
