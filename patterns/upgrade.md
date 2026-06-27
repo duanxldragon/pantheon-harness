@@ -4,26 +4,65 @@ Chinese version: [UPGRADE.zh.md](./UPGRADE.zh.md)
 
 Use this guide when updating an existing repository that already contains:
 
-- `agentic-method-kit/`
-- `agentic-repo-shell/`-derived repo-local files
+- `pantheon-harness/` (standalone mode)
+- `../pantheon-harness/` (workspace mode)
 
 ## Upgrade Policy
 
-- upgrade `agentic-method-kit/` first
-- then reconcile repo-local shell files
-- then rerun harness checks
+1. Update `pantheon-harness/` or pull latest changes from the harness repo
+2. Then reconcile local harness files if needed
+3. Then rerun harness checks
 
-## 1.0.0
+## Version Compatibility
 
-Baseline release.
+- `pantheon-harness` VERSION should match consumer repo VERSION
+- Run health check after upgrade:
+```bash
+node scripts/harness/check-method-health.mjs --strict
+```
 
-Recommended verification after upgrade:
+## Standalone Mode Upgrade
 
 ```text
-node agentic-method-kit/scripts/check-task-packet.mjs --root .
-node agentic-method-kit/scripts/check-evidence.mjs --root . --strict
-node agentic-method-kit/scripts/check-review.mjs --root . --strict
-node agentic-method-kit/scripts/check-adoption.mjs --root .
+# Pull latest pantheon-harness changes
+git pull origin main
+
+# Or replace with fresh copy
+rm -rf pantheon-harness
+cp -r /path/to/new/pantheon-harness .
+```
+
+## Workspace Mode Upgrade
+
+```text
+# Pull latest pantheon-harness
+cd ../pantheon-harness
+git pull origin main
+
+# Update local VERSION to match
+cd ../my-consumer-repo
+echo "1.3.0" > VERSION
+
+# Verify compatibility
+node scripts/harness/check-method-health.mjs --strict
+```
+
+## Verification After Upgrade
+
+### Standalone Mode
+
+```text
+node pantheon-harness/scripts/harness/check-task-packet.mjs --root .
+node pantheon-harness/scripts/harness/check-evidence.mjs --root . --strict
+node pantheon-harness/scripts/harness/check-review.mjs --root . --strict
+node pantheon-harness/scripts/harness/check-adoption.mjs --root .
+```
+
+### Workspace Mode
+
+```text
+node scripts/harness/check-method-health.mjs --strict
+node scripts/harness/check-adoption.mjs --root .
 ```
 
 If the upgraded repository has no recorded evidence or review artifacts yet, run evidence/review checks without `--strict` during bootstrap. Enable `--strict` only after the repository has at least one linked task packet, `commands.json`, and `review.md`.

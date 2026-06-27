@@ -1,98 +1,58 @@
-# Agentic Method Kit
+# 方法模式
+
+Agentic 交付的核心方法模式和模板。
 
 English version: [README.md](./README.md)
 
-这是一个可移植的方法包，给希望在仓库里建立可重复 Harness Engineering 工作流的团队使用。
+可移植的方法包，适用于希望在仓库中建立可重复 Harness Engineering 工作流的团队。
 
-当你希望非 trivial 的 agent 或人工辅助交付有明确控制项时，就把这个目录复制进目标仓库。
+当您希望对非平凡的 agent 或人工辅助交付有明确的控制项时，可将此目录复制到目标仓库。
 
-它也内置了一条最小图审查收口路径：
+## 本目录内容
 
-- 从 task packet 的 `## Structural Scope` 生成 `graphChecks` / `structuralReview` 骨架
-- 把保存下来的 CodeGraph 风格输出整理成 `graph-review.json`
-- 再把这个导入结果写回 evidence / review 收口件
+- 核心方法模型（`HARNESS_CORE_MODEL.*`）
+- 方法 playbook（`METHOD_PLAYBOOK.*`）
+- Context engineering 协议
+- 执行护栏
+- 模板分类
+- 工具适配矩阵
+- 模板（`templates/`）
+- 配置（`config/`）
 
-建议与下列目录一起使用：
+## 使用方式
 
-- `agentic-repo-shell/`
+### 独立模式
 
-可选示例 overlay：
+将 `pantheon-harness/` 复制到目标仓库根目录。方法论独立运行。
 
-- `sample-overlays/pantheon/`
+### 工作区模式
 
-## 这个方法包定义什么
-
-- 工具无关的 harness 核心模型
-- 一套 context-engineering 协议，用来定义 context surface 分层、渐进式检索、跨 session 恢复和敏感上下文边界
-- 方法优先交付策略，避免流程尚未清楚时陷入生产代码修复
-- 执行护栏，用来约束歧义处理、简单优先、外科式 diff 和可验证完成
-- 最小复杂度阶梯，用来避免不必要代码、依赖和抽象，同时不削弱安全性
-- 面向 guides、sensors、gates 和 failure capture 的覆盖模型
-- 跨 agent ratchet 模型，把重复失败升级成可复用方法资产，同时避免绑定单一业务仓库
-- 从设计、开发、QA 验收到 GitHub PR 治理和 ratchet closeout 的交付治理闭环
-- 平台化评估，用来判断什么时候应该做轻量人机协同 companion，而不是过早平台化
-- 面向不同仓库形态的模板分类
-- 工具适配矩阵，让具体工具可用，但不把它们变成方法前提
-- 一套默认 playbook，覆盖 change 选择、task packet、实现、evidence 和 review
-- task packet、evidence、review closure、failure registry entry 的可移植 schema 与模板
-- 方法健康度、adoption、task packet 结构和治理漂移的可移植检查
-- review artifact 的可移植闭环，以及 template/runtime/docs-integrity 的通用治理检查
-
-## 这个方法包不要求什么
-
-- 不要求某一个编辑器
-- 不要求某一个托管 agent runtime
-- 不要求某一个 MCP server
-- 不要求某一个 skill bundle
-
-具体工具可以被仓库推荐，但不能成为方法本身。
+将 `pantheon-harness/` 作为兄弟目录放在工作区根目录。消费者仓库通过 `../pantheon-harness/` 引用它。
 
 ## 快速开始
 
-1. 阅读 [README.zh.md](./README.zh.md)
+1. 如果您的团队优先使用中文，阅读 [README.zh.md](./README.zh.md)
 2. 阅读 [HARNESS_CORE_MODEL.zh.md](./HARNESS_CORE_MODEL.zh.md)
-3. 阅读 [EXECUTION_GUARDRAILS.zh.md](./EXECUTION_GUARDRAILS.zh.md)
-4. 阅读 [CONTEXT_ENGINEERING_PROTOCOL.zh.md](./CONTEXT_ENGINEERING_PROTOCOL.zh.md)
-5. 阅读 [METHOD_FIRST_DELIVERY_POLICY.zh.md](./METHOD_FIRST_DELIVERY_POLICY.zh.md)
-6. 阅读 [MINIMAL_COMPLEXITY_LADDER.zh.md](./MINIMAL_COMPLEXITY_LADDER.zh.md)
-7. 阅读 [HARNESS_COVERAGE_MODEL.zh.md](./HARNESS_COVERAGE_MODEL.zh.md)
-8. 阅读 [CROSS_AGENT_RATCHET_MODEL.zh.md](./CROSS_AGENT_RATCHET_MODEL.zh.md)
-9. 阅读 [DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md](./DESIGN_DEV_QA_GITHUB_GOVERNANCE.zh.md)
-10. 阅读 [HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.zh.md](./HUMAN_AGENT_COLLABORATION_PLATFORM_ASSESSMENT.zh.md)
-11. 阅读 [HARNESS_TEMPLATE_TAXONOMY.zh.md](./HARNESS_TEMPLATE_TAXONOMY.zh.md)
-12. 阅读 [TOOL_ADAPTER_MATRIX.zh.md](./TOOL_ADAPTER_MATRIX.zh.md)
-13. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
-14. 复制你需要的模板
-15. 如果你的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
-16. 运行 [scripts/](./scripts/) 下的可移植检查脚本
+3. 阅读 [execution-guardrails.zh.md](./execution-guardrails.zh.md)
+4. 阅读 [METHOD_PLAYBOOK.zh.md](./METHOD_PLAYBOOK.zh.md)
+5. 从 [templates/](./templates/) 复制您需要的模板
+6. 如果您的仓库路径约定不同，调整 [config/method.config.json](./config/method.config.json)
+7. 运行 [scripts/](./scripts/) 下的可移植检查脚本
 
-## 闭环
+## 目录位置
 
-对于非 trivial 工作，可移植闭环是：
+本 `patterns/` 目录是 `pantheon-harness` 中的规范方法来源。
 
-- change record
-- task packet
-- implementation
-- verification evidence
-- review artifact
-- 如果仓库采用文档治理，则再加 governed docs
-
-这个方法包存在的目的，就是把这条闭环显式化、可迁移化。
-
-## Canonical 角色
-
-`agentic-method-kit/` 是方法事实源。
-
-仓库本地的 `docs/harness/*` 可以为本地执行投影或摘要这些方法，但如果出现漂移，应以这里的方法定义为准，再回同步下游投影层。
+仓库本地的 `architecture/harness/*` 文件可以为本执行投影或摘要这些方法，但如果出现漂移，应以这里的方法定义为准，再回同步下游投影层。
 
 ## 版本管理
 
-当前版本：`1.1.0`
+当前版本：`1.3.0`（与 `pantheon-harness/VERSION` 匹配）
 
 版本元数据：
 
-- [VERSION](./VERSION)
-- [METHOD_VERSION.json](./METHOD_VERSION.json)
+- [VERSION](../VERSION)
+- [CHANGELOG.md](../CHANGELOG.md)
 - [changelog.md](./changelog.md)
 - [upgrade.md](./upgrade.md)
 
@@ -101,5 +61,9 @@ English version: [README.md](./README.md)
 运行健康检查验证方法包完整性：
 
 ```bash
+# 独立模式
+node pantheon-harness/scripts/harness/check-method-health.mjs --strict
+
+# 工作区模式
 node scripts/harness/check-method-health.mjs --strict
 ```
