@@ -117,7 +117,7 @@ platform
 
 - Task ID: example
 - OpenSpec Change: openspec/changes/example-change/
-- Plan References: docs/superpowers/plans/example-plan.md
+- Plan References: plan references, workflow references, or resumable execution artifacts
 - Evidence Directory: .harness/evidence/example/
 - Review File: .harness/evidence/example/review.md
 

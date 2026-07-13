@@ -12,7 +12,7 @@ English version: [TASK_PACKET_SPEC.en.md](./task-packet-spec.en.md)
 
 版本：v1.1 (2026-06-26)
 
-Task packet 是非 trivial 任务的工具无关输入格式。它让 Codex、Claude Code、Cursor、Copilot、OpenHands、Aider 和人工工程师共享同一份任务边界。
+Task packet 是非 trivial 任务的工具无关输入格式。它让各类 agent 工具和人工工程师共享同一份任务边界。
 
 ## 0. 版本历史
 
@@ -149,7 +149,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 > v1.2+ 增强：参考 [Context Engineering Guide](../methodology/context-engineering-guide.md)
 
-- Entry Sources: `AGENTS.md`, `CLAUDE.md`, current task packet, latest review summary | none
+- Entry Sources: `AGENTS.md`, repo-local agent configuration file, current task packet, latest review summary | none
 - Retrieval Order: `entry -> summary -> raw`
 - Retrieval Helpers: `none | codegraph | graph report | wiki hot cache`
 - Promotion Target: `none | repo wiki | decision log | guide update`
@@ -209,7 +209,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 - Task ID: `YYYY-MM-DD-task-name`
 - OpenSpec Change: `openspec/changes/<name>/` | none
-- Plan References: `docs/superpowers/plans/<file>.md`, `.omx/plans/<file>.md`, `.codex-flow/journal/<file>.jsonl` | none
+- Plan References: `plan references`, workflow references, or resumable execution artifacts | none
 - Evidence Directory: `.harness/evidence/<task-id>/`
 - Review File: `.harness/evidence/<task-id>/review.md` | none
 

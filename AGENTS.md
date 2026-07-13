@@ -26,7 +26,7 @@ pantheon-harness/
 │   ├── harness/           # Harness protocols & contracts
 │   └── methodology/       # Methodology docs
 ├── .agents/               # Agent adapters
-│   └── adapters/          # Tool-specific adapters (codex, claude-code, cursor, etc.)
+│   └── adapters/          # Agent adapters
 ├── .github/               # GitHub templates
 │   └── pull_request_template.md
 ├── config/agents/         # Agent configurations
@@ -37,7 +37,7 @@ pantheon-harness/
 │   └── METHOD_VERSION.json # Version metadata
 ├── rules/                 # Harness evidence & verification
 ├── scripts/               # Harness bootstrap scripts
-├── skills/                # Codex/Cursor agent skills
+├── skills/                # Shared agent skills
 ├── workflows/            # Dynamic workflow patterns
 ├── verify/                # Verification schemas & scripts
 ├── evaluations/           # Evaluation materials
@@ -56,7 +56,7 @@ pantheon-harness/
 | `config/agents/` | Agent adapter configurations |
 | `patterns/` | Core method patterns, playbooks, templates |
 | `rules/` | Harness evidence and rule definitions |
-| `skills/` | Codex/Cursor agent skills |
+| `skills/` | Shared agent skills |
 | `workflows/` | Dynamic workflow patterns (Fan-out, Adversarial, etc.) |
 | `verify/` | Verification schemas and scripts |
 | `evaluations/` | Evaluation materials and benchmarks |
@@ -84,5 +84,5 @@ node scripts/harness/check-review.mjs --strict
 
 - `openspec/` is a tool, not part of the method - maintained in `tools/`
 - `examples/pantheon-base/` contains the reference implementation for pantheon-base projects
-- `skills/` contains all Codex/Cursor skills, organized by function
+- `skills/` contains all shared agent skills, organized by function
 <!-- OMX:AGENTS-INIT:MANUAL:END -->

@@ -2,7 +2,7 @@
 
 Chinese version: [README.zh.md](./README.zh.md)
 
-This directory stores shared templates for repository-local Codex workflow skills.
+This directory stores shared templates for repository-local agent workflow skills.
 
 These templates are not tied to one concrete repository. Use them when creating or refreshing repo-local skills in repositories such as `pantheon-base` and `pantheon-ops`.
 

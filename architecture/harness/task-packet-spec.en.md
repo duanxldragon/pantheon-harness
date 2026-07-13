@@ -10,7 +10,7 @@ updated_at: 2026-06-27
 
 Chinese version: [TASK_PACKET_SPEC.md](./task-packet-spec.md)
 
-A task packet is the tool-agnostic input format for non-trivial work. It lets Codex, Claude Code, Cursor, Copilot, OpenHands, Aider, and human engineers share the same task boundary.
+A task packet is the tool-agnostic input format for non-trivial work. It lets any agent tool or human engineer share the same task boundary.
 
 ## 1. Location
 
@@ -112,7 +112,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 ## Context Strategy
 
-- Entry Sources: `AGENTS.md`, `CLAUDE.md`, current task packet, latest review summary | none
+- Entry Sources: `AGENTS.md`, repo-local agent configuration file, current task packet, latest review summary | none
 - Retrieval Order: `entry -> summary -> raw`
 - Retrieval Helpers: `none | codegraph | graph report | wiki hot cache`
 - Promotion Target: `none | repo wiki | decision log | guide update`
@@ -152,7 +152,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 
 - Task ID: `YYYY-MM-DD-task-name`
 - OpenSpec Change: `openspec/changes/<name>/` | none
-- Plan References: `docs/superpowers/plans/<file>.md`, `.omx/plans/<file>.md`, `.codex-flow/journal/<file>.jsonl` | none
+- Plan References: `plan references`, workflow references, or resumable execution artifacts | none
 - Evidence Directory: `.harness/evidence/<task-id>/`
 - Review File: `.harness/evidence/<task-id>/review.md` | none
 

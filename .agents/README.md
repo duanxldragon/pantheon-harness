@@ -2,7 +2,7 @@
 
 > Adapter layer for Pantheon Harness agent integration
 
-This directory contains tool-specific adapter configurations for Pantheon Harness.
+This directory contains agent adapter configurations for Pantheon Harness.
 
 ## Supported Adapters
 

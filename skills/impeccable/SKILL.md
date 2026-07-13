@@ -1,6 +1,12 @@
 ---
 name: impeccable
-description: Visual excellence and product UI quality skill. Use whenever Codex designs, implements, reviews, improves, or QA-tests any user-facing UI, page, dashboard, admin panel, form, table, chart, navigation, layout, visual design system, interaction state, responsive view, or frontend experience. Prefer this skill before other UI work to make pages aesthetically polished, coherent, accessible, and production-grade.
+description: >
+  Visual excellence and product UI quality skill. Use whenever an agent or reviewer
+  designs, implements, reviews, improves, or QA-tests any user-facing UI, page,
+  dashboard, admin panel, form, table, chart, navigation, layout, visual design system,
+  interaction state, responsive view, or frontend experience. Prefer this skill before
+  other UI work to make pages aesthetically polished, coherent, accessible, and
+  production-grade.
 ---
 
 # Impeccable

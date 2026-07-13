@@ -2,7 +2,7 @@
 
 English version: [README.md](./README.md)
 
-这里存放仓库本地 Codex workflow skills 的共享模板层。
+这里存放仓库本地 agent workflow skills 的共享模板层。
 
 这些模板不绑定某一个具体仓库，适用于为 `pantheon-base`、`pantheon-ops` 之类的仓库创建或刷新 repo-local skills。
 

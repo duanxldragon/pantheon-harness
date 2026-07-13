@@ -78,8 +78,8 @@ complete | blocked | partial
   "taskId": "YYYY-MM-DD-task-name",
   "repo": "example-repository",
   "agent": {
-    "tool": "codex",
-    "adapter": ".agents/adapters/codex.md"
+    "tool": "agent",
+    "adapter": "repository-defined adapter"
   },
   "commands": [
     {
@@ -109,7 +109,7 @@ complete | blocked | partial
     "estimatedCostUsd": 1.42,
     "retryCount": 1,
     "delegationCount": 0,
-    "notes": "derived from tool-native session log"
+    "notes": "derived from agent session record"
   },
   "browserEvidence": [],
   "runtimeSensitive": true,
@@ -122,9 +122,9 @@ complete | blocked | partial
     "reviewFile": ".harness/evidence/YYYY-MM-DD-task-name/review.md",
     "changeRef": "openspec/changes/<name>/",
     "planRefs": [
-      "docs/superpowers/plans/<file>.md",
-      ".omx/plans/<file>.md",
-      ".codex-flow/journal/<file>.jsonl"
+      "plan references",
+      "workflow references",
+      "resumable execution artifacts"
     ]
   },
   "knownGaps": [],
@@ -134,14 +134,11 @@ complete | blocked | partial
 
 `agent.tool` may be:
 
-- `codex`
-- `claude-code`
-- `cursor`
-- `github-copilot`
-- `openhands`
-- `aider`
+- `agent`
 - `human`
 - `other`
+
+Specific tool examples include `codex`, `claude-code`, `cursor`, `github-copilot`, `openhands`, and `aider`.
 
 When a task includes browser verification for UI, routes, permission states, or browser flows, `browserEvidence` should include at least:
 
@@ -190,7 +187,7 @@ For long-running, delegated, or cost-sensitive work, `commands.json` should also
     "estimatedCostUsd": 1.42,
     "retryCount": 1,
     "delegationCount": 2,
-    "notes": "derived from tool-native session log"
+    "notes": "derived from agent session record"
   }
 }
 ```

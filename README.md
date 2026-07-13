@@ -11,7 +11,7 @@ Portable, tool-agnostic Harness Engineering for non-trivial software delivery wi
 Pantheon Harness provides the methodology layer for repeatable agentic delivery:
 
 - **Explicit contracts** — Task packets, handoff protocols, verification evidence
-- **Scoped boundaries** — Tool-agnostic patterns that work across Codex, Claude Code, Cursor
+- **Scoped boundaries** — Tool-agnostic patterns that work across agent tools
 - **Durable closure** — Artifacts that outlive the chat session
 - **Portable adoption** — Copy the method into any repository
 
@@ -71,7 +71,7 @@ pantheon-harness/
 ├── patterns/               # Templates & installation
 ├── verify/                 # Schema validation (optional)
 │
-├── skills/                # Internal: tool-specific skills
+├── skills/                # Internal: shared skills
 ├── workflows/             # Internal: workflow patterns
 ├── tools/                 # Internal: openspec tooling
 ├── .agents/              # Internal: agent adapters
@@ -183,4 +183,4 @@ node scripts/harness/check-visual-evidence.mjs --root . --strict
 
 - `architecture/` — Architecture and methodology documentation (consumer needs)
 - `patterns/` — Method source of truth (consumer needs)
-- `skills/` — Tool-specific skills and adapters (internal only)
+- `skills/` — Shared agent skills (internal only)
