@@ -78,7 +78,7 @@ A UI is not ready if any of these are true:
 
 ## Relationship To Other Skills
 
-- If `ui-ux-pro-max` is available, use it for detailed design-system, color, typography, accessibility, and stack-specific guidance.
+- If a dedicated design-system or accessibility review skill is available, use it for detailed color, typography, accessibility, and stack-specific guidance.
 - If browser QA tools are available, inspect screenshots instead of relying on code inspection only.
 - If a project has its own design system, follow it first and use Impeccable as the polish/review gate.
 

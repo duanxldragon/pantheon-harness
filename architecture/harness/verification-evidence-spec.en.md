@@ -217,7 +217,7 @@ Rules:
 - `taskId` must match the `linkage.taskPacket` filename and the `linkage.evidenceDir` directory name
 - if `reviewFile` exists, it should live under the matching evidence directory
 - if there is no OpenSpec change, `changeRef` must be `none`
-- if there is no plan, workflow, or resumable execution artifact, `planRefs` may be an empty array; Superpowers plans, OMX plans/goals, and codex-flow journals are all valid plan references
+- if there is no plan, workflow, or resumable execution artifact, `planRefs` may be an empty array; legacy artifacts (Superpowers plans, OMX plans/goals, codex-flow journals) remain valid plan references for historical tasks
 
 ## 4. UI Evidence
 

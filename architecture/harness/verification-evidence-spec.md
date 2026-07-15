@@ -240,7 +240,7 @@ complete | blocked | partial
 - `taskId` 必须与 `linkage.taskPacket` 文件名和 `linkage.evidenceDir` 目录名一致
 - `reviewFile` 如存在应放在对应 evidence 目录下
 - `changeRef` 如无 OpenSpec change，写 `none`
-- `planRefs` 如无 plan、workflow 或可恢复执行 artifact，可为空数组；Superpowers plan、OMX plan/goal、codex-flow journal 都可以作为 plan reference
+- `planRefs` 如无 plan、workflow 或可恢复执行 artifact，可为空数组；legacy artifact（Superpowers plan、OMX plan/goal、codex-flow journal）作为历史 plan reference 仍然有效
 
 ## 5. UI 证据
 

@@ -68,3 +68,23 @@
 | **合计** | **22** | **22** | **0** | **1** |
 
 结论：没有需要丢弃的资产。Superpowers 时代的所有沉淀都有历史价值或仍在活跃使用。唯一的"进化"是将 sonar-remediation 的手动流程升级为标准化 Skill。
+
+---
+
+## 附录：2026-07-15 模型时代再审计（推翻部分结论）
+
+> 触发条件：`harness-retirement-review.md` 第 2 节 "模型、工具链或 repo shell 发生重大升级"。
+> 完整逐条结论见 [2026-07-15 Model-Era Retirement Review](../harness/retirement-reviews/2026-07-15-model-era-retirement-review.md)。
+
+2026-06-15 的结论"22 项全部保留"在一个月后已不成立：
+
+| 当时结论 | 再审计结论 | 原因 |
+|---|---|---|
+| OMX/codex-flow 作为活跃路由保留 | **retire**：从 `workflow-routing.md` 主路由移除，能力改由 plan mode / subagent / workflow 编排等 runtime 原生能力承担 | OMX 与 codex-flow 已不再日常使用；模型原生规划与并行能力已覆盖其价值 |
+| Superpowers plugin 运行时保留 | **retire**：不再作为任何路由目标 | 同上 |
+| 设计文档 17 份历史参考保留 | **keep**：不变 | 历史考古价值不受模型升级影响 |
+| Global Codex skills 5 个保留 | **keep**（其中 impeccable 仍是三仓 UI 门禁） | 仍在活跃使用 |
+
+同时删除了 `pantheon-harness/skills/` 下 46 个零引用的 vendored/一次性技能目录（gstack-*、openspec-*、ui-ux-pro-max、cutover/drift 套件、pantheon-base-foundation、pantheon-workspace-routing），仅保留 `grill-me` 和 `impeccable`。
+
+历史工件不受影响：`docs/superpowers/` 下的 specs/plans、旧 task packets 和 evidence 中的 legacy plan references 依然有效（校验脚本继续接受）。

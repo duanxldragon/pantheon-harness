@@ -2,7 +2,7 @@
 
 > Planner/Dispatcher 每次把任务交给任意 Generator adapter 执行时，必须按此模板填写。
 > 信息不完整 = Generator 容易猜错 = 返工。
-> 具体工具可以是 Codex、Claude Code、Cursor、OpenHands、Aider、OMX execution lane 或人工工程师；工具不能改变 Task Packet 字段语义。
+> 具体工具可以是 Codex、Claude Code、Cursor、OpenHands、Aider 或人工工程师；工具不能改变 Task Packet 字段语义。
 
 ## 最小模板（日常快速任务）
 
@@ -30,7 +30,7 @@
 - 层级：
 - 模式：
 - 关联 PR/Issue：
-- 执行 adapter：none | Codex | Claude Code | Cursor | OpenHands | Aider | OMX lane | human engineer | other
+- 执行 adapter：none | Codex | Claude Code | Cursor | OpenHands | Aider | human engineer | other
 - Reviewer/Evaluator：
 
 ### 前置阅读（按顺序）

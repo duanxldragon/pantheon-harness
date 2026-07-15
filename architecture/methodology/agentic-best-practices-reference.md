@@ -150,11 +150,11 @@ Skills structure:
 
 ```markdown
 Skill categories:
-- .system/ - Tool creation skills
-- pantheon-* - Pantheon-specific
 - impeccable - UI quality gate
-- openspec-* - Spec management
+- grill-me - plan/design/PR grilling
 ```
+
+（2026-07-15 退役审查后，skills/ 只保留被合同或消费仓实际引用的技能。）
 
 ## 6. Evidence and Verification
 

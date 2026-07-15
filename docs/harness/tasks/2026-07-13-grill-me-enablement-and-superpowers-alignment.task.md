@@ -6,7 +6,7 @@ Make `grill-me` an actual usable planning/design review skill in `pantheon-harne
 
 ## Primary Layer
 
-method / docs-governance / agent-adapter
+method
 
 ## Dependency Layers
 
@@ -148,6 +148,10 @@ method / docs-governance / agent-adapter
 - Risk Nodes: none
 - Graph Focus: none
 
+## Visual Evidence
+
+Visual evidence: not applicable — docs governance and skill registration only, no user-facing UI.
+
 ## Verification Plan
 
 - `git status --short`
@@ -177,12 +181,14 @@ method / docs-governance / agent-adapter
 
 ## Completion Checklist
 
-- [ ] grill-me SKILL.md rewritten in harness
-- [ ] skills-lock path metadata corrected
-- [ ] tool-adapter matrix updated
-- [ ] base inheritance reference added
-- [ ] Superpowers linkage audit completed
-- [ ] base checker/docs updated for consistent linkage wording
-- [ ] Verification run or exception recorded
-- [ ] Evidence saved
-- [ ] Review completed
+- [x] Layer and boundary declared
+- [x] Contract anchors read
+- [x] grill-me SKILL.md rewritten in harness
+- [x] skills-lock path metadata corrected
+- [x] tool-adapter matrix updated
+- [x] base inheritance reference added
+- [x] Superpowers linkage audit completed
+- [x] base checker/docs updated for consistent linkage wording
+- [x] Verification run or exception recorded
+- [x] Evidence saved or summarized
+- [x] Review completed
