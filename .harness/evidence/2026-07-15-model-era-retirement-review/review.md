@@ -7,7 +7,7 @@ Executed the first model-era retirement review under `harness-retirement-review.
 ## Findings
 
 - No blocking findings.
-- Pre-existing: `.harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/` fails current evidence/review schema on main (before this task); recorded as known gap for a follow-up packet.
+- Pre-existing: `.harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/` failed current evidence/review schema on main (before this task); resolved in this branch via schema backfill (original verdicts unchanged) because it blocked the strict artifact-check CI gate.
 - `workflow-routing.md` duplication (Core Model / Decision Tree pasted twice) removed as part of the rewrite.
 
 ## Machine Readable

@@ -79,7 +79,7 @@
     ]
   },
   "knownGaps": [
-    "Pre-existing evidence/review schema failures in .harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/ predate this task (present on main) and are left for a follow-up packet."
+    "Pre-existing evidence/review schema failures in .harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/ predated this task (present on main); resolved in this branch by schema backfill (commit 86559bc) because they blocked the strict artifact-check CI gate."
   ],
   "completedAt": "2026-07-15T00:00:00+08:00"
 }
