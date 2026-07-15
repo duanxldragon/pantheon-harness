@@ -1,0 +1,85 @@
+{
+  "taskId": "2026-07-15-model-era-retirement-review",
+  "repo": "pantheon-harness",
+  "agent": {
+    "tool": "claude-code"
+  },
+  "commands": [
+    {
+      "command": "node --test scripts/harness/*.test.mjs",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "81 tests passed, 0 failed. Legacy plan-ref fixtures unchanged and still passing."
+    },
+    {
+      "command": "node scripts/harness/check-doc-frontmatter.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 errors, 0 warnings (includes new retirement review record)."
+    },
+    {
+      "command": "node scripts/harness/check-doc-links.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings after removing codex-workflow-quick-reference.md and its inbound links."
+    },
+    {
+      "command": "node scripts/harness/check-doc-inventory.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs --root .",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Task packet valid; contract anchors resolve from repo root."
+    },
+    {
+      "command": "node scripts/harness/check-evidence.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "This artifact validates. Pre-existing failure in 2026-07-13-grill-me evidence exists on main before this task (verified via git stash) and is out of scope."
+    },
+    {
+      "command": "node scripts/harness/check-review.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "This task's review validates. Pre-existing failure in 2026-07-13-grill-me review exists on main before this task and is out of scope."
+    },
+    {
+      "command": "node scripts/harness/check-adoption.mjs --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings, 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-method-health.mjs --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "VERSION, SHELL_VERSION.json, and patterns/METHOD_VERSION.json aligned at 1.4.0."
+    }
+  ],
+  "graphChecks": {
+    "usedCodeGraph": false,
+    "affectedSubgraph": [
+      "workflow-routing -> tool-adapter-matrix -> task-delegation-template -> spec linkage wording -> skills registry"
+    ],
+    "checks": [],
+    "findings": [],
+    "notes": "Task packet declares Graph Focus: none; method-doc and skill-directory governance did not require codegraph traversal."
+  },
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-07-15-model-era-retirement-review.task.md",
+    "evidenceDir": ".harness/evidence/2026-07-15-model-era-retirement-review/",
+    "reviewFile": ".harness/evidence/2026-07-15-model-era-retirement-review/review.md",
+    "changeRef": "none",
+    "planRefs": [
+      "architecture/harness/retirement-reviews/2026-07-15-model-era-retirement-review.md"
+    ]
+  },
+  "knownGaps": [
+    "Pre-existing evidence/review schema failures in .harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/ predate this task (present on main) and are left for a follow-up packet."
+  ],
+  "completedAt": "2026-07-15T00:00:00+08:00"
+}

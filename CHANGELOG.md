@@ -6,6 +6,27 @@ Pantheon Harness 方法论变更记录。按 semver 管理。
 
 ---
 
+## [1.4.0] — 2026-07-15
+
+### Added
+- **Model-Era Retirement Review**: 新增 `architecture/harness/retirement-reviews/2026-07-15-model-era-retirement-review.md`，按 `harness-retirement-review.md` 政策对全部 Superpowers/OMX/codex-flow 时代资产给出逐条 keep/downgrade/replace/remove 结论和回滚条件
+- **Governance Evidence**: 新增任务包和 `.harness/evidence/` 证据/review，覆盖本次退役审查
+
+### Changed
+- **workflow-routing.md**: 重写——去除重复粘贴的 Core Model/Decision Tree 段落；OMX（$deep-interview/$ralplan/$ultragoal/$team/$ralph）和 codex-flow 从活跃路由移除，路由改为 capability 表述（plan-first、subagent/workflow 扇出）；"codex-flow Contract" 替换为工具无关的 "Parallel Fan-Out Contract"
+- **harness-methodology.zh.md**: 修复重复的 §8 编号（Context Engineering→§9、最佳实践→§10）；§5 文档地图更新为当前真实文件名；§9.3 subagent 强制路由表降级为原则表述
+- **tool-adapter-matrix.md/.zh.md**: Planning/parallel/execution/browser-evidence 各行去除 OMX、superpowers、codex-flow、gstack 绑定；修复 en 版缺失 grill-me 行的中英漂移
+- **task-packet-spec / verification-evidence-spec**: Superpowers/OMX/codex-flow plan references 措辞降级为 legacy（历史工件仍有效，校验行为不变）
+- **task-delegation-template.md**: adapter 枚举去除 OMX lane
+- **superpowers-migration.md**: 追加 2026-07-15 再审计附录，推翻 2026-06-15 "全部保留" 结论
+- **skills/impeccable/SKILL.md**: 去除对已删除 `ui-ux-pro-max` 的引用
+
+### Removed
+- **46 个零引用 skill 目录**: 37 个 gstack-* vendored 副本、4 个 openspec-*、ui-ux-pro-max、4 个一次性 cutover/drift skills（backport-to-base、docs-cutover、workspace-cutover、triage-base-drift）、pantheon-base-foundation、pantheon-workspace-routing；`skills/` 仅保留 `grill-me` 和 `impeccable`
+- **codex-workflow-quick-reference.md**: codex-flow 专属操作手册，随 codex-flow 路由退役
+
+---
+
 ## [1.3.0] — 2026-06-27
 
 ### Added

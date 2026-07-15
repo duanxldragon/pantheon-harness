@@ -253,7 +253,7 @@ The following fields are the minimum closed-loop keys linking a task packet to l
 - `Evidence Directory`: must point to `.harness/evidence/<task-id>/`
 - `Review File`: if a review artifact is retained, it must point to a file under the evidence directory
 - `OpenSpec Change`: if the task comes from OpenSpec, the change path must be recorded explicitly; otherwise use `none`
-- `Plan References`: if the task comes from a plan, OMX goal/plan, codex-flow journal, or equivalent artifact, record it explicitly; otherwise use `none`
+- `Plan References`: if the task comes from a plan, workflow journal, or equivalent artifact, record it explicitly; otherwise use `none` (legacy Superpowers plan / OMX goal / codex-flow journal references remain valid for historical tasks)
 
 These linkage fields connect `OpenSpec change / plan or workflow reference / task packet / evidence / review` into a traceable chain.
 

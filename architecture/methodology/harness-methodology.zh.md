@@ -1,6 +1,6 @@
 # Pantheon Harness 方法论
 
-> 最后更新：2026-06-23
+> 最后更新：2026-07-15
 > 版本：[v1.0.0](../../VERSION)
 > 变更历史：[CHANGELOG.md](../../CHANGELOG.md)
 > 演化机制：[evolution.md](./evolution.md)
@@ -194,16 +194,22 @@ CI SonarQube 扫描
 ## 5. 文档体系
 
 ```
-docs/
-├── HARNESS_METHODOLOGY.zh.md     ← 本文件（方法总纲）
-├── WORKFLOW_ROUTING.md           ← 工具路由决策树
-├── WORKSPACE_INHERITANCE.md      ← 仓库角色与继承关系
-├── ACCEPTANCE_CHECKLIST.zh.md    ← 非程序员验收清单
-├── TASK_DELEGATION_TEMPLATE.md   ← Planner/Dispatcher→Generator 任务委派模板
-├── codex-development-process-improvement.md  ← 流程增强背景
-├── codex-workflow-quick-reference.md         ← 命令速查
-├── SONARQUBE_RULES.md            ← SonarQube 规则与排除原因
-└── MIGRATION_LOG.md              ← Superpowers→OMX 迁移记录
+architecture/methodology/
+├── harness-methodology.zh.md      ← 本文件（方法总纲）
+├── workflow-routing.md            ← 能力路由决策树
+├── solo-delivery-tiers.md         ← L0/L1/L2 交付分级
+├── acceptance-checklist.zh.md     ← 非程序员验收清单
+├── task-delegation-template.md    ← Planner/Dispatcher→Generator 任务委派模板
+├── workflow-templates.md          ← L0/L1/L2/UI/Bug Fix/Proto First 工作流模板
+├── proto-driven-development.md    ← 原型驱动开发模式
+├── branch-pr-workflow.md          ← 分支与 PR 规范
+├── ci-cd-integration.md           ← CI/CD 门禁矩阵
+├── context-engineering-guide.md   ← Context engineering 规范
+├── agentic-best-practices-reference.md ← 跨工具最佳实践对照
+├── evolution.md                   ← 方法论演化机制
+├── retrospective-template.md      ← 复盘模板
+├── codex-development-process-improvement.md ← 流程增强背景（历史）
+└── superpowers-migration.md       ← Superpowers 时代资产迁移与退役记录
 ```
 
 ---
@@ -309,10 +315,11 @@ flowchart TD
 | v1.0 | 2026-06-15 | 初始版本：角色分离模型、Task Packet 模板、SonarQube 闭环、验收清单 |
 | v1.0.1 | 2026-06-23 | 将总纲从 Claude/Codex 固定分工改为工具无关角色分离模型 |
 | v1.1 | 2026-06-26 | 增强质量门禁矩阵（按档位差异化）、新增 Human Gate 标准 |
+| v1.4 | 2026-07-15 | 模型时代退役审查：移除 OMX/codex-flow 活跃路由、删除孤儿 skills、精简针对旧模型弱点的强制路由细则 |
 
-## 8. Context Engineering 规范（v1.2+ 新增）
+## 9. Context Engineering 规范（v1.2+ 新增）
 
-### 8.1 CLAUDE.md 编写原则
+### 9.1 CLAUDE.md 编写原则
 
 参考 [Context Engineering Guide](./context-engineering-guide.md)：
 
@@ -323,7 +330,7 @@ flowchart TD
 | 工具无关 | 不绑定特定 agent runtime |
 | 懒加载 | 用 skills 处理特定领域规则 |
 
-### 8.2 Plan First 流程
+### 9.2 Plan First 流程
 
 非 trivial 任务必须遵循：
 
@@ -337,19 +344,11 @@ flowchart TD
 - **审查**：验证 diff 和 evidence
 - **验收**：Human 最终确认
 
-### 8.3 Subagent 使用场景
+### 9.3 Subagent 使用原则
 
-| 场景 | 推荐使用 Subagent | 主会话处理 |
-|------|------------------|------------|
-| 深度文件阅读（10+ 文件） | 是 | |
-| 跨路径搜索 | 是 | |
-| 并行调查 | 是 | |
-| 研究任务 | 是 | |
-| 实现 | | 是 |
-| 快速修复 | | 是 |
-| 协调 | | 是 |
+原则：把上下文重的调查工作（大量文件阅读、跨路径搜索、并行调研）委派给 subagent，保持主上下文干净；实现、快速修复、协调留在主会话。边界情况由 runtime 自行判断——目标是干净的主上下文，不是强制路由表。
 
-### 8.4 Evidence First 原则
+### 9.4 Evidence First 原则
 
 **先验证，后声称完成。**
 
@@ -359,7 +358,7 @@ flowchart TD
 - Runtime-sensitive 任务必须有日志/指标
 - 验证跳过必须记录原因和风险
 
-## 9. 最佳实践参考（v1.2+ 新增）
+## 10. 最佳实践参考（v1.2+ 新增）
 
 参考 [Agentic Best Practices Reference](./agentic-best-practices-reference.md)：
 

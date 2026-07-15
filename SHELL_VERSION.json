@@ -1,8 +1,8 @@
 {
-  "version": "1.3.0",
-  "compatibleMethodKit": "1.3.0",
+  "version": "1.4.0",
+  "compatibleMethodKit": "1.4.0",
   "description": "Pantheon Harness Repo Shell - Landing files for harness adoption",
-  "releaseDate": "2026-06-26",
+  "releaseDate": "2026-07-15",
   "landingFiles": [
     ".agents/README.md",
     ".github/pull_request_template.md",

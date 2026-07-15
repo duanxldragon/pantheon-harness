@@ -16,7 +16,6 @@
 对应的可执行流程已落到：
 
 - `architecture/methodology/workflow-routing.md`
-- `architecture/methodology/codex-workflow-quick-reference.md`
 
 这个增强卡后续主要保留“为什么这样设计”的背景，不再承担日常执行入口。
 
@@ -260,7 +259,7 @@
 - QA/浏览器验证：`qa`、`qa-only`、`browse`
 - PR/安全审查：`review`、`cso`
 - harness 检查：`pantheon-harness/scripts/harness/*`
-- base/ops 继承检查：`triage-base-drift`、inheritance checks、ops sync scripts
+- base/ops 继承检查：inheritance checks、ops sync scripts（`triage-base-drift` skill 已于 2026-07-15 退役）
 
 ## 6. 刻意跳过
 

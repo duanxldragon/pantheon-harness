@@ -310,7 +310,7 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 - `Evidence Directory`：必须指向 `.harness/evidence/<task-id>/`
 - `Review File`：如保留 review artifact，必须指向 evidence 目录下文件
 - `OpenSpec Change`：如任务来自 OpenSpec，必须显式记录 change 路径；否则写 `none`
-- `Plan References`：如任务来自 plan、OMX goal/plan、codex-flow journal 或等价 artifact，必须显式记录；否则写 `none`
+- `Plan References`：如任务来自 plan、workflow journal 或等价 artifact，必须显式记录；否则写 `none`（legacy Superpowers plan / OMX goal / codex-flow journal 引用对历史任务仍然有效）
 
 这组 linkage 字段用于把 `OpenSpec change / plan or workflow reference / task packet / evidence / review` 串成可追踪链路。
 

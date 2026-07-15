@@ -125,7 +125,7 @@ Internal Only (not needed by consumers):
 
 | File | Location | Purpose |
 |------|----------|---------|
-| `VERSION` | Root | Current version (e.g., `1.3.0`) |
+| `VERSION` | Root | Current version (e.g., `1.4.0`) |
 | `CHANGELOG.md` | Root | Full version history |
 | `patterns/upgrade.md` | patterns/ | Upgrade guide |
 | `patterns/templates/release-notes.template.md` | patterns/templates/ | GitHub Release body template |
@@ -151,9 +151,16 @@ If UI is touched, also require browser or screenshot evidence.
 
 ## Current Status
 
-- Current version: `1.3.0`
-- Latest release: `v1.3.0`
+- Current version: `1.4.0`
+- Latest release: `v1.4.0`
 - Method shell: `pantheon-harness`
+
+### v1.4.0 Highlights
+
+- Model-era retirement review: removed OMX/codex-flow active routing; routing is now capability-based (plan-first, subagent/workflow fan-out).
+- Deleted 46 zero-reference skill directories; `skills/` now holds only `grill-me` and `impeccable`.
+- Downgraded old-model-oriented mandatory subagent routing tables to principles.
+- Legacy plan references (Superpowers/OMX/codex-flow artifacts) remain valid for historical tasks; validators unchanged.
 
 ### v1.3.0 Highlights
 
