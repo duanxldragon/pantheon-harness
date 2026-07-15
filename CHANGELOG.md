@@ -20,6 +20,7 @@ Pantheon Harness 方法论变更记录。按 semver 管理。
 - **task-delegation-template.md**: adapter 枚举去除 OMX lane
 - **superpowers-migration.md**: 追加 2026-07-15 再审计附录，推翻 2026-06-15 "全部保留" 结论
 - **skills/impeccable/SKILL.md**: 去除对已删除 `ui-ux-pro-max` 的引用
+- **AGENTS.md**: 去除 OMX 管理标记（`OMX:AGENTS-INIT:MANAGED`/`MANUAL` 注释），转为普通治理文档；layout 描述更新为当前真实目录（含 retirement-reviews/、.harness/，去除不存在的 rules/）
 
 ### Removed
 - **46 个零引用 skill 目录**: 37 个 gstack-* vendored 副本、4 个 openspec-*、ui-ux-pro-max、4 个一次性 cutover/drift skills（backport-to-base、docs-cutover、workspace-cutover、triage-base-drift）、pantheon-base-foundation、pantheon-workspace-routing；`skills/` 仅保留 `grill-me` 和 `impeccable`
