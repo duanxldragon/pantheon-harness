@@ -64,6 +64,9 @@ jobs:
       - name: Check Doc Frontmatter
         run: node scripts/harness/check-doc-frontmatter.mjs --root . --strict
 
+      - name: Check Encoding
+        run: node scripts/harness/check-encoding.mjs --root . --strict
+
       - name: Check Doc Links
         run: node scripts/harness/check-doc-links.mjs --root . --strict
 

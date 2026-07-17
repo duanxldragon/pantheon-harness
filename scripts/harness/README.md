@@ -27,6 +27,7 @@ The portable method source of truth lives in `patterns/`. Scripts here are gener
 | `check-method-health.mjs` | Checks method-kit and repo-shell version and landing-file health. |
 | `check-failure-registry.mjs` | Validates failure registry tables against the portable taxonomy. |
 | `check-doc-frontmatter.mjs` | Validates governed Markdown frontmatter conventions. |
+| `check-encoding.mjs` | Scans git-tracked text files for invalid UTF-8 byte sequences (mojibake corruption). |
 
 ## Common Commands
 
@@ -40,6 +41,7 @@ node scripts/harness/check-adoption.mjs --strict --root .
 node scripts/harness/check-doc-links.mjs --strict --root .
 node scripts/harness/check-doc-inventory.mjs --strict --root .
 node scripts/harness/check-sync-drift.mjs --strict --root .
+node scripts/harness/check-encoding.mjs --strict --root .
 node --test scripts/harness/*.test.mjs
 ```
 

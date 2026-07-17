@@ -6,6 +6,11 @@ Pantheon Harness 方法论变更记录。按 semver 管理。
 
 ---
 
+## [Unreleased]
+
+### Added
+- **check-encoding.mjs 门禁**: 扫描所有 git 跟踪的文本文件（`.md/.go/.ts` 等）是否含非法 UTF-8 字节序列，定位到行号。背景：2026-06-27 的 harness-engineering→pantheon-harness 迁移提交用非 UTF-8 代码页写回文件，损坏了 pantheon-base 5 个中文治理文档（每个多字节字符边界丢字节并吞掉换行），在 7 条 CI workflow 下潜伏近 3 周无门禁可见——按 ratchet loop 补此字节层 sensor。含 7 个 tmpdir fixture 测试，已接入 `harness-health.yml` docs-check job。
+
 ## [1.4.0] — 2026-07-15
 
 ### Added

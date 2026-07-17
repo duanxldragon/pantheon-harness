@@ -27,6 +27,7 @@ English version: [README.md](./README.md)
 | `check-method-health.mjs` | 校验 method-kit 与 repo-shell 版本和落地文件健康度。 |
 | `check-failure-registry.mjs` | 按可移植 taxonomy 校验 failure registry 表格。 |
 | `check-doc-frontmatter.mjs` | 校验 governed Markdown frontmatter 约定。 |
+| `check-encoding.mjs` | 扫描 git 跟踪的文本文件是否含非法 UTF-8 字节序列（乱码损坏）。 |
 
 ## 常用命令
 
@@ -40,6 +41,7 @@ node scripts/harness/check-adoption.mjs --strict --root .
 node scripts/harness/check-doc-links.mjs --strict --root .
 node scripts/harness/check-doc-inventory.mjs --strict --root .
 node scripts/harness/check-sync-drift.mjs --strict --root .
+node scripts/harness/check-encoding.mjs --strict --root .
 node --test scripts/harness/*.test.mjs
 ```
 
