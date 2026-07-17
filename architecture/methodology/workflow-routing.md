@@ -39,6 +39,16 @@ The end-to-end loop from requirement to acceptance. Suite skills (superpowers / 
 
 Each stage consumes the previous stage's artifact — a stage without its artifact is not complete, regardless of how confident the implementation looks. When a stage's owner is unavailable, record the gap explicitly instead of silently skipping the stage.
 
+### Human Touchpoints
+
+The maintainer appears at exactly three points in the loop; everything between them runs autonomously:
+
+1. **Requirement clarification** (loop entry) — the agent batches ALL clarifying questions into one round, then writes the In / Out / acceptance criteria. After the maintainer confirms them, no further questions about scope or approach.
+2. **Gate policy** — deciding what to do when a quality gate is red, approving exemptions (`ui-contract-allow`, `solo-override`), and changing gate rules. The gates themselves run mechanically without the maintainer.
+3. **Final acceptance** — visual/functional sign-off against the acceptance criteria from touchpoint 1, with rendered evidence prepared by the agent in advance.
+
+Between touchpoints, do not ask for mid-task confirmation on reversible, in-scope actions. Escalate to the maintainer only for destructive/irreversible operations, credential needs, or genuine scope changes — everything else is corrected by the Reviewer against the packet's In / Out, not by interrupting the maintainer.
+
 ## Decision Tree
 
 Start every non-trivial task by identifying the target repository, layer, risk, and evidence requirement.
