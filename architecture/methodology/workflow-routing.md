@@ -18,11 +18,26 @@ Use the smallest workflow that can finish the task with evidence.
 | Structural context | CodeGraph | Symbol lookup, impact, callers/callees, trace, affected subgraph |
 | UI quality gate | `impeccable` | Visual quality, responsive behavior, rendered evidence expectations |
 | Plan/design grilling | `grill-me` or equivalent challenge review | Challenge scope, risk, acceptance, rollback before approval |
-| Operational gates | Browser QA / security review tooling | Browser evidence, ship checks, health, security review |
+| Operational gates | Repo-native automation: Playwright smoke, capture scripts, CI quality gates | Browser evidence, ship checks, health, security review |
 
 The planning layer coordinates; it does not replace gates. CodeGraph and `impeccable` are gates that must be used inside whichever execution path applies.
 
 Keep `impeccable`. It is the current UI visual quality gate because it catches visual polish, layout, responsive, and interaction-state issues better than generic code review. Orchestration routes work; it does not replace `impeccable`.
+
+## Delivery Loop
+
+The end-to-end loop from requirement to acceptance. Suite skills (superpowers / gstack) used to fill several of these slots; after the 2026-07-17 user-environment retirement review, every slot is owned by the method itself plus repo-native tooling. No stage depends on an externally installed skill suite.
+
+| Stage | Owner | Artifact / gate |
+|---|---|---|
+| 需求澄清 (Requirement) | Plan-first path: clarifying interview, scope + acceptance bounded before editing | Task Packet `In / Out / Do Not Touch`; `grill-me` challenge for non-obvious scope |
+| 设计评审 (Design review) | `grill-me` challenge + human gate; CodeGraph impact for structural decisions | Recorded decision in the task packet; L2 requires reviewer-perspective declaration |
+| 开发执行 (Implementation) | Role separation: planner/reviewer plans and reviews, generator implements (see repo `CLAUDE.md` role boundary and model tiers) | Small reviewable diffs inside packet scope |
+| UI 质量 (UI quality) | `impeccable` gate + repo design contract (`DESIGN.md`) + mechanical style checkers in CI | Rendered evidence (screenshot/browser check) or recorded blocker |
+| 测试验收 (Test & acceptance) | Repo-native tests: unit + Playwright smoke + capture scripts; human acceptance checklist for milestone gates | Verification evidence per `verification-evidence-spec.md`; ACCEPTANCE_CHECKLIST for human sign-off |
+| 发布 (Release) | `repo-pr-gate` workflow skill + branch/PR workflow + CI quality gates; foundation release flow for base→business propagation | Green quality gates; release artifacts + consumer lock update |
+
+Each stage consumes the previous stage's artifact — a stage without its artifact is not complete, regardless of how confident the implementation looks. When a stage's owner is unavailable, record the gap explicitly instead of silently skipping the stage.
 
 ## Decision Tree
 
@@ -62,7 +77,7 @@ Task arrives
   |     -> impeccable gate before implementation and before completion
   |
   +-- Does it need browser evidence, QA, shipping, health, or security review?
-        -> Browser QA / security tooling as the operational gate
+        -> Repo-native operational gate: Playwright smoke / capture scripts / CI quality + security workflows
 ```
 
 When two paths apply, prefer composition over replacement:
@@ -121,8 +136,8 @@ Use `/plan` or equivalent to define the path before executing.
 | Many independent files/modules/repos to inspect | Subagent / workflow fan-out | Synthesized recommendation with per-branch evidence |
 | Parallel implementation lanes | Multi-agent execution (worktree-isolated when mutating) | Shared task list, integration owner, final verification |
 | UI/page/layout/component work | Normal route plus `impeccable` | Rendered evidence or recorded blocker |
-| Browser QA, ship, health | Browser QA tooling | Screenshot/log/check output |
-| Security review or finding validation | Security review tooling | Finding evidence and validation result |
+| Browser QA, ship, health | Repo-native Playwright smoke + capture scripts + CI gates | Screenshot/log/check output |
+| Security review or finding validation | Repo security workflow (security.yml) + targeted review | Finding evidence and validation result |
 | Formal product/spec change | OpenSpec when needed | Link OpenSpec artifacts into task packet |
 
 ## CodeGraph Gate

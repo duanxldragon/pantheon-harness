@@ -9,6 +9,8 @@ Pantheon Harness 方法论变更记录。按 semver 管理。
 ## [Unreleased]
 
 ### Added
+- **2026-07-17 用户环境退役审查**: `architecture/harness/retirement-reviews/2026-07-17-user-environment-retirement-review.md` —— 收尾 7-15 审查的用户环境侧：gstack 全家桶（39 个 `~/.claude/skills/` 目录）移入备份退役、superpowers 插件（已禁用）建议卸载、openspec 判 keep-dormant、impeccable 三处消费副本全部与 canonical 对齐
+- **workflow-routing.md Delivery Loop 章节**: 需求→设计→开发→UI→测试验收→发布 六阶段闭环显式映射到现存 owner（plan-first/grill-me/三权分立/impeccable+机械门禁/Playwright+验收清单/repo-pr-gate+foundation release），任何阶段不再依赖外装 skill 套件；Operational gates 行从 "Browser QA tooling" 具名化为 repo-native Playwright smoke + capture scripts + CI gates
 - **check-encoding.mjs 门禁**: 扫描所有 git 跟踪的文本文件（`.md/.go/.ts` 等）是否含非法 UTF-8 字节序列，定位到行号。背景：2026-06-27 的 harness-engineering→pantheon-harness 迁移提交用非 UTF-8 代码页写回文件，损坏了 pantheon-base 5 个中文治理文档（每个多字节字符边界丢字节并吞掉换行），在 7 条 CI workflow 下潜伏近 3 周无门禁可见——按 ratchet loop 补此字节层 sensor。含 7 个 tmpdir fixture 测试，已接入 `harness-health.yml` docs-check job。
 
 ## [1.4.0] — 2026-07-15
