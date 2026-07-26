@@ -1,34 +1,5 @@
 # Claude Code Adapter
 
-> Anthropic Claude Code integration for Pantheon Harness
+Canonical: [config/agents/adapters/claude-code.md](../../config/agents/adapters/claude-code.md)
 
-## Activation
-
-Activate this adapter when using Claude Code CLI for implementation tasks.
-
-## Capability Mapping
-
-| Harness Concept | Claude Code Capability |
-|-----------------|------------------------|
-| Task Packet | `--system` prompt with scoped instructions |
-| Handoff Protocol | Structured output format |
-| Verification Evidence | File generation, test output |
-| Review Loop | Native review mode |
-
-## Constraints
-
-- Claude Code operates with project context
-- Use CLAUDE.md for project-specific rules
-- File modifications require explicit approval
-
-## Evidence Format
-
-```json
-{
-  "adapter": "claude-code",
-  "version": "1.0.0",
-  "sessionId": "...",
-  "commands": [...],
-  "artifacts": [...]
-}
-```
+This path is kept as a pointer for adoption checks; the adapter content (required reading, capability mapping, human touchpoint contract) lives at the canonical location above.

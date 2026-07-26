@@ -25,6 +25,15 @@ Claude Code is an execution and review adapter for the Pantheon Harness Engineer
 
 Claude-specific prompt files must not become the only source for architecture, permission, i18n, audit, or inheritance rules.
 
+## Capability Mapping
+
+| Harness Concept | Claude Code Capability |
+|-----------------|------------------------|
+| Task Packet | Scoped session instructions (`CLAUDE.md` + task packet file) |
+| Handoff Protocol | Structured final output |
+| Verification Evidence | Command output and file artifacts per evidence spec |
+| Review Loop | Findings-first review mode |
+
 ## Human Touchpoint Contract
 
 The maintainer appears at exactly three touchpoints in the delivery loop; everything between them runs autonomously. Canonical definition: [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints).

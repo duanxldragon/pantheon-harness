@@ -25,6 +25,15 @@ For non-trivial work:
 
 Human work is held to the same completion definition as agent work.
 
+## Capability Mapping
+
+| Harness Concept | Human Capability |
+|-----------------|-------------------|
+| Task Packet | Manual acceptance criteria review |
+| Handoff Protocol | Written handoff |
+| Verification Evidence | Manual testing, screenshots |
+| Review Loop | Inline comments, approval; milestone sign-off via [acceptance-checklist.zh.md](../../../architecture/methodology/acceptance-checklist.zh.md) |
+
 ## Human Touchpoint Contract
 
 When delegating to agents, the maintainer appears at exactly three touchpoints in the delivery loop; everything between them runs autonomously. Canonical definition: [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints).

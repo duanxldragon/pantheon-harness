@@ -22,6 +22,15 @@ Cursor is an implementation adapter for the Pantheon Harness Engineering protoco
 
 Cursor can implement or review, but review output must follow `docs/harness/review-loop-spec.md`.
 
+## Capability Mapping
+
+| Harness Concept | Cursor Capability |
+|-----------------|-------------------|
+| Task Packet | Agent mode with scoped instructions |
+| Handoff Protocol | Structured output format |
+| Verification Evidence | Inline diff, test panel, terminal output |
+| Review Loop | Built-in review panel |
+
 ## Human Touchpoint Contract
 
 The maintainer appears at exactly three touchpoints in the delivery loop; everything between them runs autonomously. Canonical definition: [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints).

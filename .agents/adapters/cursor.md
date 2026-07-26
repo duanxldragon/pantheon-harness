@@ -1,34 +1,5 @@
 # Cursor Adapter
 
-> Cursor IDE integration for Pantheon Harness
+Canonical: [config/agents/adapters/cursor.md](../../config/agents/adapters/cursor.md)
 
-## Activation
-
-Activate this adapter when using Cursor for implementation tasks.
-
-## Capability Mapping
-
-| Harness Concept | Cursor Capability |
-|-----------------|-------------------|
-| Task Packet | Agent mode with scoped instructions |
-| Handoff Protocol | Structured output format |
-| Verification Evidence | Inline diff, test panel |
-| Review Loop | Built-in review panel |
-
-## Constraints
-
-- Cursor operates with full IDE context
-- Use workspace rules in CLAUDE.md
-- File modifications require user approval
-
-## Evidence Format
-
-```json
-{
-  "adapter": "cursor",
-  "version": "1.0.0",
-  "sessionId": "...",
-  "commands": [...],
-  "artifacts": [...]
-}
-```
+This path is kept as a pointer for adoption checks; the adapter content (required reading, capability mapping, human touchpoint contract) lives at the canonical location above.

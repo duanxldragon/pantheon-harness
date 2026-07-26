@@ -19,6 +19,15 @@ English version: [openhands.md](./openhands.md)
 - 命令摘要和工件按 evidence spec 持久化。
 - 删除、schema、base contract、permission、i18n、audit、inheritance 相关变更，不能绕过人工关口。
 
+## 能力映射
+
+| Harness 概念 | OpenHands 能力 |
+|---|---|
+| Task Packet | 任务指令格式 |
+| Handoff Protocol | 结构化输出 |
+| Verification Evidence | 动作历史、文件 diff |
+| Review Loop | 会话回放 |
+
 ## 人类触点契约
 
 维护者在交付回路中只出现在三个触点，其余全程自治。canonical 定义见 [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints)。

@@ -32,6 +32,15 @@ Final responses must include:
 - evidence path or summary
 - known gaps
 
+## Capability Mapping
+
+| Harness Concept | Codex Capability |
+|-----------------|------------------|
+| Task Packet | CLI prompt with scoped instructions |
+| Handoff Protocol | Structured output format |
+| Verification Evidence | Shell command output and file generation |
+| Review Loop | Multi-turn session |
+
 ## Human Touchpoint Contract
 
 The maintainer appears at exactly three touchpoints in the delivery loop; everything between them runs autonomously. Canonical definition: [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints).

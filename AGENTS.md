@@ -24,8 +24,8 @@ pantheon-harness/
 ├── architecture/          # Architecture & method documentation
 │   ├── harness/           # Harness protocols & contracts (incl. retirement-reviews/)
 │   └── methodology/       # Methodology docs
-├── .agents/               # Agent adapters
-│   └── adapters/          # Agent adapters
+├── .agents/               # Adapter pointer layer (canonical: config/agents/adapters/)
+│   └── adapters/          # Pointers kept for adoption-check path stability
 ├── .github/               # GitHub templates & CI workflow
 ├── .harness/              # Verification evidence
 ├── config/agents/         # Agent configurations (adapters, prompts, schemas, skill templates)

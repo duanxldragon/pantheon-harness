@@ -18,6 +18,15 @@ GitHub Copilot is a local assist and PR assist adapter for the Pantheon Harness 
 - Copilot-generated code is not accepted unless repository checks pass.
 - Copilot review comments should use P0/P1/P2 severity where applicable.
 
+## Capability Mapping
+
+| Harness Concept | Copilot Capability |
+|-----------------|---------------------|
+| Task Packet | Inline completion with context |
+| Handoff Protocol | Manual state transfer |
+| Verification Evidence | Manual test output capture |
+| Review Loop | PR review integration |
+
 ## Human Touchpoint Contract
 
 The maintainer appears at exactly three touchpoints in the delivery loop; everything between them runs autonomously. Canonical definition: [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints).

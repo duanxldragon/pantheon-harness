@@ -22,6 +22,15 @@ English version: [cursor.md](./cursor.md)
 
 Cursor 可以用于实现或 review，但 review 输出仍必须遵循 `docs/harness/review-loop-spec.md`。
 
+## 能力映射
+
+| Harness 概念 | Cursor 能力 |
+|---|---|
+| Task Packet | 带边界指令的 Agent 模式 |
+| Handoff Protocol | 结构化输出格式 |
+| Verification Evidence | 内联 diff、测试面板、终端输出 |
+| Review Loop | 内置评审面板 |
+
 ## 人类触点契约
 
 维护者在交付回路中只出现在三个触点，其余全程自治。canonical 定义见 [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints)。

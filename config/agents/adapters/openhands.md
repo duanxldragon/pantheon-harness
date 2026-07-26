@@ -19,6 +19,15 @@ OpenHands is an execution adapter for the Pantheon Harness Engineering protocol.
 - Persist command summaries and artifacts using the evidence spec.
 - Do not bypass human gates for deletion, schema, base contract, permission, i18n, audit, or inheritance changes.
 
+## Capability Mapping
+
+| Harness Concept | OpenHands Capability |
+|-----------------|----------------------|
+| Task Packet | Task instruction format |
+| Handoff Protocol | Structured output |
+| Verification Evidence | Action history, file diffs |
+| Review Loop | Session replay |
+
 ## Human Touchpoint Contract
 
 The maintainer appears at exactly three touchpoints in the delivery loop; everything between them runs autonomously. Canonical definition: [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints).

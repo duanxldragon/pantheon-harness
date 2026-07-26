@@ -25,6 +25,15 @@ English version: [claude-code.md](./claude-code.md)
 
 Claude 专属 prompt 文件不能变成架构、权限、i18n、审计或继承规则的唯一来源。
 
+## 能力映射
+
+| Harness 概念 | Claude Code 能力 |
+|---|---|
+| Task Packet | 有边界的会话指令（`CLAUDE.md` + task packet 文件） |
+| Handoff Protocol | 结构化最终输出 |
+| Verification Evidence | 按 evidence spec 记录命令输出与文件工件 |
+| Review Loop | findings-first 评审模式 |
+
 ## 人类触点契约
 
 维护者在交付回路中只出现在三个触点，其余全程自治。canonical 定义见 [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints)。

@@ -18,6 +18,15 @@ English version: [github-copilot.md](./github-copilot.md)
 - 仓库检查未通过前，Copilot 生成代码不能视为可接受结果。
 - Copilot review comment 在适用时使用 `P0 / P1 / P2` 严重级别。
 
+## 能力映射
+
+| Harness 概念 | Copilot 能力 |
+|---|---|
+| Task Packet | 带上下文的内联补全 |
+| Handoff Protocol | 人工状态转移 |
+| Verification Evidence | 人工捕获测试输出 |
+| Review Loop | PR review 集成 |
+
 ## 人类触点契约
 
 维护者在交付回路中只出现在三个触点，其余全程自治。canonical 定义见 [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints)。

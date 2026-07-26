@@ -25,6 +25,15 @@ English version: [human.md](./human.md)
 
 人工工作和 agent 工作使用同一套完成定义，不存在“人工就可以跳过协议”的例外。
 
+## 能力映射
+
+| Harness 概念 | 人工能力 |
+|---|---|
+| Task Packet | 人工验收标准评审 |
+| Handoff Protocol | 书面交接 |
+| Verification Evidence | 人工测试、截图 |
+| Review Loop | 内联评论与批准；里程碑签收用 [acceptance-checklist.zh.md](../../../architecture/methodology/acceptance-checklist.zh.md) |
+
 ## 人类触点契约
 
 向 agent 委派工作时，维护者在交付回路中只出现在三个触点，其余全程自治。canonical 定义见 [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints)。

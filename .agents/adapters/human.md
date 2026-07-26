@@ -1,34 +1,5 @@
-# Human Reviewer Adapter
+# Human Adapter
 
-> Human reviewer integration for Pantheon Harness
+Canonical: [config/agents/adapters/human.md](../../config/agents/adapters/human.md)
 
-## Activation
-
-Activate this adapter when a human is performing review.
-
-## Capability Mapping
-
-| Harness Concept | Human Capability |
-|-----------------|-------------------|
-| Task Packet | Manual acceptance criteria review |
-| Handoff Protocol | Face-to-face or written handoff |
-| Verification Evidence | Manual testing, screenshot |
-| Review Loop | Inline comments, approval |
-
-## Constraints
-
-- Humans provide judgment on quality
-- Use [acceptance-checklist.zh.md](../architecture/methodology/acceptance-checklist.zh.md)
-- Final approval authority
-
-## Evidence Format
-
-```json
-{
-  "adapter": "human",
-  "version": "1.0.0",
-  "reviewer": "...",
-  "comments": [...],
-  "approval": true
-}
-```
+This path is kept as a pointer for adoption checks; the adapter content (required reading, capability mapping, human touchpoint contract) lives at the canonical location above.

@@ -32,6 +32,15 @@ English version: [codex.md](./codex.md)
 - 证据路径或摘要
 - 已知缺口
 
+## 能力映射
+
+| Harness 概念 | Codex 能力 |
+|---|---|
+| Task Packet | 带边界指令的 CLI prompt |
+| Handoff Protocol | 结构化输出格式 |
+| Verification Evidence | shell 命令输出与文件生成 |
+| Review Loop | 多轮会话 |
+
 ## 人类触点契约
 
 维护者在交付回路中只出现在三个触点，其余全程自治。canonical 定义见 [workflow-routing — Human Touchpoints](../../../architecture/methodology/workflow-routing.md#human-touchpoints)。
