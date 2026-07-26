@@ -3,7 +3,7 @@ title: Solo Delivery Tiers
 doc_type: Method
 layer: method
 status: Active
-updated_at: 2026-06-17
+updated_at: 2026-07-26
 ---
 
 # Solo Delivery Tiers
@@ -171,6 +171,18 @@ updated_at: 2026-06-17
 | `L0` | no formal artifact | minimum relevant check | inline summary ok | self-check ok |
 | `L1` | lean plan required | targeted checks required | inline summary by default | self-review or lightweight external review |
 | `L2` | task packet required | risk-matched checks required | artifact or equivalent structured summary | findings-first review required |
+
+### 6.1 Gate Outcomes 一行记录
+
+`L1` 及以上的 closeout 增加一行结构化记录（`L0` 可省略）：
+
+```text
+Gate Outcomes: <gate/检查名> caught <拦住了什么> | <gate/检查名> false-positive <误报了什么> | none
+```
+
+目的：为 coverage review 和 retirement review 积累传感器命中/误报数据，让 keep / tune / downgrade / remove 决策有据可依，而不是依赖临场回忆。
+
+本行是 guide 级要求（advisory），不新增机械校验；按 sensor 放置策略，等记录习惯稳定、数据被证明有用后，再考虑提升为机械 closeout 检查。
 
 ## 7. 对 Agent 的直接要求
 

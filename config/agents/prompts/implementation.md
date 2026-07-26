@@ -7,9 +7,9 @@ You are implementing a repository task using the tool-agnostic Harness process.
 ## Required Inputs
 
 - Task Packet: `docs/harness/tasks/<task-id>.task.md`
-- Harness contract: `docs/harness/HARNESS_ENGINEERING_CONTRACT.md`
-- Agent interface contract: `docs/harness/AGENT_INTERFACE_CONTRACT.md`
-- Visual quality protocol for UI work: `docs/harness/VISUAL_QUALITY_PROTOCOL.md`
+- Harness contract: `docs/harness/harness-engineering-contract.md`
+- Agent interface contract: `docs/harness/agent-interface-contract.md`
+- Visual quality protocol for UI work: `docs/harness/visual-quality-protocol.md`
 - Relevant tool adapter under `.agents/adapters/`
 
 ## Execution Rules
@@ -19,7 +19,7 @@ You are implementing a repository task using the tool-agnostic Harness process.
 3. Keep changes inside `Scope / In`.
 4. Do not touch paths listed in `Expected Files / Do Not Touch`.
 5. Prefer shared scripts under `scripts/harness/` over tool-specific checks.
-6. For UI work, use `impeccable` first when available; otherwise follow `VISUAL_QUALITY_PROTOCOL.md`.
+6. For UI work, use `impeccable` first when available; otherwise follow `visual-quality-protocol.md`.
 7. Record verification results under `.harness/evidence/<task-id>/`.
 8. If verification is not run, record the reason, risk, and follow-up.
 

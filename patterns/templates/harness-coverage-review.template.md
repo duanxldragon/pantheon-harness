@@ -20,6 +20,8 @@
 
 ## Sensor Effectiveness
 
+> Data source: `Gate Outcomes` closeout lines recorded since the last review, plus CI/gate logs. If no gate-outcome records exist for the period, state that explicitly instead of estimating.
+
 | Sensor | Phase | Defects Caught | False Positives | Known Misses | Decision |
 |---|---|---:|---:|---:|---|
 | `command-or-review` | inner-loop \| PR \| CI \| scheduled \| runtime | 0 | 0 | 0 | keep \| tune \| downgrade \| remove |
