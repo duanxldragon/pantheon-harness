@@ -6,8 +6,8 @@ This file tracks method-level tasks that are intentionally not blocking the curr
 
 | Task ID | Area | Trigger | Promotion Rule | Status |
 |---|---|---|---|---|
-| `HOT-001` | visual evidence | `check-visual-evidence.mjs --strict` currently supports observation mode before becoming a hard CI gate. | Follow `visual-evidence-promotion-policy.md` for the promotion window, rollback conditions, and recording requirements. | open |
-| `HOT-002` | failure registry | `check-failure-registry.mjs` currently treats a missing default registry as a warning. | Follow `failure-registry-promotion-policy.md` for downstream adoption thresholds, upgrade actions, and rollback conditions. | open |
+| `HOT-001` | visual evidence | 2026-07-26 evaluation: in pantheon-harness CI the checker already runs as a blocking `--strict` step (harness-health.yml, no continue-on-error) — that de facto promotion is recorded here retroactively per policy §4; it is vacuously green because this repo has no UI tasks. The policy's real promotion window (3 consecutive UI-affecting tasks with viewport/state plans and rendered evidence) can only accumulate in UI-bearing consumer repos, and pantheon-base CI does not yet run `check-visual-evidence.mjs` at all. | Remaining scope: wire the checker into pantheon-base CI in observation mode (`continue-on-error: true`), accumulate the 3-task window per `visual-evidence-promotion-policy.md`, then promote there. | open |
+| `HOT-002` | failure registry | `check-failure-registry.mjs` currently treats a missing default registry as a warning. 2026-07-26 evaluation: seeding threshold is 1/2 — pantheon-base has `docs/harness/failure-registry.md`, pantheon-ops does not — so promotion conditions are not met. | Next action: seed the pantheon-ops registry from `patterns/templates/failure-registry.template.md`, then re-evaluate the 2-release-cycle retention condition at a release review per `failure-registry-promotion-policy.md`. | open |
 
 ## Recently Closed
 
