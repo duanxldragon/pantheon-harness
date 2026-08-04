@@ -63,7 +63,7 @@
   "graphChecks": {
     "usedCodeGraph": false,
     "affectedSubgraph": [
-      "playbook entry -> tier routing -> adapters -> prompts -> closeout spec -> registry/coverage loop"
+      "playbook entry -> tier routing -> adapters -> closeout spec -> registry/coverage loop"
     ],
     "checks": [],
     "findings": [],

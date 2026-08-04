@@ -203,6 +203,7 @@ method
 ### Frontend
 
 - none
+- Visual Evidence: not applicable; no user-facing UI.
 
 ### Browser / Smoke
 
