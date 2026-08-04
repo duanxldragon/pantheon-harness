@@ -216,7 +216,7 @@ method
 
 - Task ID: 2026-08-04-better-harness-evaluation
 - OpenSpec Change: none
-- Plan References: ../.omx/plans/2026-08-04-pantheon-harness-better-harness-evaluation.md
+- Plan References: none
 - Evidence Directory: .harness/evidence/2026-08-04-better-harness-evaluation/
 - Review File: .harness/evidence/2026-08-04-better-harness-evaluation/review.md
 

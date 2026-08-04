@@ -141,9 +141,7 @@
     "evidenceDir": ".harness/evidence/2026-08-04-better-harness-evaluation/",
     "reviewFile": ".harness/evidence/2026-08-04-better-harness-evaluation/review.md",
     "changeRef": "none",
-    "planRefs": [
-      "../.omx/plans/2026-08-04-pantheon-harness-better-harness-evaluation.md"
-    ]
+    "planRefs": []
   },
   "knownGaps": [
     "Better Harness has 5 unobserved symlink scenarios because Windows fs.symlink returned EPERM before their assertions; rerun on a symlink-capable Windows environment or Linux before treating those scenarios as exercised.",

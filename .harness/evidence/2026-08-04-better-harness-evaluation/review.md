@@ -54,9 +54,7 @@ The evaluation is complete and suitable for the maintainer prioritization gate. 
     "evidence": ".harness/evidence/2026-08-04-better-harness-evaluation/commands.json",
     "reviewFile": ".harness/evidence/2026-08-04-better-harness-evaluation/review.md",
     "changeRef": "none",
-    "planRefs": [
-      "../.omx/plans/2026-08-04-pantheon-harness-better-harness-evaluation.md"
-    ]
+    "planRefs": []
   }
 }
 ```
