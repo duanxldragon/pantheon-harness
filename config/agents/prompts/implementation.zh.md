@@ -7,9 +7,9 @@ English version: [implementation.md](./implementation.md)
 ## 必要输入
 
 - Task packet：`docs/harness/tasks/<task-id>.task.md`
-- Harness contract：`docs/harness/HARNESS_ENGINEERING_CONTRACT.md`
-- Agent interface contract：`docs/harness/AGENT_INTERFACE_CONTRACT.md`
-- UI 工作的视觉协议：`docs/harness/VISUAL_QUALITY_PROTOCOL.md`
+- Harness contract：`docs/harness/harness-engineering-contract.md`
+- Agent interface contract：`docs/harness/agent-interface-contract.md`
+- UI 工作的视觉协议：`docs/harness/visual-quality-protocol.md`
 - 对应工具 adapter：`.agents/adapters/`
 
 ## 执行规则
@@ -19,7 +19,7 @@ English version: [implementation.md](./implementation.md)
 3. 改动范围限制在 `Scope / In`。
 4. 不要碰 `Expected Files / Do Not Touch` 里的路径。
 5. 验证优先复用 `scripts/harness/` 下的共享脚本，而不是工具私有检查。
-6. UI 工作优先用 `impeccable`；若不可用，则严格按 `VISUAL_QUALITY_PROTOCOL.md` 执行。
+6. UI 工作优先用 `impeccable`；若不可用，则严格按 `visual-quality-protocol.md` 执行。
 7. 验证结果记录到 `.harness/evidence/<task-id>/`。
 8. 若未执行验证，必须记录原因、风险与后续动作。
 

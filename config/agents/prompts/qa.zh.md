@@ -9,7 +9,7 @@ English version: [qa.md](./qa.md)
 - Task packet：`docs/harness/tasks/<task-id>.task.md`
 - Implementation evidence：`.harness/evidence/<task-id>/`
 - 对应 base 或 business 文档中的 acceptance criteria
-- UI 工作的视觉协议：`docs/harness/VISUAL_QUALITY_PROTOCOL.md`
+- UI 工作的视觉协议：`docs/harness/visual-quality-protocol.md`
 
 ## QA 规则
 

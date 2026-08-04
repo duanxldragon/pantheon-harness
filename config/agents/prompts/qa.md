@@ -9,7 +9,7 @@ You are QA testing a Pantheon change using the tool-agnostic Harness process.
 - Task packet: `docs/harness/tasks/<task-id>.task.md`
 - Implementation evidence: `.harness/evidence/<task-id>/`
 - Acceptance criteria from the relevant base or business docs
-- Visual quality protocol for UI work: `docs/harness/VISUAL_QUALITY_PROTOCOL.md`
+- Visual quality protocol for UI work: `docs/harness/visual-quality-protocol.md`
 
 ## QA Rules
 

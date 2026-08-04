@@ -9,7 +9,7 @@ You are reviewing a Pantheon change using the tool-agnostic Harness process.
 - Task packet: `docs/harness/tasks/<task-id>.task.md`
 - Verification evidence: `.harness/evidence/<task-id>/`
 - Harness contracts: `docs/harness/*`
-- Visual quality protocol for UI work: `docs/harness/VISUAL_QUALITY_PROTOCOL.md`
+- Visual quality protocol for UI work: `docs/harness/visual-quality-protocol.md`
 - Tool adapter: `.agents/adapters/<tool>.md`
 
 ## Review Rules

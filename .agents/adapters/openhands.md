@@ -1,33 +1,5 @@
 # OpenHands Adapter
 
-> OpenHands integration for Pantheon Harness
+Canonical: [config/agents/adapters/openhands.md](../../config/agents/adapters/openhands.md)
 
-## Activation
-
-Activate this adapter when using OpenHands for autonomous implementation tasks.
-
-## Capability Mapping
-
-| Harness Concept | OpenHands Capability |
-|-----------------|----------------------|
-| Task Packet | Task instruction format |
-| Handoff Protocol | Structured output |
-| Verification Evidence | Action history, file diffs |
-| Review Loop | Session replay |
-
-## Constraints
-
-- OpenHands operates autonomously
-- Use sandbox mode for safety
-- File modifications require explicit confirmation
-
-## Evidence Format
-
-```json
-{
-  "adapter": "openhands",
-  "version": "1.0.0",
-  "actions": [...],
-  "artifacts": [...]
-}
-```
+This path is kept as a pointer for adoption checks; the adapter content (required reading, capability mapping, human touchpoint contract) lives at the canonical location above.

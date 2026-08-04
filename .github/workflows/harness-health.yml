@@ -101,6 +101,9 @@ jobs:
         run: node scripts/harness/check-graph-review.mjs --root . --strict
 
       - name: Check Visual Evidence
+        # Blocking strict gate in this repo (promotion recorded retroactively 2026-07-26, HOT-001).
+        # Vacuously green here (no UI tasks); the observation->promotion window per
+        # visual-evidence-promotion-policy.md applies to UI-bearing consumer repos.
         run: node scripts/harness/check-visual-evidence.mjs --root . --strict
 
       - name: Check Runtime Evidence

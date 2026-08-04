@@ -9,7 +9,7 @@ English version: [review.md](./review.md)
 - Task packet：`docs/harness/tasks/<task-id>.task.md`
 - Verification evidence：`.harness/evidence/<task-id>/`
 - Harness contracts：`docs/harness/*`
-- UI 工作的视觉协议：`docs/harness/VISUAL_QUALITY_PROTOCOL.md`
+- UI 工作的视觉协议：`docs/harness/visual-quality-protocol.md`
 - 工具 adapter：`.agents/adapters/<tool>.md`
 
 ## Review 规则
