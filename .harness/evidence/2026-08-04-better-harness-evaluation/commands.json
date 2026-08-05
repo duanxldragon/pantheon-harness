@@ -1,0 +1,151 @@
+{
+  "taskId": "2026-08-04-better-harness-evaluation",
+  "repo": "pantheon-harness",
+  "agent": {
+    "tool": "codex",
+    "adapter": "repository AGENTS.md"
+  },
+  "commands": [
+    {
+      "command": "npm ci",
+      "cwd": "temporary pinned Better Harness checkout outside Pantheon repositories",
+      "status": "passed",
+      "notes": "Installed the two dependencies locked by Better Harness commit 4cd2fdb340631ebc726d1f7b617f997511aca9e8."
+    },
+    {
+      "command": "npm test",
+      "cwd": "temporary pinned Better Harness checkout outside Pantheon repositories",
+      "status": "failed",
+      "notes": "1148 tests: 1128 passed, 5 failed, 15 skipped. Each failure occurred before its product assertion because Windows fs.symlink returned EPERM; the limitation reproduced outside the sandbox. The five scenarios remain unobserved, not product failures or passes."
+    },
+    {
+      "command": "npm run pack:verify",
+      "cwd": "temporary pinned Better Harness checkout outside Pantheon repositories",
+      "status": "passed",
+      "notes": "Package verification passed outside the sandbox: 395 npm package entries and 417 runtime zip entries."
+    },
+    {
+      "command": "node --test scripts/harness/*.test.mjs",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "88 tests passed, 0 failed."
+    },
+    {
+      "command": "node --test verify/scripts/*.test.mjs",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "13 tests passed, 0 failed."
+    },
+    {
+      "command": "node scripts/harness/check-doc-frontmatter.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 errors, 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-doc-links.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings."
+    },
+    {
+      "command": "node scripts/harness/check-doc-inventory.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings."
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs --root .",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "8 task packets, 0 errors. The remaining 3 warnings belong to the pre-existing 2026-07-13 task packet."
+    },
+    {
+      "command": "node scripts/harness/check-evidence.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "All 8 evidence command artifacts passed."
+    },
+    {
+      "command": "node scripts/harness/check-review.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "All 8 review artifacts passed."
+    },
+    {
+      "command": "node scripts/harness/check-graph-review.mjs --root . --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "All 8 graph-reviewed tasks passed with 0 warnings after PR #6 aligned the pre-existing 2026-07-26 artifact metadata."
+    },
+    {
+      "command": "node scripts/harness/check-adoption.mjs --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings, 0 warnings."
+    },
+    {
+      "command": "node scripts/harness/check-method-health.mjs --strict",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "0 findings, 0 warnings; method kit and repo shell are aligned at 1.4.0."
+    },
+    {
+      "command": "codegraph status",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Project-local index is up to date: 60 files, 1023 nodes, 2047 edges."
+    },
+    {
+      "command": "codegraph context \"Better Harness evaluation evidence linkage\"",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Returned the repository evidence entry points in bootstrap-harness.mjs and check-adoption.mjs; the documentation-only evaluation chain has no source-symbol impact path."
+    },
+    {
+      "command": "codegraph sync",
+      "cwd": ".",
+      "status": "passed",
+      "notes": "Final project-local index synchronization completed before closeout."
+    }
+  ],
+  "methodReadiness": {
+    "ownerLayer": "portable-method",
+    "ratchetDecision": "no-repeat-observed",
+    "deferredCodeIssues": [
+      "method-effectiveness review",
+      "failure-registry owner routing",
+      "privacy-safe Task Episode pilot",
+      "CodeGraph evidence pack",
+      "protected-write contract and one adapter pilot"
+    ]
+  },
+  "graphChecks": {
+    "usedCodeGraph": true,
+    "affectedSubgraph": [
+      "upstream evidence -> capability mapping -> evaluation report -> future maintainer decision"
+    ],
+    "checks": [],
+    "findings": [],
+    "notes": "CodeGraph is healthy and confirms the existing repository evidence entry points. No AST dependency path is changed by this documentation-only evaluation; task/evidence/review linkage is checked separately by check-graph-review."
+  },
+  "sessionEconomics": {
+    "responseMode": "detailed",
+    "costSensitivity": "medium",
+    "notes": "Exact token and cost counters are unavailable in the current adapter; no raw session transcript was retained."
+  },
+  "browserEvidence": [],
+  "runtimeSensitive": false,
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-08-04-better-harness-evaluation.task.md",
+    "evidenceDir": ".harness/evidence/2026-08-04-better-harness-evaluation/",
+    "reviewFile": ".harness/evidence/2026-08-04-better-harness-evaluation/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  },
+  "knownGaps": [
+    "Better Harness has 5 unobserved symlink scenarios because Windows fs.symlink returned EPERM before their assertions; rerun on a symlink-capable Windows environment or Linux before treating those scenarios as exercised.",
+    "Upstream source and tests establish implementation and exercised paths, but do not establish outcome improvement across independent real-world Task Episodes."
+  ],
+  "completedAt": "2026-08-04T20:12:32+08:00"
+}
