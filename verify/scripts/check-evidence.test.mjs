@@ -29,6 +29,7 @@ function validEvidence() {
   return {
     taskId: 'sample',
     repo: 'method-kit-fixture',
+    evidenceState: 'outcome-supported',
     agent: {
       tool: 'codex',
     },
@@ -108,4 +109,18 @@ test('check-evidence rejects non-numeric session economics counters', () => {
 
   assert.equal(result.status, 1);
   assert.match(result.stdout, /root\.sessionEconomics\.retryCount must be a number/);
+});
+
+test('check-evidence rejects an unsupported evidence strength state', () => {
+  const root = makeFixture();
+  const payload = validEvidence();
+  payload.evidenceState = 'complete';
+  writeEvidence(root, payload);
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /root\.evidenceState must be one of/);
 });

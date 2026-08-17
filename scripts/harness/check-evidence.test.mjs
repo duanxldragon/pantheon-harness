@@ -29,6 +29,7 @@ function writeCommands(root, taskId, payload) {
 const VALID_PAYLOAD = {
   taskId: 'sample',
   repo: 'example-repository',
+  evidenceState: 'outcome-supported',
   agent: { tool: 'claude-code' },
   commands: [
     {
@@ -161,6 +162,18 @@ test('check-evidence rejects an unsupported command status', () => {
 
   assert.equal(result.status, 1);
   assert.match(result.stdout, /commands\[0\]\.status must be one of/);
+});
+
+test('check-evidence rejects an unsupported evidence strength state', () => {
+  const root = makeFixture();
+  writeCommands(root, 'sample', { ...VALID_PAYLOAD, evidenceState: 'complete' });
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--strict', '--root', root], {
+    encoding: 'utf8',
+  });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /root\.evidenceState must be one of/);
 });
 
 test('check-evidence rejects browser evidence missing viewport metadata', () => {

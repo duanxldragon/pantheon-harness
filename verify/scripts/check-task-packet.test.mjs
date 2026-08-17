@@ -161,6 +161,38 @@ test('check-task-packet accepts method-first task metadata', () => {
   assert.equal(result.errorCount, 0);
 });
 
+test('check-task-packet requires complete workspace context for cross-repository work', () => {
+  const root = makeFixture();
+  writeTask(root, validTask().replace(/^method$/m, 'cross-repository'));
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--root', root], { encoding: 'utf8' });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /requires section "## Workspace Context"/);
+});
+
+test('check-task-packet accepts valid cross-repository workspace context', () => {
+  const root = makeFixture();
+  const packet = validTask()
+    .replace(/^method$/m, 'cross-repository')
+    .replace('## Contract Anchors', `## Workspace Context
+
+- Target Repository: pantheon-harness
+- Repository Role: method-source
+- Upstream Dependencies: none
+- Downstream Consumers: pantheon-base
+- Sync Expectation: required
+- Release Requirement: method-release
+
+## Contract Anchors`);
+  writeTask(root, packet);
+
+  const output = execFileSync(process.execPath, [SCRIPT, '--json', '--root', root], { encoding: 'utf8' });
+  const result = JSON.parse(output);
+
+  assert.equal(result.errorCount, 0);
+});
+
 test('check-task-packet rejects packets that only use legacy Superpowers Plan', () => {
   const root = makeFixture();
   writeTask(root, validTask().replace('- Plan References: none', '- Superpowers Plan: none'));

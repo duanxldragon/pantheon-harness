@@ -12,6 +12,8 @@ Chinese version: [VERIFICATION_EVIDENCE_SPEC.md](./verification-evidence-spec.md
 
 This document defines the format for task verification evidence. The evidence format must be tool-agnostic.
 
+Version: v1.2 (2026-08-17)
+
 ## 1. Evidence Directory
 
 Default directory:
@@ -77,6 +79,7 @@ complete | blocked | partial
 {
   "taskId": "YYYY-MM-DD-task-name",
   "repo": "example-repository",
+  "evidenceState": "outcome-supported",
   "agent": {
     "tool": "agent",
     "adapter": "repository-defined adapter"
@@ -131,6 +134,17 @@ complete | blocked | partial
   "completedAt": "YYYY-MM-DDTHH:mm:ssZ"
 }
 ```
+
+`evidenceState` is optional and describes evidence strength, not task progress. Allowed values are:
+
+- `present`: the artifact exists but is not shown to be wired
+- `wired`: the artifact is connected to a verification or linkage path
+- `exercised`: the command or workflow actually ran
+- `outcome-supported`: the evidence supports the task outcome (normally with Review)
+- `missing`: expected evidence is absent
+- `unobserved`: the current environment cannot observe the signal
+
+It does not replace command `status`, runtime signals, Review, or a Human Gate. `passed` describes only one command's exit result.
 
 `agent.tool` may be:
 

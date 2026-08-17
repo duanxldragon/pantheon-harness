@@ -10,7 +10,7 @@ updated_at: 2026-06-27
 
 English version: not yet available.
 
-版本：v1.0 (2026-06-26)
+版本：v1.1 (2026-08-17)
 
 本文定义 agent 间交接的标准化流程、状态机和检查清单。
 
@@ -19,6 +19,7 @@ English version: not yet available.
 | 版本 | 日期 | 变更 |
 |---|---|---|
 | v1.0 | 2026-06-26 | 初始版本：交接触发条件、状态机、检查清单 |
+| v1.1 | 2026-08-17 | 增加跨仓交接字段、无记忆恢复要求和 release/sync 停点 |
 
 ## 1. 概述
 
@@ -93,6 +94,18 @@ stateDiagram-v2
 
 Generator: Complete implementation and generate evidence
 ```
+
+## 3.1 跨仓交接最小信息
+
+当任务跨越 Harness -> Base -> Ops，接收者不得依赖聊天记录。Task Packet 必须提供 `Workspace Context`；Handoff 必须另外明确：
+
+- 当前仓库和仓库角色
+- 上游合同版本/commit 或“尚未 release”
+- 下游消费者及其同步状态
+- 下一步唯一 owner、命令和 stop point
+- 未完成的 release、lock upgrade、migration 或 runtime gap
+
+没有这些信息时，状态只能保持 `ChangesRequested` 或 `HumanGatePending`，不能报告为完成。
 
 ## 4. 交接检查清单
 
@@ -295,6 +308,25 @@ If yes, specify reason: <reason>
 - Blockers: none | <blockers>
 ```
 
+### 6.3 跨仓交接报告
+
+跨仓任务在 Generator 或 Reviewer 报告中增加：
+
+```md
+## Workspace Handoff
+
+- Target Repository: <repository>
+- Repository Role: method-source | foundation-source | business-consumer | standalone
+- Upstream Dependencies: <list or none>
+- Downstream Consumers: <list or none>
+- Sync Expectation: none | not-required | deferred | required | completed
+- Release Requirement: none | method-release | foundation-release | consumer-lock-update
+- Current Release/Sync State: <what is actually true>
+- Next Owner: <tool or role>
+- Next Command: `<command>`
+- Stop Point: <release, lock update, migration, human gate, or none>
+```
+
 ## 7. 工具适配指南
 
 工具 adapter 必须支持：
@@ -309,4 +341,3 @@ If yes, specify reason: <reason>
 - 跳过检查清单项而不记录原因
 - 在未生成 Evidence 前触发 Review 交接
 - 绕过 Human Gate 直接完成任务
-

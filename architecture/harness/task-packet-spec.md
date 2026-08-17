@@ -10,7 +10,7 @@ updated_at: 2026-06-27
 
 English version: [TASK_PACKET_SPEC.en.md](./task-packet-spec.en.md)
 
-版本：v1.1 (2026-06-26)
+版本：v1.2 (2026-08-17)
 
 Task packet 是非 trivial 任务的工具无关输入格式。它让各类 agent 工具和人工工程师共享同一份任务边界。
 
@@ -20,6 +20,7 @@ Task packet 是非 trivial 任务的工具无关输入格式。它让各类 agen
 |---|---|---|
 | v1.0 | 2026-06-15 | 初始版本 |
 | v1.1 | 2026-06-26 | 新增 priority/estimatedComplexity/technicalDebtFlag/rollBackPlan/dependencies 字段，增强边界定义量化 |
+| v1.2 | 2026-08-17 | 新增跨仓 Workspace Context 条件合同，明确 owner、上下游、同步和 release 停点 |
 
 ## 1. 存放位置
 
@@ -50,11 +51,24 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 
 ## Primary Layer
 
-app | domain/<name> | service/<name> | package/<name> | infra | docs | method | repository-defined layer
+app | domain/<name> | service/<name> | package/<name> | infra | docs | method | inheritance-sync | cross-repository | repository-defined layer
 
 ## Dependency Layers
 
 - none
+
+## Workspace Context (required for `inheritance-sync` or `cross-repository`)
+
+跨仓任务必须声明以下六项；普通单仓任务可省略：
+
+- Target Repository: `repository-name`
+- Repository Role: `method-source | foundation-source | business-consumer | standalone`
+- Upstream Dependencies: `none` 或上游仓库列表
+- Downstream Consumers: `none` 或下游仓库列表
+- Sync Expectation: `none | not-required | deferred | required | completed`
+- Release Requirement: `none | method-release | foundation-release | consumer-lock-update`
+
+这些字段描述交接和发布边界，不代表同步或 release 已经发生。`required`、`deferred` 和 `completed` 必须在 Evidence/Review 中给出对应依据。
 
 ## Dependencies (v1.1+)
 

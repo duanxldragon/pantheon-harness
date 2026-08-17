@@ -6,7 +6,16 @@
 
 ## Primary Layer
 
-app | domain/<name> | service/<name> | package/<name> | infra | docs | method | repository-defined layer
+app | domain/<name> | service/<name> | package/<name> | infra | docs | method | inheritance-sync | cross-repository | repository-defined layer
+
+## Workspace Context (required for `inheritance-sync` or `cross-repository`)
+
+- Target Repository: `<repository-name>`
+- Repository Role: `method-source | foundation-source | business-consumer | standalone`
+- Upstream Dependencies: `none | repository list`
+- Downstream Consumers: `none | repository list`
+- Sync Expectation: `none | not-required | deferred | required | completed`
+- Release Requirement: `none | method-release | foundation-release | consumer-lock-update`
 
 ## Dependency Layers
 

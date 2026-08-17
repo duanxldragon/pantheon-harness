@@ -16,6 +16,14 @@ const VALID_AGENT_TOOLS = new Set([
   'other',
 ]);
 const VALID_COMMAND_STATUSES = new Set(['passed', 'failed', 'not-run']);
+const VALID_EVIDENCE_STATES = new Set([
+  'present',
+  'wired',
+  'exercised',
+  'outcome-supported',
+  'missing',
+  'unobserved',
+]);
 
 function printHelp() {
   console.log(`Usage:
@@ -244,6 +252,14 @@ function validateEvidenceFile(filePath, root) {
 
   requireString(evidence, 'taskId', result.errors, 'root');
   requireString(evidence, 'repo', result.errors, 'root');
+
+  if ('evidenceState' in evidence) {
+    if (typeof evidence.evidenceState !== 'string' || !VALID_EVIDENCE_STATES.has(evidence.evidenceState)) {
+      result.errors.push(
+        `root.evidenceState must be one of: ${Array.from(VALID_EVIDENCE_STATES).join(', ')}.`,
+      );
+    }
+  }
 
   if (!isObject(evidence.agent)) {
     result.errors.push('root.agent must be an object.');

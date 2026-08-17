@@ -16,10 +16,61 @@
     "evidenceRequired",
     "humanGates"
   ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "primaryLayer": {
+            "enum": ["inheritance-sync", "cross-repository"]
+          }
+        },
+        "required": ["primaryLayer"]
+      },
+      "then": {
+        "required": ["workspaceContext"]
+      }
+    }
+  ],
   "properties": {
     "taskId": { "type": "string" },
     "goal": { "type": "string" },
     "primaryLayer": { "type": "string" },
+    "workspaceContext": {
+      "type": "object",
+      "required": [
+        "targetRepository",
+        "repositoryRole",
+        "upstreamDependencies",
+        "downstreamConsumers",
+        "syncExpectation",
+        "releaseRequirement"
+      ],
+      "properties": {
+        "targetRepository": { "type": "string", "minLength": 1 },
+        "repositoryRole": {
+          "type": "string",
+          "enum": ["method-source", "foundation-source", "business-consumer", "standalone"]
+        },
+        "upstreamDependencies": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "downstreamConsumers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "syncExpectation": {
+          "type": "string",
+          "enum": ["none", "not-required", "deferred", "required", "completed"]
+        },
+        "releaseRequirement": {
+          "type": "string",
+          "enum": ["none", "method-release", "foundation-release", "consumer-lock-update"]
+        }
+      }
+    },
     "harnessProfile": {
       "type": "object",
       "required": [

@@ -53,6 +53,21 @@ const VALID_COVERAGE_DIMENSIONS = new Set([
   'method-health',
 ]);
 
+const CROSS_REPOSITORY_LAYERS = new Set(['inheritance-sync', 'cross-repository']);
+const VALID_REPOSITORY_ROLES = new Set([
+  'method-source',
+  'foundation-source',
+  'business-consumer',
+  'standalone',
+]);
+const VALID_SYNC_EXPECTATIONS = new Set(['none', 'not-required', 'deferred', 'required', 'completed']);
+const VALID_RELEASE_REQUIREMENTS = new Set([
+  'none',
+  'method-release',
+  'foundation-release',
+  'consumer-lock-update',
+]);
+
 const REQUIRED_CHECKLIST_ITEMS = [
   'Layer and boundary declared',
   'Contract anchors read',
@@ -221,6 +236,7 @@ function validateTaskPacket(filePath, root) {
 
   validatePrimaryLayer(content, headings, result);
   validateHarnessProfile(content, headings, result);
+  validateWorkspaceContext(content, headings, result);
   validateContractAnchors(content, headings, result, root);
   validateScope(content, headings, result);
   validateVerificationPlan(content, headings, result);
@@ -233,6 +249,58 @@ function validateTaskPacket(filePath, root) {
   validateChecklist(content, headings, result);
 
   return result;
+}
+
+function validateWorkspaceContext(content, headings, result) {
+  const primaryLayerSection = findSection(headings, 'Primary Layer');
+  const primaryLayer = primaryLayerSection
+    ? normalizeItemValue(getFirstMeaningfulLine(getSectionContent(content, headings, primaryLayerSection)) || '')
+    : '';
+  const required = CROSS_REPOSITORY_LAYERS.has(primaryLayer);
+  const section = findSection(headings, 'Workspace Context');
+
+  if (!section) {
+    if (required) {
+      result.errors.push(`Primary layer "${primaryLayer}" requires section "## Workspace Context".`);
+    }
+    return;
+  }
+
+  const items = parseLinkageItems(getSectionContent(content, headings, section));
+  const requiredItems = [
+    'Target Repository',
+    'Repository Role',
+    'Upstream Dependencies',
+    'Downstream Consumers',
+    'Sync Expectation',
+    'Release Requirement',
+  ];
+
+  for (const item of requiredItems) {
+    if (!items.has(item) || normalizeItemValue(items.get(item)) === '') {
+      result.errors.push(`Section "## Workspace Context" must include "- ${item}: <value>".`);
+    }
+  }
+
+  validateWorkspaceEnum(items, 'Repository Role', VALID_REPOSITORY_ROLES, result);
+  validateWorkspaceEnum(items, 'Sync Expectation', VALID_SYNC_EXPECTATIONS, result);
+  validateWorkspaceEnum(items, 'Release Requirement', VALID_RELEASE_REQUIREMENTS, result);
+}
+
+function validateWorkspaceEnum(items, key, allowed, result) {
+  if (!items.has(key)) {
+    return;
+  }
+  const value = normalizeItemValue(items.get(key));
+  if (value !== '' && !allowed.has(value)) {
+    result.errors.push(
+      `Workspace Context ${key} "${value}" must be one of: ${Array.from(allowed).join(', ')}.`,
+    );
+  }
+}
+
+function normalizeItemValue(value) {
+  return String(value ?? '').replace(/^`+/, '').replace(/`+$/, '').trim();
 }
 
 function validateRecommendedGuardrailSections(content, headings, result) {

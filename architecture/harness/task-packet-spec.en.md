@@ -12,6 +12,8 @@ Chinese version: [TASK_PACKET_SPEC.md](./task-packet-spec.md)
 
 A task packet is the tool-agnostic input format for non-trivial work. It lets any agent tool or human engineer share the same task boundary.
 
+Version: v1.2 (2026-08-17)
+
 ## 1. Location
 
 Task packets should live by default at:
@@ -21,6 +23,19 @@ docs/harness/tasks/YYYY-MM-DD-<task-name>.task.md
 ```
 
 If the task comes from an existing plan, workflow, or resumable execution record, the task packet may reference that artifact instead of repeating it in full.
+
+## 1.1 Workspace Context
+
+Tasks whose `Primary Layer` is `inheritance-sync` or `cross-repository` must include a `## Workspace Context` section with all six fields:
+
+- `Target Repository`: repository being changed
+- `Repository Role`: `method-source | foundation-source | business-consumer | standalone`
+- `Upstream Dependencies`: upstream repositories, or `none`
+- `Downstream Consumers`: downstream repositories, or `none`
+- `Sync Expectation`: `none | not-required | deferred | required | completed`
+- `Release Requirement`: `none | method-release | foundation-release | consumer-lock-update`
+
+Ordinary single-repository packets remain valid without this section. The fields describe handoff and release boundaries; they do not claim that a sync or release has already happened.
 
 ## 2. Required Template
 
@@ -33,7 +48,7 @@ If the task comes from an existing plan, workflow, or resumable execution record
 
 ## Primary Layer
 
-app | domain/<name> | service/<name> | package/<name> | infra | docs | method | repository-defined layer
+app | domain/<name> | service/<name> | package/<name> | infra | docs | method | inheritance-sync | cross-repository | repository-defined layer
 
 ## Dependency Layers
 

@@ -4,6 +4,8 @@ Chinese version: [changelog.zh.md](./changelog.zh.md)
 
 ## Unreleased
 
+- Add conditional `Workspace Context` and evidence-strength vocabulary for stateless cross-repository handoffs.
+- Add portable handoff and task-status templates with explicit release/sync stop points.
 - Require method-first ratchet metadata in task packets: quality profile, portable failure class, owner layer, method readiness, ratchet decision, and deferred code issues.
 - Require evidence and review artifacts to record owner layer, ratchet decision, and deferred code issues.
 - Add task-packet regression tests so stale packets without method readiness fail mechanically.

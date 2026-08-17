@@ -10,7 +10,7 @@ updated_at: 2026-06-27
 
 English version: [VERIFICATION_EVIDENCE_SPEC.en.md](./verification-evidence-spec.en.md)
 
-版本：v1.1 (2026-06-26)
+版本：v1.2 (2026-08-17)
 
 本文定义任务验证证据的格式。证据格式必须工具无关。
 
@@ -20,6 +20,7 @@ English version: [VERIFICATION_EVIDENCE_SPEC.en.md](./verification-evidence-spec
 |---|---|---|
 | v1.0 | 2026-06-15 | 初始版本 |
 | v1.1 | 2026-06-26 | 增强证据目录结构、质量标准、Evidence 生成脚本 |
+| v1.2 | 2026-08-17 | 新增可选 evidenceState，区分证据存在、接线、已执行和结果支持程度 |
 
 ## 1. 证据目录（v1.1+ 增强结构）
 
@@ -100,6 +101,7 @@ complete | blocked | partial
 {
   "taskId": "YYYY-MM-DD-task-name",
   "repo": "example-repository",
+  "evidenceState": "outcome-supported",
   "agent": {
     "tool": "agent",
     "adapter": "repository-defined adapter"
@@ -154,6 +156,17 @@ complete | blocked | partial
   "completedAt": "YYYY-MM-DDTHH:mm:ssZ"
 }
 ```
+
+`evidenceState` 是可选的证据强度声明，合法值为：
+
+- `present`: 文件或记录存在，但尚未证明被接入
+- `wired`: 已接入验证流程或引用链路
+- `exercised`: 验证命令或流程实际执行
+- `outcome-supported`: 证据足以支持任务结果（通常还需 Review）
+- `missing`: 预期证据缺失
+- `unobserved`: 当前环境无法观察该信号
+
+它不替代命令 `status`、运行态日志、Review 或 Human Gate；`passed` 只描述一条命令的退出结果。
 
 `agent.tool` 可取值：
 

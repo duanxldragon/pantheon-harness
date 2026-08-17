@@ -187,6 +187,59 @@ test('check-task-packet rejects an invalid primary layer value', () => {
   assert.match(result.stdout, /Invalid primary layer/);
 });
 
+test('check-task-packet requires workspace context for an explicit cross-repository layer', () => {
+  const root = makeFixture();
+  const packet = VALID_PACKET.replace(/^platform$/m, 'inheritance-sync');
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), packet);
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--root', root], { encoding: 'utf8' });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /requires section "## Workspace Context"/);
+});
+
+test('check-task-packet accepts a complete workspace context', () => {
+  const root = makeFixture();
+  const packet = VALID_PACKET
+    .replace(/^platform$/m, 'inheritance-sync')
+    .replace('## Contract Anchors', `## Workspace Context
+
+- Target Repository: pantheon-base
+- Repository Role: foundation-source
+- Upstream Dependencies: pantheon-harness
+- Downstream Consumers: pantheon-ops
+- Sync Expectation: required
+- Release Requirement: foundation-release
+
+## Contract Anchors`);
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), packet);
+
+  const output = execFileSync(process.execPath, [SCRIPT, '--json', '--root', root], { encoding: 'utf8' });
+  const result = JSON.parse(output);
+
+  assert.equal(result.errorCount, 0);
+});
+
+test('check-task-packet rejects invalid workspace context enums', () => {
+  const root = makeFixture();
+  const packet = VALID_PACKET.replace('## Contract Anchors', `## Workspace Context
+
+- Target Repository: pantheon-base
+- Repository Role: shared-database
+- Upstream Dependencies: none
+- Downstream Consumers: none
+- Sync Expectation: someday
+- Release Requirement: ad-hoc
+
+## Contract Anchors`);
+  fs.writeFileSync(path.join(root, 'docs', 'harness', 'tasks', 'sample.task.md'), packet);
+
+  const result = spawnSync(process.execPath, [SCRIPT, '--root', root], { encoding: 'utf8' });
+
+  assert.equal(result.status, 1);
+  assert.match(result.stdout, /Repository Role|Sync Expectation|Release Requirement/);
+});
+
 test('check-task-packet rejects linkage task id mismatch', () => {
   const root = makeFixture();
   const packet = VALID_PACKET.replace('`sample`', '`other-task`');

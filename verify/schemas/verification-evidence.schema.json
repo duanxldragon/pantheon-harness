@@ -6,6 +6,10 @@
   "properties": {
     "taskId": { "type": "string" },
     "repo": { "type": "string" },
+    "evidenceState": {
+      "type": "string",
+      "enum": ["present", "wired", "exercised", "outcome-supported", "missing", "unobserved"]
+    },
     "agent": {
       "type": "object",
       "required": ["tool"],
