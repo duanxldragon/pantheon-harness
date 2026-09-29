@@ -1,8 +1,13 @@
-# CI/CD Integration Guide
+---
+title: CI/CD Integration Guide
+doc_type: Method
+layer: method
+status: Active
+updated_at: 2026-06-26
+version: v1.0.0
+---
 
-> 最后更新：2026-06-26
-> 版本：v1.0.0
-> 归属层：method
+# CI/CD Integration Guide
 
 本文档定义 Pantheon 项目的 CI/CD 集成标准和本地预检流程。
 

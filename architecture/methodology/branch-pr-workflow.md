@@ -1,8 +1,13 @@
-# Branch and Pull Request Workflow
+---
+title: Branch and Pull Request Workflow
+doc_type: Method
+layer: method
+status: Active
+updated_at: 2026-06-26
+version: v1.0.0
+---
 
-> 版本：v1.0.0
-> 最后更新：2026-06-26
-> 归属层：method
+# Branch and Pull Request Workflow
 
 本文档定义 Pantheon 方法论中的分支策略和 Pull Request 流程。与具体业务代码无关，适用于所有遵循 Pantheon Harness 的仓库。
 

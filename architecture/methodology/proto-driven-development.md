@@ -1,8 +1,13 @@
-# Proto First Development
+---
+title: Proto First Development
+doc_type: Method
+layer: method
+status: Active
+updated_at: 2026-06-26
+version: v1.0.0
+---
 
-> 最后更新：2026-06-26
-> 版本：v1.0.0
-> 归属层：method
+# Proto First Development
 
 本文档定义 Proto First（原型驱动开发）模式，适用于探索性开发、方案验证和快速原型迭代。
 
