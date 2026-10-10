@@ -8,7 +8,7 @@
   "verdict": "approved with documented P2 follow-up",
   "structuralReview": {
     "affectedSubgraph": [
-      "task packet -> checker/schema -> evidence -> downstream adoption"
+      "task template -> task packet checker/schema -> handoff artifact -> evidence checker/schema -> consumer adoption"
     ],
     "checks": [],
     "findings": [],
