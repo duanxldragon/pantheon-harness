@@ -1,8 +1,13 @@
-# Workflow Templates
+---
+title: Workflow Templates
+doc_type: Method
+layer: method
+status: Active
+updated_at: 2026-06-26
+version: v1.0.0
+---
 
-> 最后更新：2026-06-26
-> 版本：v1.0.0
-> 归属层：method
+# Workflow Templates
 
 本文档定义 Pantheon 工作流的具体执行模板。完整方法论见 [Harness Methodology](./harness-methodology.zh.md)。
 

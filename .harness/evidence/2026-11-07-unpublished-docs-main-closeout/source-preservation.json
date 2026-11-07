@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-11-07T05:48:41.111Z",
+  "original": "aeb46142466b755e779b06e62cb34c0e9ded99e7",
+  "candidate": "ddef8c286fb39fc278f424725bbe0069142b36d5",
+  "files": [
+    "architecture/methodology/branch-pr-workflow.md",
+    "architecture/methodology/ci-cd-integration.md",
+    "architecture/methodology/proto-driven-development.md",
+    "architecture/methodology/workflow-templates.md",
+    ".codegraph/.gitignore",
+    "research/better-harness-analysis.md"
+  ],
+  "contentDiff": [],
+  "originalStash": "75596f6e3924d8cc8af730f7e6d54d0cfa9525cd",
+  "bundle": "../audit-artifacts/github-main-release-2026-11-07/pantheon-harness-all-refs-before-cleanup.bundle"
+}
