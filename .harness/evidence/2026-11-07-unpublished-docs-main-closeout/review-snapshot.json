@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-11-07T05:50:36.333Z",
+  "taskId": "2026-11-07-unpublished-docs-main-closeout",
+  "original": "aeb46142466b755e779b06e62cb34c0e9ded99e7",
+  "upstream": "6ca85500ffb0ed647749bb3520e7561407b4800c",
+  "files": [
+    {
+      "path": ".codegraph/.gitignore",
+      "sha256": "c3480710020aaeb46e2c68fe7bc85aa52d11c7ad84fe8300654debb360a8475d"
+    },
+    {
+      "path": "architecture/methodology/branch-pr-workflow.md",
+      "sha256": "805fea3abef91d9100f3b7789978746372bd0b8bdaff2274a5769df1640ed38e"
+    },
+    {
+      "path": "architecture/methodology/ci-cd-integration.md",
+      "sha256": "7fe4659c5c3d82933a83ab55c1655206285dfa69a859246afdd29fc806121ea0"
+    },
+    {
+      "path": "architecture/methodology/proto-driven-development.md",
+      "sha256": "ec5a67187a3205527538d028df43b4893d9248a798195a1ed66d5a0325278bba"
+    },
+    {
+      "path": "architecture/methodology/workflow-templates.md",
+      "sha256": "ac8559acbc9d1449611c6d57683abcd78ff80279c2e689cdcebd49ece24df5ae"
+    },
+    {
+      "path": "research/better-harness-analysis.md",
+      "sha256": "4f1e942506ce69d1c8d3eaf6384fe53226a70f8cd9af0072d3001c6f74f1eb49"
+    },
+    {
+      "path": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/commands.json",
+      "sha256": "c322b832f76c11717e1128f532fd57e199fe8e76da943b9d0320db262be769e4"
+    },
+    {
+      "path": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/source-preservation.json",
+      "sha256": "908dda9eadf44e3cd18d3c2035257395decf9b05cd390640f900c0e81df8f9ca"
+    },
+    {
+      "path": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/summary.md",
+      "sha256": "acbe8868e194fe9b3c7ab1bf445528772f2fd93563248bf34cf582b8e6f6c28c"
+    },
+    {
+      "path": "docs/harness/tasks/2026-11-07-unpublished-docs-main-closeout.task.md",
+      "sha256": "3005fcba31836b8e94e391db53934b6b2873c33522470772a44b30a413f2e4fc"
+    }
+  ],
+  "validation": {
+    "tests": 108,
+    "governance": 15
+  },
+  "allowedPostReviewFactualUpdates": [
+    "Review linkage/reports/fingerprints, completion checklist after actual approval, actual CI/merge/main refs statuses only"
+  ],
+  "scope": "preserve six original docs/cache-ignore files; new governance only, no scripts/workflows/runtime change",
+  "approvalScope": "harness-unpublished-docs-reconciliation"
+}

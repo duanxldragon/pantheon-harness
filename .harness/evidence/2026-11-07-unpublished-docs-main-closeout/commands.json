@@ -1,0 +1,209 @@
+{
+  "taskId": "2026-11-07-unpublished-docs-main-closeout",
+  "repo": "pantheon-harness",
+  "agent": {
+    "tool": "codex",
+    "adapter": "Dispatcher bounded docs/refs; independent Git-master analysis and CODE reviewer"
+  },
+  "commands": [
+    {
+      "command": "git bundle verify ../audit-artifacts/github-main-release-2026-11-07/pantheon-harness-all-refs-before-cleanup.bundle",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "notes": "Complete bundle preserves initial main/branch/stash history. Original .codegraph stash75596f6 retained."
+    },
+    {
+      "command": "git cherry-pick f97ac5a aeb4614",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "notes": "Equivalent unique documents now7e978e0/ddef8c2 on currentorigin/main6ca8550; alreadymerged48a0dfb not repeated."
+    },
+    {
+      "command": "node scripts/harness/check-method-health.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-method-health.log.gz",
+      "sha256": "8fe0ff58f80b3f2bd1535981e8e109dbc76c0603085983426092a924c11c52f5",
+      "rawSha256": "50bb4b19419252f32991b106367e5ed930da614cc13a0f1ebcdc7c19a15ec7ac"
+    },
+    {
+      "command": "node scripts/harness/check-adoption.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-adoption.log.gz",
+      "sha256": "73cef6f323f32ff63f5d39ea75e6971886522dee720390e73be3d5cf91c99e42",
+      "rawSha256": "664d23f3cb0c481ff9b0f03c88186e233171b019ad12fc270c216a1491dd462a"
+    },
+    {
+      "command": "node scripts/harness/check-failure-registry.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-failure-registry.log.gz",
+      "sha256": "8ed1b0ebdb2ebeda513e7f2a56fdadb340d543cf6546f4b10577b7c0a3e93fa9",
+      "rawSha256": "331aa44c0f7f5a6035152b07e090e0d38021a5e4a4b7218998d1961fcc1feb71"
+    },
+    {
+      "command": "node scripts/harness/check-sync-drift.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-sync-drift.log.gz",
+      "sha256": "3de4545adde71afc560b61b6e58dd52ea08501d98c5ec0a078a7eb23a69396c7",
+      "rawSha256": "95d289b3e599a1185a4da2ee2820897e29ff27aa3e0abbabe1625c38b6d038e9"
+    },
+    {
+      "command": "node scripts/harness/check-doc-frontmatter.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-doc-frontmatter.log.gz",
+      "sha256": "be21b05628f79a6e5ce6756ebe2bf0fe890a51d04103b4b29bed2918129a0795",
+      "rawSha256": "2ae6bec5bfbe18e2244fc223e3f32d94a34bb5a35ef74c80080b33aef7e4f508"
+    },
+    {
+      "command": "node scripts/harness/check-encoding.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-encoding.log.gz",
+      "sha256": "128d57090d5538ac4392ec755d384a34015ebbbd877e0c5200606da57fd13b9f",
+      "rawSha256": "afbbb7f368fdf3fb67cb59b860c7c9cc2c94852d9daf59b23ffe48739a006f5f"
+    },
+    {
+      "command": "node scripts/harness/check-doc-links.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-doc-links.log.gz",
+      "sha256": "329fc1d1a51d3772dcac8e42944e6f6bd4857c86768c44e49ec89813264262b9",
+      "rawSha256": "561d38f298d8834a76db2ad8e0250d75efce154351570b008818a36eafd3e7c1"
+    },
+    {
+      "command": "node scripts/harness/check-doc-inventory.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-doc-inventory.log.gz",
+      "sha256": "c2fc1d0200db4bdaaab324d65f2b385e8d6de2588264867da14c0e30bbf76857",
+      "rawSha256": "8fcf744748e4a575a941c4bed68972e559caa677de6f2c08c7a9a3e97e96e392"
+    },
+    {
+      "command": "node scripts/harness/check-template-health.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-template-health.log.gz",
+      "sha256": "13f71ef7bda18b966dc1adab4d5994147f7507f7c22581268c1f8021401bc971",
+      "rawSha256": "c488eea6681299d7f10d7b22edc4b1ddb1d4af8570eb8b9737d87a2a01f9cd8e"
+    },
+    {
+      "command": "node scripts/harness/check-task-packet.mjs --root .",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-task-packet.log.gz",
+      "sha256": "c46598e46ab50414974d4dc0805f2fd4dfeb6fe0d117ca4479cf0ee1283eb2bd",
+      "rawSha256": "6bd644192400d7f3ef6241511b04643918d3da0f98af911d6ea7079028735632"
+    },
+    {
+      "command": "node scripts/harness/check-evidence.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-evidence.log.gz",
+      "sha256": "2cb0f52aa6f04eeb6776ea71b6b663164a2a2c3de6294ce08a68deac160b0150",
+      "rawSha256": "81be8df67f4994ddb4529727207761df91812dd8f59183c367cd1671a61d9738"
+    },
+    {
+      "command": "node scripts/harness/check-review.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-review.log.gz",
+      "sha256": "911cdd205ac72dbf78b91c4785f6870e1737e78cd34d107a01344be224ebca7b",
+      "rawSha256": "506af35c4edd14809a9ba0892554150655cd093e5770fb94ad129e083b407b0f"
+    },
+    {
+      "command": "node scripts/harness/check-graph-review.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "failed",
+      "exitCode": 1,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-graph-review.log.gz",
+      "sha256": "100e64ec571d1bbe1f46de3bcd820b4a4c039f5d72b2c463a898400dfb21b43c",
+      "rawSha256": "e77db5e95e6437e5477dbbf171d589a0c3dba40920a92ef9c64a6c15da1cc770"
+    },
+    {
+      "command": "node scripts/harness/check-visual-evidence.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-visual-evidence.log.gz",
+      "sha256": "8920659b8283fd0e0876cbc9906efab2d44d7b2c7acc1669e8ad0d8636d7b2fc",
+      "rawSha256": "d9ddf84dc0fbcd683d1a6522e32dab34dd29e83b714ccf10758867b6fb3ae6ed"
+    },
+    {
+      "command": "node scripts/harness/check-runtime-evidence.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/initial-runtime-evidence.log.gz",
+      "sha256": "5323960280b8a549adfd667a74890af08c837ad07de8d303210054e841c62c7c",
+      "rawSha256": "5fdfe28c9c7564b573ad482546790b067025efa65ff8bc3da4f6bc4e1ded2a01"
+    },
+    {
+      "command": "node scripts/harness/check-graph-review.mjs --root . --strict",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/harness-check-graph-review-fixed2.log.gz",
+      "sha256": "9e0fb4b040210c0456f19d7d1419dd77733c1e2078bc32f437e65a26d3db3eb8",
+      "rawSha256": "15af67754b40a756e29d505f7c1035c8796c0475563c461e3b115816b1d1c0ee"
+    },
+    {
+      "command": "node --test scripts/harness/*.test.mjs verify/scripts/*.test.mjs",
+      "cwd": "D:/workspace/go/pantheon-platform/pantheon-harness",
+      "status": "passed",
+      "exitCode": 0,
+      "log": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/harness-all-script-tests.log.gz",
+      "sha256": "ac8edc5b98ab1f3ac6a0574906b5c9c5a13275790fab1a477df2c0b80affb9fc",
+      "rawSha256": "3b529f4cd2f6bd2d36554bf85524ce053808b73732dc1986437a53ddb3cbe8b3"
+    }
+  ],
+  "knownGaps": [
+    "Hosted checks, merge and final onlymain verification pending"
+  ],
+  "runtimeSensitive": false,
+  "runtimeGap": "Documentation/cache-ignore metadata only; no UI or runtime code change.",
+  "runtimeLogs": [],
+  "linkage": {
+    "taskPacket": "docs/harness/tasks/2026-11-07-unpublished-docs-main-closeout.task.md",
+    "evidenceDir": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/",
+    "reviewFile": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/review.md",
+    "changeRef": "none",
+    "planRefs": []
+  },
+  "graphChecks": {
+    "usedCodeGraph": false,
+    "affectedSubgraph": [
+      "portable method documentation -> metadata discovery -> ordinary evidence/review gates"
+    ],
+    "checks": [],
+    "findings": [],
+    "notes": "Graph Focus:none; exact six documentation/cache-ignore files from archived commit preserved, no code/runtime dependency graph change."
+  },
+  "approval": {
+    "lane": "code-reviewer",
+    "verdict": "APPROVE",
+    "snapshotSha256": "41125d6744057fb2ace2bca4c1646c3158b5bef65481cc47efd89834d37d3fe1",
+    "approvalScope": "harness-unpublished-docs-reconciliation",
+    "acceptsPostReviewFactualUpdates": true,
+    "findings": [],
+    "report": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/code-review.md",
+    "reportSha256": "3e99afa878d62e31e5e62112f25f18081db6d5b8acfe4e94860b0a8d133c437d"
+  }
+}
