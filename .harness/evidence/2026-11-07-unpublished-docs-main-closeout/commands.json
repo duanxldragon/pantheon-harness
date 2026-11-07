@@ -175,7 +175,7 @@
     }
   ],
   "knownGaps": [
-    "Hosted checks, merge and final onlymain verification pending"
+    "This factual closeout PR still requires its own CI/merge and removal of its temporary branch"
   ],
   "runtimeSensitive": false,
   "runtimeGap": "Documentation/cache-ignore metadata only; no UI or runtime code change.",
@@ -204,6 +204,34 @@
     "acceptsPostReviewFactualUpdates": true,
     "findings": [],
     "report": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/code-review.md",
-    "reportSha256": "3e99afa878d62e31e5e62112f25f18081db6d5b8acfe4e94860b0a8d133c437d"
+    "reportSha256": "eedbc76e0ef021d6cdfc02e4887ee2359f0d9d2730779ec9d1825102192637e6"
+  },
+  "finalConsolidation": {
+    "recordedAt": "2026-11-07T06:07:47.977Z",
+    "pr": {
+      "mergeCommit": {
+        "oid": "992387523656a5482c614ac5add2fed20a72c4c9"
+      },
+      "mergedAt": "2026-11-07T05:57:11Z",
+      "state": "MERGED",
+      "url": "https://github.com/duanxldragon/pantheon-harness/pull/9"
+    },
+    "remoteBranches": [
+      {
+        "name": "main",
+        "sha": "992387523656a5482c614ac5add2fed20a72c4c9"
+      }
+    ],
+    "priorLocalBranches": [
+      "main"
+    ],
+    "historicalBundlePreserved": true,
+    "originalCacheStashPreserved": true,
+    "independentReport": {
+      "rawArchive": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/raw-code-review.md.gz",
+      "rawSha256": "3e99afa878d62e31e5e62112f25f18081db6d5b8acfe4e94860b0a8d133c437d",
+      "liveSha256": "eedbc76e0ef021d6cdfc02e4887ee2359f0d9d2730779ec9d1825102192637e6",
+      "note": "Git checkout CRLF differs from reviewed LF report; parsed decision unchanged."
+    }
   }
 }
