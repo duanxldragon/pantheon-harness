@@ -33,7 +33,7 @@ APPROVE for original six documentation/cache-ignore files on reviewed snapshot. 
     "acceptsPostReviewFactualUpdates": true,
     "findings": [],
     "report": ".harness/evidence/2026-11-07-unpublished-docs-main-closeout/code-review.md",
-    "reportSha256": "3e99afa878d62e31e5e62112f25f18081db6d5b8acfe4e94860b0a8d133c437d"
+    "reportSha256": "eedbc76e0ef021d6cdfc02e4887ee2359f0d9d2730779ec9d1825102192637e6"
   }
 }
 ```
