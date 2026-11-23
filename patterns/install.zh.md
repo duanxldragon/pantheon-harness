@@ -28,7 +28,7 @@ English version: [install.md](./install.md)
 
 本工具包会在以下文件中发布自己的版本信息：
 
-- `VERSION` — 当前版本（如 `1.3.0`）
+- `VERSION` — 当前版本（如 `1.5.0`）
 - `CHANGELOG.md` — 完整版本历史
 - `patterns/upgrade.md` — 升级指南
 

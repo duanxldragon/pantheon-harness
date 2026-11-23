@@ -1,6 +1,6 @@
 # Pantheon Harness
 
-Current execution policy: [Capability-Adaptive Delivery](./patterns/capability-adaptive-delivery.md), an Unreleased revision dated 2026-11-23. One primary agent plans, implements, and verifies; high-risk work keeps independent review and evidence. Base/Ops consume entry links and policy-hash receipts independently of product versions.
+Current execution policy: [Capability-Adaptive Delivery](./patterns/capability-adaptive-delivery.md), released in v1.5.0 on 2026-11-23. One primary agent plans, implements, and verifies; high-risk work keeps independent review and evidence. Base/Ops consume entry links and policy-hash receipts independently of product versions.
 
 > Agentic Development Methodology and Tools
 
@@ -127,7 +127,7 @@ Internal Only (not needed by consumers):
 
 | File | Location | Purpose |
 |------|----------|---------|
-| `VERSION` | Root | Current version (e.g., `1.4.0`) |
+| `VERSION` | Root | Current version (e.g., `1.5.0`) |
 | `CHANGELOG.md` | Root | Full version history |
 | `patterns/upgrade.md` | patterns/ | Upgrade guide |
 | `patterns/templates/release-notes.template.md` | patterns/templates/ | GitHub Release body template |
@@ -153,9 +153,16 @@ If UI is touched, also require browser or screenshot evidence.
 
 ## Current Status
 
-- Current version: `1.4.0`
-- Latest release: `v1.4.0`
+- Current version: `1.5.0`
+- Latest release: `v1.5.0`
 - Method shell: `pantheon-harness`
+
+### v1.5.0 Highlights
+
+- Primary-agent plan/implement/verify loop with short ordinary L1 records and retained L2 review/evidence gates.
+- Dated model/client capability evidence, bounded delegation, and durable context recovery.
+- Portable consumption preflight verifies reviewed policy hashes and active Base/Ops entry links.
+- Cross-repository ownership/handoff contracts and UTF-8 encoding validation.
 
 ### v1.4.0 Highlights
 

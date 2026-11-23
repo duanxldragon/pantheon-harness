@@ -1,0 +1,24 @@
+✔ check-evidence accepts valid session economics metadata (244.6991ms)
+✔ check-evidence rejects invalid session economics enums (185.7123ms)
+✔ check-evidence rejects non-numeric session economics counters (175.0224ms)
+✔ check-evidence rejects an unsupported evidence strength state (164.2429ms)
+✔ check-review accepts a valid review artifact (204.3895ms)
+✔ check-review fails when machine-readable block is missing (203.3438ms)
+✔ check-review fails when method review is missing (199.4335ms)
+✔ check-review fails when delivery governance review is missing (160.5038ms)
+✔ check-review fails when linkage does not match the task id (171.2573ms)
+✔ check-review fails on malformed structural review metadata (173.7676ms)
+✔ check-task-packet accepts method-first task metadata (190.4212ms)
+✔ check-task-packet requires complete workspace context for cross-repository work (157.2027ms)
+✔ check-task-packet accepts valid cross-repository workspace context (176.3735ms)
+✔ check-task-packet rejects packets that only use legacy Superpowers Plan (192.836ms)
+✔ check-task-packet rejects packets without plan references linkage (208.7211ms)
+✔ check-task-packet accepts comma-delimited plan references (182.9647ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1311.4255

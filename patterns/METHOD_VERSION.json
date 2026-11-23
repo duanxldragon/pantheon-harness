@@ -1,7 +1,7 @@
 {
-  "version": "1.4.0",
-  "compatibleRepoShell": "1.4.0",
+  "version": "1.5.0",
+  "compatibleRepoShell": "1.5.0",
   "description": "Pantheon Harness Method Kit - Agentic Development Methodology and Tools",
-  "releaseDate": "2026-07-15",
+  "releaseDate": "2026-11-23",
   "changelog": "CHANGELOG.md"
 }

@@ -28,7 +28,7 @@ Not required:
 
 This kit publishes its own version information in:
 
-- `VERSION` — Current version (e.g., `1.3.0`)
+- `VERSION` — Current version (e.g., `1.5.0`)
 - `CHANGELOG.md` — Full version history
 - `patterns/upgrade.md` — Upgrade guide
 

@@ -1,6 +1,6 @@
 # Pantheon Harness
 
-当前执行策略：[能力适配交付规则](./patterns/capability-adaptive-delivery.md)（2026-11-23 Unreleased 修订）。主 agent 默认完成计划、实现、验证；高风险保留独立 review 和 evidence。Base/Ops 通过入口链接与规则哈希 receipt 消费，产品版本独立。
+当前执行策略：[能力适配交付规则](./patterns/capability-adaptive-delivery.md)（2026-11-23 发布于 v1.5.0）。主 agent 默认完成计划、实现、验证；高风险保留独立 review 和 evidence。Base/Ops 通过入口链接与规则哈希 receipt 消费，产品版本独立。
 
 > Agentic 开发方法论与工具集
 
@@ -127,7 +127,7 @@ pantheon-harness/
 
 | 文件 | 位置 | 用途 |
 |------|------|------|
-| `VERSION` | 根目录 | 当前版本（如 `1.3.0`） |
+| `VERSION` | 根目录 | 当前版本（如 `1.5.0`） |
 | `CHANGELOG.md` | 根目录 | 完整版本历史 |
 | `patterns/upgrade.md` | patterns/ | 升级指南 |
 | `patterns/templates/release-notes.template.md` | patterns/templates/ | GitHub Release 正文模板 |
@@ -153,9 +153,23 @@ node pantheon-harness/scripts/harness/check-adoption.mjs --root .
 
 ## 当前状态
 
-- 当前版本：`1.3.0`
-- 最新 Release：`v1.3.0`
+- 当前版本：`1.5.0`
+- 最新 Release：`v1.5.0`
 - 方法论本体：`pantheon-harness`
+
+### v1.5.0 重点
+
+- 主 agent 在同一会话完成计划、实现和验证；普通 L1 使用简短记录，L2 保留独立审查和证据门禁。
+- 以有日期的模型与客户端能力证据指导执行，明确委派预算和上下文恢复方式。
+- 工具无关的消费预检校验规则哈希及 Base/Ops 活跃入口链接。
+- 发布跨仓库归属与交接契约，以及 UTF-8 编码检查门禁。
+
+### v1.4.0 重点
+
+- 模型时代退役评审：移除 OMX/codex-flow 的活跃路由，改按能力路由（plan-first、subagent/workflow fan-out）。
+- 删除 46 个零引用 skill 目录；`skills/` 仅保留 `grill-me` 和 `impeccable`。
+- 将面向旧模型的强制 subagent 路由表降级为原则。
+- 历史任务中的旧 plan 引用（Superpowers/OMX/codex-flow 产物）继续有效；验证器不变。
 
 ### v1.3.0 重点
 
