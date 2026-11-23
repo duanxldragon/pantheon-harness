@@ -1,7 +1,7 @@
 # Pantheon Harness 方法论
 
 > 最后更新：2026-11-23
-> 已发布版本：[VERSION](../../VERSION)；本次修订见 CHANGELOG 的 Unreleased
+> 当前发布：v1.5.0（2026-11-23），版本以 [VERSION](../../VERSION) 为准；后续修订见 CHANGELOG 的 Unreleased
 > 变更历史：[CHANGELOG.md](../../CHANGELOG.md)
 > 演化机制：[evolution.md](./evolution.md)
 > 作者：人机协作（Human 定目标和验收，agent roles 规划、执行、验证、审查）

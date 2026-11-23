@@ -49,7 +49,7 @@ English version: [README.md](./README.md)
 
 ## 版本管理
 
-当前版本：`1.3.0`（与 `pantheon-harness/VERSION` 匹配）
+当前版本：`1.5.0`（与 `pantheon-harness/VERSION` 匹配）
 
 版本元数据：
 

@@ -49,7 +49,7 @@ Repository-local `architecture/harness/*` files may project or summarize the met
 
 ## Versioning
 
-Current version: `1.3.0` (matches `pantheon-harness/VERSION`)
+Current version: `1.5.0` (matches `pantheon-harness/VERSION`)
 
 Version metadata:
 

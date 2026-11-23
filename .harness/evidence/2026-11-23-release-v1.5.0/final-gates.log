@@ -1,0 +1,296 @@
+### node --test scripts/harness/build-graph-review-import.test.mjs scripts/harness/check-adoption.test.mjs scripts/harness/check-doc-frontmatter.test.mjs scripts/harness/check-doc-inventory.test.mjs scripts/harness/check-doc-links.test.mjs scripts/harness/check-encoding.test.mjs scripts/harness/check-evidence.test.mjs scripts/harness/check-failure-registry.test.mjs scripts/harness/check-graph-review.test.mjs scripts/harness/check-method-consumption.test.mjs scripts/harness/check-method-health.test.mjs scripts/harness/check-review.test.mjs scripts/harness/check-runtime-evidence.test.mjs scripts/harness/check-sync-drift.test.mjs scripts/harness/check-task-packet.test.mjs scripts/harness/check-template-health.test.mjs scripts/harness/check-visual-evidence.test.mjs scripts/harness/scaffold-graph-review.test.mjs
+✔ build-graph-review-import fake codegraph fixture exposes a POSIX executable wrapper (6.9397ms)
+✔ build-graph-review-import converts trace-like JSON into scaffold import shape (106.3045ms)
+✔ build-graph-review-import passes through direct import shape and writes output file (107.8057ms)
+✔ build-graph-review-import falls back across paths and finding summaries (109.4574ms)
+✔ build-graph-review-import supports live codegraph callers and callees (386.846ms)
+✔ build-graph-review-import supports sync and live impact/context sources (547.0731ms)
+✔ build-graph-review-import resolves PowerShell codegraph wrappers from PATH on Windows (812.029ms)
+✔ check-adoption passes when all required entrypoints exist (226.5706ms)
+✔ check-adoption fails strict mode when a required Harness file is missing (223.4042ms)
+✔ check-adoption fails when PR template is missing the trivial-change marker (226.4409ms)
+✔ check-adoption warns when implementation prompt is missing evidence rules (213.9822ms)
+✔ check-adoption fails when implementation files change without task packet or evidence linkage (143.6387ms)
+✔ check-adoption passes when implementation changes include task packet and evidence linkage (152.4345ms)
+✔ check-adoption requires real openspec linkage when an active change exists (134.2739ms)
+Doc frontmatter check (report-only): 0 error(s), 0 warning(s)
+✔ scripts\harness\check-doc-frontmatter.test.mjs (185.5849ms)
+✔ check-doc-inventory passes when script and key doc indexes are complete (134.1424ms)
+✔ check-doc-inventory fails when a root harness script is missing from scripts README (115.9255ms)
+✔ check-doc-inventory fails when docs README misses a required method entry (136.3435ms)
+✔ check-doc-links passes with valid internal markdown links (127.3219ms)
+✔ check-doc-links fails strict mode when internal targets are missing (117.1545ms)
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'bom.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+✔ check-encoding passes on clean UTF-8 tracked files (395.4755ms)
+✔ check-encoding fails in strict mode when a tracked file has invalid UTF-8 (500.0974ms)
+✔ check-encoding reports line numbers of corruption (422.3839ms)
+✔ check-encoding report-only mode exits 0 even with findings (353.1648ms)
+✔ check-encoding respects --ext filter (310.0715ms)
+✔ check-encoding tolerates UTF-8 BOM (481.8748ms)
+✔ check-encoding skips untracked files (418.267ms)
+✔ check-evidence accepts a valid evidence fixture (126.0582ms)
+✔ check-evidence accepts valid browser evidence for a UI task (129.7732ms)
+✔ check-evidence accepts valid graph checks metadata (134.403ms)
+✔ check-evidence fails strict mode when no evidence files exist (122.3223ms)
+✔ check-evidence flags an unknown agent tool in strict mode (129.52ms)
+✔ check-evidence flags malformed JSON in strict mode (137.377ms)
+✔ check-evidence rejects an unsupported command status (116.4867ms)
+✔ check-evidence rejects an unsupported evidence strength state (118.284ms)
+✔ check-evidence rejects browser evidence missing viewport metadata (129.8158ms)
+✔ check-evidence rejects browser evidence missing screenshot and visual gap (106.8655ms)
+✔ check-evidence rejects linkage when task packet path does not match taskId (105.4859ms)
+✔ check-evidence rejects malformed runtime classification metadata (92.1094ms)
+✔ check-evidence rejects malformed graph checks metadata (106.6706ms)
+✔ check-failure-registry accepts a valid registry fixture (156.7204ms)
+✔ check-failure-registry reports missing default files as a warning (122.1799ms)
+✔ check-failure-registry fails when required columns are missing (122.4433ms)
+✔ check-failure-registry rejects invalid enum values (121.1907ms)
+✔ check-failure-registry rejects template placeholder rows in real registries (111.0819ms)
+✔ check-graph-review passes when task packet, evidence, and review agree (120.2114ms)
+✔ check-graph-review warns when graph-reviewed task is missing graph checks (109.6041ms)
+✔ check-graph-review warns when structural metadata disagrees (118.2445ms)
+✔ records and verifies adoption without changing product version or refreshing evidence (32.5173ms)
+✔ source edits fail validation until explicitly reviewed and updated (48.3566ms)
+✔ Git CRLF/LF checkout differences preserve the same method snapshot (39.4889ms)
+✔ method version, wrong source, incomplete receipt and invalid JSON fail visibly (49.2097ms)
+✔ removing a tool entry link or adding an unlinked entry blocks update too (24.6203ms)
+✔ an inactive inherited English guide does not require a shared-source override (23.9349ms)
+✔ a stale English guide activated only by Claude blocks adoption (37.4365ms)
+✔ missing source files or receipts are failures, not automatic adoption (20.6978ms)
+✔ CLI requires an explicit source and rejects unsupported flags (791.4235ms)
+✔ check-method-health passes with compatible versions (170.3225ms)
+✔ check-method-health fails strict mode on incompatible versions (155.1242ms)
+✔ check-method-health reports missing method kit files (157.235ms)
+✔ check-method-health reports missing failure registry checker (182.7669ms)
+✔ check-method-health reports missing generic review checker (162.0741ms)
+✔ check-method-health reports missing graph review checker (160.0352ms)
+✔ check-method-health reports missing graph review scaffold tool (164.8634ms)
+✔ check-method-health reports missing graph review import builder (145.2919ms)
+✔ root check-review accepts a valid review artifact (142.9752ms)
+✔ root check-review fails strict mode when no review artifacts exist (127.0912ms)
+✔ root check-review fails on invalid verdict (125.0028ms)
+✔ root check-review fails on malformed structural review metadata (135.3679ms)
+✔ check-runtime-evidence passes when runtime signal exists (140.569ms)
+✔ check-runtime-evidence warns when runtime-sensitive task has no signal or gap (112.7237ms)
+✔ check-runtime-evidence honors explicit runtimeSensitive metadata even without runtime keywords in the task packet (124.3089ms)
+✔ check-sync-drift passes when configured mirrors match (137.8368ms)
+✔ check-sync-drift fails when configured mirror drifts (122.9498ms)
+✔ check-task-packet accepts a valid task packet fixture (137.0589ms)
+✔ check-task-packet rejects packets that only use legacy Superpowers Plan (139.055ms)
+✔ check-task-packet fails when required sections are missing (103.904ms)
+✔ check-task-packet warns when contract anchor file does not exist (142.2951ms)
+✔ check-task-packet rejects an invalid primary layer value (133.9571ms)
+✔ check-task-packet requires workspace context for an explicit cross-repository layer (117.2183ms)
+✔ check-task-packet accepts a complete workspace context (97.3968ms)
+✔ check-task-packet rejects invalid workspace context enums (98.6651ms)
+✔ check-task-packet rejects linkage task id mismatch (99.5933ms)
+✔ check-task-packet rejects malformed optional execution roles and stop points sections (96.2967ms)
+✔ check-task-packet rejects malformed optional structural scope section (113.1646ms)
+✔ check-template-health passes with required docs and template selection (130.7342ms)
+✔ check-template-health warns when template selection is missing (136.2176ms)
+✔ check-template-health fails strict mode when required docs are missing (156.556ms)
+✔ check-visual-evidence passes when UI task declares viewport, states and has a screenshot (162.6639ms)
+✔ check-visual-evidence warns when viewport plan and state plan are missing (131.9519ms)
+✔ check-visual-evidence warns when evidence directory is missing (129.9501ms)
+✔ check-visual-evidence ignores explicit not-applicable method tasks that mention visual docs (99.6192ms)
+✔ check-visual-evidence fails strict mode when warnings exist (86.2918ms)
+✔ check-visual-evidence accepts a recorded screenshot gap as evidence (93.5727ms)
+✔ scaffold-graph-review fake codegraph fixture exposes a POSIX executable wrapper (13.5875ms)
+✔ scaffold-graph-review creates graph review skeleton from task packet (114.3966ms)
+✔ scaffold-graph-review preserves existing evidence and review fields while refreshing graph sections (140.0937ms)
+✔ scaffold-graph-review does not write files in report-only mode (108.3398ms)
+✔ scaffold-graph-review imports graph review payload and applies it to evidence and review (107.0695ms)
+✔ scaffold-graph-review falls back to task structural scope when imported payload is partial (101.2484ms)
+✔ scaffold-graph-review can query live codegraph data and write evidence directly (436.7802ms)
+ℹ tests 101
+ℹ suites 0
+ℹ pass 101
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3056.2132
+EXIT=0
+### node --test verify/scripts/check-evidence.test.mjs verify/scripts/check-review.test.mjs verify/scripts/check-task-packet.test.mjs
+✔ check-evidence accepts valid session economics metadata (76.4131ms)
+✔ check-evidence rejects invalid session economics enums (63.6603ms)
+✔ check-evidence rejects non-numeric session economics counters (67.7809ms)
+✔ check-evidence rejects an unsupported evidence strength state (75.6456ms)
+✔ check-review accepts a valid review artifact (76.6655ms)
+✔ check-review fails when machine-readable block is missing (65.9351ms)
+✔ check-review fails when method review is missing (69.5675ms)
+✔ check-review fails when delivery governance review is missing (81.1759ms)
+✔ check-review fails when linkage does not match the task id (88.4861ms)
+✔ check-review fails on malformed structural review metadata (80.2926ms)
+✔ check-task-packet accepts method-first task metadata (72.2952ms)
+✔ check-task-packet requires complete workspace context for cross-repository work (66.3366ms)
+✔ check-task-packet accepts valid cross-repository workspace context (66.8679ms)
+✔ check-task-packet rejects packets that only use legacy Superpowers Plan (76.1835ms)
+✔ check-task-packet rejects packets without plan references linkage (86.659ms)
+✔ check-task-packet accepts comma-delimited plan references (80.2375ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 568.4395
+EXIT=0
+### node scripts/harness/check-method-health.mjs --root . --strict
+Method health check (strict): 0 finding(s), 0 warning(s)
+method kit version: 1.5.0
+repo shell version: 1.5.0
+
+no findings
+EXIT=0
+### node scripts/harness/check-adoption.mjs --root . --strict
+Adoption check (strict): 0 finding(s), 0 warning(s)
+
+no findings
+EXIT=0
+### node scripts/harness/check-failure-registry.mjs --root . --strict
+Failure registry check: 1 file(s), 0 error(s), 0 warning(s)
+
+[PASS] architecture/harness/failure-registry.md
+EXIT=0
+### node scripts/harness/check-sync-drift.mjs --root . --strict
+Sync drift check (strict): 0 finding(s)
+EXIT=0
+### node scripts/harness/check-doc-frontmatter.mjs --root . --strict
+Doc frontmatter check (strict): 0 error(s), 0 warning(s)
+EXIT=0
+### node scripts/harness/check-encoding.mjs --root . --strict
+Encoding check (strict): 0 finding(s) across 301 scanned file(s)
+EXIT=0
+### node scripts/harness/check-doc-links.mjs --root . --strict
+Docs link check (strict): 0 finding(s)
+EXIT=0
+### node scripts/harness/check-doc-inventory.mjs --root . --strict
+Docs inventory check (strict): 0 finding(s)
+EXIT=0
+### node scripts/harness/check-template-health.mjs --root . --strict
+Template health check (strict): 0 finding(s), 0 warning(s)
+EXIT=0
+### node scripts/harness/check-task-packet.mjs --root .
+Task packet check: 12 file(s), 0 error(s), 3 warning(s)
+
+[PASS] docs/harness/tasks/2026-06-27-frontmatter-migration.task.md
+
+[PASS] docs/harness/tasks/2026-06-27-known-issue-closure.task.md
+
+[PASS] docs/harness/tasks/2026-06-27-migration-hardening.task.md
+
+[PASS] docs/harness/tasks/2026-07-13-grill-me-enablement-and-superpowers-alignment.task.md
+  warning: Contract anchor does not exist: pantheon-harness/architecture/methodology/harness-methodology.zh.md
+  warning: Contract anchor does not exist: pantheon-harness/architecture/methodology/superpowers-migration.md
+  warning: Contract anchor does not exist: pantheon-harness/skills/skills-lock.json
+
+[PASS] docs/harness/tasks/2026-07-15-model-era-retirement-review.task.md
+
+[PASS] docs/harness/tasks/2026-07-26-hot-005-adapter-layer-consolidation.task.md
+
+[PASS] docs/harness/tasks/2026-07-26-method-review-rectification.task.md
+
+[PASS] docs/harness/tasks/2026-08-04-better-harness-evaluation.task.md
+
+[PASS] docs/harness/tasks/2026-08-17-cross-repo-handoff-evidence-strength.task.md
+
+[PASS] docs/harness/tasks/2026-11-07-unpublished-docs-main-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-11-23-capability-adaptive-delivery.task.md
+
+[PASS] docs/harness/tasks/2026-11-23-release-v1.5.0.task.md
+EXIT=0
+### node scripts/harness/check-evidence.mjs --root . --strict
+Evidence check (strict): 12 file(s), 0 error(s), 0 warning(s)
+
+[PASS] .harness/evidence/2026-06-27-frontmatter-migration/commands.json
+
+[PASS] .harness/evidence/2026-06-27-known-issue-closure/commands.json
+
+[PASS] .harness/evidence/2026-06-27-migration-hardening/commands.json
+
+[PASS] .harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/commands.json
+
+[PASS] .harness/evidence/2026-07-15-model-era-retirement-review/commands.json
+
+[PASS] .harness/evidence/2026-07-26-hot-005-adapter-layer-consolidation/commands.json
+
+[PASS] .harness/evidence/2026-07-26-method-review-rectification/commands.json
+
+[PASS] .harness/evidence/2026-08-04-better-harness-evaluation/commands.json
+
+[PASS] .harness/evidence/2026-08-17-cross-repo-handoff-evidence-strength/commands.json
+
+[PASS] .harness/evidence/2026-11-07-unpublished-docs-main-closeout/commands.json
+
+[PASS] .harness/evidence/2026-11-23-capability-adaptive-delivery/commands.json
+
+[PASS] .harness/evidence/2026-11-23-release-v1.5.0/commands.json
+EXIT=0
+### node scripts/harness/check-review.mjs --root . --strict
+Review check (strict): 12 file(s), 0 error(s)
+
+[PASS] .harness/evidence/2026-06-27-frontmatter-migration/review.md
+
+[PASS] .harness/evidence/2026-06-27-known-issue-closure/review.md
+
+[PASS] .harness/evidence/2026-06-27-migration-hardening/review.md
+
+[PASS] .harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/review.md
+
+[PASS] .harness/evidence/2026-07-15-model-era-retirement-review/review.md
+
+[PASS] .harness/evidence/2026-07-26-hot-005-adapter-layer-consolidation/review.md
+
+[PASS] .harness/evidence/2026-07-26-method-review-rectification/review.md
+
+[PASS] .harness/evidence/2026-08-04-better-harness-evaluation/review.md
+
+[PASS] .harness/evidence/2026-08-17-cross-repo-handoff-evidence-strength/review.md
+
+[PASS] .harness/evidence/2026-11-07-unpublished-docs-main-closeout/review.md
+
+[PASS] .harness/evidence/2026-11-23-capability-adaptive-delivery/review.md
+
+[PASS] .harness/evidence/2026-11-23-release-v1.5.0/review.md
+EXIT=0
+### node scripts/harness/check-graph-review.mjs --root . --strict
+Graph review check (strict): 12 graph-reviewed task(s), 0 warning(s)
+
+no findings
+EXIT=0
+### node scripts/harness/check-visual-evidence.mjs --root . --strict
+Visual evidence check (strict): 0 UI task(s), 0 warning(s)
+
+no findings
+EXIT=0
+### node scripts/harness/check-runtime-evidence.mjs --root . --strict
+Runtime evidence check (strict): 12 file(s), 0 error(s), 0 warning(s)
+EXIT=0
+### pantheon-base consumption
+Method consumption verified: 1.5.0, 7 policies, AGENTS.md, AGENTS.en.md, CLAUDE.md
+EXIT=0
+### pantheon-ops consumption
+Method consumption verified: 1.5.0, 7 policies, AGENTS.md, CLAUDE.md
+EXIT=0
+DURATION_MS=6145
