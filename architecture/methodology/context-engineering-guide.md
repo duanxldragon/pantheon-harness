@@ -4,15 +4,15 @@
 
 ## 0. 概述
 
-Context Engineering is the discipline of managing an agent's working memory. It is more important than prompt engineering. Agents who manage context well consistently outperform those who don't.
+Context Engineering manages an agent's working context. Apply the [capability-adaptive policy](../../patterns/capability-adaptive-delivery.md); no performance gain is claimed without comparable task evidence.
 
-**Core principle**: Keep CLAUDE.md concise, use lazy-loading rules, and separate investigation from execution.
+**Core principle**: Keep entry rules concise, retrieve focused context, and retain coupled planning/implementation/testing in the primary session.
 
 ## 1. CLAUDE.md Size Control
 
 ### 1.1 Target Size
 
-- **Hard limit**: 200 lines recommended
+- **Guide**: keep broadly loaded entry rules short; 200 lines is a heuristic, not a runtime limit
 - **Over 300 lines**: Consider splitting into sub-rules
 
 ### 1.2 What Goes in CLAUDE.md
@@ -56,33 +56,15 @@ These files only load when relevant files are accessed, saving context tokens.
 | standard | Normal development tasks | Moderate |
 | detailed | Complex architecture, security review | High |
 
-### 3.2 /compact Trigger
+### 3.2 Compaction and Checkpoints
 
-When context reaches 40-50% capacity, compact the session:
-- Claude Code: `/compact`
-- Codex CLI: Similar context management
-
-Signs you need compaction:
-- Long conversation history
-- Many files visited
-- Slow responses
+Use actual runtime pressure or loss of task focus, not a universal 40-50% threshold or latency alone. Before supported compaction/handoff, save goal, In/Out, decisions, owned edits, verification, gaps, remaining work, and next action in the current task/evidence summary. Compaction can lose detail; reload the checkpoint and inspect current files on resume.
 
 ## 4. Context Pollution Prevention
 
-### 4.1 Subagent Isolation
+### 4.1 Bounded Subagent Isolation
 
-Use subagents for noisy tasks to keep the main context clean:
-
-**Good candidates for subagent:**
-- Deep file reading (10+ files)
-- Searching across many paths
-- Parallel investigation
-- Research tasks
-
-**Keep in main context:**
-- Implementation
-- Quick fixes
-- Coordination
+Delegate independent review or self-contained noisy work only when available and authorized. Specify scope, ownership, evidence, budget, stop condition, and integration owner. Query an available structural index directly. Keep coupled implementation and its tests in the main context; large file counts alone do not justify delegation.
 
 ### 4.2 Subagent Patterns
 

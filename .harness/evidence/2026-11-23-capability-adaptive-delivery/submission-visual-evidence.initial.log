@@ -1,0 +1,9 @@
+Visual evidence check (strict): 1 UI task(s), 2 warning(s)
+
+warning: docs/harness/tasks/2026-11-23-capability-adaptive-delivery.task.md
+  task: 2026-11-23-capability-adaptive-delivery
+  reason: UI task packet does not declare desktop/mobile viewport verification plan
+
+warning: docs/harness/tasks/2026-11-23-capability-adaptive-delivery.task.md
+  task: 2026-11-23-capability-adaptive-delivery
+  reason: UI task packet does not declare empty/loading/error/permission state verification plan

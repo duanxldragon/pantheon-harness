@@ -1,5 +1,7 @@
 # 执行护栏
 
+按 [能力适配交付规则](./capability-adaptive-delivery.md) 执行：先读取已有上下文，开工时打包关键澄清；可逆细节用明确假设推进。主 agent 可闭环实现，只有缺少授权或实质改变已确认边界才重新请求决策。
+
 English version: [EXECUTION_GUARDRAILS.md](./execution-guardrails.md)
 
 本文为可移植的 Harness Engineering 方法补上一组小而硬的执行护栏。

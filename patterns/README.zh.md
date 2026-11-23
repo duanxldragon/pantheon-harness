@@ -1,5 +1,7 @@
 # 方法模式
 
+执行入口：[能力适配交付规则](./capability-adaptive-delivery.md)；默认主 agent 闭环，按风险和实际 runtime 能力选择最小路径。
+
 Agentic 交付的核心方法模式和模板。
 
 English version: [README.md](./README.md)

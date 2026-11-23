@@ -24,6 +24,7 @@ The portable method source of truth lives in `patterns/`. Scripts here are gener
 | `check-sync-drift.mjs` | Checks configured file mirror drift. |
 | `check-visual-evidence.mjs` | Reports UI/visual evidence gaps. |
 | `check-adoption.mjs` | Checks generic method adoption entrypoints and task/evidence linkage. |
+| `check-method-consumption.mjs` | Verifies consumer entry links and reviewed method version/policy hashes; `--update` explicitly records an intentional adoption. |
 | `check-method-health.mjs` | Checks method-kit and repo-shell version and landing-file health. |
 | `check-failure-registry.mjs` | Validates failure registry tables against the portable taxonomy. |
 | `check-doc-frontmatter.mjs` | Validates governed Markdown frontmatter conventions. |

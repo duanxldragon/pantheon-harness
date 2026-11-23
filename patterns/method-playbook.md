@@ -4,7 +4,7 @@ Chinese version: [method-playbook.zh.md](./method-playbook.zh.md)
 
 This playbook turns a set of tools into a single operating method.
 
-Read these method foundations first:
+Read [Capability-Adaptive Delivery](./capability-adaptive-delivery.md) first; load these foundations only when their topic governs the current task:
 
 1. [harness-core-model.md](./harness-core-model.md)
 2. [context-engineering-protocol.md](./context-engineering-protocol.md)
@@ -25,6 +25,8 @@ Read these method foundations first:
 - local harness checks: task packet, evidence, adoption
 
 ## Default Workflow
+
+Apply [Capability-Adaptive Delivery](./capability-adaptive-delivery.md) and select the tier first. The stages below describe responsibilities, normally performed by one primary agent. L1 may combine them into a short plan and closeout; L2 retains linked task/evidence/review artifacts. Stage names do not require separate documents, models, or processes.
 
 The default workflow is method-first. Do not start production-code changes for non-trivial work until the intake, profile, verification, review, and ratchet plan are clear.
 
@@ -79,7 +81,7 @@ Before implementation, choose the smallest narration budget that still keeps the
 
 - Decide whether the work is `trivial` or `non-trivial`
 - Use the repository's triviality policy when one exists; otherwise default to `non-trivial`
-- If non-trivial, create or select a change identity such as an OpenSpec change
+- For L2, create or select a durable task identity; ordinary L1 may use its existing short plan without OpenSpec
 - Select the smallest applicable harness template or overlay
 - Decide whether the current task is method/process work or production-code work. Method/process work should record code-level failures as deferred backlog unless they block method validation.
 
@@ -96,6 +98,8 @@ Before implementation, choose the smallest narration budget that still keeps the
 - Produce a concrete implementation plan
 
 ### 4. Task Packet
+
+This full artifact stage applies to L2. Ordinary L1 keeps the relevant scope/plan/checks in its short record, without a separate packet.
 
 - Create a task packet from the plan
 - Select a quality profile or explicitly record `none`
@@ -132,6 +136,8 @@ Before implementation, choose the smallest narration budget that still keeps the
 
 ### 7. Evidence
 
+L2 uses the linked files below. Ordinary L1 may keep command results, findings, and gaps in its short closeout; create durable files only when needed for recovery or repository gates.
+
 - Save command results in `.harness/evidence/<task-id>/commands.json`
 - Save human-readable summary in `summary.md`
 - Save review output in `review.md`
@@ -140,6 +146,8 @@ Before implementation, choose the smallest narration budget that still keeps the
 - When the session is long-running, delegated, or cost-sensitive, add `sessionEconomics` or record the explicit gap
 
 ### 8. Mechanical Checks
+
+Run only checks required by the task's tier and repository contract. The full governance set below is for L2 or method upkeep; ordinary L1 uses its targeted behavioral checks.
 
 - Run:
   - `check-task-packet`
@@ -156,8 +164,8 @@ Before implementation, choose the smallest narration budget that still keeps the
 ### 9. Review
 
 - Findings-first
-- Review must point at the same task packet and evidence
-- Use an external evaluator by default for non-trivial work; if only self-review is used, record why and what residual risk remains
+- Review points at the same L2 task packet/evidence or L1 scope/verification record
+- Ordinary L1 may use findings-first self-review. L2 retains review artifacts; high-risk work requires an independent reviewer or an explicit review gap and acceptance gate. Never present self-review as independent approval
 - For structural, high-risk, or cross-layer work, review should at minimum say:
   - what affected subgraph actually changed
   - whether a new cycle or larger cycle cluster was introduced
@@ -167,7 +175,7 @@ Before implementation, choose the smallest narration budget that still keeps the
 
 ### 10. Close
 
-- Merge or ship
+- Merge or ship only when requested and authorized; otherwise close the local implementation with evidence
 - Classify any PR or CI failure as `method-gate`, `repo-quality-gate`, `runtime-evidence-gate`, `external-flaky`, or `not-applicable`
 - Archive the OpenSpec change when complete
 - If the same failure pattern recurs, ratchet it into a guide, template, sensor, or gate instead of only patching code again
@@ -176,7 +184,7 @@ Before implementation, choose the smallest narration budget that still keeps the
 
 ## Minimum Machine-Readable Closure
 
-Every non-trivial task should have:
+Every L2 task should have the artifacts below. Ordinary L1 may combine scope, plan, checks, findings, and gaps in one short record:
 
 - one change identity or explicit `none`
 - one task packet

@@ -96,6 +96,8 @@ Rules:
 
 ## 4. Resume And Checkpoints
 
+Apply [capability-adaptive recovery](./capability-adaptive-delivery.md#4-long-tasks-and-recovery). Use actual runtime context signals, not a universal compaction percentage. Before compaction, delegation, or session end, checkpoint goal, In/Out, decisions, current edits, verification, remaining work, gaps, and next action in the existing task/evidence summary. On resume, inspect current files and reverify affected changes; long context does not replace durable state.
+
 Long-running work must survive context reset through repo state, not through chat memory alone.
 
 Use durable artifacts for resume:

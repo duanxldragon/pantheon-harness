@@ -61,7 +61,7 @@ my-project/
 workspace-root/
 ├── pantheon-harness/     # 方法论本体（只读规范源）
 └── my-consumer-repo/     # 消费者仓库
-    ├── VERSION           # 必须与 pantheon-harness 匹配
+    ├── VERSION           # 产品版本，与方法 VERSION 独立
     ├── docs/harness/    # 本地 harness 合同
     └── scripts/harness/ # 本地验证脚本
 ```

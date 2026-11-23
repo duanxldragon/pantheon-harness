@@ -6,7 +6,7 @@ It applies to every repository that adopts the Agentic Method Kit. Consumer repo
 
 ## 1. Principle
 
-For non-trivial work, improve the method and process before changing production code.
+For non-trivial work, establish scope, risk-matched verification, and review before changing production code. Reuse existing contracts and controls; routine delivery does not require redesigning the method. Apply [Capability-Adaptive Delivery](./capability-adaptive-delivery.md) so ordinary L1 uses a short plan and L2 keeps durable governance.
 
 Default order:
 
@@ -21,7 +21,7 @@ method boundary
   -> evidence and closeout
 ```
 
-Code changes are last because code-level failures are often symptoms of unclear task boundaries, missing profiles, weak verification placement, or absent ratchet decisions.
+Implement once those decisions are sufficient. Improve the method itself when repeated failures or a demonstrable gap justify it; do not turn every code defect into a new workflow or sensor.
 
 ## 2. Scope
 

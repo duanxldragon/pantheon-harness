@@ -1,5 +1,7 @@
 # Pantheon Harness
 
+Current execution policy: [Capability-Adaptive Delivery](./patterns/capability-adaptive-delivery.md), an Unreleased revision dated 2026-11-23. One primary agent plans, implements, and verifies; high-risk work keeps independent review and evidence. Base/Ops consume entry links and policy-hash receipts independently of product versions.
+
 > Agentic Development Methodology and Tools
 
 [English](./README.md) | [中文](./README.zh.md)
@@ -49,7 +51,7 @@ Place `pantheon-harness/` as a sibling at workspace root level. Consumer repos r
 workspace-root/
 ├── pantheon-harness/     # Method source (read-only canonical)
 └── my-consumer-repo/     # Consumer repo
-    ├── VERSION           # Must match pantheon-harness VERSION
+    ├── VERSION           # Product version; independent of method VERSION
     ├── docs/harness/    # Local harness contracts
     └── scripts/harness/  # Local validation scripts
 ```

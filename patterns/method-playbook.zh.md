@@ -4,7 +4,7 @@ English version: [method-playbook.md](./method-playbook.md)
 
 这份 playbook 用来把一组工具收敛成一套统一的方法。
 
-先阅读这些方法基础：
+先读 [能力适配交付规则](./capability-adaptive-delivery.md)；以下基础只在其主题约束当前任务时按需读取：
 
 1. [harness-core-model.zh.md](./harness-core-model.zh.md)
 2. [context-engineering-protocol.zh.md](./context-engineering-protocol.zh.md)
@@ -25,6 +25,8 @@ English version: [method-playbook.md](./method-playbook.md)
 - 本地 harness checks：task packet、evidence、adoption
 
 ## 默认工作流
+
+先用 [能力适配交付规则](./capability-adaptive-delivery.md) 选档位与执行路径。下面阶段描述职责，默认由同一主 agent 完成；L1 合并为短计划与 closeout，L2 保留完整 task/evidence/review。文档层级不表示必须使用多个工具。
 
 默认工作流是方法优先。非 trivial 工作在 intake、profile、verification、review 和 ratchet plan 清楚前，不应开始生产代码修改。
 
@@ -79,7 +81,7 @@ English version: [method-playbook.md](./method-playbook.md)
 
 - 判断当前工作是 `trivial` 还是 `non-trivial`
 - 如果仓库提供 triviality policy，按该策略判断；否则默认按 `non-trivial`
-- 如果是 non-trivial，先创建或选择一个变更身份，例如 OpenSpec change
+- L2 创建或选择持久 task identity；普通 L1 可用现有短计划，不强制 OpenSpec
 - 选择最小适用的 harness template 或 overlay
 - 判断当前任务是方法/流程工作，还是生产代码工作。方法/流程工作中发现的代码级失败，除非阻塞方法验证，否则应记录为 deferred backlog。
 
@@ -96,6 +98,8 @@ English version: [method-playbook.md](./method-playbook.md)
 - 产出可执行的具体实现计划
 
 ### 4. Task Packet
+
+完整工件阶段适用于 L2。普通 L1 把范围、计划和验证放在现有短记录，不另建 packet。
 
 - 根据 plan 创建 task packet
 - 选择 quality profile，或显式写 `none`
@@ -132,6 +136,8 @@ English version: [method-playbook.md](./method-playbook.md)
 
 ### 7. Evidence
 
+L2 使用以下互相链接的文件。普通 L1 可在短 closeout 保留命令结果、findings 和 gaps；仅恢复或仓库门禁需要时落盘。
+
 - 把命令结果保存到 `.harness/evidence/<task-id>/commands.json`
 - 把人类可读摘要保存到 `summary.md`
 - 把 review 输出保存到 `review.md`
@@ -140,6 +146,8 @@ English version: [method-playbook.md](./method-playbook.md)
 - 如果 session 很长、存在 delegation，或任务对成本敏感，在 evidence 里补 `sessionEconomics`，拿不到时就显式记录 gap
 
 ### 8. Mechanical Checks
+
+按任务档位和仓库合同运行必需检查。以下完整治理集合用于 L2 或方法维护；普通 L1 使用最小相关行为验证。
 
 - 运行：
   - `check-task-packet`
@@ -156,8 +164,8 @@ English version: [method-playbook.md](./method-playbook.md)
 ### 9. Review
 
 - 采用 findings-first 风格
-- review 必须指向同一份 task packet 和 evidence
-- 对 non-trivial 任务，默认使用外部评估者视角；如果只能 self-review，要记录原因和 residual risk
+- review 指向同一份 L2 task packet/evidence 或 L1 范围/验证短记录
+- 普通 L1 可 findings-first 自检；L2 保留 review artifact，高风险需要独立 reviewer 或显式 review gap 与验收 gate；不能把 self-review 写作独立批准
 - 对结构性、高风险或跨层任务，review 至少说明：
   - 本轮实际修改的是哪条受影响子图
   - 是否引入新循环依赖或扩大循环簇
@@ -167,7 +175,7 @@ English version: [method-playbook.md](./method-playbook.md)
 
 ### 10. Close
 
-- 合并或发布
+- 仅在已请求且获授权时合并或发布；否则以 evidence 关闭本地实现
 - 将 PR 或 CI 失败分类为 `method-gate`、`repo-quality-gate`、`runtime-evidence-gate`、`external-flaky` 或 `not-applicable`
 - 完成后归档 OpenSpec change
 - 如果同类 failure pattern 再次出现，不要只补代码，要把它升级成 guide、template、sensor 或 gate
@@ -176,7 +184,7 @@ English version: [method-playbook.md](./method-playbook.md)
 
 ## 最小 Machine-Readable 闭环
 
-每个 non-trivial 任务都应当具备：
+L2 任务应具备以下工件；普通 L1 可把范围、计划、验证、findings 和 gap 合并为一份短记录：
 
 - 一个变更身份，或显式写 `none`
 - 一个 task packet

@@ -1,5 +1,7 @@
 # Method Patterns
 
+Execution entry: [Capability-Adaptive Delivery](./capability-adaptive-delivery.md). Default to the primary agent delivery loop and select the minimum path by risk and actual runtime capabilities.
+
 Core method patterns and templates for agentic delivery.
 
 Chinese version: [README.zh.md](./README.zh.md)

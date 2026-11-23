@@ -1,10 +1,12 @@
 # Pantheon Harness 方法论
 
-> 最后更新：2026-07-15
-> 版本：[v1.0.0](../../VERSION)
+> 最后更新：2026-11-23
+> 已发布版本：[VERSION](../../VERSION)；本次修订见 CHANGELOG 的 Unreleased
 > 变更历史：[CHANGELOG.md](../../CHANGELOG.md)
 > 演化机制：[evolution.md](./evolution.md)
 > 作者：人机协作（Human 定目标和验收，agent roles 规划、执行、验证、审查）
+
+先读 [能力适配交付规则](../../patterns/capability-adaptive-delivery.md)：默认主 agent 闭环，能力决定执行路径，风险决定门禁强度；最新模型事实和本地可用工具分开记录。
 
 ## 0. 核心原则
 
@@ -35,28 +37,13 @@
 | PR 合并 | — | — | Reviewer 审查 + 人确认 |
 | 部署 | 人授权 | Operator/Generator | 人或运行态 gate 验证 |
 
-### 0.2 角色能改什么、不能改什么
+### 0.2 角色职责与执行权限
 
-这些规则约束角色，不约束某个具体工具。一个工具可以扮演多个角色，但高风险任务应分离 Generator 和 Reviewer/Evaluator。
+Planner/Dispatcher、Generator、Reviewer/Evaluator 是职责，不要求不同工具或进程。主 agent 可在已授权任务中依次完成规划、实现、验证和修复。明确的只读规划、评审或研究任务保持只读，不自行转成实现。
 
-**Planner/Dispatcher 可以改或维护（治理层）：**
-- `docs/` 下的所有文档
-- `.codex/`、`.agents/` 或等价 adapter 配置
-- `CLAUDE.md`、`AGENTS.md`、`DESIGN.md`、`GEMINI.md` 等治理入口
-- 根配置：`sonar-project.properties`、`.gitignore`、`package.json`（scripts）
-- CI/CD 工作流：`.github/workflows/`
-- 项目记忆：`memory/`
+实现权限取决于任务 In/Out、仓库所有权和当前 sandbox；规划身份不额外限制已授权代码实现，也不扩大权限。普通 L1 可在同一会话自检；安全、权限、审计、schema、信任边界、release 或 gate-policy 变更保留独立审查，无法获得时记录 review gap 和验收 gate。独立 reviewer 不把自己的修复当成独立批准。
 
-**Planner/Dispatcher 默认不能直接改（代码层）：**
-- `backend/` 下任何 `.go` 文件
-- `frontend/src/` 下任何 `.ts`/`.tsx` 文件
-- `database/` 下 SQL 文件
-- `scripts/harness/` 下运行时脚本（测试除外）
-
-**灰色地带处理：**
-- 单字符 typo、注释修正、import 路径对齐 → Planner/Dispatcher 可改，改后记录
-- 配置文件（`package.json`、`tsconfig.json`、`vite.config.ts`）→ Planner/Dispatcher 可改，但需要验证
-- 测试文件 → 首选交给 Generator，仅在阻塞时 Planner/Dispatcher 可改并记录原因
+优先复用主上下文；只有独立评审或自包含分支才委派，并声明所有权、预算、证据、停止条件和集成者。
 
 ---
 
@@ -101,7 +88,7 @@
 
 ## 2. 任务委派标准
 
-每个任务交给任意 Generator adapter 前，Planner/Dispatcher 必须提供完整 Task Packet：
+按 L0/L1/L2 选择最小输入：L0 直接执行；L1 用简短目标、In/Out、计划和验证集合；L2 或跨仓委派提供 Task Packet。以下字段可写入当前 packet，不必每次新建：
 
 ```text
 目标仓库：    pantheon-base / pantheon-ops / pantheon-harness
@@ -227,7 +214,7 @@ architecture/methodology/
 
 - 理解需求，分解任务
 - 选择满足同一 harness capability 的最小 adapter 和执行路径
-- 按 Task Packet 模板委派给 Generator
+- 按档位准备计划或 Task Packet；默认主 agent 转入 Generator 职责，仅对自包含分支委派
 - 组织 Reviewer/Evaluator 审查 Generator 产出的 diff 和 evidence
 - 维护治理文档和方法论
 
@@ -244,7 +231,7 @@ architecture/methodology/
 默认目标是“人做判断，agent 做上下文搬运和证据整理”。每次非 trivial 协作都应满足：
 
 - 人只需要补充目标、优先级、风险接受、验收口径和 high-impact gate 决策。
-- Planner/Dispatcher 负责把需求变成 Task Packet，并写清 scope、禁止触碰区域、验证命令、stop points 和 handoff artifact。
+- Planner/Dispatcher 按档位写清 scope、禁止触碰区域、验证命令和 stop points；L2 写入 Task Packet，L1 可用轻量计划。
 - Generator 负责执行、验证、保存 evidence，并把失败原因压缩成下一轮可执行输入。
 - Review 必须回指同一份 Task Packet 和 evidence；如果结论冲突，先升级为 review gate，而不是让实现者自行扩大范围。
 - 任何 human gate 决策都要写回可恢复 state：决定、证据、接受的风险和下一步 owner。
@@ -254,22 +241,15 @@ architecture/methodology/
 
 ## 7. Human Gate 标准（v1.1+ 新增）
 
-### 7.1 强制介入点（必须）
+### 7.1 授权与风险分开判断
 
-以下情况必须 Human 介入确认：
+维护者在需求澄清、门禁策略和最终验收三个触点介入。已授权、范围内、安全可逆的实现默认自主推进；触及架构、schema、权限、审计或 CI 会提高证据要求，不自动要求重复批准。
 
-1. **架构决策点**: 涉及跨层依赖、接口变更、新增服务
-2. **破坏性变更**: 数据库 schema 变更、权限模型变更、API breaking change
-3. **高风险操作**: 删除文件、修改 secrets、变更 CI/CD
-4. **首次某类任务**: 引入新技术栈、首次某类模块
+以下尚未获授权的动作需 Human 决策：破坏性/不可逆操作、外部生产或凭证操作、正式发布、实质扩大 In/Out、required/advisory 或阈值/豁免策略变化。红灯先复现、诊断、修复和复测；agent 不能自行豁免。
 
-### 7.2 可选介入点（建议）
+### 7.2 最终验收
 
-以下情况建议 Human 介入：
-
-1. **方案评审**: 涉及较大技术选型时
-2. **PR 合并前**: 最终验收确认
-3. **阻塞升级**: Agent 无法自行解决时
+提交可审查的 diff、验证结果、独立评审或显式 gap；UI 提供渲染证据。批准与完成状态记录回同一任务，不能靠模型自信或聊天记忆代替。
 
 ### 7.3 Human 反馈格式
 
@@ -346,7 +326,7 @@ flowchart TD
 
 ### 9.3 Subagent 使用原则
 
-原则：把上下文重的调查工作（大量文件阅读、跨路径搜索、并行调研）委派给 subagent，保持主上下文干净；实现、快速修复、协调留在主会话。边界情况由 runtime 自行判断——目标是干净的主上下文，不是强制路由表。
+默认保留耦合的规划、实现和测试在主上下文。只有独立审查或自包含调查分支有明确隔离/并行收益时才委派；文件数量和 L2 档位不是触发器。先直接查询可用结构索引，再判断是否需要分支；记录所有权、预算、证据、停止条件和集成者，并服从实际 runtime 的能力与授权。
 
 ### 9.4 Evidence First 原则
 

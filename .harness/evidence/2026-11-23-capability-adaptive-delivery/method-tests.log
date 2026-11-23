@@ -1,0 +1,129 @@
+✔ build-graph-review-import fake codegraph fixture exposes a POSIX executable wrapper (7.3047ms)
+✔ build-graph-review-import converts trace-like JSON into scaffold import shape (263.4839ms)
+✔ build-graph-review-import passes through direct import shape and writes output file (257.7025ms)
+✔ build-graph-review-import falls back across paths and finding summaries (227.1145ms)
+✔ build-graph-review-import supports live codegraph callers and callees (888.9963ms)
+✔ build-graph-review-import supports sync and live impact/context sources (882.4815ms)
+✔ build-graph-review-import resolves PowerShell codegraph wrappers from PATH on Windows (1869.2768ms)
+✔ check-adoption passes when all required entrypoints exist (395.8175ms)
+✔ check-adoption fails strict mode when a required Harness file is missing (388.1998ms)
+✔ check-adoption fails when PR template is missing the trivial-change marker (379.7805ms)
+✔ check-adoption warns when implementation prompt is missing evidence rules (390.5554ms)
+✔ check-adoption fails when implementation files change without task packet or evidence linkage (293.57ms)
+✔ check-adoption passes when implementation changes include task packet and evidence linkage (284.4128ms)
+✔ check-adoption requires real openspec linkage when an active change exists (319.2887ms)
+Doc frontmatter check (report-only): 0 error(s), 0 warning(s)
+✔ scripts\harness\check-doc-frontmatter.test.mjs (330.5399ms)
+✔ check-doc-inventory passes when script and key doc indexes are complete (273.4901ms)
+✔ check-doc-inventory fails when a root harness script is missing from scripts README (371.9539ms)
+✔ check-doc-inventory fails when docs README misses a required method entry (224.202ms)
+✔ check-doc-links passes with valid internal markdown links (218.5356ms)
+✔ check-doc-links fails strict mode when internal targets are missing (224.0525ms)
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'corrupted.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'bom.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.go', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'clean.md', LF will be replaced by CRLF the next time Git touches it
+✔ check-encoding passes on clean UTF-8 tracked files (678.9777ms)
+✔ check-encoding fails in strict mode when a tracked file has invalid UTF-8 (778.4132ms)
+✔ check-encoding reports line numbers of corruption (741.5359ms)
+✔ check-encoding report-only mode exits 0 even with findings (606.8143ms)
+✔ check-encoding respects --ext filter (755.7947ms)
+✔ check-encoding tolerates UTF-8 BOM (613.1826ms)
+✔ check-encoding skips untracked files (289.2923ms)
+✔ check-evidence accepts a valid evidence fixture (243.9634ms)
+✔ check-evidence accepts valid browser evidence for a UI task (256.5911ms)
+✔ check-evidence accepts valid graph checks metadata (370.5557ms)
+✔ check-evidence fails strict mode when no evidence files exist (220.4965ms)
+✔ check-evidence flags an unknown agent tool in strict mode (339.4499ms)
+✔ check-evidence flags malformed JSON in strict mode (229.3416ms)
+✔ check-evidence rejects an unsupported command status (252.1364ms)
+✔ check-evidence rejects an unsupported evidence strength state (230.8815ms)
+✔ check-evidence rejects browser evidence missing viewport metadata (220.7767ms)
+✔ check-evidence rejects browser evidence missing screenshot and visual gap (187.1156ms)
+✔ check-evidence rejects linkage when task packet path does not match taskId (167.9708ms)
+✔ check-evidence rejects malformed runtime classification metadata (273.2565ms)
+✔ check-evidence rejects malformed graph checks metadata (227.4224ms)
+✔ check-failure-registry accepts a valid registry fixture (225.6925ms)
+✔ check-failure-registry reports missing default files as a warning (216.6862ms)
+✔ check-failure-registry fails when required columns are missing (229.5502ms)
+✔ check-failure-registry rejects invalid enum values (213.2558ms)
+✔ check-failure-registry rejects template placeholder rows in real registries (288.0188ms)
+✔ check-graph-review passes when task packet, evidence, and review agree (301.2375ms)
+✔ check-graph-review warns when graph-reviewed task is missing graph checks (309.2216ms)
+✔ check-graph-review warns when structural metadata disagrees (230.5434ms)
+✔ records and verifies adoption without changing product version or refreshing evidence (52.2218ms)
+✔ source edits fail validation until explicitly reviewed and updated (51.7581ms)
+✔ Git CRLF/LF checkout differences preserve the same method snapshot (65.0775ms)
+✔ method version, wrong source, incomplete receipt and invalid JSON fail visibly (111.0234ms)
+✔ removing a tool entry link or adding an unlinked entry blocks update too (52.7403ms)
+✔ an inactive inherited English guide does not require a shared-source override (44.8462ms)
+✔ a stale English guide activated only by Claude blocks adoption (159.3856ms)
+✔ missing source files or receipts are failures, not automatic adoption (60.1147ms)
+✔ CLI requires an explicit source and rejects unsupported flags (1710.4292ms)
+✔ check-method-health passes with compatible versions (310.1687ms)
+✔ check-method-health fails strict mode on incompatible versions (328.0191ms)
+✔ check-method-health reports missing method kit files (282.1429ms)
+✔ check-method-health reports missing failure registry checker (408.6844ms)
+✔ check-method-health reports missing generic review checker (286.71ms)
+✔ check-method-health reports missing graph review checker (304.5639ms)
+✔ check-method-health reports missing graph review scaffold tool (310.3955ms)
+✔ check-method-health reports missing graph review import builder (278.907ms)
+✔ root check-review accepts a valid review artifact (249.0102ms)
+✔ root check-review fails strict mode when no review artifacts exist (272.1087ms)
+✔ root check-review fails on invalid verdict (254.2585ms)
+✔ root check-review fails on malformed structural review metadata (272.466ms)
+✔ check-runtime-evidence passes when runtime signal exists (222.3552ms)
+✔ check-runtime-evidence warns when runtime-sensitive task has no signal or gap (257.3708ms)
+✔ check-runtime-evidence honors explicit runtimeSensitive metadata even without runtime keywords in the task packet (303.0821ms)
+✔ check-sync-drift passes when configured mirrors match (294.0197ms)
+✔ check-sync-drift fails when configured mirror drifts (224.2257ms)
+✔ check-task-packet accepts a valid task packet fixture (272.0832ms)
+✔ check-task-packet rejects packets that only use legacy Superpowers Plan (225.034ms)
+✔ check-task-packet fails when required sections are missing (230.2529ms)
+✔ check-task-packet warns when contract anchor file does not exist (242.5897ms)
+✔ check-task-packet rejects an invalid primary layer value (227.6216ms)
+✔ check-task-packet requires workspace context for an explicit cross-repository layer (195.7676ms)
+✔ check-task-packet accepts a complete workspace context (175.7717ms)
+✔ check-task-packet rejects invalid workspace context enums (211.565ms)
+✔ check-task-packet rejects linkage task id mismatch (258.5646ms)
+✔ check-task-packet rejects malformed optional execution roles and stop points sections (288.7049ms)
+✔ check-task-packet rejects malformed optional structural scope section (299.3052ms)
+✔ check-template-health passes with required docs and template selection (278.7188ms)
+✔ check-template-health warns when template selection is missing (221.4951ms)
+✔ check-template-health fails strict mode when required docs are missing (207.1289ms)
+✔ check-visual-evidence passes when UI task declares viewport, states and has a screenshot (255.283ms)
+✔ check-visual-evidence warns when viewport plan and state plan are missing (246.4409ms)
+✔ check-visual-evidence warns when evidence directory is missing (222.8305ms)
+✔ check-visual-evidence ignores explicit not-applicable method tasks that mention visual docs (165.4812ms)
+✔ check-visual-evidence fails strict mode when warnings exist (172.1128ms)
+✔ check-visual-evidence accepts a recorded screenshot gap as evidence (326.6889ms)
+✔ scaffold-graph-review fake codegraph fixture exposes a POSIX executable wrapper (26.0457ms)
+✔ scaffold-graph-review creates graph review skeleton from task packet (253.9237ms)
+✔ scaffold-graph-review preserves existing evidence and review fields while refreshing graph sections (267.2509ms)
+✔ scaffold-graph-review does not write files in report-only mode (190.8411ms)
+✔ scaffold-graph-review imports graph review payload and applies it to evidence and review (187.3461ms)
+✔ scaffold-graph-review falls back to task structural scope when imported payload is partial (274.6865ms)
+✔ scaffold-graph-review can query live codegraph data and write evidence directly (1119.3106ms)
+ℹ tests 101
+ℹ suites 0
+ℹ pass 101
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4795.4463

@@ -3,7 +3,7 @@ title: Review Loop Spec
 doc_type: Contract
 layer: method
 status: Active
-updated_at: 2026-06-27
+updated_at: 2026-11-23
 ---
 
 # Review Loop Spec
@@ -34,21 +34,11 @@ Review 不是总结变更，而是发现：
 
 同一工具可以扮演多个角色，但高风险任务建议实现者和 reviewer 分离。
 
-### 2.1 默认分离规则
+### 2.1 按风险分离
 
-对 `non-trivial` 任务，review 默认不是作者自检，而是实现之后的外部评估环节。
+按 [能力适配交付规则](../../patterns/capability-adaptive-delivery.md) 执行：L0 最小验证，普通 L1 可 findings-first 自检，L2 必须有 review artifact。角色不固定到某个工具或模型。
 
-允许 self-review 的情况：
-
-- trivial 任务
-- 低风险文档整理
-- 当前环境只有单执行者，且已记录原因与剩余风险
-
-以下情况默认需要独立 reviewer 或显式 review gate：
-
-- 触发 human gate 的任务
-- security / permission / audit / schema / trust-boundary 任务
-- release、CI、secrets、删除或高影响运维流程变更
+安全、权限、审计、schema、信任边界、release、CI/gate-policy、secrets 或高影响运维变更默认需要独立 reviewer。当前环境无法提供时，明确写 review gap、残余风险和最终验收 gate；实现者自检不能充当独立批准。独立 reviewer 对照同一任务、diff 与 evidence；如果 reviewer 改了代码，修复后的范围需另行审查，不继承原独立性。
 
 ## 3. Review 输入
 

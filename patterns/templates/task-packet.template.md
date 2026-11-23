@@ -95,6 +95,15 @@ app | domain/<name> | service/<name> | package/<name> | infra | docs | method | 
 - Response Budget: `terse | standard | detailed`
 - Sensitive Context: `none | redacted or local-only handling rule`
 
+## Capability Decision (use existing plan fields for L1; record unknowns)
+
+- Runtime / Provider / Client Version: current values | unknown
+- Actual Model / Reasoning Effort: preserve current selection | unknown
+- Required Tools / Delegation: available and authorized | unavailable
+- Authority / Recovery: current sandbox and write boundaries; task/evidence checkpoint paths
+- Execution Path: single-agent | bounded delegation; reason, ownership, budget, stop condition, integration owner
+- Review Independence: L1 self-review | independent reviewer | explicit review gap and acceptance gate
+
 ## Method Readiness
 
 - Consumer-Specific Controls: repository contract | checker | smoke path | none

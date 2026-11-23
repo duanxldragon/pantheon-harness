@@ -8,6 +8,13 @@ Pantheon Harness 方法论变更记录。按 semver 管理。
 
 ## [Unreleased]
 
+### Capability-adaptive delivery — 2026-11-23
+
+- Added dated official OpenAI/Claude evidence and a portable policy: primary-agent plan/implement/verify loop, runtime capability checks, bounded delegation, context recovery, and comparison-based evaluation.
+- Replaced fixed planner/executor tools and universal compaction thresholds in active method and consumer entrypoints; preserved L2 evidence, independent high-risk review, authorization, UI/runtime gates, and Base-first product inheritance.
+- Added `check-method-consumption.mjs` plus regression tests and Base/Ops policy-hash receipts. Direct method adoption remains separate from product VERSION/foundation locks and formal publication.
+
+
 ### Added
 - **Cross-repository handoff contract**: task packets with `inheritance-sync` or `cross-repository` layers now declare workspace ownership, upstream/downstream consumers, sync expectation, and release requirement; evidence may declare a six-state `evidenceState` without replacing command status or review.
 - **2026-07-17 用户环境退役审查**: `architecture/harness/retirement-reviews/2026-07-17-user-environment-retirement-review.md` —— 收尾 7-15 审查的用户环境侧：gstack 全家桶（39 个 `~/.claude/skills/` 目录）移入备份退役、superpowers 插件（已禁用）建议卸载、openspec 判 keep-dormant、impeccable 三处消费副本全部与 canonical 对齐
