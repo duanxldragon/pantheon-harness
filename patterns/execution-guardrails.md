@@ -10,6 +10,8 @@ These guardrails are adapted from the Karpathy-inspired guidance in `multica-ai/
 
 Do not silently guess through ambiguity.
 
+Apply [Capability-Adaptive Delivery](./capability-adaptive-delivery.md): inspect existing context and batch material questions at intake. Reasonable reversible assumptions keep authorized work moving; only missing authority or material changes to the agreed boundary require another decision.
+
 - Separate confirmed facts, working assumptions, and open questions.
 - If ambiguity changes scope, safety, data handling, architecture, or user-visible behavior, stop and ask.
 - If ambiguity only affects reversible local exploration, inspect the repository first and then decide whether escalation is still needed.

@@ -8,6 +8,8 @@ English version: [README.md](./README.md)
 
 ## 当前脚本
 
+`check-method-consumption.mjs` 校验消费者入口链接、方法版本与规范化文本 SHA256；仅在审查 intentional 更新后使用 `--update` 写入 `.harness/method-consumption.json`。源码变化或来源缺失不会自动刷新或跳过。
+
 | Script | 用途 |
 |---|---|
 | `bootstrap-harness.mjs` | 为目标仓库生成或刷新基础 Harness 落地文件。 |

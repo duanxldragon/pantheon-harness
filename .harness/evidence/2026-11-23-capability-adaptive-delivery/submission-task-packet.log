@@ -1,0 +1,26 @@
+Task packet check: 11 file(s), 0 error(s), 3 warning(s)
+
+[PASS] docs/harness/tasks/2026-06-27-frontmatter-migration.task.md
+
+[PASS] docs/harness/tasks/2026-06-27-known-issue-closure.task.md
+
+[PASS] docs/harness/tasks/2026-06-27-migration-hardening.task.md
+
+[PASS] docs/harness/tasks/2026-07-13-grill-me-enablement-and-superpowers-alignment.task.md
+  warning: Contract anchor does not exist: pantheon-harness/architecture/methodology/harness-methodology.zh.md
+  warning: Contract anchor does not exist: pantheon-harness/architecture/methodology/superpowers-migration.md
+  warning: Contract anchor does not exist: pantheon-harness/skills/skills-lock.json
+
+[PASS] docs/harness/tasks/2026-07-15-model-era-retirement-review.task.md
+
+[PASS] docs/harness/tasks/2026-07-26-hot-005-adapter-layer-consolidation.task.md
+
+[PASS] docs/harness/tasks/2026-07-26-method-review-rectification.task.md
+
+[PASS] docs/harness/tasks/2026-08-04-better-harness-evaluation.task.md
+
+[PASS] docs/harness/tasks/2026-08-17-cross-repo-handoff-evidence-strength.task.md
+
+[PASS] docs/harness/tasks/2026-11-07-unpublished-docs-main-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-11-23-capability-adaptive-delivery.task.md

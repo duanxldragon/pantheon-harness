@@ -15,37 +15,23 @@ Use this guide when updating an existing repository that already contains:
 
 ## Version Compatibility
 
-- `pantheon-harness` VERSION should match consumer repo VERSION
-- Run health check after upgrade:
-```bash
-node scripts/harness/check-method-health.mjs --strict
+Consumer product VERSION is independent of harness method VERSION. Existing METHOD_VERSION.json / SHELL_VERSION.json compatibility remains a separate contract; do not rewrite product versions or foundation locks for documentation adoption.
+
+## Workspace Method Adoption
+
+1. Link [Capability-Adaptive Delivery](./capability-adaptive-delivery.md) from active AGENTS.md and tool entrypoints while preserving consumer contracts and ownership.
+2. After reviewing an intentional method change, run from the consumer root:
+
+```powershell
+node ../pantheon-harness/scripts/harness/check-method-consumption.mjs --root . --source ../pantheon-harness --update
+node ../pantheon-harness/scripts/harness/check-method-consumption.mjs --root . --source ../pantheon-harness
 ```
 
-## Standalone Mode Upgrade
+The receipt records the reviewed version and normalized-text SHA256. Validation never refreshes it; unavailable or changed source fails visibly. Unreleased edits are distinguished by hashes and do not imply publication. CI/offline use must provide the same harness snapshot. Shared Base product files still reach Ops through a formal foundation release; direct method links do not replace that path.
 
-```text
-# Pull latest pantheon-harness changes
-git pull origin main
+## Standalone Method Adoption
 
-# Or replace with fresh copy
-rm -rf pantheon-harness
-cp -r /path/to/new/pantheon-harness .
-```
-
-## Workspace Mode Upgrade
-
-```text
-# Pull latest pantheon-harness
-cd ../pantheon-harness
-git pull origin main
-
-# Update local VERSION to match
-cd ../my-consumer-repo
-echo "1.3.0" > VERSION
-
-# Verify compatibility
-node scripts/harness/check-method-health.mjs --strict
-```
+Keep the local method copy and product version. Supply its location explicitly with --source and update entry links; record the receipt after review. Preserve a rollback copy before replacing an existing directory rather than using an unchecked recursive deletion command.
 
 ## Verification After Upgrade
 

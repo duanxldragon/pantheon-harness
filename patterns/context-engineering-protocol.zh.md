@@ -102,6 +102,8 @@ entry guides -> task packet -> repo memory index -> summary/review -> raw eviden
 
 ## 4. Resume 和 Checkpoints
 
+按 [能力适配交付规则](./capability-adaptive-delivery.md) 使用实际 runtime 的上下文信号；不按统一百分比压缩。compaction、委派和会话结束前，把目标、In/Out、决定、当前编辑、验证、剩余工作和下一步写入现有任务/evidence summary。恢复后核对当前字节与此前证据，变化部分重新验证；长上下文不能替代持久状态。
+
 长任务必须靠 repo state 恢复，而不是只靠聊天记忆。
 
 用于 resume 的 durable artifact 应包括：

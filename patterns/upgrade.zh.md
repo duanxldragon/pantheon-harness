@@ -15,37 +15,23 @@ English version: [upgrade.md](./upgrade.md)
 
 ## 版本兼容性
 
-- `pantheon-harness` VERSION 应与消费者仓库 VERSION 匹配
-- 升级后运行健康检查：
-```bash
-node scripts/harness/check-method-health.mjs --strict
+产品 `VERSION` 不与 harness 方法 `VERSION` 相等。保持各自版本；方法/Repo Shell 的兼容性由既有 `METHOD_VERSION.json` / `SHELL_VERSION.json` 约束，不为文档消费重写产品发行锁。
+
+## 工作区方法消费
+
+1. 在现有 `AGENTS.md` 与工具入口中引用 [能力适配交付规则](./capability-adaptive-delivery.md)，保留消费者本地合同和所有权。
+2. 审查 intentional 方法改动后，在消费者根目录运行：
+
+```powershell
+node ../pantheon-harness/scripts/harness/check-method-consumption.mjs --root . --source ../pantheon-harness --update
+node ../pantheon-harness/scripts/harness/check-method-consumption.mjs --root . --source ../pantheon-harness
 ```
 
-## 独立模式升级
+receipt 记录已审查的版本与规范化文本 SHA256；验证不自动更新，来源缺失/哈希变化直接报错。Unreleased 更新以哈希区分，不代表已正式发布。CI/离线环境要提供同一 harness 快照。Base 共享产品文件仍通过正式 foundation release 同步到 Ops；方法引用不替代它。
 
-```text
-# 拉取 pantheon-harness 最新更改
-git pull origin main
+## 独立模式方法消费
 
-# 或替换为新副本
-rm -rf pantheon-harness
-cp -r /path/to/new/pantheon-harness .
-```
-
-## 工作区模式升级
-
-```text
-# 拉取 pantheon-harness 最新版本
-cd ../pantheon-harness
-git pull origin main
-
-# 更新本地 VERSION 以匹配
-cd ../my-consumer-repo
-echo "1.3.0" > VERSION
-
-# 验证兼容性
-node scripts/harness/check-method-health.mjs --strict
-```
+保留本地 method 副本和现有产品版本；按副本位置显式提供 `--source`，更新入口相对链接，审查后记录 receipt。升级已有目录前保留可回退的版本，不用未经检查的递归删除命令。
 
 ## 升级后验证
 

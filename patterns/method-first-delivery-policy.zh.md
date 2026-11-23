@@ -8,7 +8,7 @@ English version: [METHOD_FIRST_DELIVERY_POLICY.md](./method-first-delivery-polic
 
 ## 1. 原则
 
-非 trivial 工作先完善方法和流程，再修改生产代码。
+非 trivial 工作先明确范围、按风险匹配的验证和 review，再修改生产代码。复用已有合同和门禁，不为普通缺陷重设计方法。按 [能力适配交付规则](./capability-adaptive-delivery.md) 执行：普通 L1 使用短计划，L2 保留持久治理。
 
 默认顺序：
 
@@ -23,7 +23,7 @@ method boundary
   -> evidence and closeout
 ```
 
-代码修改放在最后，因为代码级失败经常只是任务边界不清、profile 缺失、verification 放错位置或 ratchet 决策缺失的症状。
+这些决策足够后进入实现。只有重复失败或可证明的缺口才改进方法本身，不把每个代码缺陷变成新 workflow 或 sensor。
 
 ## 2. 适用范围
 

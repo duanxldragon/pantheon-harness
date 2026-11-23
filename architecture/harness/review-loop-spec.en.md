@@ -3,7 +3,7 @@ title: Review Loop Spec
 doc_type: Contract
 layer: method
 status: Active
-updated_at: 2026-06-27
+updated_at: 2026-11-23
 ---
 
 # Review Loop Spec
@@ -34,21 +34,11 @@ At minimum, the following roles must be supported:
 
 One tool may play multiple roles, but high-risk work should preferably separate implementer and reviewer.
 
-## 2.1 Default Separation Rule
+## 2.1 Risk-Based Separation
 
-For `non-trivial` work, review is not author self-check by default. It is a post-implementation external evaluation stage.
+Apply [Capability-Adaptive Delivery](../../patterns/capability-adaptive-delivery.md): L0 uses minimum verification, ordinary L1 may use findings-first self-review, and L2 retains a review artifact. Roles do not bind a particular tool or model.
 
-Self-review is acceptable for:
-
-- trivial work
-- low-risk documentation cleanup
-- single-operator environments where the reason and residual risk are documented
-
-The following should default to an independent reviewer or explicit review gate:
-
-- any task that crosses a human gate
-- security, permission, audit, schema, or trust-boundary work
-- release, CI, secrets, deletion, or other high-impact operational changes
+Security, permission, audit, schema, trust-boundary, release, CI/gate-policy, secrets, and high-impact operations default to independent review. If unavailable, record a review gap, residual risk, and final acceptance gate; author self-check is not independent approval. Review the same task, diff, and evidence. If a reviewer edits the code, the repaired scope needs a separate review rather than inheriting the original independence.
 
 ## 3. Review Inputs
 

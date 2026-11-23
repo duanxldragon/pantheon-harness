@@ -61,7 +61,7 @@ Place `pantheon-harness/` as a sibling at workspace root:
 workspace-root/
 ├── pantheon-harness/     # Method source (read-only canonical)
 └── my-consumer-repo/     # Consumer repo
-    ├── VERSION           # Must match pantheon-harness
+    ├── VERSION           # Product version; independent of method VERSION
     ├── docs/harness/    # Local harness contracts
     └── scripts/harness/ # Local validation scripts
 ```
@@ -69,6 +69,8 @@ workspace-root/
 In workspace mode, local validation scripts should reference `../pantheon-harness/` for method source.
 
 ## Standard Paths
+
+Link [Capability-Adaptive Delivery](./capability-adaptive-delivery.md) from active agent entrypoints and use the [reviewed method consumption flow](./upgrade.md#workspace-method-adoption). The receipt belongs in `.harness/method-consumption.json`; product versions and foundation locks remain separate.
 
 The default config expects these locations:
 

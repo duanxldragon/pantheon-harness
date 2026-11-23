@@ -3,7 +3,7 @@ title: Solo Delivery Tiers
 doc_type: Method
 layer: method
 status: Active
-updated_at: 2026-07-26
+updated_at: 2026-11-23
 ---
 
 # Solo Delivery Tiers
@@ -30,6 +30,8 @@ updated_at: 2026-07-26
 - `pantheon-base` 的目标是长期演进的产品底座，但后续投入应克制。
 - `pantheon-ops` 是首个业务交付目标，开发效率优先于方法扩张。
 - 方法资产应尽量少、稳、低维护，不把流程本身做成需要持续经营的产品。
+
+执行路径遵循 [能力适配交付规则](../../patterns/capability-adaptive-delivery.md)：主 agent 默认在一个上下文完成计划、实现、验证；模型增强不降低权限、证据或独立审查要求。
 
 ## 2. 分级原则
 

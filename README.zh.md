@@ -1,5 +1,7 @@
 # Pantheon Harness
 
+当前执行策略：[能力适配交付规则](./patterns/capability-adaptive-delivery.md)（2026-11-23 Unreleased 修订）。主 agent 默认完成计划、实现、验证；高风险保留独立 review 和 evidence。Base/Ops 通过入口链接与规则哈希 receipt 消费，产品版本独立。
+
 > Agentic 开发方法论与工具集
 
 [English](./README.md) | 中文

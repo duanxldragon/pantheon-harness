@@ -1,0 +1,79 @@
+{
+  "evidenceType": "official_web_retrieval",
+  "researchLane": "capability_research (native researcher)",
+  "localBenchmarkingPerformed": false,
+  "hashBasis": "SHA256 of UTF-8 decoded HTTP response text",
+  "note": "Last-Modified describes document freshness, not model release date or availability in the current account/client. Pantheon workflow recommendations are interpretations of these facts.",
+  "sources": [
+    {
+      "id": "openai-latest-model",
+      "url": "https://developers.openai.com/api/docs/guides/latest-model.md",
+      "retrievedAtUtc": "2026-11-23T04:07:37.2780855+00:00",
+      "statusCode": 200,
+      "lastModified": "Mon, 23 Nov 2026 01:15:18 GMT",
+      "sha256": "d51a271ccee79b94428bc1d1a1591f9f98c424f2d9d084a37ccc4358dada40c0",
+      "context": "GPT-6.2 API guidance; medium is a new-integration starting point, not evidence of current session effort.",
+      "excerpts": [
+        "Use [GPT-6.2 Astra](https://developers.openai.com/api/docs/models/gpt-6.2-astra) for the most demanding tasks or [GPT-6.2 Sol](https://developers.openai.com/api/docs/models/gpt-6.2-sol) for complex work at lower cost.",
+        "**Reasoning effort:** Start with `medium` for a new integration. If you currently use `none` or `minimal`, use `low` instead.",
+        "Make reasonable, reversible assumptions to carry work forward and state them if it progresses the task within scope."
+      ]
+    },
+    {
+      "id": "codex-subagents",
+      "url": "https://developers.openai.com/codex/multi-agent.md",
+      "retrievedAtUtc": "2026-11-23T04:07:39.6684281+00:00",
+      "statusCode": 200,
+      "lastModified": null,
+      "sha256": "cd2b9d3a74eff357c4bc58dd6c58498c6b8f1291200309292b4e34d2c74dfa39",
+      "context": "Local Codex client guidance; actual installed tools still need runtime inspection.",
+      "excerpts": [
+        "Current local Codex releases spawn agents after a direct request or applicable\nproject or skill instruction.",
+        "Subagent workflows consume more tokens than comparable single-agent runs\nbecause each subagent does its own model and tool work.",
+        "Subagents inherit the parent turn's current sandbox and approval settings,\nincluding changes made with `/permissions` or `--yolo`."
+      ]
+    },
+    {
+      "id": "claude-code-loop",
+      "url": "https://code.claude.com/docs/en/how-claude-code-works.md",
+      "retrievedAtUtc": "2026-11-23T04:07:37.8996045+00:00",
+      "statusCode": 200,
+      "lastModified": "Sun, 22 Nov 2026 21:30:05 GMT",
+      "sha256": "23891c1c03c0ded782b93f6b7753d2fed1008fd08580d4f3fbc8164913876a24",
+      "context": "Agentic loop and compaction; no guarantee of preserving every detailed instruction.",
+      "excerpts": [
+        "When you give Claude a task, it works through three phases: **gather context**, **take action**, and **verify results**. These phases blend together.",
+        "The agentic loop is powered by two components: [models](#models) that reason and [tools](#tools) that act.",
+        "The summary keeps your requests and key code snippets, but detailed instructions from early in the conversation may be lost. Put persistent rules in CLAUDE.md rather than relying on conversation history."
+      ]
+    },
+    {
+      "id": "claude-subagents",
+      "url": "https://code.claude.com/docs/en/sub-agents.md",
+      "retrievedAtUtc": "2026-11-23T04:07:38.2042205+00:00",
+      "statusCode": 200,
+      "lastModified": "Sun, 22 Nov 2026 21:23:09 GMT",
+      "sha256": "5009da9098bc24888b27a387643a68e7c08b472f7d6e210d6cffe2c556ae4c7a",
+      "context": "The shared-context bullet recommends the main conversation; nesting depends on current client behavior.",
+      "excerpts": [
+        "Multiple phases share significant context, such as planning, implementation, and testing\n* You're making a quick, targeted change\n* Latency matters.",
+        "By default, a subagent can spawn subagents of its own, up to three layers below the main conversation."
+      ]
+    },
+    {
+      "id": "claude-model-config",
+      "url": "https://code.claude.com/docs/en/model-config.md",
+      "retrievedAtUtc": "2026-11-23T04:07:37.9106080+00:00",
+      "statusCode": 200,
+      "lastModified": "Sun, 22 Nov 2026 21:23:07 GMT",
+      "sha256": "0eb85bfd05da194833d741b15172de8430cee5920a4ecd11ec07787db8d2c0cf",
+      "context": "Alias change documented for Claude Code v2.1.321. The model table applies to Anthropic API; providers/gateways/organization defaults may differ.",
+      "excerpts": [
+        "| Anthropic API | Opus 5.5 | Sonnet 5.5 | Haiku 5.5 |",
+        "**Fable 5.2**: run `/model fable`, or launch with `claude --model fable`.",
+        "Fable 5.2, Opus 5.5, Sonnet 5.5, and Haiku 5.5 default to `medium`, and Opus 4.7 defaults to `xhigh`.",
+        "| v2.1.321 | `fable` resolves to Fable 5.2, except in Claude apps gateway sessions |"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+Frontmatter check failed. Checked 509 docs, 359 with frontmatter, 150 without (informational, not enforced).
+Enforced directories: docs/superpowers/specs/, docs/archive/examples/, docs/archive/baselines/, docs/archive/upgrade/ — 4 doc(s) must carry frontmatter.
+- docs/harness/tasks/2026-11-20-ops-argocd-ownership-and-webhook.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-business-permissions-and-task-visibility.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-core-business-tenant-isolation.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-deploy-credential-ownership-and-ui.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-deploy-fixed-template-security.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-deploy-recovery-and-remote-execution.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-deploy-template-and-task-experience.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-extension-and-async-tenant-isolation.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-filedist-durable-lifecycle.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-k8s-client-lifecycle-and-config-safety.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-k8s-log-websocket-lifecycle.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-k8s-resource-authorization-and-mutations.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-review-baseline-and-decisions.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-review-delivery-and-closeout.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-review-docs-and-test-governance.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-review-live-runtime-acceptance.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-review-remediation.task.md: doc_type "Remediation" requires non-empty linked_contracts
+- docs/harness/tasks/2026-11-20-ops-service-deploy-business-closure.task.md: doc_type "Remediation" requires non-empty linked_contracts
