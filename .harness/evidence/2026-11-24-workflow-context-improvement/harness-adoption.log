@@ -1,0 +1,4 @@
+{"name":"harness-adoption","repo":"pantheon-harness","command":["node","scripts/harness/check-adoption.mjs","--strict"],"start":"2026-11-24T01:49:42.830Z","elapsedMs":248,"exitCode":0,"signal":null,"error":null}
+Adoption check (strict): 0 finding(s), 0 warning(s)
+
+no findings

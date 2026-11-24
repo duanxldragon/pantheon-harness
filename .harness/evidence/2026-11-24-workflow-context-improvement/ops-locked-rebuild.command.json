@@ -1,0 +1,15 @@
+{
+  "name": "ops-locked-rebuild",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "scripts/business-overlay/rebuild-from-base.mjs",
+    "--target",
+    ".tmp/workflow-context-improvement-20261124"
+  ],
+  "start": "2026-11-24T01:50:43.083Z",
+  "elapsedMs": 27556,
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

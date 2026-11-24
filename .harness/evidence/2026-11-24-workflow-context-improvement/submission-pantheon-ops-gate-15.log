@@ -1,0 +1,476 @@
+{"name":"submission-pantheon-ops-gate-15","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-evidence.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:41.271Z","elapsedMs":466,"exitCode":1,"signal":null,"error":null}
+Evidence check (strict): 80 file(s), 179 error(s), 0 warning(s)
+Pre-2026-10-26 structural findings counted, not gated: 134 across 25 archived artifact(s) — must shrink, see the constant's comment
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-17-ops-foundation-hardening/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-architecture-quality-gates/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[5].cwd must be a non-empty string.
+  pre-schema: root.commands[6].cwd must be a non-empty string.
+  pre-schema: root.commands[7].cwd must be a non-empty string.
+  pre-schema: root.commands[8].cwd must be a non-empty string.
+  pre-schema: root.commands[9].cwd must be a non-empty string.
+  pre-schema: root.commands[10].cwd must be a non-empty string.
+  pre-schema: root.commands[11].cwd must be a non-empty string.
+  pre-schema: root.commands[12].cwd must be a non-empty string.
+  pre-schema: root.commands[13].cwd must be a non-empty string.
+  pre-schema: root.commands[14].cwd must be a non-empty string.
+  pre-schema: root.commands[15].cwd must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-bizscope-datascope-ownership/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.commands[5].cwd must be a non-empty string.
+  pre-schema: root.commands[5].status must be a non-empty string.
+  pre-schema: root.commands[6].cwd must be a non-empty string.
+  pre-schema: root.commands[6].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-business-versioned-migrations/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-cross-module-capability-boundaries/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-deploy-immutability-idempotency/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-k8s-release-reliability/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-resource-service-state-machines/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/ops-service-instance-foundation/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[FAIL] .harness/archive/2026-10/evidence/2026-10-31-frontend-follow-redirects-audit/commands.json
+  error: root.linkage.changeRef is required.
+  error: root.linkage.planRefs is required.
+  error: root.linkage.changeRef must be a non-empty string.
+  error: root.linkage.planRefs must be an array.
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-17-github-governance-followup/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-18-branch-hygiene-fallback/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-18-branch-hygiene-slash-path-fix/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-18-pr-branch-cleanup-automation/commands.json
+  pre-schema: root.graphChecks.checks[0] must be one of: cycle, hub, call-depth, sensitive-flow.
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-21-business-deploy-task-main-flow-closeout/commands.json
+  pre-schema: root.graphChecks.checks[0] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.graphChecks.checks[1] must be one of: cycle, hub, call-depth, sensitive-flow.
+
+[PASS] .harness/archive/2026-11/evidence/2026-07-17-cmdb-ssh-config-externalize/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-07-foundation-upgrade-base-v0-10-3/commands.json
+  pre-schema: root.browserEvidence[0].viewport must be a non-empty string.
+  pre-schema: root.browserEvidence[0].url must be a non-empty string.
+  pre-schema: root.browserEvidence[0] must include a screenshot or explicit visualGap.
+  pre-schema: root.browserEvidence[0].consoleErrors must be an array.
+  pre-schema: root.graphChecks.checks[0] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.graphChecks.checks[1] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.graphChecks.checks[2] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.linkage.changeRef does not exist: d405d1f
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-08-foundation-upgrade-base-v0-10-5/commands.json
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[5].cwd must be a non-empty string.
+  pre-schema: root.commands[6].cwd must be a non-empty string.
+  pre-schema: root.graphChecks.checks[0] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.graphChecks.checks[1] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.graphChecks.checks[2] must be one of: cycle, hub, call-depth, sensitive-flow.
+  pre-schema: root.linkage.changeRef is required.
+  pre-schema: root.linkage.planRefs is required.
+  pre-schema: root.linkage.changeRef must be a non-empty string.
+  pre-schema: root.linkage.planRefs must be an array.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-10-security-csrf-closeout/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[8].status must be one of: passed, failed, not-run.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-11-foundation-consumer-certification/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-11-sonarcloud-ops-remediation/commands.json
+  pre-schema: root.taskId must be a non-empty string.
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands must be an array.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-12-foundation-v0-10-14-clean-consumer/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-13-clean-base-business-overlay-rebuild/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-19-ops-v1-backlog-closeout/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-31-ops-operational-workbench-design/commands.json
+  pre-schema: taskManifest.status must be one of: planned, in-progress, completed, abandoned (got "superseded").
+
+[PASS] .harness/archive/2026-11/evidence/2026-09-28-ops-delivery-readiness-gap-closure/commands.json
+  pre-schema: taskManifest.status must be one of: planned, in-progress, completed, abandoned (got "superseded").
+
+[PASS] .harness/archive/2026-11/evidence/2026-09-29-ops-ssrf-protection-integration/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-12-foundation-upgrade-base-v0-16-1/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-27-foundation-upgrade-base-v0-17-6/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-27-foundation-upgrade-base-v0-17-7/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-29-foundation-upgrade-base-v0-18-1/commands.json
+
+[FAIL] .harness/archive/2026-11/evidence/2026-10-29-sonar-ci-analysis-restore/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+
+[FAIL] .harness/archive/2026-11/evidence/2026-10-30-sonar-findings-remediation/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-31-foundation-upgrade-base-v0-18-2/commands.json
+
+[FAIL] .harness/archive/2026-11/evidence/2026-11-05-base-v0183-consumption/commands.json
+  error: root.commands[18].status must be a non-empty string.
+  error: root.commands[19].status must be a non-empty string.
+  error: root.commands[20].status must be a non-empty string.
+  error: root.commands[21].status must be a non-empty string.
+  error: root.commands[22].status must be a non-empty string.
+  error: root.commands[23].cwd must be a non-empty string.
+  error: root.commands[23].status must be a non-empty string.
+  error: root.commands[24].cwd must be a non-empty string.
+  error: root.commands[24].status must be a non-empty string.
+  error: root.commands[25].cwd must be a non-empty string.
+  error: root.commands[25].status must be a non-empty string.
+  error: root.commands[26].cwd must be a non-empty string.
+  error: root.commands[26].status must be a non-empty string.
+  error: root.commands[27].status must be a non-empty string.
+  error: root.commands[28].status must be a non-empty string.
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-07-base-v0186-consumption/commands.json
+
+[FAIL] .harness/archive/2026-11/evidence/2026-11-07-ops-planned-task-closeout/commands.json
+  error: root.commands[11].cwd must be a non-empty string.
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-base-v0187-consumption/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-14-ops-latest-foundation-and-plans/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-argocd-ownership-convergence/commands.json
+
+[FAIL] .harness/archive/2026-11/evidence/2026-11-16-ops-business-menu-m3c/commands.json
+  error: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-business-runtime-acceptance/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-extensions-live-acceptance/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-filedist-product-closure/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-helm-capability-truth/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-k8s-service-mutations/commands.json
+
+[FAIL] .harness/archive/2026-11/evidence/2026-11-16-ops-navigation-repair/commands.json
+  error: root.taskId must be a non-empty string.
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.commands[0].command must be a non-empty string.
+  error: root.commands[0].cwd must be a non-empty string.
+  error: root.commands[0].status must be a non-empty string.
+  error: root.commands[1].command must be a non-empty string.
+  error: root.commands[1].cwd must be a non-empty string.
+  error: root.commands[1].status must be a non-empty string.
+  error: root.commands[2].command must be a non-empty string.
+  error: root.commands[2].cwd must be a non-empty string.
+  error: root.commands[2].status must be a non-empty string.
+  error: root.commands[3].command must be a non-empty string.
+  error: root.commands[3].cwd must be a non-empty string.
+  error: root.commands[3].status must be a non-empty string.
+  error: root.commands[4].command must be a non-empty string.
+  error: root.commands[4].cwd must be a non-empty string.
+  error: root.commands[4].status must be a non-empty string.
+  error: root.commands[5].command must be a non-empty string.
+  error: root.commands[5].cwd must be a non-empty string.
+  error: root.commands[5].status must be a non-empty string.
+  error: root.commands[6].command must be a non-empty string.
+  error: root.commands[6].cwd must be a non-empty string.
+  error: root.commands[6].status must be a non-empty string.
+  error: root.commands[7].command must be a non-empty string.
+  error: root.commands[7].cwd must be a non-empty string.
+  error: root.commands[7].status must be a non-empty string.
+  error: root.commands[8].command must be a non-empty string.
+  error: root.commands[8].cwd must be a non-empty string.
+  error: root.commands[8].status must be a non-empty string.
+  error: root.commands[9].command must be a non-empty string.
+  error: root.commands[9].cwd must be a non-empty string.
+  error: root.commands[9].status must be a non-empty string.
+  error: root.commands[10].command must be a non-empty string.
+  error: root.commands[10].cwd must be a non-empty string.
+  error: root.commands[10].status must be a non-empty string.
+  error: root.commands[11].command must be a non-empty string.
+  error: root.commands[11].cwd must be a non-empty string.
+  error: root.commands[11].status must be a non-empty string.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-pilot-delivery/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-pilot-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-readiness-plan-closeout/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-service-catalog-usability/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-service-deploy-integrity/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-service-deploy-user-flow/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-17-ops-o4-recovery-regression/commands.json
+
+[FAIL] .harness/archive/2026-11/evidence/cmdb-host-import-export/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.commands[9].status must be one of: passed, failed, not-run.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/archive/2026-11/evidence/k8s-recovery/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.linkage must be an object.
+
+[PASS] .harness/evidence/2026-08-17-ops-foundation-hardening/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/evidence/2026-09-01-ops-foundation-upgrade-v0-10-25/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[FAIL] .harness/evidence/2026-10-31-frontend-follow-redirects-audit/commands.json
+  error: root.linkage.changeRef is required.
+  error: root.linkage.planRefs is required.
+  error: root.linkage.changeRef must be a non-empty string.
+  error: root.linkage.planRefs must be an array.
+
+[PASS] .harness/evidence/2026-11-17-ops-history-audit/commands.json
+
+[FAIL] .harness/evidence/2026-11-17-ops-history-audit/packaging-before-correction/.harness/evidence/2026-11-07-ops-planned-task-closeout/commands.json
+  error: root.linkage.evidenceDir must match the commands.json directory ".harness/evidence/2026-11-17-ops-history-audit/packaging-before-correction/.harness/evidence/2026-11-07-ops-planned-task-closeout/".
+
+[FAIL] .harness/evidence/2026-11-20-ops-board-complete/commands.json
+  error: root.agent.tool must be a non-empty string.
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.changeRef does not exist: chore/ops-board-complete-2026-11-20
+
+[FAIL] .harness/evidence/2026-11-20-ops-business-permissions-and-task-visibility/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.commands[0].cwd must be a non-empty string.
+  error: root.commands[0].status must be a non-empty string.
+  error: root.commands[1].cwd must be a non-empty string.
+  error: root.commands[1].status must be a non-empty string.
+  error: root.commands[2].cwd must be a non-empty string.
+  error: root.commands[2].status must be a non-empty string.
+  error: root.commands[3].cwd must be a non-empty string.
+  error: root.commands[3].status must be a non-empty string.
+  error: root.commands[4].cwd must be a non-empty string.
+  error: root.commands[4].status must be a non-empty string.
+  error: root.commands[5].cwd must be a non-empty string.
+  error: root.commands[5].status must be a non-empty string.
+  error: root.commands[6].cwd must be a non-empty string.
+  error: root.commands[6].status must be a non-empty string.
+  error: root.commands[7].cwd must be a non-empty string.
+  error: root.commands[7].status must be a non-empty string.
+  error: root.commands[8].cwd must be a non-empty string.
+  error: root.commands[8].status must be a non-empty string.
+  error: root.commands[9].cwd must be a non-empty string.
+  error: root.commands[9].status must be a non-empty string.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/2026-11-20-ops-core-business-tenant-isolation/commands.json
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.
+
+[PASS] .harness/evidence/2026-11-20-ops-deploy-fixed-template-security/commands.json
+
+[FAIL] .harness/evidence/2026-11-20-ops-deploy-recovery-and-remote-execution/commands.json
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.
+
+[FAIL] .harness/evidence/2026-11-20-ops-k8s-client-lifecycle-and-config-safety/commands.json
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.
+
+[FAIL] .harness/evidence/2026-11-20-ops-k8s-log-websocket-lifecycle/commands.json
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.
+
+[PASS] .harness/evidence/2026-11-20-ops-k8s-resource-authorization-and-mutations/commands.json
+
+[FAIL] .harness/evidence/2026-11-20-ops-review-baseline-and-decisions/commands.json
+  error: root.taskId must be a non-empty string.
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.commands[0].status must be a non-empty string.
+  error: root.commands[1].status must be a non-empty string.
+  error: root.commands[2].status must be a non-empty string.
+  error: root.commands[3].status must be a non-empty string.
+  error: root.commands[4].status must be a non-empty string.
+  error: root.commands[5].status must be a non-empty string.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/2026-11-20-ops-review-live-runtime-acceptance/commands.json
+  error: root.linkage.planRefs[1] does not exist: .local/acceptance-20261121/run-live-acceptance.ps1
+
+[FAIL] .harness/evidence/2026-11-24-workflow-context-improvement/commands.json
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.
+
+[FAIL] .harness/evidence/ops-architecture-quality-gates/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.commands[0].cwd must be a non-empty string.
+  error: root.commands[1].cwd must be a non-empty string.
+  error: root.commands[2].cwd must be a non-empty string.
+  error: root.commands[3].cwd must be a non-empty string.
+  error: root.commands[4].cwd must be a non-empty string.
+  error: root.commands[5].cwd must be a non-empty string.
+  error: root.commands[6].cwd must be a non-empty string.
+  error: root.commands[7].cwd must be a non-empty string.
+  error: root.commands[8].cwd must be a non-empty string.
+  error: root.commands[9].cwd must be a non-empty string.
+  error: root.commands[10].cwd must be a non-empty string.
+  error: root.commands[11].cwd must be a non-empty string.
+  error: root.commands[12].cwd must be a non-empty string.
+  error: root.commands[13].cwd must be a non-empty string.
+  error: root.commands[14].cwd must be a non-empty string.
+  error: root.commands[15].cwd must be a non-empty string.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/ops-bizscope-datascope-ownership/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.commands[0].cwd must be a non-empty string.
+  error: root.commands[0].status must be a non-empty string.
+  error: root.commands[1].cwd must be a non-empty string.
+  error: root.commands[1].status must be a non-empty string.
+  error: root.commands[2].cwd must be a non-empty string.
+  error: root.commands[2].status must be a non-empty string.
+  error: root.commands[3].cwd must be a non-empty string.
+  error: root.commands[3].status must be a non-empty string.
+  error: root.commands[4].cwd must be a non-empty string.
+  error: root.commands[4].status must be a non-empty string.
+  error: root.commands[5].cwd must be a non-empty string.
+  error: root.commands[5].status must be a non-empty string.
+  error: root.commands[6].cwd must be a non-empty string.
+  error: root.commands[6].status must be a non-empty string.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/ops-business-versioned-migrations/commands.json
+  error: Evidence root must be a JSON object.
+
+[FAIL] .harness/evidence/ops-cross-module-capability-boundaries/commands.json
+  error: Evidence root must be a JSON object.
+
+[FAIL] .harness/evidence/ops-deploy-immutability-idempotency/commands.json
+  error: Evidence root must be a JSON object.
+
+[FAIL] .harness/evidence/ops-k8s-release-reliability/commands.json
+  error: Evidence root must be a JSON object.
+
+[FAIL] .harness/evidence/ops-resource-service-state-machines/commands.json
+  error: root.repo must be a non-empty string.
+  error: root.agent must be an object.
+  error: root.knownGaps must be an array.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/ops-service-instance-foundation/commands.json
+  error: Evidence root must be a JSON object.

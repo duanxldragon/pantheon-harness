@@ -1,0 +1,15 @@
+{
+  "name": "ops-staged-drift-approved",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "scripts/business-overlay/check-shared-drift.mjs",
+    "--root",
+    ".tmp/workflow-context-improvement-20261124"
+  ],
+  "start": "2026-11-24T01:53:52.432Z",
+  "elapsedMs": 68868,
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

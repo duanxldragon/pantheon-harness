@@ -1,0 +1,688 @@
+{"name":"submission-pantheon-base-gate-15","repo":".local/workflow-improvement-20261124/submission/pantheon-base","command":["node","scripts/harness/check-evidence.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:42.716Z","elapsedMs":1121,"exitCode":1,"signal":null,"error":null}
+Evidence check (strict): 239 file(s), 2 error(s), 0 warning(s)
+Pre-2026-10-26 structural findings counted, not gated: 205 across 43 archived artifact(s) — must shrink, see the constant's comment
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-15-code-review-remediation/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: fix-report.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-15-repo-deep-cleanup/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-17-infra-hardening-round/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-20-security-audit-governance-round/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-21-v090-govulncheck/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-21-v090-module-rename/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-21-v1-leftovers/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-errcheck-cleanup/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-frontend-unit-tests/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-release-tooling-win/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-sonarcloud-remediation/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-23-base-freeze-sonar-control/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-23-main-quality-gates-green/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-23-security-event-policy-i18n-header/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-25-sonar-scope-and-s8545/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-25-sonar-small-buckets/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-sonar-frontend-style/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-sonar-go-s1192/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-v1-freeze-backend-fixes/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-visual-evidence-observation-gate/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-27-ci-api-unit-test-wiring/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-27-profile-shell-fallback/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-29-sonar-go-platform-core/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-29-sonar-ts-final/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-30-local-consolidation/commands.json
+
+[PASS] .harness/archive/2026-07/evidence/ui-fix-20260727/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-02-sonarcloud-open-issues/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-03-dependabot-pr-governance/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-03-sonarcloud-encoding-warning/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-04-base-v0-10-0-release-candidate/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-05-base-v0-10-1-release/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-05-base-v0-10-2-visual-checker/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-06-generator-business-page-route/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-10-shared-csrf-release/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-base-security-dependencies/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-delivery-certification/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-foundation-release-v0-10-12/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-foundation-release-v0-10-13/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-consumer-cleanup-overlay/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.commands[5].status must be a non-empty string.
+  pre-schema: root.commands[6].status must be a non-empty string.
+  pre-schema: root.commands[7].status must be a non-empty string.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-consumer-runtime-portability/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-smoke-closure/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-smoke-contract-closure/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.commands[5].status must be a non-empty string.
+  pre-schema: root.commands[6].status must be a non-empty string.
+  pre-schema: root.commands[7].status must be a non-empty string.
+  pre-schema: root.commands[8].status must be a non-empty string.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-pr-auto-merge-push-trigger/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0] must be an object.
+  pre-schema: root.commands[1] must be an object.
+  pre-schema: root.commands[2] must be an object.
+  pre-schema: root.commands[3] must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-pr-auto-merge-token/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-13-foundation-release-repo-snapshot/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-17-foundation-cross-repo-handoff-adoption/commands.json
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-21-security-goroutine-hardening/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-21-sonarcloud-remediation/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-31-base-operational-workbench-design/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-01-release-docs-reconciliation/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-01-release-gate-sonar-cleanup/commands.json
+  pre-schema: root.agent must be an object.
+  pre-schema: root.linkage.changeRef is required.
+  pre-schema: root.linkage.changeRef must be a non-empty string.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-01-sonar-duplication-reduction/commands.json
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[5].cwd must be a non-empty string.
+  pre-schema: root.commands[6].cwd must be a non-empty string.
+  pre-schema: root.commands[7].cwd must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage.changeRef is required.
+  pre-schema: root.linkage.changeRef must be a non-empty string.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-02-foundation-release-v0-10-26-and-ops-sync/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-03-frontend-design-alignment/commands.json
+  pre-schema: root.taskId must be a non-empty string.
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.commands[4].cwd must be a non-empty string.
+  pre-schema: root.commands[4].status must be a non-empty string.
+  pre-schema: root.commands[5].cwd must be a non-empty string.
+  pre-schema: root.commands[5].status must be a non-empty string.
+  pre-schema: root.commands[6].cwd must be a non-empty string.
+  pre-schema: root.commands[6].status must be a non-empty string.
+  pre-schema: root.commands[7].cwd must be a non-empty string.
+  pre-schema: root.commands[7].status must be a non-empty string.
+  pre-schema: root.commands[8].cwd must be a non-empty string.
+  pre-schema: root.commands[8].status must be a non-empty string.
+  pre-schema: root.commands[9].cwd must be a non-empty string.
+  pre-schema: root.commands[9].status must be a non-empty string.
+  pre-schema: root.commands[10].cwd must be a non-empty string.
+  pre-schema: root.commands[10].status must be a non-empty string.
+  pre-schema: root.commands[11].cwd must be a non-empty string.
+  pre-schema: root.commands[11].status must be a non-empty string.
+  pre-schema: root.commands[12].cwd must be a non-empty string.
+  pre-schema: root.commands[12].status must be a non-empty string.
+  pre-schema: root.commands[13].cwd must be a non-empty string.
+  pre-schema: root.commands[13].status must be a non-empty string.
+  pre-schema: root.commands[14].cwd must be a non-empty string.
+  pre-schema: root.commands[14].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-04-readme-v011-final/commands.json
+  pre-schema: root.taskId must be a non-empty string.
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[0].status must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[1].status must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[2].status must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be a non-empty string.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-04-readme-v011-update/commands.json
+  pre-schema: Evidence root must be a JSON object.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-04-v0.11.1-release-preparation/commands.json
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be one of: passed, failed, not-run.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage.changeRef does not exist: fix/core-smoke-followup
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-07-core-smoke-followup/commands.json
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands[0].cwd must be a non-empty string.
+  pre-schema: root.commands[1].cwd must be a non-empty string.
+  pre-schema: root.commands[2].cwd must be a non-empty string.
+  pre-schema: root.commands[3].cwd must be a non-empty string.
+  pre-schema: root.commands[3].status must be one of: passed, failed, not-run.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage.changeRef does not exist: fix/core-smoke-followup
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-community-building/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: .harness/tasks/TASK_MASTER_PLAN.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-multi-tenant-design/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: .harness/tasks/TASK_MASTER_PLAN.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-test-coverage-phase2/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: .harness/tasks/TASK_MASTER_PLAN.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-test-coverage-phase3/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: .harness/tasks/TASK_MASTER_PLAN.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-09-oidc-deps-ci-repair/commands.json
+  pre-schema: root.linkage.changeRef does not exist: PR #298
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-i18n-s3649-zero/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-release-gate-repair/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-release-gate-zero/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-smoke-core-repair/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-sonar-new-code-zero/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-sonar-resolved-repair/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-tenant-core-data-infrastructure/commands.json
+  pre-schema: root.agent.tool must be one of: codex, claude-code, cursor, github-copilot, openhands, aider, human, other.
+  pre-schema: root.linkage.changeRef does not exist: PR #312 (fix/smoke-oper-log-export-tenant-column)
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-tenant-verification-and-gray/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: .harness/tasks/TENANT_EVOLUTION_MASTER_PLAN_20260910.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-bench-perf-smoke-summary-path/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-ci-bench-perf-smoke/commands.json
+  pre-schema: root.agent must be an object.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-merged-packet-closeout/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-module-governance-flaky-timeout/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-permission-workbench-route-binding/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-smoke-core-tenant-ci-gap/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-tenant-hostile-matrix-phase2/commands.json
+  pre-schema: root.agent must be an object.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-document-layout-inventory/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-document-relocation-and-archive/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-export-and-session-pagination/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-frontend-style-naming-alignment/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-generated-artifact-governance/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-layer-boundary-gate/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-naming-boundary-canonical-standard/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-production-redis-and-security-gates/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-request-path-maintenance/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-session-revocation-closure/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-tenant-public-settings-scope/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-upload-authorization-and-import-resources/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-ci-triage-338-fallout/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-dormant-governance-tests-and-status-vocabulary/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-governance-residual-closeout/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-legacy-packet-migration-and-config-integrity/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-24-fix-report-residual-closeout/commands.json
+  pre-schema: root.linkage.planRefs[1] does not exist: fix-report.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-24-production-readiness-audit/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-25-task-archiving-and-v0130-prep/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-28-base-ssrf-protection/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-29-v0140-release-completion/commands.json
+
+[PASS] .harness/archive/2026-09/evidence/maintenance-test-stability-2026-09-02/commands.json
+  pre-schema: root.taskId must be a non-empty string.
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands must be an array.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-09/evidence/sonarcloud-s4666/commands.json
+  pre-schema: root.taskId must be a non-empty string.
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands must be an array.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-09/evidence/test-suite-optimization/commands.json
+  pre-schema: root.taskId must be a non-empty string.
+  pre-schema: root.repo must be a non-empty string.
+  pre-schema: root.agent must be an object.
+  pre-schema: root.commands must be an array.
+  pre-schema: root.knownGaps must be an array.
+  pre-schema: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-audit-request-body/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-auth-session-scope/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-governance-gate-repair/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-iam-data-scope/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-login-log-identity/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-performance-followup/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-release-qualification/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-release-readiness-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-ui-maintainability-followup/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-upgrade-runbook/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-dependabot-sprintf-js-dos/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-naming-correspondence-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-smoke-test-tiering/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-sonar-duplication-under-3/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-sonar-smoke-helper-smells/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-flake-signal-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-foundation-release-asset-gate/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-v0160-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-v0161-release-cut/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-13-tenant-console-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-13-tenant-true-isolation/commands.json
+  pre-schema: root.linkage.planRefs[2] does not exist: docs/TENANT_INITIALIZATION_FINDINGS_2026-10-13.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-15-tenant-closeout/commands.json
+  pre-schema: root.linkage.planRefs[0] does not exist: docs/TENANT_SCOPE_FREEZE_DECISION_2026-10-15.md
+  pre-schema: root.linkage.planRefs[1] does not exist: docs/TENANT_LOGIN_INIT_EVALUATION_2026-10-15.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-tenant-permission-isolation-remediation/commands.json
+  pre-schema: root.linkage.planRefs[2] does not exist: docs/TENANT_SCOPE_FREEZE_DECISION_2026-10-15.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w0-isolation-contract-guardrails/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w1-data-scope-tenant-dimension/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w2-tenant-user-onboarding/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w3-role-menu-grant-persistence/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w4-session-revocation-login-gate/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w5-tenant-console-ux/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w6-reverification-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-20-sonarcloud-zero-issues/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-20-tenant-audit-permission-seed/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-20-tenant-delivery-hardening/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-21-acceptance-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-21-v0170-release-cut/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-delivery-audit-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-release-and-residual-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-tenant-plan-entitlements-and-audit/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-v0171-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-iam-race-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-iam-residual-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-residual-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-v0173-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-v0174-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-24-single-tenant-scope-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-24-v0175-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-governance-evidence-schema-backfill/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-governance-red-checkers-closure/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-login-accessibility-and-lang/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-pr427-ci-gate-closure/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-tenant-plan-assignment/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-base-docs-artifact-landing/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-codebase-simplification-program/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s1-api-surface-narrowing/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s1-dead-code-removal/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-batch-and-envelope/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-error-mapping-dedup/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-id-parse-migration/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-import-export-pipeline/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-pagination-sort-migration/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-shared-handler-helpers/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s3-oidc-envelope/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s3-role-data-scope-model/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s3-tenant-scope-unification/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s4-governance-decisions/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s4-re-export-alias-removal/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-completeness-remediation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-console-ui-automation/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-contract-docs-alignment/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-dead-surface-removal/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-delete-archive-guard/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-member-integrity/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-multi-membership-authorization/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-multi-membership-decision/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-plan-ladder-decision/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-v0176-release-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-v0177-lint-codeql-closure/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-v0178-dep-vuln-closure/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-plan-ladder-option-a-impl/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-release-gate-green/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-release-notes-directory/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-tenantlist-s3776-followup/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-harness-task-archive/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-simplification-program-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-v0180-simplification-release/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-v0181-restore-request-guard/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-30-menu-contract-inline-const/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-30-workflow-sonar-githubactions/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-archive-closure-pr-governance/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p1-business-route-tenant-context/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p1-entry-doc-truthfulness/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p1-lowcode-generator-build/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-ci-checker-wiring/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-dead-code-legacy-surface/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-doc-lifecycle-archive/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-doc-metadata-and-index/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-oidc-scaffold-decision/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-token-cache-race/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p3-residual-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-remediation-programme/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-base-menu-filter-sql-literal-convergence/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-frontend-follow-redirects-audit/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-harness-archive-closeout-round2/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-release-gate-checks-poll-resilience/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-v0182-consumer-closeout/commands.json
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-v0182-menu-contract-shared-surface/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-01-audit-p2-automigrate-boundary/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-01-audit-p2-human-gate-preconditions/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p1-pagination-data-consistency/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-data-scope-automigrate/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-doc-drift-closeout/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-governance-wiring-closeout/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-route-groups-unify/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-remediation-programme/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-archive-governance-scope-repair/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-freeze-preconditions/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p1-npm-audit-exit/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p1-refresh-rotation/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p1-ssrf-dial-binding/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-agent-stop-points/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-authoritative-docs/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-freeze-validation/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-ops-db-test-followup/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-release-policy/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p3-ci-cost-review/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p3-consumer-seams/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-global-audit-remediation/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-05-base-freeze-release/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-07-ops-formal-queue-foundation-gaps/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-07-v0186-release-ops-consumption/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-12-v0187-release-ops-consumption/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-candidate-filesystem-security/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-docs-archive-closeout/commands.json
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-v0188-release-preparation/commands.json
+
+[PASS] .harness/evidence/2026-11-24-business-route-static-guard/commands.json
+
+[FAIL] .harness/evidence/2026-11-24-workflow-context-improvement/commands.json
+  error: root.linkage.taskManifest is required.
+  error: root.linkage.taskManifest must be a non-empty string.

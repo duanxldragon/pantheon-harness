@@ -1,0 +1,23 @@
+{"name":"submission-ops-workflow-tests","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","--test","tests/scripts/workflow-method-consumption.test.mjs","tests/scripts/quality-workflow.test.mjs"],"start":"2026-11-24T02:08:29.093Z","elapsedMs":10705,"exitCode":0,"signal":null,"error":null}
+✔ smoke sanity requires all core Ops business suites after backend readiness (7.1444ms)
+✔ actual Ops business smoke shell propagates every failure and stops later suites (789.0432ms)
+✔ change scope classifies real gates instead of removed docs/governance cutoffs (1.5532ms)
+✔ every checkout is pinned to the resolved candidate commit (652.9066ms)
+✔ frontend contract and smoke sanity gate on pull-request scope only (0.8454ms)
+✔ backend tests always run and fail closed (0.7417ms)
+✔ go lint scopes pull requests and merge groups to new code and enforces in real bash (662.5425ms)
+✔ duplication gate is report-only on pull request and merge group in real bash (767.6495ms)
+✔ quality gates aggregate every runtime job and enforce them in real bash (7219.6244ms)
+✔ docs governance blocks UI quality drift as a strict non-advisory step (1.183ms)
+✔ docs governance validates the PR governance template and body, rerunning on edits (0.6902ms)
+✔ docs governance does not checkout an unused pantheon-base foundation copy (1.0636ms)
+✔ CI method pin rejects unreviewed branch names and output injection (616.3606ms)
+✔ sibling layout preserves frontend cwd, candidate checkout and blocking method/boundary checks (2.3186ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10591.4351

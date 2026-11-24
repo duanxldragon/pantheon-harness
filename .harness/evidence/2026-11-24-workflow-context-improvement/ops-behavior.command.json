@@ -1,0 +1,16 @@
+{
+  "name": "ops-behavior",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "--test",
+    "tests/scripts/workflow-method-consumption.test.mjs",
+    "tests/scripts/quality-workflow.test.mjs",
+    "tests/scripts/business-overlay/rebuild-from-base.test.mjs"
+  ],
+  "start": "2026-11-24T01:25:31.246Z",
+  "elapsedMs": 10501,
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

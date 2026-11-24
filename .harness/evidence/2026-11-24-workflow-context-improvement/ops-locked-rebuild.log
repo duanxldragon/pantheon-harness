@@ -1,0 +1,15 @@
+{"name":"ops-locked-rebuild","repo":"pantheon-ops","command":["node","scripts/business-overlay/rebuild-from-base.mjs","--target",".tmp/workflow-context-improvement-20261124"],"start":"2026-11-24T01:50:43.083Z","elapsedMs":27556,"exitCode":1,"signal":null,"error":null}
+file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:552
+    throw new Error('Cannot normalize consumer Go dependencies: ' +
+          ^
+
+Error: Cannot normalize consumer Go dependencies: pattern ./...: open D:\cache\go\build\43\4308ef5b85b8c52b033502379cec9e02e5946362c7ffa718b1a500044f893ee0-d: Access is denied.
+    at normalizeGoDependencies (file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:552:11)
+    at assembleConsumerTree (file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:618:23)
+    at rebuildFromBase (file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:626:10)
+    at file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:636:18
+    at ModuleJob.run (node:internal/modules/esm/module_job:430:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:661:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.14.0

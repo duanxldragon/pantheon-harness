@@ -1,0 +1,55 @@
+{"name":"ops-behavior","repo":"pantheon-ops","command":["node","--test","tests/scripts/workflow-method-consumption.test.mjs","tests/scripts/quality-workflow.test.mjs","tests/scripts/business-overlay/rebuild-from-base.test.mjs"],"start":"2026-11-24T01:25:31.246Z","elapsedMs":10501,"exitCode":1,"signal":null,"error":null}
+✖ rebuilds a deterministic Base snapshot with generated business registries (2493.7125ms)
+✔ rejects a business path that overwrites a Base hook file (897.7964ms)
+✔ rejects a manifest that claims a generic product path (726.3998ms)
+✔ validateReleaseBundleChecksum accepts a matching checksum (4.3261ms)
+✔ validateReleaseBundleChecksum rejects a mismatched checksum (2.9949ms)
+✔ validateReleaseBundleChecksum rejects missing checksums (5.7418ms)
+✔ release bundle checksum validation rejects tampered bundles via lock file path (1236.5376ms)
+✔ refuses to consume a live base tree when no lock snapshot is present (419.9371ms)
+✔ migration assembly requires module-owned, paired and unique inputs (1.9427ms)
+▶ migration assembly rejects missing or non-file sources before copying either half
+  ✔ up missing (964.0541ms)
+  ✔ up directory (978.2028ms)
+  ✔ down missing (1071.7607ms)
+  ✔ down directory (1310.7249ms)
+✔ migration assembly rejects missing or non-file sources before copying either half (4326.9387ms)
+✔ production rebuild refuses local Base arguments (153.7951ms)
+✔ smoke sanity requires all core Ops business suites after backend readiness (2.5869ms)
+✔ actual Ops business smoke shell propagates every failure and stops later suites (428.8958ms)
+✔ change scope classifies real gates instead of removed docs/governance cutoffs (1.4242ms)
+✔ every checkout is pinned to the resolved candidate commit (334.804ms)
+✔ frontend contract and smoke sanity gate on pull-request scope only (0.4219ms)
+✔ backend tests always run and fail closed (0.4593ms)
+✔ go lint scopes pull requests and merge groups to new code and enforces in real bash (482.4288ms)
+✔ duplication gate is report-only on pull request and merge group in real bash (418.9908ms)
+✔ quality gates aggregate every runtime job and enforce them in real bash (6080.603ms)
+✔ docs governance blocks UI quality drift as a strict non-advisory step (0.6296ms)
+✔ docs governance validates the PR governance template and body, rerunning on edits (0.4339ms)
+✔ docs governance does not checkout an unused pantheon-base foundation copy (0.2323ms)
+✔ CI method pin rejects unreviewed branch names and output injection (301.493ms)
+✔ sibling layout preserves frontend cwd, candidate checkout and blocking method/boundary checks (0.8419ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 28
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10423.4715
+
+✖ failing tests:
+
+test at tests\scripts\business-overlay\rebuild-from-base.test.mjs:51:1
+✖ rebuilds a deterministic Base snapshot with generated business registries (2493.7125ms)
+  Error: Cannot normalize consumer Go dependencies: go: found github.com/gin-gonic/gin in github.com/gin-gonic/gin v0.0.0-00010101000000-000000000000
+  go: found gorm.io/gorm in gorm.io/gorm v0.0.0-00010101000000-000000000000
+  pattern ./...: open D:\cache\go\build\e3\e39014516500a7e17e195bdf045f6ca1db13ef7f5d65138135eb5868f36f1397-a: Access is denied.
+      at normalizeGoDependencies (file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:552:11)
+      at assembleConsumerTree (file:///D:/workspace/go/pantheon-platform/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:618:23)
+      at rebuildFixture (file:///D:/workspace/go/pantheon-platform/pantheon-ops/tests/scripts/business-overlay/rebuild-from-base.test.mjs:48:10)
+      at TestContext.<anonymous> (file:///D:/workspace/go/pantheon-platform/pantheon-ops/tests/scripts/business-overlay/rebuild-from-base.test.mjs:137:19)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)

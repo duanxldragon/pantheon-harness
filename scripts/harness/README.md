@@ -58,3 +58,9 @@ All check scripts accept `--root <path>` so they can be run from fixture directo
 ## Boundary
 
 Do not add application-specific scanners here. If a check assumes a particular stack, architecture, route layout, permission model, CI provider, or product repository, package it as an overlay and keep the portable method gate independent.
+
+## Task Index and Policy Provenance
+
+`render-task-index.mjs --root <consumer>` reads current manifests; `--write` explicitly regenerates `.harness/TASK_INDEX.md`, and `--check` fails on drift without updating files. It never changes task status or infers product acceptance. This helper is Unreleased.
+
+`check-method-consumption.mjs --root <consumer> --source <harness>` preserves the receipt. `--update --source-commit <full-sha>` selects a reviewed Git checkout and verifies its seven policy blobs; CI uses that immutable commit. A normal update retains an existing pin and fails if local policy bytes differ from it. Product locks are independent.

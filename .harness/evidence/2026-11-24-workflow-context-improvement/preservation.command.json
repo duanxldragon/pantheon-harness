@@ -1,0 +1,13 @@
+{
+  "name": "preservation",
+  "repo": "pantheon-harness",
+  "command": [
+    "node",
+    "../.local/workflow-improvement-20261124/preservation.mjs"
+  ],
+  "start": "2026-11-24T01:50:56.720Z",
+  "elapsedMs": 160,
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

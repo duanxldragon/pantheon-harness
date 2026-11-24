@@ -1,0 +1,14 @@
+{
+  "name": "ops-wiring",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "scripts/harness/check-checker-wiring.mjs",
+    "--json"
+  ],
+  "start": "2026-11-24T01:48:57.664Z",
+  "elapsedMs": 107,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

@@ -1,0 +1,6 @@
+{"name":"ops-staged-boundaries-final","repo":"pantheon-ops","command":["node","scripts/harness/check-boundaries.mjs","--root",".tmp/workflow-context-improvement-20261124","--strict","--repo","pantheon-ops","--baseline","config/boundary-baseline.json"],"start":"2026-11-24T01:54:04.086Z","elapsedMs":202,"exitCode":0,"signal":null,"error":null}
+Boundary check (strict): 0 finding(s), 0 baselined, 0 stale baselined, 0 unresolved repo root(s), 0 warning(s)
+Baseline review-by: 2026-12-31
+
+pantheon-ops
+  no findings

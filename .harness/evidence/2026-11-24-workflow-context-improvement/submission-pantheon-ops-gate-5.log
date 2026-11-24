@@ -1,0 +1,13 @@
+{"name":"submission-pantheon-ops-gate-5","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-method-health.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:31.790Z","elapsedMs":105,"exitCode":1,"signal":null,"error":null}
+Method health check (strict): 2 finding(s), 1 warning(s)
+method kit version: 1.5.0
+repo shell version: 1.4.0
+
+finding: SHELL_VERSION.json
+  reason: repo shell version "1.4.0" does not match method kit compatibleRepoShell "1.5.0"
+
+finding: patterns/METHOD_VERSION.json
+  reason: method kit version "1.5.0" does not match repo shell compatibleMethodKit "1.4.0"
+
+warning: openspec
+  reason: OpenSpec skeleton directory is missing

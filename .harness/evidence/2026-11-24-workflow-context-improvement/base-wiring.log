@@ -1,0 +1,325 @@
+{"name":"base-wiring","repo":"pantheon-base","command":["node","scripts/harness/check-checker-wiring.mjs","--json"],"start":"2026-11-24T01:48:55.682Z","elapsedMs":148,"exitCode":0,"signal":null,"error":null}
+{
+  "total": 32,
+  "wired": 31,
+  "ciReferenced": 30,
+  "manualOnly": 1,
+  "exceptions": 1,
+  "unwired": [],
+  "results": [
+    {
+      "name": "check-duplication.mjs",
+      "file": "scripts/check-duplication.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-pr-governance.mjs",
+      "file": "scripts/check-pr-governance.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/pr-automation.yml",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-security-patterns.mjs",
+      "file": "scripts/check-security-patterns.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-task-packet-template.mjs",
+      "file": "scripts/check-task-packet-template.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-ui-tokens.mjs",
+      "file": "scripts/check-ui-tokens.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-adoption.mjs",
+      "file": "scripts/harness/check-adoption.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-audit-coverage.mjs",
+      "file": "scripts/harness/check-audit-coverage.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-backend-dto-contract.mjs",
+      "file": "scripts/harness/check-backend-dto-contract.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-backend-response-contract.mjs",
+      "file": "scripts/harness/check-backend-response-contract.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-boundaries.mjs",
+      "file": "scripts/harness/check-boundaries.mjs",
+      "status": "wired",
+      "wiredIn": [
+        ".github/workflows/ci.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-checker-wiring.mjs",
+      "file": "scripts/harness/check-checker-wiring.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-coverage.mjs",
+      "file": "scripts/harness/check-coverage.mjs",
+      "status": "wired",
+      "wiredIn": [
+        ".github/workflows/ci.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-doc-frontmatter.mjs",
+      "file": "scripts/harness/check-doc-frontmatter.mjs",
+      "status": "exception",
+      "reason": "mirror-only: scripts/frontmatter-check.mjs is the single implementation run as check:docs-frontmatter (2026-10-31 W5 decision)"
+    },
+    {
+      "name": "check-doc-inventory.mjs",
+      "file": "scripts/harness/check-doc-inventory.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-doc-links.mjs",
+      "file": "scripts/harness/check-doc-links.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-encoding.mjs",
+      "file": "scripts/harness/check-encoding.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-evidence.mjs",
+      "file": "scripts/harness/check-evidence.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-failure-registry.mjs",
+      "file": "scripts/harness/check-failure-registry.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-feature-ledger.mjs",
+      "file": "scripts/harness/check-feature-ledger.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-generated.mjs",
+      "file": "scripts/harness/check-generated.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-graph-review.mjs",
+      "file": "scripts/harness/check-graph-review.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-inheritance-contract.mjs",
+      "file": "scripts/harness/check-inheritance-contract.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json"
+      ],
+      "invocation": "manual-only"
+    },
+    {
+      "name": "check-method-health.mjs",
+      "file": "scripts/harness/check-method-health.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-permission-contract.mjs",
+      "file": "scripts/harness/check-permission-contract.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-review.mjs",
+      "file": "scripts/harness/check-review.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-runtime-evidence.mjs",
+      "file": "scripts/harness/check-runtime-evidence.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-structure-contract.mjs",
+      "file": "scripts/harness/check-structure-contract.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-sync-drift.mjs",
+      "file": "scripts/harness/check-sync-drift.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-task-packet.mjs",
+      "file": "scripts/harness/check-task-packet.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-template-health.mjs",
+      "file": "scripts/harness/check-template-health.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-ui-quality-gate.mjs",
+      "file": "scripts/harness/check-ui-quality-gate.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    },
+    {
+      "name": "check-visual-evidence.mjs",
+      "file": "scripts/harness/check-visual-evidence.mjs",
+      "status": "wired",
+      "wiredIn": [
+        "package.json",
+        ".github/workflows/quality.yml"
+      ],
+      "invocation": "ci-reference"
+    }
+  ]
+}

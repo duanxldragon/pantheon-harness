@@ -1,0 +1,48 @@
+{"name":"submission-pantheon-ops-gate-17","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-runtime-evidence.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:42.461Z","elapsedMs":441,"exitCode":1,"signal":null,"error":null}
+Runtime evidence check (strict): 82 file(s), 2 error(s), 14 warning(s)
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-argocd-ownership-convergence/commands.json
+  task: 2026-11-16-ops-argocd-ownership-convergence
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-business-runtime-acceptance/commands.json
+  task: 2026-11-16-ops-business-runtime-acceptance
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-extensions-live-acceptance/commands.json
+  task: 2026-11-16-ops-extensions-live-acceptance
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-helm-capability-truth/commands.json
+  task: 2026-11-16-ops-helm-capability-truth
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-k8s-service-mutations/commands.json
+  task: 2026-11-16-ops-k8s-service-mutations
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-pilot-delivery/commands.json
+  task: 2026-11-16-ops-pilot-delivery
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-pilot-release-closeout/commands.json
+  task: 2026-11-16-ops-pilot-release-closeout
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-service-catalog-usability/commands.json
+  task: 2026-11-16-ops-service-catalog-usability
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-service-deploy-integrity/commands.json
+  task: 2026-11-16-ops-service-deploy-integrity
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-16-ops-service-deploy-user-flow/commands.json
+  task: 2026-11-16-ops-service-deploy-user-flow
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/archive/2026-11/evidence/2026-11-17-ops-o4-recovery-regression/commands.json
+  task: 2026-11-17-ops-o4-recovery-regression
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/evidence/2026-11-20-ops-deploy-fixed-template-security/commands.json
+  task: 2026-11-20-ops-deploy-fixed-template-security
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/evidence/2026-11-20-ops-k8s-resource-authorization-and-mutations/commands.json
+  task: 2026-11-20-ops-k8s-resource-authorization-and-mutations
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+warning: .harness/evidence/2026-11-20-ops-review-live-runtime-acceptance/commands.json
+  task: 2026-11-20-ops-review-live-runtime-acceptance
+  reason: runtime-sensitive task evidence has no runtime logs/metrics/traces/performance signal and no recorded runtime gap
+error: .harness/archive/2026-09/evidence/2026-09-01-release-gate-sonar-cleanup/commands.json
+  reason: stale legacy runtime-evidence allowlist entry: the artifact no longer exists
+error: .harness/archive/2026-10/evidence/2026-10-27-s2-batch-and-envelope/commands.json
+  reason: stale legacy runtime-evidence allowlist entry: the artifact no longer exists

@@ -1,0 +1,39 @@
+{"name":"ops-behavior-approved","repo":"pantheon-ops","command":["node","--test","tests/scripts/workflow-method-consumption.test.mjs","tests/scripts/quality-workflow.test.mjs","tests/scripts/business-overlay/rebuild-from-base.test.mjs"],"start":"2026-11-24T01:45:36.552Z","elapsedMs":12977,"exitCode":0,"signal":null,"error":null}
+✔ rebuilds a deterministic Base snapshot with generated business registries (5026.3998ms)
+✔ rejects a business path that overwrites a Base hook file (789.9535ms)
+✔ rejects a manifest that claims a generic product path (710.1709ms)
+✔ validateReleaseBundleChecksum accepts a matching checksum (2.3625ms)
+✔ validateReleaseBundleChecksum rejects a mismatched checksum (1.4725ms)
+✔ validateReleaseBundleChecksum rejects missing checksums (1.6537ms)
+✔ release bundle checksum validation rejects tampered bundles via lock file path (1173.7629ms)
+✔ refuses to consume a live base tree when no lock snapshot is present (505.7912ms)
+✔ migration assembly requires module-owned, paired and unique inputs (2.0555ms)
+▶ migration assembly rejects missing or non-file sources before copying either half
+  ✔ up missing (1231.4319ms)
+  ✔ up directory (1054.9062ms)
+  ✔ down missing (1005.6984ms)
+  ✔ down directory (1118.7512ms)
+✔ migration assembly rejects missing or non-file sources before copying either half (4413.2246ms)
+✔ production rebuild refuses local Base arguments (109.6043ms)
+✔ smoke sanity requires all core Ops business suites after backend readiness (2.0094ms)
+✔ actual Ops business smoke shell propagates every failure and stops later suites (473.3442ms)
+✔ change scope classifies real gates instead of removed docs/governance cutoffs (0.9586ms)
+✔ every checkout is pinned to the resolved candidate commit (357.164ms)
+✔ frontend contract and smoke sanity gate on pull-request scope only (0.4492ms)
+✔ backend tests always run and fail closed (0.5539ms)
+✔ go lint scopes pull requests and merge groups to new code and enforces in real bash (673.8502ms)
+✔ duplication gate is report-only on pull request and merge group in real bash (981.3808ms)
+✔ quality gates aggregate every runtime job and enforce them in real bash (5981.3574ms)
+✔ docs governance blocks UI quality drift as a strict non-advisory step (1.0248ms)
+✔ docs governance validates the PR governance template and body, rerunning on edits (0.5274ms)
+✔ docs governance does not checkout an unused pantheon-base foundation copy (0.2999ms)
+✔ CI method pin rejects unreviewed branch names and output injection (276.0379ms)
+✔ sibling layout preserves frontend cwd, candidate checkout and blocking method/boundary checks (1.8683ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12859.429

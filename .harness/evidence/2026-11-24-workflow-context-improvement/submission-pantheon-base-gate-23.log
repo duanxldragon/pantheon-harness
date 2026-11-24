@@ -1,0 +1,281 @@
+{"name":"submission-pantheon-base-gate-23","repo":".local/workflow-improvement-20261124/submission/pantheon-base","command":["node","scripts/harness/check-task-packet.mjs","--root","."],"start":"2026-11-24T02:17:46.515Z","elapsedMs":1025,"exitCode":1,"signal":null,"error":null}
+Task packet check: 127 file(s), 1 error(s), 24 warning(s)
+
+[PASS] docs/harness/tasks/2026-07-29-sonar-ts-final.task.md
+
+[PASS] docs/harness/tasks/2026-07-30-local-consolidation.task.md
+
+[PASS] docs/harness/tasks/2026-08-02-sonarcloud-open-issues.task.md
+
+[PASS] docs/harness/tasks/2026-08-03-dependabot-pr-governance.task.md
+
+[PASS] docs/harness/tasks/2026-08-03-sonarcloud-encoding-warning.task.md
+
+[PASS] docs/harness/tasks/2026-08-04-base-v0-10-0-release-candidate.task.md
+
+[PASS] docs/harness/tasks/2026-08-05-base-v0-10-1-release.task.md
+
+[PASS] docs/harness/tasks/2026-08-05-base-v0-10-2-visual-checker.task.md
+
+[PASS] docs/harness/tasks/2026-08-06-generator-business-page-route.task.md
+
+[PASS] docs/harness/tasks/2026-08-10-shared-csrf-release.task.md
+
+[PASS] docs/harness/tasks/2026-08-11-base-security-dependencies.task.md
+
+[PASS] docs/harness/tasks/2026-08-11-delivery-certification.task.md
+
+[PASS] docs/harness/tasks/2026-08-11-foundation-release-v0-10-12.task.md
+
+[PASS] docs/harness/tasks/2026-08-11-foundation-release-v0-10-13.task.md
+
+[PASS] docs/harness/tasks/2026-08-12-foundation-consumer-cleanup-overlay.task.md
+
+[PASS] docs/harness/tasks/2026-08-12-foundation-consumer-runtime-portability.task.md
+
+[PASS] docs/harness/tasks/2026-08-12-foundation-smoke-closure.task.md
+
+[PASS] docs/harness/tasks/2026-08-12-foundation-smoke-contract-closure.task.md
+
+[PASS] docs/harness/tasks/2026-08-12-pr-auto-merge-push-trigger.task.md
+
+[PASS] docs/harness/tasks/2026-08-12-pr-auto-merge-token.task.md
+
+[PASS] docs/harness/tasks/2026-08-13-foundation-release-repo-snapshot.task.md
+
+[PASS] docs/harness/tasks/2026-08-17-foundation-cross-repo-handoff-adoption.task.md
+
+[PASS] docs/harness/tasks/2026-08-21-sonarcloud-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-08-31-base-operational-workbench-design.task.md
+
+[PASS] docs/harness/tasks/2026-09-01-release-docs-reconciliation.task.md
+
+[PASS] docs/harness/tasks/2026-09-01-release-gate-sonar-cleanup.task.md
+
+[PASS] docs/harness/tasks/2026-09-01-sonar-duplication-reduction.task.md
+
+[PASS] docs/harness/tasks/2026-09-02-foundation-release-v0-10-26-and-ops-sync.task.md
+
+[PASS] docs/harness/tasks/2026-09-29-v0140-release-completion.task.md
+  warning: Contract anchor does not exist: RELEASE_NOTES_v0.14.0.md
+
+[PASS] docs/harness/tasks/2026-10-07-release-readiness-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-11-smoke-test-tiering.task.md
+
+[PASS] docs/harness/tasks/2026-10-11-sonar-smoke-helper-smells.task.md
+
+[PASS] docs/harness/tasks/2026-10-12-flake-signal-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-12-foundation-release-asset-gate.task.md
+  warning: Section "## Linkage" is missing recommended item: Task ID.
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Section "## Linkage" is missing recommended item: Evidence Directory.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[PASS] docs/harness/tasks/2026-10-12-v0160-release-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-12-v0161-release-cut.task.md
+
+[PASS] docs/harness/tasks/2026-10-13-tenant-console-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-13-tenant-true-isolation.task.md
+
+[PASS] docs/harness/tasks/2026-10-19-tenant-permission-isolation-remediation.task.md
+  warning: Contract anchor does not exist: docs/TENANT_SCOPE_FREEZE_DECISION_2026-10-15.md
+
+[PASS] docs/harness/tasks/2026-10-20-sonarcloud-zero-issues.task.md
+
+[PASS] docs/harness/tasks/2026-10-20-tenant-audit-permission-seed.task.md
+
+[PASS] docs/harness/tasks/2026-10-20-tenant-delivery-hardening.task.md
+
+[PASS] docs/harness/tasks/2026-10-21-acceptance-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-21-v0170-release-cut.task.md
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+
+[PASS] docs/harness/tasks/2026-10-22-delivery-audit-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-22-release-and-residual-closeout.task.md
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+
+[PASS] docs/harness/tasks/2026-10-22-tenant-plan-entitlements-and-audit.task.md
+
+[PASS] docs/harness/tasks/2026-10-22-v0171-release-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-23-iam-race-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-23-iam-residual-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-23-residual-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-23-v0173-release-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-23-v0174-release-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-24-single-tenant-scope-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-24-v0175-release-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-26-governance-evidence-schema-backfill.task.md
+
+[PASS] docs/harness/tasks/2026-10-26-governance-red-checkers-closure.task.md
+
+[PASS] docs/harness/tasks/2026-10-26-login-accessibility-and-lang.task.md
+
+[PASS] docs/harness/tasks/2026-10-26-pr427-ci-gate-closure.task.md
+  warning: Contract anchor does not exist: backend/modules/system/iam/permission/permission_workbench.go:624-654
+
+[PASS] docs/harness/tasks/2026-10-26-tenant-plan-assignment.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-base-docs-artifact-landing.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-codebase-simplification-program.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-s3-oidc-envelope.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-s3-role-data-scope-model.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-s3-tenant-scope-unification.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-tenant-completeness-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-v0176-release-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-v0177-lint-codeql-closure.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-v0178-dep-vuln-closure.task.md
+
+[PASS] docs/harness/tasks/2026-10-28-plan-ladder-option-a-impl.task.md
+
+[PASS] docs/harness/tasks/2026-10-28-release-gate-green.task.md
+
+[PASS] docs/harness/tasks/2026-10-28-release-notes-directory.task.md
+
+[PASS] docs/harness/tasks/2026-10-28-tenantlist-s3776-followup.task.md
+
+[PASS] docs/harness/tasks/2026-10-29-harness-task-archive.task.md
+
+[PASS] docs/harness/tasks/2026-10-29-simplification-program-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-29-v0180-simplification-release.task.md
+
+[PASS] docs/harness/tasks/2026-10-29-v0181-restore-request-guard.task.md
+
+[PASS] docs/harness/tasks/2026-10-30-menu-contract-inline-const.task.md
+
+[PASS] docs/harness/tasks/2026-10-30-workflow-sonar-githubactions.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-archive-closure-pr-governance.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p1-business-route-tenant-context.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p1-entry-doc-truthfulness.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p1-lowcode-generator-build.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p2-ci-checker-wiring.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p2-dead-code-legacy-surface.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p2-doc-lifecycle-archive.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p2-doc-metadata-and-index.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p2-oidc-scaffold-decision.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p2-token-cache-race.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-p3-residual-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-audit-remediation-programme.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-base-menu-filter-sql-literal-convergence.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-frontend-follow-redirects-audit.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-harness-archive-closeout-round2.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-release-gate-checks-poll-resilience.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-v0182-consumer-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-v0182-menu-contract-shared-surface.task.md
+
+[PASS] docs/harness/tasks/2026-11-01-audit-p2-automigrate-boundary.task.md
+
+[PASS] docs/harness/tasks/2026-11-01-audit-p2-human-gate-preconditions.task.md
+
+[PASS] docs/harness/tasks/2026-11-03-audit-p1-pagination-data-consistency.task.md
+
+[PASS] docs/harness/tasks/2026-11-03-audit-p2-data-scope-automigrate.task.md
+
+[PASS] docs/harness/tasks/2026-11-03-audit-p2-doc-drift-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-11-03-audit-p2-governance-wiring-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-11-03-audit-p2-route-groups-unify.task.md
+
+[PASS] docs/harness/tasks/2026-11-03-audit-remediation-programme.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-archive-governance-scope-repair.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-freeze-preconditions.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p1-npm-audit-exit.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p1-refresh-rotation.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p1-ssrf-dial-binding.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p2-agent-stop-points.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p2-authoritative-docs.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p2-freeze-validation.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p2-ops-db-test-followup.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p2-release-policy.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p3-ci-cost-review.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-audit-p3-consumer-seams.task.md
+
+[PASS] docs/harness/tasks/2026-11-04-global-audit-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-11-05-base-freeze-release.task.md
+
+[PASS] docs/harness/tasks/2026-11-07-ops-formal-queue-foundation-gaps.task.md
+
+[PASS] docs/harness/tasks/2026-11-07-v0186-release-ops-consumption.task.md
+
+[PASS] docs/harness/tasks/2026-11-12-v0187-release-ops-consumption.task.md
+
+[PASS] docs/harness/tasks/2026-11-13-candidate-filesystem-security.task.md
+  warning: Contract anchors should be listed as backticked file paths.
+
+[PASS] docs/harness/tasks/2026-11-13-docs-archive-closeout.task.md
+  warning: Contract anchors should be listed as backticked file paths.
+
+[PASS] docs/harness/tasks/2026-11-13-v0188-release-preparation.task.md
+
+[PASS] docs/harness/tasks/2026-11-24-business-route-static-guard.task.md
+
+[FAIL] docs/harness/tasks/2026-11-24-workflow-context-improvement.task.md
+  error: Invalid harness template "docs-governance". Expected one of: admin-platform, api-service, event-processor, dashboard, ui-heavy-product, custom.
+  warning: Contract anchor does not exist: architecture/harness/task-packet-spec.md
+  warning: Contract anchor does not exist: architecture/harness/review-loop-spec.md
+  warning: Contract anchor does not exist: patterns/capability-adaptive-delivery.md
+  warning: Contract anchor does not exist: patterns/context-engineering-protocol.md
+  warning: Contract anchor does not exist: ../pantheon-base/AGENTS.md
+  warning: Contract anchor does not exist: ../pantheon-ops/docs/PROJECT_INHERITANCE.md
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.

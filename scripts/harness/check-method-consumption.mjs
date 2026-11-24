@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 export const POLICY_FILES = [
@@ -42,17 +43,42 @@ function validateEntries(root, source) {
   return entries;
 }
 
-export function checkConsumption({ root, source, update = false }) {
+function validateSourceCommit(source, commit, snapshot) {
+  if (!/^[0-9a-f]{40}$/.test(commit)) throw new Error('sourceCommit must be a full Git commit SHA');
+  const git = (...args) => execFileSync('git', ['-C', source, ...args], {
+    encoding: 'utf8', windowsHide: true, timeout: 5000, maxBuffer: 1024 * 1024,
+    stdio: ['ignore', 'pipe', 'pipe'],
+  }).trim();
+  if (git('rev-parse', 'HEAD') !== commit) throw new Error('Method checkout does not match sourceCommit');
+  if (git('show', `${commit}:VERSION`) !== snapshot.methodVersion) throw new Error('Pinned method VERSION differs');
+  for (const file of POLICY_FILES) {
+    const bytes = execFileSync('git', ['-C', source, 'show', `${commit}:${file}`], {
+      encoding: 'utf8', windowsHide: true, timeout: 5000, maxBuffer: 1024 * 1024,
+      stdio: ['ignore', 'pipe', 'pipe'],
+    });
+    const hash = createHash('sha256').update(bytes.replaceAll('\r\n', '\n')).digest('hex');
+    if (hash !== snapshot.files[file]) throw new Error(`Pinned policy has local edits: ${file}; publish or select the reviewed commit`);
+  }
+}
+
+export function checkConsumption({ root, source, update = false, sourceCommit }) {
   const snapshot = sourceSnapshot(source);
   const entrypoints = validateEntries(root, source);
   const sourcePath = path.relative(root, source).replaceAll(path.sep, '/') || '.';
   const expected = { schemaVersion: 1, hashFormat: 'sha256-utf8-lf', source: sourcePath, ...snapshot, entrypoints };
   const receiptPath = path.join(root, RECEIPT);
+  const receipt = fs.existsSync(receiptPath) ? JSON.parse(fs.readFileSync(receiptPath, 'utf8')) : null;
+  const pin = update ? sourceCommit ?? receipt?.sourceCommit : receipt?.sourceCommit;
+  if (sourceCommit && !update) throw new Error('Changing sourceCommit requires --update after review');
+  if (pin !== undefined) {
+    validateSourceCommit(source, pin, snapshot);
+    expected.sourceCommit = pin;
+  }
   if (update) {
     fs.mkdirSync(path.dirname(receiptPath), { recursive: true });
     fs.writeFileSync(receiptPath, `${JSON.stringify(expected, null, 2)}\n`, 'utf8');
   } else {
-    const receipt = JSON.parse(fs.readFileSync(receiptPath, 'utf8'));
+    if (!receipt) throw new Error('ENOENT: Method receipt is missing');
     if (receipt.schemaVersion !== 1) throw new Error('Unsupported method consumption schema');
     if (receipt.hashFormat !== expected.hashFormat) throw new Error('Unsupported method hash format');
     if (receipt.source !== sourcePath) throw new Error('Method source does not match receipt');
@@ -72,11 +98,15 @@ function main(argv) {
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === '--update') options.update = true;
+    else if (arg === '--source-commit') {
+      if (!argv[i + 1] || argv[i + 1].startsWith('--')) throw new Error('--source-commit requires a full commit SHA');
+      options.sourceCommit = argv[++i];
+    }
     else if (arg === '--root' || arg === '--source') {
       if (!argv[i + 1] || argv[i + 1].startsWith('--')) throw new Error(`${arg} requires a path`);
       options[arg.slice(2)] = path.resolve(argv[++i]);
     } else if (arg === '--help' || arg === '-h') {
-      console.log('Usage: node check-method-consumption.mjs --root <consumer> --source <harness> [--update]');
+      console.log('Usage: node check-method-consumption.mjs --root <consumer> --source <harness> [--update --source-commit <full-sha>]');
       return;
     } else throw new Error(`Unknown argument: ${arg}`);
   }

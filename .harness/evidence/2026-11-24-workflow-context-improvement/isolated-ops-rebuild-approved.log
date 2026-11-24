@@ -1,0 +1,25 @@
+{"name":"isolated-ops-rebuild-approved","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","--test","tests/scripts/business-overlay/rebuild-from-base.test.mjs"],"start":"2026-11-24T02:26:07.617Z","elapsedMs":15263,"exitCode":0,"signal":null,"error":null}
+✔ rebuilds a deterministic Base snapshot with generated business registries (5661.7401ms)
+✔ rejects a business path that overwrites a Base hook file (1283.9553ms)
+✔ rejects a manifest that claims a generic product path (1267.3592ms)
+✔ validateReleaseBundleChecksum accepts a matching checksum (2.6261ms)
+✔ validateReleaseBundleChecksum rejects a mismatched checksum (4.6345ms)
+✔ validateReleaseBundleChecksum rejects missing checksums (4.2664ms)
+✔ release bundle checksum validation rejects tampered bundles via lock file path (1590.3024ms)
+✔ refuses to consume a live base tree when no lock snapshot is present (393.6952ms)
+✔ migration assembly requires module-owned, paired and unique inputs (0.5998ms)
+▶ migration assembly rejects missing or non-file sources before copying either half
+  ✔ up missing (1331.3554ms)
+  ✔ up directory (1216.0405ms)
+  ✔ down missing (970.5782ms)
+  ✔ down directory (1137.727ms)
+✔ migration assembly rejects missing or non-file sources before copying either half (4657.0731ms)
+✔ production rebuild refuses local Base arguments (105.0181ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15139.3932

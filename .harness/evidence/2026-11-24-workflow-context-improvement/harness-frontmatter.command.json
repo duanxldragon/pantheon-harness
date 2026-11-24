@@ -1,0 +1,14 @@
+{
+  "name": "harness-frontmatter",
+  "repo": "pantheon-harness",
+  "command": [
+    "node",
+    "scripts/harness/check-doc-frontmatter.mjs",
+    "--strict"
+  ],
+  "start": "2026-11-24T01:49:45.825Z",
+  "elapsedMs": 122,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

@@ -1,0 +1,31 @@
+{"name":"preservation-final","repo":"pantheon-harness","command":["node","../.local/workflow-improvement-20261124/preservation.mjs"],"start":"2026-11-24T01:52:30.508Z","elapsedMs":159,"exitCode":0,"signal":null,"error":null}
+{
+  "baselineFiles": 59,
+  "unchangedProtectedFiles": 44,
+  "protectedBackendFiles": 25,
+  "snapshots": [
+    {
+      "repo": "pantheon-base",
+      "beforeBytes": 3196,
+      "afterBytes": 1727,
+      "archiveSha256": "22d60290e72d5f1baea2bb8b09a5ad3170c70ebf67a40eec1f7ade8da5ef6e46",
+      "originalSha256": "22d60290e72d5f1baea2bb8b09a5ad3170c70ebf67a40eec1f7ade8da5ef6e46",
+      "intakeSha256": "22d60290e72d5f1baea2bb8b09a5ad3170c70ebf67a40eec1f7ade8da5ef6e46",
+      "identicalIntake": true,
+      "identicalArchive": true,
+      "containsEarlierBody": true
+    },
+    {
+      "repo": "pantheon-ops",
+      "beforeBytes": 91680,
+      "afterBytes": 2838,
+      "archiveSha256": "f9e6e0c8cdd4f24a9b34a231bb76090697e7288c43ae651d7623cdcf064b8d21",
+      "originalSha256": "31cddeaa012906d3358c561ed0e34d6e404ab1816b2092368a32a6350fe6b7b3",
+      "intakeSha256": "31cddeaa012906d3358c561ed0e34d6e404ab1816b2092368a32a6350fe6b7b3",
+      "identicalIntake": true,
+      "identicalArchive": false,
+      "containsEarlierBody": true
+    }
+  ],
+  "failures": []
+}

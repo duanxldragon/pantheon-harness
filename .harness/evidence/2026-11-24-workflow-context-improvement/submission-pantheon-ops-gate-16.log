@@ -1,0 +1,221 @@
+{"name":"submission-pantheon-ops-gate-16","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-review.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:41.845Z","elapsedMs":442,"exitCode":1,"signal":null,"error":null}
+Review check (strict): 73 file(s), 73 error(s)
+
+[FAIL] .harness/archive/2026-08/evidence/2026-08-17-ops-foundation-hardening/review.md
+  error: root.verdict must be one of: approved, changes requested, blocked, approved with documented P2 follow-up.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/archive/2026-08/evidence/ops-architecture-quality-gates/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-08/evidence/ops-bizscope-datascope-ownership/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-08/evidence/ops-business-versioned-migrations/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-08/evidence/ops-cross-module-capability-boundaries/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-08/evidence/ops-deploy-immutability-idempotency/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-08/evidence/ops-k8s-release-reliability/review.md
+  error: root.verdict must be a non-empty string.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/archive/2026-08/evidence/ops-resource-service-state-machines/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-08/evidence/ops-service-instance-foundation/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-10/evidence/2026-10-31-frontend-follow-redirects-audit/review.md
+  error: root.verdict must be one of: approved, changes requested, blocked, approved with documented P2 follow-up.
+  error: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-17-github-governance-followup/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-18-branch-hygiene-fallback/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-06-18-branch-hygiene-slash-path-fix/review.md
+
+[FAIL] .harness/archive/2026-11/evidence/2026-06-18-pr-branch-cleanup-automation/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-11/evidence/2026-06-21-business-deploy-task-main-flow-closeout/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-07-foundation-upgrade-base-v0-10-3/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-08-foundation-upgrade-base-v0-10-5/review.md
+  error: root.verdict must be one of: approved, changes requested, blocked, approved with documented P2 follow-up.
+  error: root.structuralReview.checks[0] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.structuralReview.checks[1] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.structuralReview.checks[2] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.linkage.changeRef must be a non-empty string.
+  error: root.linkage.planRefs must be an array.
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-10-security-csrf-closeout/review.md
+  error: root.verdict must be one of: approved, changes requested, blocked, approved with documented P2 follow-up.
+  error: root.structuralReview.checks[0] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.structuralReview.checks[1] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.structuralReview.checks[2] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.structuralReview.checks[3] must be one of: cycle, hub, call-depth, sensitive-flow.
+  error: root.linkage.changeRef must be a non-empty string.
+  error: root.linkage.planRefs must be an array.
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-11-foundation-consumer-certification/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-11-sonarcloud-ops-remediation/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-12-foundation-v0-10-14-clean-consumer/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-13-clean-base-business-overlay-rebuild/review.md
+  error: root.verdict must be a non-empty string.
+  error: root.linkage must be an object.
+
+[PASS] .harness/archive/2026-11/evidence/2026-08-19-ops-v1-backlog-closeout/review.md
+
+[FAIL] .harness/archive/2026-11/evidence/2026-08-31-ops-operational-workbench-design/review.md
+  error: taskManifest.status must be one of: planned, in-progress, completed, abandoned (got "superseded").
+
+[FAIL] .harness/archive/2026-11/evidence/2026-09-28-ops-delivery-readiness-gap-closure/review.md
+  error: taskManifest.status must be one of: planned, in-progress, completed, abandoned (got "superseded").
+
+[FAIL] .harness/archive/2026-11/evidence/2026-10-12-foundation-upgrade-base-v0-16-1/review.md
+  error: missing ## Machine Readable JSON block
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-27-foundation-upgrade-base-v0-17-6/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-27-foundation-upgrade-base-v0-17-7/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-29-foundation-upgrade-base-v0-18-1/review.md
+
+[FAIL] .harness/archive/2026-11/evidence/2026-10-29-sonar-ci-analysis-restore/review.md
+  error: root.taskId must be a non-empty string.
+  error: root.taskId must match evidence directory name "2026-10-29-sonar-ci-analysis-restore".
+
+[FAIL] .harness/archive/2026-11/evidence/2026-10-30-sonar-findings-remediation/review.md
+  error: missing ## Machine Readable JSON block
+
+[PASS] .harness/archive/2026-11/evidence/2026-10-31-foundation-upgrade-base-v0-18-2/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-05-base-v0183-consumption/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-07-base-v0186-consumption/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-base-v0187-consumption/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-argocd-ownership-convergence/review.md
+
+[FAIL] .harness/archive/2026-11/evidence/2026-11-16-ops-business-menu-m3c/review.md
+  error: missing ## Machine Readable JSON block
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-business-runtime-acceptance/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-extensions-live-acceptance/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-filedist-product-closure/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-helm-capability-truth/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-k8s-service-mutations/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-pilot-delivery/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-pilot-release-closeout/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-readiness-plan-closeout/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-service-catalog-usability/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-service-deploy-integrity/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-16-ops-service-deploy-user-flow/review.md
+
+[FAIL] .harness/archive/2026-11/evidence/2026-11-17-ops-auto-merge-reconcile/review.md
+  error: missing ## Machine Readable JSON block
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-17-ops-o4-recovery-regression/review.md
+
+[FAIL] .harness/archive/2026-11/evidence/cmdb-host-import-export/review.md
+  error: root.verdict must be a non-empty string.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/2026-08-17-ops-foundation-hardening/review.md
+  error: root.verdict must be one of: approved, changes requested, blocked, approved with documented P2 follow-up.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/2026-10-31-frontend-follow-redirects-audit/review.md
+  error: root.verdict must be one of: approved, changes requested, blocked, approved with documented P2 follow-up.
+  error: root.linkage must be an object.
+
+[PASS] .harness/evidence/2026-11-17-ops-history-audit/review.md
+
+[FAIL] .harness/evidence/2026-11-20-ops-board-complete/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/2026-11-20-ops-business-permissions-and-task-visibility/review.md
+  error: root.verdict must be a non-empty string.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/2026-11-20-ops-core-business-tenant-isolation/review.md
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.taskManifest must be ".harness/tasks/2026-11-20-ops-core-business-tenant-isolation/manifest.json".
+
+[PASS] .harness/evidence/2026-11-20-ops-deploy-fixed-template-security/review.md
+
+[FAIL] .harness/evidence/2026-11-20-ops-deploy-recovery-and-remote-execution/review.md
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.taskManifest must be ".harness/tasks/2026-11-20-ops-deploy-recovery-and-remote-execution/manifest.json".
+
+[FAIL] .harness/evidence/2026-11-20-ops-k8s-client-lifecycle-and-config-safety/review.md
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.taskManifest must be ".harness/tasks/2026-11-20-ops-k8s-client-lifecycle-and-config-safety/manifest.json".
+
+[FAIL] .harness/evidence/2026-11-20-ops-k8s-log-websocket-lifecycle/review.md
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.taskManifest must be ".harness/tasks/2026-11-20-ops-k8s-log-websocket-lifecycle/manifest.json".
+
+[PASS] .harness/evidence/2026-11-20-ops-k8s-resource-authorization-and-mutations/review.md
+
+[FAIL] .harness/evidence/2026-11-20-ops-review-baseline-and-decisions/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/2026-11-20-ops-review-live-runtime-acceptance/review.md
+  error: root.verdict must be a non-empty string.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/2026-11-24-workflow-context-improvement/review.md
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.taskManifest must be ".harness/tasks/2026-11-24-workflow-context-improvement/manifest.json".
+
+[FAIL] .harness/evidence/ops-architecture-quality-gates/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/ops-bizscope-datascope-ownership/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/ops-business-versioned-migrations/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/ops-cross-module-capability-boundaries/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/ops-deploy-immutability-idempotency/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/ops-k8s-release-reliability/review.md
+  error: root.verdict must be a non-empty string.
+  error: root.linkage must be an object.
+
+[FAIL] .harness/evidence/ops-resource-service-state-machines/review.md
+  error: missing ## Machine Readable JSON block
+
+[FAIL] .harness/evidence/ops-service-instance-foundation/review.md
+  error: missing ## Machine Readable JSON block

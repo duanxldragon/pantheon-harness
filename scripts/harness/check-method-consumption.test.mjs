@@ -121,3 +121,45 @@ test('CLI requires an explicit source and rejects unsupported flags', (t) => {
   assert.equal(pass.status, 0, pass.stderr);
   assert.match(pass.stdout, /Method consumption verified/);
 });
+
+function commitFixture(source) {
+  const git = (...args) => {
+    const result = spawnSync('git', ['-C', source, ...args], { encoding: 'utf8', windowsHide: true });
+    assert.equal(result.status, 0, result.stderr);
+    return result.stdout.trim();
+  };
+  git('init');
+  git('add', '.');
+  git('-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '-m', 'reviewed method');
+  return { git, commit: git('rev-parse', 'HEAD') };
+}
+
+test('a reviewed full commit pin is retained on update and rejects another checkout', (t) => {
+  const f = fixture(t);
+  const { git, commit } = commitFixture(f.source);
+  checkConsumption({ ...f, update: true, sourceCommit: commit });
+  assert.equal(checkConsumption(f).sourceCommit, commit);
+  checkConsumption({ ...f, update: true });
+  assert.equal(JSON.parse(fs.readFileSync(f.receipt, 'utf8')).sourceCommit, commit);
+  git('-c', 'user.name=Fixture', '-c', 'user.email=fixture@example.invalid', 'commit', '--allow-empty', '-m', 'other checkout');
+  assert.throws(() => checkConsumption(f), /checkout does not match/);
+});
+
+test('a pinned receipt cannot silently adopt unpublished policy edits', (t) => {
+  const f = fixture(t);
+  const { commit } = commitFixture(f.source);
+  checkConsumption({ ...f, update: true, sourceCommit: commit });
+  const before = fs.readFileSync(f.receipt);
+  fs.appendFileSync(path.join(f.source, POLICY_FILES[0]), 'unpublished change\n');
+  assert.throws(() => checkConsumption(f), /Pinned policy has local edits/);
+  assert.throws(() => checkConsumption({ ...f, update: true }), /Pinned policy has local edits/);
+  assert.deepEqual(fs.readFileSync(f.receipt), before);
+});
+
+test('invalid commit pins and pin changes outside intentional update fail', (t) => {
+  const f = fixture(t);
+  for (const sourceCommit of ['main', 'abc123', 'a'.repeat(40) + '\ncommit=other']) {
+    assert.throws(() => checkConsumption({ ...f, update: true, sourceCommit }), /full Git commit SHA/);
+  }
+  assert.throws(() => checkConsumption({ ...f, sourceCommit: 'a'.repeat(40) }), /requires --update/);
+});

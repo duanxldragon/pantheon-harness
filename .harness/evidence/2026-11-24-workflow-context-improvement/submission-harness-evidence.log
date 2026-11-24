@@ -1,0 +1,30 @@
+{"name":"submission-harness-evidence","repo":".local/workflow-improvement-20261124/submission/pantheon-harness","command":["node","scripts/harness/check-evidence.mjs","--strict"],"start":"2026-11-24T02:10:09.403Z","elapsedMs":115,"exitCode":1,"signal":null,"error":null}
+Evidence check (strict): 13 file(s), 2 error(s), 0 warning(s)
+
+[PASS] .harness/evidence/2026-06-27-frontmatter-migration/commands.json
+
+[PASS] .harness/evidence/2026-06-27-known-issue-closure/commands.json
+
+[PASS] .harness/evidence/2026-06-27-migration-hardening/commands.json
+
+[PASS] .harness/evidence/2026-07-13-grill-me-enablement-and-superpowers-alignment/commands.json
+
+[PASS] .harness/evidence/2026-07-15-model-era-retirement-review/commands.json
+
+[PASS] .harness/evidence/2026-07-26-hot-005-adapter-layer-consolidation/commands.json
+
+[PASS] .harness/evidence/2026-07-26-method-review-rectification/commands.json
+
+[PASS] .harness/evidence/2026-08-04-better-harness-evaluation/commands.json
+
+[PASS] .harness/evidence/2026-08-17-cross-repo-handoff-evidence-strength/commands.json
+
+[PASS] .harness/evidence/2026-11-07-unpublished-docs-main-closeout/commands.json
+
+[PASS] .harness/evidence/2026-11-23-capability-adaptive-delivery/commands.json
+
+[PASS] .harness/evidence/2026-11-23-release-v1.5.0/commands.json
+
+[FAIL] .harness/evidence/2026-11-24-workflow-context-improvement/commands.json
+  error: root.linkage.evidenceDir is required.
+  error: root.linkage.evidenceDir must be a non-empty string.

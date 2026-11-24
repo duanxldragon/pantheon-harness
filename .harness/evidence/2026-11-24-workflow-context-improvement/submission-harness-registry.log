@@ -1,0 +1,4 @@
+{"name":"submission-harness-registry","repo":".local/workflow-improvement-20261124/submission/pantheon-harness","command":["node","scripts/harness/check-failure-registry.mjs","--strict"],"start":"2026-11-24T02:10:19.613Z","elapsedMs":101,"exitCode":0,"signal":null,"error":null}
+Failure registry check: 1 file(s), 0 error(s), 0 warning(s)
+
+[PASS] architecture/harness/failure-registry.md

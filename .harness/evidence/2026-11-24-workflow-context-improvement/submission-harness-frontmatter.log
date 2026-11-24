@@ -1,0 +1,2 @@
+{"name":"submission-harness-frontmatter","repo":".local/workflow-improvement-20261124/submission/pantheon-harness","command":["node","scripts/harness/check-doc-frontmatter.mjs","--strict"],"start":"2026-11-24T02:12:38.276Z","elapsedMs":128,"exitCode":0,"signal":null,"error":null}
+Doc frontmatter check (strict): 0 error(s), 0 warning(s)

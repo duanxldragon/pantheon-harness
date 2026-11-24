@@ -1,0 +1,1016 @@
+{"name":"submission-pantheon-ops-gate-23","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-task-packet.mjs","--root","."],"start":"2026-11-24T02:17:44.146Z","elapsedMs":601,"exitCode":1,"signal":null,"error":null}
+Task packet check: 115 file(s), 658 error(s), 126 warning(s)
+
+[FAIL] docs/harness/tasks/2026-06-17-github-governance-followup.task.md
+  error: Invalid primary layer "platform/governance". Expected one of: platform, system/auth, system/iam, system/org, system/config, business/*, app, inheritance-sync.
+  error: Invalid harness template "pantheon-opscustom". Expected one of: admin-platform, api-service, event-processor, dashboard, ui-heavy-product, custom.
+  error: Invalid coverage dimension "security". Expected one of: behaviour, maintainability, architecture-fitness, runtime-quality, method-health.
+  error: Completion checklist is missing required item: Layer and boundary declared
+  error: Completion checklist is missing required item: Contract anchors read
+  error: Completion checklist is missing required item: Verification run or exception recorded
+  error: Completion checklist is missing required item: Evidence saved or summarized
+  error: Completion checklist is missing required item: Review completed
+  warning: Contract anchor does not exist: ../pantheon-base/DESIGN.md
+  warning: Contract anchor does not exist: ../pantheon-base/AGENTS.md
+  warning: Contract anchor does not exist: ../pantheon-base/docs/README.md
+  warning: Contract anchor does not exist: ../harness-engineering/docs/harness/VERIFICATION_EVIDENCE_SPEC.md
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+
+[FAIL] docs/harness/tasks/2026-06-18-branch-hygiene-fallback.task.md
+  error: Invalid primary layer "platform/governance". Expected one of: platform, system/auth, system/iam, system/org, system/config, business/*, app, inheritance-sync.
+  error: Invalid harness template "pantheon-opscustom". Expected one of: admin-platform, api-service, event-processor, dashboard, ui-heavy-product, custom.
+  error: Completion checklist is missing required item: Layer and boundary declared
+  error: Completion checklist is missing required item: Contract anchors read
+  error: Completion checklist is missing required item: Verification run or exception recorded
+  error: Completion checklist is missing required item: Evidence saved or summarized
+  error: Completion checklist is missing required item: Review completed
+  warning: Contract anchor does not exist: ../pantheon-base/AGENTS.md
+  warning: Contract anchor does not exist: ../pantheon-base/DESIGN.md
+  warning: Contract anchor does not exist: ../pantheon-base/docs/README.md
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+
+[FAIL] docs/harness/tasks/2026-06-18-branch-hygiene-slash-path-fix.task.md
+  error: Invalid primary layer "platform/governance". Expected one of: platform, system/auth, system/iam, system/org, system/config, business/*, app, inheritance-sync.
+  error: Invalid harness template "pantheon-opscustom". Expected one of: admin-platform, api-service, event-processor, dashboard, ui-heavy-product, custom.
+  error: Completion checklist is missing required item: Layer and boundary declared
+  error: Completion checklist is missing required item: Contract anchors read
+  error: Completion checklist is missing required item: Verification run or exception recorded
+  error: Completion checklist is missing required item: Evidence saved or summarized
+  error: Completion checklist is missing required item: Review completed
+  warning: Contract anchor does not exist: ../pantheon-base/AGENTS.md
+  warning: Contract anchor does not exist: ../pantheon-base/DESIGN.md
+  warning: Contract anchor does not exist: ../pantheon-base/docs/README.md
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+
+[FAIL] docs/harness/tasks/2026-06-18-pr-branch-cleanup-automation.task.md
+  error: Invalid primary layer "platform/governance". Expected one of: platform, system/auth, system/iam, system/org, system/config, business/*, app, inheritance-sync.
+  error: Invalid harness template "pantheon-opscustom". Expected one of: admin-platform, api-service, event-processor, dashboard, ui-heavy-product, custom.
+  error: Invalid coverage dimension "security". Expected one of: behaviour, maintainability, architecture-fitness, runtime-quality, method-health.
+  error: Completion checklist is missing required item: Layer and boundary declared
+  error: Completion checklist is missing required item: Contract anchors read
+  warning: Contract anchor does not exist: ../pantheon-base/AGENTS.md
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+
+[FAIL] docs/harness/tasks/2026-06-20-business-closure-permission-scope.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-06-21-business-deploy-state-guard.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-06-21-business-deploy-task-delete.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-06-21-business-deploy-task-main-flow-closeout.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-07-17-bizscope-error-key-canonicalization.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-07-17-business-design-docs-truthing.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-07-17-business-permission-gaps.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-07-17-cmdb-ssh-config-externalize.task.md
+  error: Missing required section "## Goal".
+  error: Completion checklist is missing required item: Verification run or exception recorded
+  error: Completion checklist is missing required item: Review completed
+  warning: Contract anchors should be listed as backticked file paths.
+  warning: Linked review file does not exist: .harness/evidence/2026-07-17-cmdb-ssh-config-externalize/review.md
+
+[FAIL] docs/harness/tasks/2026-07-29-sonar-ts-final.task.md
+  error: task manifest does not exist: .harness/tasks/2026-07-29-sonar-ts-final/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-07-29-sonar-ts-final/review.md
+
+[FAIL] docs/harness/tasks/2026-07-30-local-consolidation.task.md
+  error: task manifest does not exist: .harness/tasks/2026-07-30-local-consolidation/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-07-30-local-consolidation/review.md
+
+[FAIL] docs/harness/tasks/2026-08-02-sonarcloud-open-issues.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-02-sonarcloud-open-issues/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-02-sonarcloud-open-issues/review.md
+
+[FAIL] docs/harness/tasks/2026-08-03-dependabot-pr-governance.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-03-dependabot-pr-governance/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-03-dependabot-pr-governance/review.md
+
+[FAIL] docs/harness/tasks/2026-08-03-sonarcloud-encoding-warning.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-03-sonarcloud-encoding-warning/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-03-sonarcloud-encoding-warning/review.md
+
+[FAIL] docs/harness/tasks/2026-08-04-base-v0-10-0-release-candidate.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-04-base-v0-10-0-release-candidate/manifest.json
+  error: status is "Archived" but no evidence directory with summary.md exists (live or archived) — restore the evidence or revert the status.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-04-base-v0-10-0-release-candidate/review.md
+
+[FAIL] docs/harness/tasks/2026-08-05-base-v0-10-1-release.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-05-base-v0-10-1-release/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-05-base-v0-10-1-release/review.md
+
+[FAIL] docs/harness/tasks/2026-08-05-base-v0-10-2-visual-checker.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-05-base-v0-10-2-visual-checker/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-05-base-v0-10-2-visual-checker/review.md
+
+[FAIL] docs/harness/tasks/2026-08-05-foundation-upgrade-base-v0-10-1.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-05-foundation-upgrade-base-v0-10-2.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-06-generator-business-page-route.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-06-generator-business-page-route/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-06-generator-business-page-route/review.md
+
+[FAIL] docs/harness/tasks/2026-08-07-foundation-upgrade-base-v0-10-3.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-08-foundation-upgrade-base-v0-10-5.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  warning: Section "## Linkage" is missing recommended item: Task ID.
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Section "## Linkage" is missing recommended item: Evidence Directory.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[FAIL] docs/harness/tasks/2026-08-10-security-csrf-closeout.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+
+[FAIL] docs/harness/tasks/2026-08-10-shared-csrf-release.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-10-shared-csrf-release/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-10-shared-csrf-release/review.md
+
+[FAIL] docs/harness/tasks/2026-08-11-base-security-dependencies.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-11-base-security-dependencies/manifest.json
+  error: status is "Archived" but no evidence directory with summary.md exists (live or archived) — restore the evidence or revert the status.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-11-base-security-dependencies/review.md
+
+[FAIL] docs/harness/tasks/2026-08-11-delivery-certification.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-11-delivery-certification/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-11-delivery-certification/review.md
+
+[FAIL] docs/harness/tasks/2026-08-11-foundation-consumer-certification.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+
+[FAIL] docs/harness/tasks/2026-08-11-foundation-release-v0-10-12.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-11-foundation-release-v0-10-12/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-11-foundation-release-v0-10-12/review.md
+
+[FAIL] docs/harness/tasks/2026-08-11-foundation-release-v0-10-13.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-11-foundation-release-v0-10-13/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-11-foundation-release-v0-10-13/review.md
+
+[FAIL] docs/harness/tasks/2026-08-12-foundation-consumer-cleanup-overlay.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-12-foundation-consumer-cleanup-overlay/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-12-foundation-consumer-cleanup-overlay/review.md
+
+[FAIL] docs/harness/tasks/2026-08-12-foundation-consumer-runtime-portability.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-12-foundation-consumer-runtime-portability/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-12-foundation-consumer-runtime-portability/review.md
+
+[FAIL] docs/harness/tasks/2026-08-12-foundation-smoke-closure.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-12-foundation-smoke-closure/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-12-foundation-smoke-closure/review.md
+
+[FAIL] docs/harness/tasks/2026-08-12-foundation-smoke-contract-closure.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-12-foundation-smoke-contract-closure/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-12-foundation-smoke-contract-closure/review.md
+
+[FAIL] docs/harness/tasks/2026-08-12-foundation-v0-10-14-clean-consumer.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-12-pr-auto-merge-push-trigger.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-12-pr-auto-merge-token.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-13-clean-base-business-overlay-rebuild.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Section "## Structural Scope" must include "- Affected Subgraph: <value>".
+  error: Section "## Structural Scope" must include "- Boundary Crossings: <value>".
+  error: Section "## Structural Scope" must include "- Risk Nodes: <value>".
+  error: Section "## Structural Scope" must include "- Graph Focus: <value>".
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Section "## Linkage" is missing recommended item: Evidence Directory.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[FAIL] docs/harness/tasks/2026-08-13-foundation-release-repo-snapshot.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: task manifest does not exist: .harness/tasks/2026-08-13-foundation-release-repo-snapshot/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Linked review file does not exist: .harness/evidence/2026-08-13-foundation-release-repo-snapshot/review.md
+
+[FAIL] docs/harness/tasks/2026-08-17-foundation-cross-repo-handoff-adoption.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-17-foundation-cross-repo-handoff-adoption/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-17-foundation-cross-repo-handoff-adoption/review.md
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-architecture-quality-gates.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-bizscope-datascope-ownership.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-business-versioned-migrations.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-cross-module-capability-boundaries.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-deploy-immutability-idempotency.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-foundation-hardening.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-k8s-release-reliability.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-resource-service-state-machines.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[FAIL] docs/harness/tasks/2026-08-17-ops-service-instance-foundation.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Expected Files": "### Create".
+  error: Missing required subsection under "## Expected Files": "### Modify".
+  error: Missing required subsection under "## Expected Files": "### Do Not Touch".
+
+[PASS] docs/harness/tasks/2026-08-19-ops-v1-backlog-closeout.task.md
+
+[FAIL] docs/harness/tasks/2026-08-21-sonarcloud-remediation.task.md
+  error: Missing required section "## Evidence Required".
+  warning: Contract anchor does not exist: .github/workflows/release-gate.yml
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[FAIL] docs/harness/tasks/2026-08-31-base-operational-workbench-design.task.md
+  error: task manifest does not exist: .harness/tasks/2026-08-31-base-operational-workbench-design/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-08-31-base-operational-workbench-design/review.md
+
+[FAIL] docs/harness/tasks/2026-08-31-ops-operational-workbench-design.task.md
+  error: taskManifest.status must be one of: planned, in-progress, completed, abandoned (got "superseded").
+  warning: Contract anchor does not exist: ../pantheon-base/DESIGN.md
+  warning: Contract anchor does not exist: ../pantheon-base/docs/designs/OPERATIONAL_WORKBENCH_COMPONENTS_DESIGN.md
+
+[FAIL] docs/harness/tasks/2026-08-31-ops-v1-2-production-readiness-round2.task.md
+  error: Missing top-level heading in the form "# Task Packet: <task-name>".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-09-01-ops-foundation-upgrade-v0-10-25.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Missing required subsection under "## Scope": "### Out".
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Section "## Linkage" is missing recommended item: Evidence Directory.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[FAIL] docs/harness/tasks/2026-09-01-release-docs-reconciliation.task.md
+  error: task manifest does not exist: .harness/tasks/2026-09-01-release-docs-reconciliation/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-09-01-release-docs-reconciliation/review.md
+
+[FAIL] docs/harness/tasks/2026-09-01-release-gate-sonar-cleanup.task.md
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: Section "## Structural Scope" must include "- Affected Subgraph: <value>".
+  error: Section "## Structural Scope" must include "- Boundary Crossings: <value>".
+  error: Section "## Structural Scope" must include "- Risk Nodes: <value>".
+  error: Section "## Structural Scope" must include "- Graph Focus: <value>".
+  error: task manifest does not exist: .harness/tasks/2026-09-01-release-gate-sonar-cleanup/manifest.json
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Section "## Linkage" is missing recommended item: Evidence Directory.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[FAIL] docs/harness/tasks/2026-09-01-sonar-duplication-reduction.task.md
+  error: task manifest does not exist: .harness/tasks/2026-09-01-sonar-duplication-reduction/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-09-01-sonar-duplication-reduction/review.md
+
+[FAIL] docs/harness/tasks/2026-09-02-foundation-release-v0-10-26-and-ops-sync.task.md
+  error: task manifest does not exist: .harness/tasks/2026-09-02-foundation-release-v0-10-26-and-ops-sync/manifest.json
+  warning: Linked review file does not exist: .harness/evidence/2026-09-02-foundation-release-v0-10-26-and-ops-sync/review.md
+
+[FAIL] docs/harness/tasks/2026-09-28-ops-delivery-readiness-gap-closure.task.md
+  error: taskManifest.status must be one of: planned, in-progress, completed, abandoned (got "superseded").
+
+[FAIL] docs/harness/tasks/2026-09-29-ops-ssrf-protection-integration.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[PASS] docs/harness/tasks/2026-10-12-foundation-upgrade-base-v0-16-1.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-foundation-upgrade-base-v0-17-6.task.md
+
+[PASS] docs/harness/tasks/2026-10-27-foundation-upgrade-base-v0-17-7.task.md
+
+[PASS] docs/harness/tasks/2026-10-29-foundation-upgrade-base-v0-18-1.task.md
+
+[PASS] docs/harness/tasks/2026-10-29-sonar-ci-analysis-restore.task.md
+
+[PASS] docs/harness/tasks/2026-10-30-sonar-findings-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-foundation-upgrade-base-v0-18-2.task.md
+
+[PASS] docs/harness/tasks/2026-10-31-frontend-follow-redirects-audit.task.md
+
+[PASS] docs/harness/tasks/2026-11-07-base-v0186-consumption.task.md
+  warning: Contract anchor does not exist: ../pantheon-base/docs/designs/FOUNDATION_RELEASE_MODEL.md
+
+[PASS] docs/harness/tasks/2026-11-07-ops-planned-task-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-11-13-base-v0187-consumption.task.md
+
+[PASS] docs/harness/tasks/2026-11-14-ops-latest-foundation-and-plans.task.md
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-argocd-ownership-convergence.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-argocd-ownership-convergence/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-argocd-ownership-convergence/review.md" or "none".
+
+[PASS] docs/harness/tasks/2026-11-16-ops-business-menu-m3c.task.md
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-business-runtime-acceptance.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-business-runtime-acceptance/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-business-runtime-acceptance/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-extensions-live-acceptance.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-extensions-live-acceptance/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-extensions-live-acceptance/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-filedist-product-closure.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-filedist-product-closure/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-filedist-product-closure/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-helm-capability-truth.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-helm-capability-truth/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-helm-capability-truth/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-historical-closeout.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-historical-runtime.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-k8s-service-mutations.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-k8s-service-mutations/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-k8s-service-mutations/review.md" or "none".
+
+[PASS] docs/harness/tasks/2026-11-16-ops-navigation-repair.task.md
+  warning: Linked review file does not exist: .harness/evidence/2026-11-16-ops-navigation-repair/review.md
+
+[PASS] docs/harness/tasks/2026-11-16-ops-pilot-delivery.task.md
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-pilot-release-closeout.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-pilot-release-closeout/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-pilot-release-closeout/review.md" or "none".
+
+[PASS] docs/harness/tasks/2026-11-16-ops-readiness-plan-closeout.task.md
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-service-catalog-usability.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-service-catalog-usability/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-service-catalog-usability/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-service-deploy-integrity.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-service-deploy-integrity/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-service-deploy-integrity/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-16-ops-service-deploy-user-flow.task.md
+  error: Linkage Evidence Directory must be ".harness/evidence/2026-11-16-ops-service-deploy-user-flow/".
+  error: Linkage Review File must be ".harness/evidence/2026-11-16-ops-service-deploy-user-flow/review.md" or "none".
+
+[FAIL] docs/harness/tasks/2026-11-17-ops-auto-merge-reconcile.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+
+[PASS] docs/harness/tasks/2026-11-17-ops-history-audit.task.md
+
+[FAIL] docs/harness/tasks/2026-11-19-ten-package-acceptance.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".
+  error: status is "Archived" but no evidence directory with summary.md exists (live or archived) — restore the evidence or revert the status.
+
+[PASS] docs/harness/tasks/2026-11-20-ops-argocd-ownership-and-webhook.task.md
+
+[FAIL] docs/harness/tasks/2026-11-20-ops-board-complete.task.md
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Section "## Completion Checklist" must include checkbox items.
+  error: evidence is complete (manifest-completed) but status is "Active" — set status: Archived or close the evidence.
+  warning: Section "## Linkage" is missing recommended item: Task ID.
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: OpenSpec Change.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+  warning: Section "## Linkage" is missing recommended item: Plan References.
+  warning: Section "## Linkage" is missing recommended item: Evidence Directory.
+  warning: Section "## Linkage" is missing recommended item: Review File.
+
+[FAIL] docs/harness/tasks/2026-11-20-ops-business-permissions-and-task-visibility.task.md
+  error: evidence is complete (manifest-completed) but status is "Active" — set status: Archived or close the evidence.
+
+[PASS] docs/harness/tasks/2026-11-20-ops-core-business-tenant-isolation.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-deploy-credential-ownership-and-ui.task.md
+
+[FAIL] docs/harness/tasks/2026-11-20-ops-deploy-fixed-template-security.task.md
+  error: evidence is complete (manifest-completed) but status is "Active" — set status: Archived or close the evidence.
+
+[PASS] docs/harness/tasks/2026-11-20-ops-deploy-recovery-and-remote-execution.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-deploy-template-and-task-experience.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-extension-and-async-tenant-isolation.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-filedist-durable-lifecycle.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-k8s-client-lifecycle-and-config-safety.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-k8s-log-websocket-lifecycle.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-k8s-resource-authorization-and-mutations.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-review-baseline-and-decisions.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-review-delivery-and-closeout.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-review-docs-and-test-governance.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-review-live-runtime-acceptance.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-review-remediation.task.md
+
+[PASS] docs/harness/tasks/2026-11-20-ops-service-deploy-business-closure.task.md
+
+[FAIL] docs/harness/tasks/2026-11-24-workflow-context-improvement.task.md
+  error: Invalid harness template "docs-governance". Expected one of: admin-platform, api-service, event-processor, dashboard, ui-heavy-product, custom.
+  warning: Contract anchor does not exist: architecture/harness/task-packet-spec.md
+  warning: Contract anchor does not exist: architecture/harness/review-loop-spec.md
+  warning: Contract anchor does not exist: patterns/capability-adaptive-delivery.md
+  warning: Contract anchor does not exist: patterns/context-engineering-protocol.md
+  warning: Contract anchor does not exist: ../pantheon-base/AGENTS.md
+  warning: Contract anchor does not exist: ../pantheon-ops/docs/PROJECT_INHERITANCE.md
+  warning: Section "## Linkage" is missing recommended item: Task Manifest.
+  warning: Section "## Linkage" is missing recommended item: Superpowers Plan.
+
+[FAIL] docs/harness/tasks/k8s-recovery.task.md
+  error: Missing required section "## Goal".
+  error: Missing required section "## Primary Layer".
+  error: Missing required section "## Dependency Layers".
+  error: Missing required section "## Harness Profile".
+  error: Missing required section "## Contract Anchors".
+  error: Missing required section "## Scope".
+  error: Missing required section "## Expected Files".
+  error: Missing required section "## Implementation Notes".
+  error: Missing required section "## Verification Plan".
+  error: Missing required section "## Linkage".
+  error: Missing required section "## Evidence Required".
+  error: Missing required section "## Human Gates".
+  error: Missing required section "## Completion Checklist".

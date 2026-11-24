@@ -1,0 +1,4 @@
+{"name":"inheritance-final","repo":"pantheon-base","command":["node","scripts/harness/check-inheritance-contract.mjs","--root","..","--strict"],"start":"2026-11-24T01:49:36.259Z","elapsedMs":96,"exitCode":0,"signal":null,"error":null}
+Inheritance contract check (strict): 0 finding(s), 0 warning(s)
+
+no findings

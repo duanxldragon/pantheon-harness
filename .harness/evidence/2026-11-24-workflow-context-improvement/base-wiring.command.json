@@ -1,0 +1,14 @@
+{
+  "name": "base-wiring",
+  "repo": "pantheon-base",
+  "command": [
+    "node",
+    "scripts/harness/check-checker-wiring.mjs",
+    "--json"
+  ],
+  "start": "2026-11-24T01:48:55.682Z",
+  "elapsedMs": 148,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}
