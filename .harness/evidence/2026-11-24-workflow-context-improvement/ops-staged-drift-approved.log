@@ -1,0 +1,2 @@
+{"name":"ops-staged-drift-approved","repo":"pantheon-ops","command":["node","scripts/business-overlay/check-shared-drift.mjs","--root",".tmp/workflow-context-improvement-20261124"],"start":"2026-11-24T01:53:52.432Z","elapsedMs":68868,"exitCode":1,"signal":null,"error":null}
+read tcp 192.168.104.120:49691->185.199.109.133:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.

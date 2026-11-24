@@ -1,0 +1,4 @@
+{"name":"base-frontmatter","repo":"pantheon-base","command":["node","scripts/frontmatter-check.mjs"],"start":"2026-11-24T01:49:44.780Z","elapsedMs":477,"exitCode":0,"signal":null,"error":null}
+Frontmatter check passed. Checked 478 docs, 354 with frontmatter, 124 without (informational, not enforced).
+Enforced directories: docs/superpowers/specs/, docs/archive/examples/, docs/archive/baselines/, docs/archive/upgrade/ — 5 doc(s) must carry frontmatter.
+Active docs past the 90-day review window: 110 (informational, not enforced — see DOCUMENT_METADATA_AND_STATUS §6.5).

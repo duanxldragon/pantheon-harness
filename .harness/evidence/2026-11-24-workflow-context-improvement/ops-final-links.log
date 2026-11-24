@@ -1,0 +1,2 @@
+{"name":"ops-final-links","repo":"pantheon-ops","command":["node","scripts/harness/check-doc-links.mjs","--strict"],"start":"2026-11-24T01:53:02.242Z","elapsedMs":425,"exitCode":0,"signal":null,"error":null}
+Docs link check (strict): 0 finding(s)

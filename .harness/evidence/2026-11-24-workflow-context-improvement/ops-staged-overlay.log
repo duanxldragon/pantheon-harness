@@ -1,0 +1,2 @@
+{"name":"ops-staged-overlay","repo":"pantheon-ops","command":["node","scripts/business-overlay/check-business-overlay.mjs","--root",".tmp/workflow-context-improvement-20261124"],"start":"2026-11-24T01:53:02.283Z","elapsedMs":190,"exitCode":0,"signal":null,"error":null}
+OK business overlay contract (55 declared paths, rebuilt tree)

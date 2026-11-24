@@ -1,0 +1,41 @@
+{"name":"submission-pantheon-ops-gate-27","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","--test","tests/scripts/business-overlay/rebuild-from-base.test.mjs"],"start":"2026-11-24T02:17:45.663Z","elapsedMs":13085,"exitCode":1,"signal":null,"error":null}
+✖ rebuilds a deterministic Base snapshot with generated business registries (2795.3662ms)
+✔ rejects a business path that overwrites a Base hook file (1050.0426ms)
+✔ rejects a manifest that claims a generic product path (1067.2665ms)
+✔ validateReleaseBundleChecksum accepts a matching checksum (11.0525ms)
+✔ validateReleaseBundleChecksum rejects a mismatched checksum (6.2287ms)
+✔ validateReleaseBundleChecksum rejects missing checksums (2.26ms)
+✔ release bundle checksum validation rejects tampered bundles via lock file path (1758.8879ms)
+✔ refuses to consume a live base tree when no lock snapshot is present (513.028ms)
+✔ migration assembly requires module-owned, paired and unique inputs (0.6783ms)
+▶ migration assembly rejects missing or non-file sources before copying either half
+  ✔ up missing (1255.7796ms)
+  ✔ up directory (1342.97ms)
+  ✔ down missing (1469.3938ms)
+  ✔ down directory (1351.8069ms)
+✔ migration assembly rejects missing or non-file sources before copying either half (5421.6864ms)
+✔ production rebuild refuses local Base arguments (134.7086ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 12937.7347
+
+✖ failing tests:
+
+test at tests\scripts\business-overlay\rebuild-from-base.test.mjs:51:1
+✖ rebuilds a deterministic Base snapshot with generated business registries (2795.3662ms)
+  Error: Cannot normalize consumer Go dependencies: go: found github.com/gin-gonic/gin in github.com/gin-gonic/gin v0.0.0-00010101000000-000000000000
+  go: found gorm.io/gorm in gorm.io/gorm v0.0.0-00010101000000-000000000000
+  pattern ./...: open D:\cache\go\build\a6\a623dfc67b98e60e4c5a9fc7022c07473c2566b7479779d1988a5e20cc1a8d0b-a: Access is denied.
+      at normalizeGoDependencies (file:///D:/workspace/go/pantheon-platform/.local/workflow-improvement-20261124/submission/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:552:11)
+      at assembleConsumerTree (file:///D:/workspace/go/pantheon-platform/.local/workflow-improvement-20261124/submission/pantheon-ops/scripts/business-overlay/rebuild-from-base.mjs:618:23)
+      at rebuildFixture (file:///D:/workspace/go/pantheon-platform/.local/workflow-improvement-20261124/submission/pantheon-ops/tests/scripts/business-overlay/rebuild-from-base.test.mjs:48:10)
+      at TestContext.<anonymous> (file:///D:/workspace/go/pantheon-platform/.local/workflow-improvement-20261124/submission/pantheon-ops/tests/scripts/business-overlay/rebuild-from-base.test.mjs:137:19)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)

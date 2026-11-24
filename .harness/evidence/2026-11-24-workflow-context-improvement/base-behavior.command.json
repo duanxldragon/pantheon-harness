@@ -1,0 +1,17 @@
+{
+  "name": "base-behavior",
+  "repo": "pantheon-base",
+  "command": [
+    "node",
+    "--test",
+    "tests/scripts/harness-check-checker-wiring.test.mjs",
+    "tests/scripts/harness-inheritance-command-drift.test.mjs",
+    "tests/scripts/workflow-method-consumption.test.mjs",
+    "tests/scripts/quality-workflow.test.mjs"
+  ],
+  "start": "2026-11-24T01:25:33.495Z",
+  "elapsedMs": 841,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

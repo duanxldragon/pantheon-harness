@@ -1,0 +1,27 @@
+{"name":"base-behavior-final","repo":"pantheon-base","command":["node","--test","tests/scripts/harness-check-checker-wiring.test.mjs","tests/scripts/harness-inheritance-command-drift.test.mjs","tests/scripts/workflow-method-consumption.test.mjs","tests/scripts/quality-workflow.test.mjs"],"start":"2026-11-24T01:48:53.639Z","elapsedMs":666,"exitCode":0,"signal":null,"error":null}
+✔ fails when a checker is referenced by neither package.json nor a workflow (115.5999ms)
+✔ accepts a documented exception and ignores it in the failure count (95.9911ms)
+✔ passes once the unwired checker gains a package.json script (101.8029ms)
+✔ reports machine-readable JSON for evidence capture (107.2508ms)
+✔ metadata, workflow names and standalone comments do not create wiring (15.5545ms)
+✔ npm indirection distinguishes CI references from manual-only tools (5.4758ms)
+✔ inline comments, echo data and another script argument cannot fabricate an invocation (15.5685ms)
+✔ commented npm aliases stay manual while quoted hashes preserve actual command separators (9.222ms)
+✔ valid commands and exact lock anchors pass; removed commands fail despite retained markers (22.4169ms)
+✔ a plausible version marker cannot hide lock drift or malformed package metadata (18.745ms)
+✔ large governance archives avoid oversized smoke resolver environments; mixed changes still resolve (7.2288ms)
+✔ governance-only changes can skip runtime gates without failing Quality Gates (4.2567ms)
+✔ docs governance blocks policy drift in the UI quality gate (0.3569ms)
+✔ go lint scopes pull requests and merge groups to new code (0.301ms)
+✔ docs governance validates the PR governance template and pull request body (0.8408ms)
+✔ docs governance does not checkout an unused pantheon-base foundation copy (0.3815ms)
+✔ method commit resolver accepts a full immutable pin and rejects missing/malicious pins (395.7813ms)
+✔ consumer/Harness sibling layout pins checkout and invokes read-only consumption (0.4869ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 588.5162

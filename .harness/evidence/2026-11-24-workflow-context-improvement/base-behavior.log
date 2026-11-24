@@ -1,0 +1,25 @@
+{"name":"base-behavior","repo":"pantheon-base","command":["node","--test","tests/scripts/harness-check-checker-wiring.test.mjs","tests/scripts/harness-inheritance-command-drift.test.mjs","tests/scripts/workflow-method-consumption.test.mjs","tests/scripts/quality-workflow.test.mjs"],"start":"2026-11-24T01:25:33.495Z","elapsedMs":841,"exitCode":0,"signal":null,"error":null}
+✔ fails when a checker is referenced by neither package.json nor a workflow (143.9612ms)
+✔ accepts a documented exception and ignores it in the failure count (131.0927ms)
+✔ passes once the unwired checker gains a package.json script (145.7904ms)
+✔ reports machine-readable JSON for evidence capture (146.6662ms)
+✔ metadata, workflow names and standalone comments do not create wiring (22.0562ms)
+✔ npm indirection distinguishes CI references from manual-only tools (7.935ms)
+✔ valid commands and exact lock anchors pass; removed commands fail despite retained markers (22.1165ms)
+✔ a plausible version marker cannot hide lock drift or malformed package metadata (17.2329ms)
+✔ large governance archives avoid oversized smoke resolver environments; mixed changes still resolve (5.869ms)
+✔ governance-only changes can skip runtime gates without failing Quality Gates (7.3157ms)
+✔ docs governance blocks policy drift in the UI quality gate (0.7113ms)
+✔ go lint scopes pull requests and merge groups to new code (0.6838ms)
+✔ docs governance validates the PR governance template and pull request body (2.1968ms)
+✔ docs governance does not checkout an unused pantheon-base foundation copy (0.7377ms)
+✔ method commit resolver accepts a full immutable pin and rejects missing/malicious pins (537.8949ms)
+✔ consumer/Harness sibling layout pins checkout and invokes read-only consumption (0.7902ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 738.3067

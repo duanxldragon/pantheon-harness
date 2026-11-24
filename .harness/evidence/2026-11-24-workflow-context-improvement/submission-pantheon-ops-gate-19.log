@@ -1,0 +1,10 @@
+{"name":"submission-pantheon-ops-gate-19","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-audit-coverage.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:43.303Z","elapsedMs":86,"exitCode":0,"signal":null,"error":null}
+Audit coverage check (strict): 0 finding(s), 0 warning(s), 2 scan warning(s), 0 write route(s)
+
+pantheon-base
+  write routes scanned: 0
+  scan warning: Backend root not found: pantheon-base/backend
+
+pantheon-ops
+  write routes scanned: 0
+  scan warning: Backend root not found: pantheon-ops/backend

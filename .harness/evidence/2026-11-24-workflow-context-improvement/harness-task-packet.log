@@ -1,0 +1,6 @@
+{"name":"harness-task-packet","repo":"pantheon-harness","command":["node","scripts/harness/check-task-packet.mjs","--root",".","docs/harness/tasks/2026-11-24-workflow-context-improvement.task.md"],"start":"2026-11-24T01:53:02.258Z","elapsedMs":116,"exitCode":1,"signal":null,"error":null}
+Task packet check: 1 file(s), 1 error(s), 1 warning(s)
+
+[FAIL] docs/harness/tasks/2026-11-24-workflow-context-improvement.task.md
+  error: Completion checklist is missing required item: Review completed
+  warning: Linked review file does not exist: .harness/evidence/2026-11-24-workflow-context-improvement/review.md

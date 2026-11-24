@@ -1,0 +1,32 @@
+{"name":"submission-pantheon-ops-gate-9","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-doc-inventory.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:34.315Z","elapsedMs":237,"exitCode":1,"signal":null,"error":null}
+Docs inventory check (strict): 10 finding(s)
+finding: docs/harness/HARNESS_ENGINEERING_CONTRACT.md
+  inventory: docs/README.md
+  reason: required document is missing from docs README
+finding: docs/harness/HARNESS_METHOD_PLAYBOOK.md
+  inventory: docs/README.md
+  reason: required document is missing from docs README
+finding: ../pantheon-harness/patterns/README.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/harness-core-model.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/harness-coverage-model.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/harness-template-taxonomy.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/tool-adapter-matrix.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/method-playbook.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/execution-guardrails.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README
+finding: ../pantheon-harness/patterns/context-engineering-protocol.md
+  inventory: docs/README.md
+  reason: required upstream method document is missing from docs README

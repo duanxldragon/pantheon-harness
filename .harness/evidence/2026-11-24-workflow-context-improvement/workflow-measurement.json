@@ -1,0 +1,27 @@
+{
+  "taskId": "2026-11-24-workflow-context-improvement",
+  "candidate": "candidate.json dirty snapshot; unrelated work may be committed concurrently",
+  "methodCommit": "3333391bae752cc098b39895b4cfde56292960de",
+  "model": "unknown",
+  "client": "Codex",
+  "effort": "unknown",
+  "statusSizes": [
+    {
+      "repo": "pantheon-base",
+      "beforeBytes": 3196,
+      "afterBytes": 1727
+    },
+    {
+      "repo": "pantheon-ops",
+      "beforeBytes": 91680,
+      "afterBytes": 2838
+    }
+  ],
+  "totalRecordedCheckMs": 182865,
+  "environmentWaitMs": null,
+  "delegationCount": 2,
+  "acceptance": "not-run",
+  "tokens": "unknown",
+  "cost": "unknown",
+  "speedup": "not-measured"
+}

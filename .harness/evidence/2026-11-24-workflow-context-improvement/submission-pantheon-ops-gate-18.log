@@ -1,0 +1,146 @@
+{"name":"submission-pantheon-ops-gate-18","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-graph-review.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:43.032Z","elapsedMs":169,"exitCode":1,"signal":null,"error":null}
+Graph review check (strict): 18 graph-reviewed task(s), 36 warning(s)
+
+warning: .harness/evidence/2026-11-20-ops-argocd-ownership-and-webhook/
+  task: 2026-11-20-ops-argocd-ownership-and-webhook
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-argocd-ownership-and-webhook
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-business-permissions-and-task-visibility/
+  task: 2026-11-20-ops-business-permissions-and-task-visibility
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-business-permissions-and-task-visibility/review.md
+  task: 2026-11-20-ops-business-permissions-and-task-visibility
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-core-business-tenant-isolation/
+  task: 2026-11-20-ops-core-business-tenant-isolation
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-core-business-tenant-isolation/review.md
+  task: 2026-11-20-ops-core-business-tenant-isolation
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-deploy-credential-ownership-and-ui/
+  task: 2026-11-20-ops-deploy-credential-ownership-and-ui
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-deploy-credential-ownership-and-ui
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-deploy-fixed-template-security/
+  task: 2026-11-20-ops-deploy-fixed-template-security
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-deploy-fixed-template-security/codex-round2-review.md
+  task: 2026-11-20-ops-deploy-fixed-template-security
+  reason: review structural consistency could not be checked because review.md is unreadable: missing machine-readable JSON block
+
+warning: .harness/evidence/2026-11-20-ops-deploy-recovery-and-remote-execution/
+  task: 2026-11-20-ops-deploy-recovery-and-remote-execution
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-deploy-recovery-and-remote-execution/review.md
+  task: 2026-11-20-ops-deploy-recovery-and-remote-execution
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-deploy-template-and-task-experience/
+  task: 2026-11-20-ops-deploy-template-and-task-experience
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-deploy-template-and-task-experience
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-extension-and-async-tenant-isolation/
+  task: 2026-11-20-ops-extension-and-async-tenant-isolation
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-extension-and-async-tenant-isolation
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-filedist-durable-lifecycle/
+  task: 2026-11-20-ops-filedist-durable-lifecycle
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-filedist-durable-lifecycle
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-k8s-client-lifecycle-and-config-safety/
+  task: 2026-11-20-ops-k8s-client-lifecycle-and-config-safety
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-k8s-client-lifecycle-and-config-safety/review.md
+  task: 2026-11-20-ops-k8s-client-lifecycle-and-config-safety
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-k8s-log-websocket-lifecycle/
+  task: 2026-11-20-ops-k8s-log-websocket-lifecycle
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-k8s-log-websocket-lifecycle/review.md
+  task: 2026-11-20-ops-k8s-log-websocket-lifecycle
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-k8s-resource-authorization-and-mutations/
+  task: 2026-11-20-ops-k8s-resource-authorization-and-mutations
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-k8s-resource-authorization-and-mutations/review.md
+  task: 2026-11-20-ops-k8s-resource-authorization-and-mutations
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-review-baseline-and-decisions/
+  task: 2026-11-20-ops-review-baseline-and-decisions
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-review-baseline-and-decisions
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-review-delivery-and-closeout/
+  task: 2026-11-20-ops-review-delivery-and-closeout
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-review-delivery-and-closeout
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-review-docs-and-test-governance/
+  task: 2026-11-20-ops-review-docs-and-test-governance
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-review-docs-and-test-governance
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-review-live-runtime-acceptance/
+  task: 2026-11-20-ops-review-live-runtime-acceptance
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: .harness/evidence/2026-11-20-ops-review-live-runtime-acceptance/review.md
+  task: 2026-11-20-ops-review-live-runtime-acceptance
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-review-remediation/
+  task: 2026-11-20-ops-review-remediation
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-review-remediation
+  reason: graph-reviewed task is missing review.structuralReview
+
+warning: .harness/evidence/2026-11-20-ops-service-deploy-business-closure/
+  task: 2026-11-20-ops-service-deploy-business-closure
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: none
+  task: 2026-11-20-ops-service-deploy-business-closure
+  reason: graph-reviewed task is missing review.structuralReview

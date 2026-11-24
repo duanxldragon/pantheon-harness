@@ -1,0 +1,349 @@
+{
+  "pantheon-harness": {
+    "head": "3333391bae752cc098b39895b4cfde56292960de",
+    "dirtyFiles": [
+      {
+        "path": "evaluations/README.md",
+        "sha256": "d5ad96ca97fb0dc5a79045bb2cd3a633ab2e71e6da21bd333229d2bd981eb750"
+      },
+      {
+        "path": "scripts/harness/README.md",
+        "sha256": "2d4cafeb0781053761d5fa606db1e4d138547c47de0d6339aec80f71390464fe"
+      },
+      {
+        "path": "scripts/harness/README.zh.md",
+        "sha256": "4c9cf3a1d3643735241ec2efd0cf767ede1f2c390c50c4cf94bd29a2abe192c1"
+      },
+      {
+        "path": "scripts/harness/check-method-consumption.mjs",
+        "sha256": "12c5fea18dbf932d2b23758681997a1956a2cc4226a969231d95d9d5c189a328"
+      },
+      {
+        "path": "scripts/harness/check-method-consumption.test.mjs",
+        "sha256": "22d960fe63292255c0341dba3311cf9d178b50058c35471dd3a13266111613ec"
+      },
+      {
+        "path": "docs/harness/tasks/2026-11-24-workflow-context-improvement.task.md",
+        "sha256": "44fc608968c44df7db0392b75059376f57aef5579fa88391ba11346587a2b973"
+      },
+      {
+        "path": "scripts/harness/render-task-index.mjs",
+        "sha256": "bf8dc7c06e5aab7241d9bc3f37d8773f9fb336ac5f95f8277fbef7768c947a20"
+      },
+      {
+        "path": "scripts/harness/render-task-index.test.mjs",
+        "sha256": "653d11e6661c20acaa40ef9920e825e408815a80d8a873bb93c51ef9243fd6b2"
+      }
+    ]
+  },
+  "pantheon-base": {
+    "head": "6ffee550acfc664d5e79c0178e65311eb8698c56",
+    "dirtyFiles": [
+      {
+        "path": ".agents/skills/repo-verify/SKILL.md",
+        "sha256": "06f1bcbbb3413e20db53009d19b0bae5584bf7f6346536b1bb6db28403ea1cd5"
+      },
+      {
+        "path": ".github/workflows/quality.yml",
+        "sha256": "874e9297c7b05adbae984c80a433968da4123773af7ce7805738ecbaff2269fc"
+      },
+      {
+        "path": ".harness/STATUS.md",
+        "sha256": "dca92479bd4cbf9fa3b6505f0b3c6e9a0fc7a56b06b709f5f2168bc3e026a917"
+      },
+      {
+        "path": "AGENTS.en.md",
+        "sha256": "53598e5b9812772c437d99ee7680c97e5eb945d46b2e447085fe76def644395a"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "348ca48abf9967b54af1f8afe79a0ad1dcd20a5b331e01e63efc24bc3cb1c7df"
+      },
+      {
+        "path": "CLAUDE.md",
+        "sha256": "0b17bd144ed9b4d596e1add4eb106b419e9b153901531310616eaa643a0bebe2"
+      },
+      {
+        "path": "DESIGN.md",
+        "sha256": "51bc36973ec61af25e8db4a80edbfb999c7a09cbca785bcec73355e9edc57b88"
+      },
+      {
+        "path": "backend/modules/system/config/setting/setting_seed.go",
+        "sha256": "f7886caa58b40e9b963454a4f4f3eb140de82bfe9db80f027112f00dc2ebcebe"
+      },
+      {
+        "path": "backend/modules/system/system.go",
+        "sha256": "fa8836ac32bdbbeb63f29d48cb21aab23746d52ed9e3d281e107c86414c142e2"
+      },
+      {
+        "path": "backend/pkg/contracts/business_tenant_groups.go",
+        "sha256": "e39a84dc3013b5b4a7b28f312a7dd24f35f928413c595ec1761e20f32598afd8"
+      },
+      {
+        "path": "backend/pkg/contracts/business_tenant_groups_test.go",
+        "sha256": "21302cc9468217ae74a3536f1546d510e6310d9ddca33a14e3e221134d35b834"
+      },
+      {
+        "path": "docs/README.en.md",
+        "sha256": "83929dd7e8c2e203867367b393dce94836b32d9b0274852d3b5528c7748e4b45"
+      },
+      {
+        "path": "docs/README.md",
+        "sha256": "7847cbc68fc41b41678752500bc2f77885d719a495b1158683f3b8083b17066a"
+      },
+      {
+        "path": "docs/VERSION_MANAGEMENT_GUIDE.md",
+        "sha256": "a635950f0471f7e21797465cb51ccdf84ad28063d2a047f08e50374365bced70"
+      },
+      {
+        "path": "docs/contracts/SYSTEM_AUTH_CONTRACT.md",
+        "sha256": "f3858c24647eab5cdedbb2c2b6ad91d3cf065c242f8a55372fd7e1b61a72b256"
+      },
+      {
+        "path": "docs/contracts/SYSTEM_CONFIG_CONTRACT.en.md",
+        "sha256": "75ca8518f3668ba610241089e85736a9d5e8339c364dd895580864dac249c317"
+      },
+      {
+        "path": "docs/contracts/SYSTEM_CONFIG_CONTRACT.md",
+        "sha256": "4f015281c33995e716728f2def3f1bb57857273482ec20be23f1f7f0fd3bbaeb"
+      },
+      {
+        "path": "docs/designs/FOUNDATION_RELEASE_MODEL.en.md",
+        "sha256": "709e175fdcda54f52ed2995e58f1d43bbe4b8db39196b67e3dd3f35759691872"
+      },
+      {
+        "path": "docs/designs/FOUNDATION_RELEASE_MODEL.md",
+        "sha256": "570a755bb7ad4156fb393d2dd0b5f8acbd9520ed39758010429f359427eb47ac"
+      },
+      {
+        "path": "docs/harness/PANTHEON_BASE_DELIVERY_WORKFLOW.en.md",
+        "sha256": "f059939c9f92ed957b7b51bcf962840d11f2b8eb046cffa8651682a7f8b67670"
+      },
+      {
+        "path": "docs/harness/PANTHEON_BASE_DELIVERY_WORKFLOW.md",
+        "sha256": "3ee30a094933884a925dc94638e975d674413a6d771379239497cc9bd873bd96"
+      },
+      {
+        "path": "scripts/foundation-release/publish-foundation-release.mjs",
+        "sha256": "1b72b2874f196262285336835de912c0823d22488b8048452869e534a102d2cc"
+      },
+      {
+        "path": "scripts/harness/README.md",
+        "sha256": "b462424a2b26bccc22e7f73e82ed16c901b735681dd207680100e8a647f5bbcd"
+      },
+      {
+        "path": "scripts/harness/README.zh.md",
+        "sha256": "113b56478e86ae4c2d34ff7c7f7c1d2bdea693ba03f92981e5548ee3c47c7ece"
+      },
+      {
+        "path": "scripts/harness/check-checker-wiring.mjs",
+        "sha256": "fca87ab80aa3f27d6def1a47a7219e6db523d95cc4f50824b69921ab1a6a67a3"
+      },
+      {
+        "path": "scripts/harness/check-inheritance-contract.mjs",
+        "sha256": "7754e47a2b704d4ef182583b7416dec3751fe0e5e2c7ff7882d1efadb926c3b7"
+      },
+      {
+        "path": "tests/scripts/foundation-release/publish-foundation-release.test.mjs",
+        "sha256": "93bdb5707826a62dfb58bda2f2835bda673fdf9cfbe7e3c905128f2d1a316ac4"
+      },
+      {
+        "path": "tests/scripts/harness-check-checker-wiring.test.mjs",
+        "sha256": "8ff8888150c62ff0fd5e83fb628aa3e4d168485bc3815bd23abbed4b686b5d11"
+      },
+      {
+        "path": ".harness/TASK_INDEX.md",
+        "sha256": "1cd790170dbcf5c9bb3db8d8cf8e8a8c8bece88f44ca40449bbcaf10f6e19bb4"
+      },
+      {
+        "path": ".harness/archive/2026-11/STATUS-before-workflow-improvement-20261124.md",
+        "sha256": "22d60290e72d5f1baea2bb8b09a5ad3170c70ebf67a40eec1f7ade8da5ef6e46"
+      },
+      {
+        "path": ".harness/method-consumption.json",
+        "sha256": "6aec0e1e6f09fd222c34b84ec8936abff58a798f08f276df2dbcae470e673d9f"
+      },
+      {
+        "path": ".harness/tasks/2026-11-14-ops-completion-contracts/manifest.json",
+        "sha256": "b67abc9ca1a6a0e7f364973e0a12867dd963a8d0e4ae26de6487e83b1eb60b7b"
+      },
+      {
+        "path": ".harness/tasks/2026-11-14-release-naming-normalization/manifest.json",
+        "sha256": "965f3463c0376a77daedc34149d3a38981a16d52310f850a7536c6b477e66e7a"
+      },
+      {
+        "path": ".harness/tasks/2026-11-17-business-runtime-settings/manifest.json",
+        "sha256": "3ecdce8e5d0287e7c81f8267f9b4fdfd26335c7a1fe8aa03a98ff4513bfb14e7"
+      },
+      {
+        "path": ".harness/tasks/2026-11-17-business-runtime-settings/plan.md",
+        "sha256": "160c65fe6cf5e1cbae73ba2071916844e20f04cfc2c09b0e4074f23c5867195f"
+      },
+      {
+        "path": ".harness/tasks/2026-11-19-archive-formatter-protection/manifest.json",
+        "sha256": "77b757e244d9ebd19d628e0d4cfabdbac3532f8c4c8d1fae8a8da2fa5aeb7289"
+      },
+      {
+        "path": ".harness/tasks/2026-11-19-archive-formatter-protection/plan.md",
+        "sha256": "6dc1124ea2e5ccfeeab04947ab8739c7c297bb56045a6a8bb1fdfbc909853e1b"
+      },
+      {
+        "path": ".prettierignore",
+        "sha256": "e0a85208aee1dc01824062f70edb81292c45f2dbe2262f43e85ca836a23bbc56"
+      },
+      {
+        "path": "backend/modules/auth/login/business_job_authorization.go",
+        "sha256": "1934efbf93ae576f5fcb0231331ccd0302ea64f392dce869ece37a3d53b64be1"
+      },
+      {
+        "path": "backend/modules/auth/login/business_job_authorization_test.go",
+        "sha256": "4f3ea12f66076443191980972c3403c2618ba55095f20a792a68213f870a89d5"
+      },
+      {
+        "path": "backend/modules/system/business_runtime_settings.go",
+        "sha256": "84c215443ac7439e6994075da45b92673e8ee6c9b07f52a64b2cd8def5aadaf9"
+      },
+      {
+        "path": "backend/modules/system/business_runtime_settings_test.go",
+        "sha256": "1507102e8d8e9053445969ad052e40510fc8c7658a7cb74ed7292e2f655a36bf"
+      },
+      {
+        "path": "backend/modules/system/config/setting/business_runtime_settings.go",
+        "sha256": "c696a4c8bdd8f7d6aa818c922a73f48df19cf81a172925ae54334c4ad0d3eb7b"
+      },
+      {
+        "path": "backend/modules/system/config/setting/business_runtime_settings_test.go",
+        "sha256": "4ad44eb38e37dfda399adcbee72af758b50ab2c2862596186fefa434e35d0317"
+      },
+      {
+        "path": "backend/pkg/contracts/business_runtime_settings.go",
+        "sha256": "1d4dffdb2197a523d665d1173e0276958df52e4671ae3b6506615d35c201305e"
+      },
+      {
+        "path": "backend/pkg/contracts/business_runtime_settings_test.go",
+        "sha256": "6537b2bfc64013b570512a4cd3f43c2c5b60a64438e7599badb49d3c171cbbf6"
+      },
+      {
+        "path": "backend/pkg/contracts/businessauth/job_authorization.go",
+        "sha256": "90c5594d3cbfce4c7b0794fad6767e50f9a1538617bbea4a3c6f7b5db1c3aa18"
+      },
+      {
+        "path": "backend/pkg/contracts/businessauth/job_authorization_test.go",
+        "sha256": "222dc86f9f9d1c2010e618d3d8c06828f7ead2aab7b11dedeee7cd3b4ce49819"
+      },
+      {
+        "path": "docs/harness/tasks/2026-11-14-ops-completion-contracts.task.md",
+        "sha256": "092471cc40d9afa61f6be572e69bab99e026224843312d4dbe1f21791fe2f5f2"
+      },
+      {
+        "path": "docs/harness/tasks/2026-11-14-release-naming-normalization.task.md",
+        "sha256": "c3d60945ceb4d35c5548ea1b45702fce82b0d85e3529e30fea56069d478de4cc"
+      },
+      {
+        "path": "docs/harness/tasks/2026-11-17-business-runtime-settings.task.md",
+        "sha256": "b223d7736ee95c88ee7a193c00bf2b91d39ddcb4127232b9b4fc5d226e57bb94"
+      },
+      {
+        "path": "docs/harness/tasks/2026-11-19-archive-formatter-protection.task.md",
+        "sha256": "d85c28a67827419598c10f162f60e384e04e9fde12f07e974782b7c4bf0434d1"
+      },
+      {
+        "path": "tests/scripts/harness-archive-formatting.test.mjs",
+        "sha256": "bef79f37e48d092ea0220c2039db54117ca7c6becfc08d4303fe235718658593"
+      },
+      {
+        "path": "tests/scripts/harness-inheritance-command-drift.test.mjs",
+        "sha256": "412aec295278d7fccca9818ea9596ddd166e2b53badb43ba1067546f1322406f"
+      },
+      {
+        "path": "tests/scripts/workflow-method-consumption.test.mjs",
+        "sha256": "eeb91a8990b99140a822ea2b350cd9c81075b36d08fe845b77dddc31bbf7cf0a"
+      }
+    ]
+  },
+  "pantheon-ops": {
+    "head": "15ebc4dfae0f90d3f314ce1ed76040108b95e5ef",
+    "dirtyFiles": [
+      {
+        "path": ".agents/skills/repo-verify/SKILL.md",
+        "sha256": "511576f7fdb8e9e34cef02c31622efd1edfa064c9025444b76d24f6581e342fe"
+      },
+      {
+        "path": ".github/workflows/quality.yml",
+        "sha256": "1d3fe5033f3421b5e33ce786d6e9050df6f82048e1a9350726b6fb526eef03af"
+      },
+      {
+        "path": ".harness/STATUS.md",
+        "sha256": "fa37a6614b34344d96c2a28ee3f9645e09e9251db7502f881f04741a5fd699bf"
+      },
+      {
+        "path": ".harness/method-consumption.json",
+        "sha256": "7b2caa4031dabd74ff6c4f272a10dd598d8065990e3e849b622916771848f218"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha256": "465bb668538e3bcc1a28d0057efbdb4c037cb50b52dcb8b85abc597def766c8e"
+      },
+      {
+        "path": "CLAUDE.md",
+        "sha256": "587bc7c327007391e643e4087025f0b783c50a252a35f172111175e1e35bf1a2"
+      },
+      {
+        "path": "business-overlay.json",
+        "sha256": "402fe838ae5cd4d6756c8ff613c540110ccd6dd64bfe4a8b72492d04cef11b50"
+      },
+      {
+        "path": "docs/PROJECT_INHERITANCE.en.md",
+        "sha256": "25c4ab8fe6a07f7dfd5e2131670d69335143d602f41333ef075f05bab361628e"
+      },
+      {
+        "path": "docs/PROJECT_INHERITANCE.md",
+        "sha256": "9789b7be160c53d31401ea35b9f213fe919f04ff5952b242b224d26e922f70e7"
+      },
+      {
+        "path": "docs/README.en.md",
+        "sha256": "e1e60cc9ea19c80e9b401d820b803331e66f34a136c9f8899b3219d4049ce346"
+      },
+      {
+        "path": "docs/README.md",
+        "sha256": "ec9ba120496744c82905a65b7c233eb5ea7331f9ebf4302c9030ddf6d11a2d71"
+      },
+      {
+        "path": "docs/designs/BUSINESS_SERVICE_MODULE_DESIGN.md",
+        "sha256": "a3bddb7e1f3de21a15804a3a4c129f808fe89f56a8db828b126690d9969f3f59"
+      },
+      {
+        "path": "package.json",
+        "sha256": "76a19d338e727cfbc6e585095436fdd146ff958964d191a42b4b44518950d17c"
+      },
+      {
+        "path": "scripts/business-overlay/rebuild-from-base.mjs",
+        "sha256": "f954d63d9b2fc110f6d583a2f7f532fb26e17f2f4826d49ff9967c12b3274bfe"
+      },
+      {
+        "path": "tests/scripts/business-overlay/rebuild-from-base.test.mjs",
+        "sha256": "ce3b273965cacf6583e8e7fd2117ec6845bb19547b1596ef1a29978ab4e7b7a4"
+      },
+      {
+        "path": ".harness/TASK_INDEX.md",
+        "sha256": "b10ab2319c3fdbfedf72a5541fd8324a57d6c9180c3b34b359e21ab0b211e439"
+      },
+      {
+        "path": ".harness/archive/2026-11/STATUS-at-workflow-intake-20261124.md",
+        "sha256": "31cddeaa012906d3358c561ed0e34d6e404ab1816b2092368a32a6350fe6b7b3"
+      },
+      {
+        "path": ".harness/archive/2026-11/STATUS-before-workflow-improvement-20261124.md",
+        "sha256": "f9e6e0c8cdd4f24a9b34a231bb76090697e7288c43ae651d7623cdcf064b8d21"
+      },
+      {
+        "path": "_enumerate.json",
+        "sha256": "a62eac7082defb7f3c89c161bd9aa650ee2e3d61f15959170471dee527fd74ac"
+      },
+      {
+        "path": "tests/scripts/workflow-method-consumption.test.mjs",
+        "sha256": "98321ed1a7880bc00a0f6c3d00fb9c949d4f0250998c2eb3dd738132d50319d1"
+      }
+    ]
+  }
+}

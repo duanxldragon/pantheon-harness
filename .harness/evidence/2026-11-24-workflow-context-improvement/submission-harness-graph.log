@@ -1,0 +1,10 @@
+{"name":"submission-harness-graph","repo":".local/workflow-improvement-20261124/submission/pantheon-harness","command":["node","scripts/harness/check-graph-review.mjs","--strict"],"start":"2026-11-24T02:10:13.326Z","elapsedMs":96,"exitCode":1,"signal":null,"error":null}
+Graph review check (strict): 13 graph-reviewed task(s), 2 warning(s)
+
+warning: .harness/evidence/2026-11-24-workflow-context-improvement/commands.json
+  task: 2026-11-24-workflow-context-improvement
+  reason: graph-reviewed task is missing evidence.graphChecks
+
+warning: undefined
+  task: 2026-11-24-workflow-context-improvement
+  reason: task packet vs review affected subgraph does not match

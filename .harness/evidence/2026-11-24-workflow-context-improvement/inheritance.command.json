@@ -1,0 +1,16 @@
+{
+  "name": "inheritance",
+  "repo": "pantheon-base",
+  "command": [
+    "node",
+    "scripts/harness/check-inheritance-contract.mjs",
+    "--root",
+    "..",
+    "--strict"
+  ],
+  "start": "2026-11-24T01:48:50.636Z",
+  "elapsedMs": 96,
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

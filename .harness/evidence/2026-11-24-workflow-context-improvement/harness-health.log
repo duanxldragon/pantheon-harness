@@ -1,0 +1,6 @@
+{"name":"harness-health","repo":"pantheon-harness","command":["node","scripts/harness/check-method-health.mjs","--strict"],"start":"2026-11-24T01:49:40.386Z","elapsedMs":99,"exitCode":0,"signal":null,"error":null}
+Method health check (strict): 0 finding(s), 0 warning(s)
+method kit version: 1.5.0
+repo shell version: 1.5.0
+
+no findings

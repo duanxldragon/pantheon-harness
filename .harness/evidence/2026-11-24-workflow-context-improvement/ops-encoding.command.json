@@ -1,0 +1,14 @@
+{
+  "name": "ops-encoding",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "scripts/check-encoding.mjs",
+    "--strict"
+  ],
+  "start": "2026-11-24T01:57:35.191Z",
+  "elapsedMs": 1926,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

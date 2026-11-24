@@ -1,0 +1,2 @@
+{"name":"ops-staged-boundaries","repo":"pantheon-ops","command":["node","scripts/harness/check-boundaries.mjs","--strict","--repo",".tmp/workflow-context-improvement-20261124","--baseline","config/boundary-baseline.json"],"start":"2026-11-24T01:53:02.226Z","elapsedMs":106,"exitCode":1,"signal":null,"error":null}
+Unknown repository: .tmp/workflow-context-improvement-20261124 (known: pantheon-base, pantheon-ops)

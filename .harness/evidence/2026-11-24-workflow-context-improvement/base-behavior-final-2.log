@@ -1,0 +1,28 @@
+{"name":"base-behavior-final-2","repo":"pantheon-base","command":["node","--test","tests/scripts/harness-check-checker-wiring.test.mjs","tests/scripts/harness-inheritance-command-drift.test.mjs","tests/scripts/workflow-method-consumption.test.mjs","tests/scripts/quality-workflow.test.mjs"],"start":"2026-11-24T02:01:02.711Z","elapsedMs":784,"exitCode":0,"signal":null,"error":null}
+✔ fails when a checker is referenced by neither package.json nor a workflow (119.6365ms)
+✔ accepts a documented exception and ignores it in the failure count (106.2609ms)
+✔ passes once the unwired checker gains a package.json script (136.176ms)
+✔ reports machine-readable JSON for evidence capture (126.1172ms)
+✔ metadata, workflow names and standalone comments do not create wiring (22.3398ms)
+✔ npm indirection distinguishes CI references from manual-only tools (5.7276ms)
+✔ inline comments, echo data and another script argument cannot fabricate an invocation (17.9548ms)
+✔ commented npm aliases stay manual while quoted hashes preserve actual command separators (12.9207ms)
+✔ folded YAML joins command lines before inspection and fails visibly on unsupported folding (11.0385ms)
+✔ valid commands and exact lock anchors pass; removed commands fail despite retained markers (22.5786ms)
+✔ a plausible version marker cannot hide lock drift or malformed package metadata (13.5272ms)
+✔ large governance archives avoid oversized smoke resolver environments; mixed changes still resolve (3.948ms)
+✔ governance-only changes can skip runtime gates without failing Quality Gates (4.2761ms)
+✔ docs governance blocks policy drift in the UI quality gate (0.3964ms)
+✔ go lint scopes pull requests and merge groups to new code (0.4722ms)
+✔ docs governance validates the PR governance template and pull request body (1.343ms)
+✔ docs governance does not checkout an unused pantheon-base foundation copy (0.4374ms)
+✔ method commit resolver accepts a full immutable pin and rejects missing/malicious pins (459.6062ms)
+✔ consumer/Harness sibling layout pins checkout and invokes read-only consumption (1.0968ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 690.8354

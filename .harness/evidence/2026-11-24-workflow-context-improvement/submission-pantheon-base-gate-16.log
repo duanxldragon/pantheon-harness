@@ -1,0 +1,479 @@
+{"name":"submission-pantheon-base-gate-16","repo":".local/workflow-improvement-20261124/submission/pantheon-base","command":["node","scripts/harness/check-review.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:43.940Z","elapsedMs":851,"exitCode":1,"signal":null,"error":null}
+Legacy review artifacts exempted by config/review-loop-legacy-artifacts.json: 8 (must shrink; see the file's description)
+Review check (strict): 237 file(s), 2 error(s)
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-15-code-review-remediation/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-15-repo-deep-cleanup/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-17-infra-hardening-round/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-20-security-audit-governance-round/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-21-v090-govulncheck/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-21-v090-module-rename/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-21-v1-leftovers/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-errcheck-cleanup/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-frontend-unit-tests/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-release-tooling-win/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-22-sonarcloud-remediation/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-23-base-freeze-sonar-control/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-23-main-quality-gates-green/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-23-security-event-policy-i18n-header/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-25-sonar-scope-and-s8545/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-25-sonar-small-buckets/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-sonar-frontend-style/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-sonar-go-s1192/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-v1-freeze-backend-fixes/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-26-visual-evidence-observation-gate/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-27-ci-api-unit-test-wiring/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-27-profile-shell-fallback/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-29-sonar-go-platform-core/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-29-sonar-ts-final/review.md
+
+[PASS] .harness/archive/2026-07/evidence/2026-07-30-local-consolidation/review.md
+
+[PASS] .harness/archive/2026-07/evidence/ui-fix-20260727/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-02-sonarcloud-open-issues/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-03-dependabot-pr-governance/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-03-sonarcloud-encoding-warning/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-04-base-v0-10-0-release-candidate/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-05-base-v0-10-1-release/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-05-base-v0-10-2-visual-checker/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-06-generator-business-page-route/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-10-shared-csrf-release/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-base-security-dependencies/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-delivery-certification/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-foundation-release-v0-10-12/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-11-foundation-release-v0-10-13/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-consumer-cleanup-overlay/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-consumer-runtime-portability/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-smoke-closure/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-foundation-smoke-contract-closure/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-pr-auto-merge-push-trigger/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-12-pr-auto-merge-token/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-13-foundation-release-repo-snapshot/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-17-foundation-cross-repo-handoff-adoption/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-21-security-goroutine-hardening/review.md
+
+[PASS] .harness/archive/2026-08/evidence/2026-08-21-sonarcloud-remediation/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-01-release-docs-reconciliation/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-01-release-gate-sonar-cleanup/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-01-sonar-duplication-reduction/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-02-foundation-release-v0-10-26-and-ops-sync/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-03-frontend-design-alignment/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-04-readme-v011-final/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-04-readme-v011-update/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-04-v0.11.1-release-preparation/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-07-core-smoke-followup/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-community-building/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-multi-tenant-design/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-test-coverage-phase2/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-08-p2-test-coverage-phase3/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-09-oidc-deps-ci-repair/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-i18n-s3649-zero/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-release-gate-repair/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-release-gate-zero/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-smoke-core-repair/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-sonar-new-code-zero/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-sonar-resolved-repair/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-tenant-core-data-infrastructure/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-10-tenant-verification-and-gray/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-bench-perf-smoke-summary-path/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-ci-bench-perf-smoke/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-merged-packet-closeout/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-module-governance-flaky-timeout/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-permission-workbench-route-binding/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-smoke-core-tenant-ci-gap/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-20-tenant-hostile-matrix-phase2/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-document-layout-inventory/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-document-relocation-and-archive/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-export-and-session-pagination/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-frontend-style-naming-alignment/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-generated-artifact-governance/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-layer-boundary-gate/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-naming-boundary-canonical-standard/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-production-redis-and-security-gates/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-request-path-maintenance/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-session-revocation-closure/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-tenant-public-settings-scope/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-22-upload-authorization-and-import-resources/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-ci-triage-338-fallout/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-dormant-governance-tests-and-status-vocabulary/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-governance-residual-closeout/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-23-legacy-packet-migration-and-config-integrity/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-24-production-readiness-audit/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-25-task-archiving-and-v0130-prep/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-28-base-ssrf-protection/review.md
+
+[PASS] .harness/archive/2026-09/evidence/2026-09-29-v0140-release-completion/review.md
+
+[PASS] .harness/archive/2026-09/evidence/maintenance-test-stability-2026-09-02/review.md
+
+[PASS] .harness/archive/2026-09/evidence/sonarcloud-s4666/review.md
+
+[PASS] .harness/archive/2026-09/evidence/test-suite-optimization/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-audit-request-body/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-auth-session-scope/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-governance-gate-repair/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-iam-data-scope/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-login-log-identity/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-performance-followup/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-release-qualification/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-release-readiness-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-ui-maintainability-followup/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-07-upgrade-runbook/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-dependabot-sprintf-js-dos/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-naming-correspondence-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-smoke-test-tiering/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-sonar-duplication-under-3/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-11-sonar-smoke-helper-smells/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-flake-signal-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-foundation-release-asset-gate/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-v0160-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-12-v0161-release-cut/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-13-tenant-console-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-13-tenant-true-isolation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-15-tenant-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-tenant-permission-isolation-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w0-isolation-contract-guardrails/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w1-data-scope-tenant-dimension/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w2-tenant-user-onboarding/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w3-role-menu-grant-persistence/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w4-session-revocation-login-gate/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w5-tenant-console-ux/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-19-w6-reverification-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-20-sonarcloud-zero-issues/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-20-tenant-audit-permission-seed/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-20-tenant-delivery-hardening/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-21-acceptance-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-21-v0170-release-cut/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-delivery-audit-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-release-and-residual-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-tenant-plan-entitlements-and-audit/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-22-v0171-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-iam-race-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-iam-residual-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-residual-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-v0173-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-23-v0174-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-24-single-tenant-scope-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-24-v0175-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-governance-evidence-schema-backfill/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-governance-red-checkers-closure/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-login-accessibility-and-lang/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-pr427-ci-gate-closure/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-26-tenant-plan-assignment/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-base-docs-artifact-landing/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-codebase-simplification-program/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s1-api-surface-narrowing/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s1-dead-code-removal/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-batch-and-envelope/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-error-mapping-dedup/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-id-parse-migration/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-import-export-pipeline/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-pagination-sort-migration/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s2-shared-handler-helpers/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s3-oidc-envelope/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s3-role-data-scope-model/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s3-tenant-scope-unification/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s4-governance-decisions/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-s4-re-export-alias-removal/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-completeness-remediation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-console-ui-automation/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-contract-docs-alignment/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-dead-surface-removal/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-delete-archive-guard/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-member-integrity/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-multi-membership-authorization/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-multi-membership-decision/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-tenant-plan-ladder-decision/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-v0176-release-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-v0177-lint-codeql-closure/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-27-v0178-dep-vuln-closure/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-plan-ladder-option-a-impl/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-release-gate-green/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-release-notes-directory/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-28-tenantlist-s3776-followup/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-harness-task-archive/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-simplification-program-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-v0180-simplification-release/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-29-v0181-restore-request-guard/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-30-menu-contract-inline-const/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-30-workflow-sonar-githubactions/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-archive-closure-pr-governance/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p1-business-route-tenant-context/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p1-entry-doc-truthfulness/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p1-lowcode-generator-build/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-ci-checker-wiring/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-dead-code-legacy-surface/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-doc-lifecycle-archive/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-doc-metadata-and-index/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-oidc-scaffold-decision/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p2-token-cache-race/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-p3-residual-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-audit-remediation-programme/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-base-menu-filter-sql-literal-convergence/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-frontend-follow-redirects-audit/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-harness-archive-closeout-round2/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-release-gate-checks-poll-resilience/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-v0182-consumer-closeout/review.md
+
+[PASS] .harness/archive/2026-10/evidence/2026-10-31-v0182-menu-contract-shared-surface/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-01-audit-p2-automigrate-boundary/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-01-audit-p2-human-gate-preconditions/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p1-pagination-data-consistency/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-data-scope-automigrate/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-doc-drift-closeout/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-governance-wiring-closeout/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-p2-route-groups-unify/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-03-audit-remediation-programme/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-archive-governance-scope-repair/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-freeze-preconditions/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p1-npm-audit-exit/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p1-refresh-rotation/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p1-ssrf-dial-binding/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-agent-stop-points/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-authoritative-docs/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-freeze-validation/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-ops-db-test-followup/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p2-release-policy/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p3-ci-cost-review/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-audit-p3-consumer-seams/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-04-global-audit-remediation/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-05-base-freeze-release/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-07-ops-formal-queue-foundation-gaps/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-07-v0186-release-ops-consumption/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-12-v0187-release-ops-consumption/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-candidate-filesystem-security/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-docs-archive-closeout/review.md
+
+[PASS] .harness/archive/2026-11/evidence/2026-11-13-v0188-release-preparation/review.md
+
+[PASS] .harness/evidence/2026-11-24-business-route-static-guard/review.md
+
+[FAIL] .harness/evidence/2026-11-24-workflow-context-improvement/review.md
+  error: root.linkage.taskManifest must be a non-empty string.
+  error: root.linkage.taskManifest must be ".harness/tasks/2026-11-24-workflow-context-improvement/manifest.json".

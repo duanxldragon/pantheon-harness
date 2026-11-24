@@ -59,3 +59,9 @@ node --test scripts/harness/*.test.mjs
 ## 边界
 
 不要把应用专属扫描器放进这里。只要某个检查依赖特定技术栈、架构、路由布局、权限模型、CI 供应商或产品仓库，就应打包成 overlay，并保持可移植方法门禁独立。
+
+## Task Index and Policy Provenance
+
+`render-task-index.mjs --root <consumer>` reads current manifests; `--write` explicitly regenerates `.harness/TASK_INDEX.md`, and `--check` fails on drift without updating files. It never changes task status or infers product acceptance. This helper is Unreleased.
+
+`check-method-consumption.mjs --root <consumer> --source <harness>` preserves the receipt. `--update --source-commit <full-sha>` selects a reviewed Git checkout and verifies its seven policy blobs; CI uses that immutable commit. A normal update retains an existing pin and fails if local policy bytes differ from it. Product locks are independent.

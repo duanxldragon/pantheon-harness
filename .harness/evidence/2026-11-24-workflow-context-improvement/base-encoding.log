@@ -1,0 +1,2 @@
+{"name":"base-encoding","repo":"pantheon-base","command":["node","scripts/harness/check-encoding.mjs","--strict"],"start":"2026-11-24T01:57:32.979Z","elapsedMs":2098,"exitCode":0,"signal":null,"error":null}
+Encoding check (strict): 0 finding(s) across 3463 scanned file(s)

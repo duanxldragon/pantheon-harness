@@ -1,0 +1,7 @@
+{"name":"submission-pantheon-ops-gate-2","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/frontmatter-check.mjs","--report-legacy"],"start":"2026-11-24T02:17:30.597Z","elapsedMs":595,"exitCode":0,"signal":null,"error":null}
+Frontmatter check passed. Checked 510 docs, 360 with frontmatter, 150 without (informational, not enforced).
+Enforced directories: docs/superpowers/specs/, docs/archive/examples/, docs/archive/baselines/, docs/archive/upgrade/ — 4 doc(s) must carry frontmatter.
+Active docs past the 90-day review window: 139 (informational, not enforced — see DOCUMENT_METADATA_AND_STATUS §6.5).
+Legacy metadata docs not yet migrated: 2
+- docs/migrations/COMPAT_TO_MULTI_UPGRADE.md
+- docs/runbooks/DECOMMISSION_LEGACY_AUTH_ROUTES_2026-12-31.md

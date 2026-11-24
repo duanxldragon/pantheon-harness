@@ -1,0 +1,16 @@
+{
+  "name": "harness-task-packet",
+  "repo": "pantheon-harness",
+  "command": [
+    "node",
+    "scripts/harness/check-task-packet.mjs",
+    "--root",
+    ".",
+    "docs/harness/tasks/2026-11-24-workflow-context-improvement.task.md"
+  ],
+  "start": "2026-11-24T01:53:02.258Z",
+  "elapsedMs": 116,
+  "exitCode": 1,
+  "signal": null,
+  "error": null
+}

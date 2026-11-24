@@ -1,0 +1,25 @@
+{"name":"harness-behavior","repo":"pantheon-harness","command":["node","--test","scripts/harness/check-method-consumption.test.mjs","scripts/harness/render-task-index.test.mjs"],"start":"2026-11-24T01:25:32.307Z","elapsedMs":4366,"exitCode":0,"signal":null,"error":null}
+✔ records and verifies adoption without changing product version or refreshing evidence (28.2419ms)
+✔ source edits fail validation until explicitly reviewed and updated (28.5508ms)
+✔ Git CRLF/LF checkout differences preserve the same method snapshot (19.1738ms)
+✔ method version, wrong source, incomplete receipt and invalid JSON fail visibly (32.6871ms)
+✔ removing a tool entry link or adding an unlinked entry blocks update too (22.238ms)
+✔ an inactive inherited English guide does not require a shared-source override (20.7023ms)
+✔ a stale English guide activated only by Claude blocks adoption (27.5289ms)
+✔ missing source files or receipts are failures, not automatic adoption (17.668ms)
+✔ CLI requires an explicit source and rejects unsupported flags (490.3363ms)
+✔ a reviewed full commit pin is retained on update and rejects another checkout (2161.4505ms)
+✔ a pinned receipt cannot silently adopt unpublished policy edits (1273.6029ms)
+✔ invalid commit pins and pin changes outside intentional update fail (19.6088ms)
+✔ indexes active manifests, preserves their states, and excludes terminal/archive detail (32.7658ms)
+✔ read/check never refresh the index; stale states fail until explicitly regenerated (17.1779ms)
+✔ bad roots, malformed JSON, unknown statuses and mismatched IDs fail visibly (10.9016ms)
+✔ an archive-only consumer reports an empty current tree without inferring acceptance (6.7146ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4274.7325

@@ -1,0 +1,6 @@
+# ./...
+pattern ./...: open D:\cache\go\build\55\5578bb490c8a58392fa75b2af6edf99ad92ae9d77ab0c80d797f144b295cc141-d: Access is denied.
+FAIL	./... [setup failed]
+FAIL
+
+{"name":"isolated-ops-full-cgo-race","repo":".local/workflow-improvement-20261124/submission/pantheon-ops/backend","command":["go","test","-race","./..."],"start":"2026-11-24T02:15:50.957Z","elapsedMs":1829,"exitCode":1,"signal":null,"env":{"CGO_ENABLED":"1","PATHPrefix":"D:/msys64/mingw64/bin"}}

@@ -1,0 +1,2 @@
+Error: spawn go ENOENT
+{"name":"isolated-ops-full-cgo-race-approved","repo":".local/workflow-improvement-20261124/submission/pantheon-ops/backend","command":["go","test","-race","./..."],"start":"2026-11-24T02:16:56.598Z","elapsedMs":16,"exitCode":-4058,"signal":null,"env":{"CGO_ENABLED":"1","PATHPrefix":"D:/msys64/mingw64/bin"}}

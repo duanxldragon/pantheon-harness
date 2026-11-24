@@ -1,0 +1,13 @@
+{
+  "name": "ops-template",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "scripts/check-task-packet-template.mjs"
+  ],
+  "start": "2026-11-24T01:49:48.947Z",
+  "elapsedMs": 149,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

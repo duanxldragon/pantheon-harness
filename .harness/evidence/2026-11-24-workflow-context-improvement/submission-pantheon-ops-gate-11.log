@@ -1,0 +1,6 @@
+{"name":"submission-pantheon-ops-gate-11","repo":".local/workflow-improvement-20261124/submission/pantheon-ops","command":["node","scripts/harness/check-encoding.mjs","--root",".","--strict"],"start":"2026-11-24T02:17:35.203Z","elapsedMs":4914,"exitCode":1,"signal":null,"error":null}
+Encoding check (strict): 2 finding(s) across 4557 scanned file(s)
+finding: .harness/evidence/2026-11-17-ops-history-audit/cmd-corrupt-resume-verification.json
+  reason: Unicode replacement character U+FFFD at line(s) 4, 4
+finding: .harness/evidence/2026-11-17-ops-history-audit/cmd-owned-job-verification.json
+  reason: Unicode replacement character U+FFFD at line(s) 4, 4, 4, 4, 4 (first 5 shown)

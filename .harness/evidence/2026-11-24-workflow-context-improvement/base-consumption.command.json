@@ -1,0 +1,17 @@
+{
+  "name": "base-consumption",
+  "repo": "pantheon-base",
+  "command": [
+    "node",
+    "../pantheon-harness/scripts/harness/check-method-consumption.mjs",
+    "--root",
+    ".",
+    "--source",
+    "../pantheon-harness"
+  ],
+  "start": "2026-11-24T01:48:51.660Z",
+  "elapsedMs": 598,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}

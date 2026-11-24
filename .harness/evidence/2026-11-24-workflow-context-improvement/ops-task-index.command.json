@@ -1,0 +1,16 @@
+{
+  "name": "ops-task-index",
+  "repo": "pantheon-ops",
+  "command": [
+    "node",
+    "../pantheon-harness/scripts/harness/render-task-index.mjs",
+    "--root",
+    ".",
+    "--check"
+  ],
+  "start": "2026-11-24T01:48:58.652Z",
+  "elapsedMs": 116,
+  "exitCode": 0,
+  "signal": null,
+  "error": null
+}
